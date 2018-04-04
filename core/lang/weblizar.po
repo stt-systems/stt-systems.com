@@ -1,0 +1,988 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblizar\n"
+"POT-Creation-Date: 2014-06-19 22:50+0530\n"
+"PO-Revision-Date: 2014-06-19 22:50+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:9
+msgid "Error 404"
+msgstr ""
+
+#: 404.php:10
+msgid "We're sorry, but the page you were looking for doesn't exist."
+msgstr ""
+
+#: 404.php:11
+msgid "Go to Homepage"
+msgstr ""
+
+#: archive.php:9
+msgid "Daily Archives:"
+msgstr ""
+
+#: archive.php:11
+msgid "Monthly Archives:"
+msgstr ""
+
+#: archive.php:13
+msgid "Yearly Archives:"
+msgstr ""
+
+#: archive.php:15
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:25 author.php:15 blog.php:14 category.php:16 index.php:13
+#: tag.php:16
+msgid "Older posts"
+msgstr ""
+
+#: archive.php:28 author.php:18 blog.php:17 category.php:19 index.php:16
+#: tag.php:19
+msgid "Newer posts"
+msgstr ""
+
+#: author.php:7
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: category.php:7
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: comments.php:2
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:16
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:17
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:18
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:22
+msgid "Comments Are Closed!!!"
+msgstr ""
+
+#: comments.php:26
+msgid "You must be"
+msgstr ""
+
+#: comments.php:26
+msgid "logged in"
+msgstr ""
+
+#: comments.php:26
+msgid "to post a comment"
+msgstr ""
+
+#: comments.php:46
+msgid "Logged in as "
+msgstr ""
+
+#: comments.php:46
+msgid " Log out?"
+msgstr ""
+
+#: comments.php:49
+msgid "Send"
+msgstr ""
+
+#: content.php:34 page.php:48 single.php:50
+msgid "Read More"
+msgstr ""
+
+#: front-page.php:80 front-page.php:91 front-page.php:102 front-page.php:113
+msgid "read more"
+msgstr ""
+
+#: functions.php:31
+msgid "Page"
+msgstr ""
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:100
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:102
+msgid "The primary widget area"
+msgstr ""
+
+#: functions.php:110
+msgid "Footer Widget Area"
+msgstr ""
+
+#: functions.php:112
+msgid "footer widget area"
+msgstr ""
+
+#: search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:25
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:29
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: tag.php:9
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:161 core/plugin-activation.php:72
+msgid "Install Required Plugins"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:162 core/plugin-activation.php:73
+msgid "Install Plugins"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:163 core/plugin-activation.php:74
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:175 core/plugin-activation.php:86
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:177
+#: core/class-tgm-plugin-activation.php:1945 core/plugin-activation.php:87
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:178
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:534
+#: core/class-tgm-plugin-activation.php:2162
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1169
+msgid "Private Repository"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1172
+msgid "Pre-Packaged"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1177
+msgid "WordPress Repository"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1180
+msgid "Required"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1180
+msgid "Recommended"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1183
+msgid "Not Installed"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1185
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1290
+#: core/class-tgm-plugin-activation.php:1398
+msgid "Install"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1312
+#: core/class-tgm-plugin-activation.php:1399
+msgid "Activate"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1361
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1377
+msgid "Plugin"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1378
+msgid "Source"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1379
+msgid "Type"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1380
+msgid "Status"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1928
+msgid "Install package not available."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1929
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1930
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1931
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1932
+msgid "Plugin install failed."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1933
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:1944
+msgid "Plugin activation failed."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2058
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2059
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2059
+#: core/class-tgm-plugin-activation.php:2068
+msgid "Show Details"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2059
+#: core/class-tgm-plugin-activation.php:2068
+msgid "Hide Details"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2060
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2061
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2065
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2066
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2067
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2068
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2069
+msgid "All installations have been completed."
+msgstr ""
+
+#: core/class-tgm-plugin-activation.php:2070
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: core/plugin-activation.php:75
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: core/plugin-activation.php:88
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: core/comment-box/comment-function.php:12
+msgid "Reply"
+msgstr ""
+
+#: core/comment-box/comment-function.php:20
+msgid "at"
+msgstr ""
+
+#: core/comment-box/comment-function.php:26
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: core/theme-options/option-panel.php:31
+#: core/theme-options/option-settings.php:522
+msgid "Weblizar Pro"
+msgstr ""
+
+#: core/theme-options/option-panel.php:34
+#: core/theme-options/option-settings.php:523
+msgid "Get Our First Premium Theme"
+msgstr ""
+
+#: core/theme-options/option-panel.php:37
+#: core/theme-options/option-settings.php:534
+#: core/theme-options/option-settings.php:559
+msgid "View Pro Demo"
+msgstr ""
+
+#: core/theme-options/option-panel.php:38
+msgid "Upgrade to Weblizar Pro $39"
+msgstr ""
+
+#: core/theme-options/option-panel.php:42
+#: core/theme-options/option-settings.php:525
+#: core/theme-options/option-settings.php:546
+msgid "Responsive Design"
+msgstr ""
+
+#: core/theme-options/option-panel.php:43
+#: core/theme-options/option-settings.php:526
+msgid "More than 10 Templates"
+msgstr ""
+
+#: core/theme-options/option-panel.php:44
+msgid "13 types Themes Colors Scheme"
+msgstr ""
+
+#: core/theme-options/option-panel.php:45
+msgid "Patterns Background"
+msgstr ""
+
+#: core/theme-options/option-panel.php:46
+msgid "Image Background"
+msgstr ""
+
+#: core/theme-options/option-panel.php:47
+#: core/theme-options/option-settings.php:528
+msgid "Ultimate Portfolio layout with Isotope effect"
+msgstr ""
+
+#: core/theme-options/option-panel.php:48
+#: core/theme-options/option-settings.php:529
+msgid "Rich Short codes"
+msgstr ""
+
+#: core/theme-options/option-panel.php:49
+#: core/theme-options/option-settings.php:530
+msgid "Translation Ready"
+msgstr ""
+
+#: core/theme-options/option-panel.php:50
+#: core/theme-options/option-settings.php:531
+msgid "Coming Soon Mode"
+msgstr ""
+
+#: core/theme-options/option-panel.php:51
+msgid "Google Fonts"
+msgstr ""
+
+#: core/theme-options/option-panel.php:58
+msgid "Weblizar Theme Settings"
+msgstr ""
+
+#: core/theme-options/option-panel.php:60
+msgid "Theme Home Page"
+msgstr ""
+
+#: core/theme-options/option-panel.php:61
+msgid "Documentation"
+msgstr ""
+
+#: core/theme-options/option-panel.php:62
+msgid "Support Forum"
+msgstr ""
+
+#: core/theme-options/option-panel.php:63
+msgid "View Changelog"
+msgstr ""
+
+#: core/theme-options/option-panel.php:71
+msgid "Home Option"
+msgstr ""
+
+#: core/theme-options/option-panel.php:73
+msgid "General Option"
+msgstr ""
+
+#: core/theme-options/option-panel.php:74
+msgid "Slide show Option"
+msgstr ""
+
+#: core/theme-options/option-panel.php:75
+msgid "Site Info Option"
+msgstr ""
+
+#: core/theme-options/option-panel.php:76
+msgid "Service Option"
+msgstr ""
+
+#: core/theme-options/option-panel.php:79
+msgid "Social Media Links"
+msgstr ""
+
+#: core/theme-options/option-panel.php:80
+msgid "Footer Option"
+msgstr ""
+
+#: core/theme-options/option-panel.php:81
+msgid "Our Products"
+msgstr ""
+
+#: core/theme-options/option-settings.php:6
+msgid "General Settings"
+msgstr ""
+
+#: core/theme-options/option-settings.php:9
+#: core/theme-options/option-settings.php:114
+#: core/theme-options/option-settings.php:233
+#: core/theme-options/option-settings.php:306
+#: core/theme-options/option-settings.php:427
+#: core/theme-options/option-settings.php:480
+msgid "Options Data updated"
+msgstr ""
+
+#: core/theme-options/option-settings.php:10
+#: core/theme-options/option-settings.php:115
+#: core/theme-options/option-settings.php:234
+#: core/theme-options/option-settings.php:307
+#: core/theme-options/option-settings.php:428
+#: core/theme-options/option-settings.php:481
+msgid "Options data Reset"
+msgstr ""
+
+#: core/theme-options/option-settings.php:26
+msgid "Theme Color Schemes"
+msgstr ""
+
+#: core/theme-options/option-settings.php:36
+msgid "light-blue"
+msgstr ""
+
+#: core/theme-options/option-settings.php:37
+msgid "green"
+msgstr ""
+
+#: core/theme-options/option-settings.php:38
+msgid "red"
+msgstr ""
+
+#: core/theme-options/option-settings.php:39
+msgid "pink"
+msgstr ""
+
+#: core/theme-options/option-settings.php:40
+msgid "light-purple"
+msgstr ""
+
+#: core/theme-options/option-settings.php:41
+msgid "orange"
+msgstr ""
+
+#: core/theme-options/option-settings.php:42
+msgid "bright-green"
+msgstr ""
+
+#: core/theme-options/option-settings.php:43
+msgid "dark-blue"
+msgstr ""
+
+#: core/theme-options/option-settings.php:44
+msgid "oil"
+msgstr ""
+
+#: core/theme-options/option-settings.php:45
+msgid "black"
+msgstr ""
+
+#: core/theme-options/option-settings.php:46
+msgid "light-brown"
+msgstr ""
+
+#: core/theme-options/option-settings.php:47
+msgid "coffee"
+msgstr ""
+
+#: core/theme-options/option-settings.php:48
+msgid "flat-blue"
+msgstr ""
+
+#: core/theme-options/option-settings.php:50
+msgid "Select OUT of 10+ Color Schemes"
+msgstr ""
+
+#: core/theme-options/option-settings.php:57
+msgid "Custom Logo"
+msgstr ""
+
+#: core/theme-options/option-settings.php:60
+msgid "Add custom logo from here suggested size is 150X50"
+msgstr ""
+
+#: core/theme-options/option-settings.php:66
+msgid "Logo Height"
+msgstr ""
+
+#: core/theme-options/option-settings.php:68
+msgid ""
+"Default Logo Height : 55px, if you want to increase than specify your value"
+msgstr ""
+
+#: core/theme-options/option-settings.php:71
+msgid "Logo Width"
+msgstr ""
+
+#: core/theme-options/option-settings.php:73
+msgid ""
+"Default Logo Width : 150px, if you want to increase than specify your value"
+msgstr ""
+
+#: core/theme-options/option-settings.php:76
+msgid "Text Title"
+msgstr ""
+
+#: core/theme-options/option-settings.php:77
+msgid "Enable text-based Site Title.   Setup title"
+msgstr ""
+
+#: core/theme-options/option-settings.php:77
+msgid "Click Here"
+msgstr ""
+
+#: core/theme-options/option-settings.php:80
+msgid "Custom Favicon"
+msgstr ""
+
+#: core/theme-options/option-settings.php:83
+msgid "Make sure you upload .icon image type which is not more then 25X25 px."
+msgstr ""
+
+#: core/theme-options/option-settings.php:89
+msgid "Google Tracking Code"
+msgstr ""
+
+#: core/theme-options/option-settings.php:91
+msgid ""
+"Paste your Google Analytics tracking code here. This will be added into "
+"themes footer. Copy only scripting code i.e no need to use script tag "
+msgstr ""
+
+#: core/theme-options/option-settings.php:94
+msgid "Custom css"
+msgstr ""
+
+#: core/theme-options/option-settings.php:96
+msgid ""
+"This is a powerful feature provided here. No need to use custom css plugin, "
+"just paste your css code and see the magic."
+msgstr ""
+
+#: core/theme-options/option-settings.php:111
+#: core/theme-options/option-settings.php:230
+#: core/theme-options/option-settings.php:303
+msgid "Site Info Settings"
+msgstr ""
+
+#: core/theme-options/option-settings.php:126
+msgid "Home Feature Image One"
+msgstr ""
+
+#: core/theme-options/option-settings.php:129
+#: core/theme-options/option-settings.php:164
+msgid "Add Home Feature image here, size suggestion is 1900X525."
+msgstr ""
+
+#: core/theme-options/option-settings.php:136
+msgid "Home Feature Image Title One"
+msgstr ""
+
+#: core/theme-options/option-settings.php:138
+#: core/theme-options/option-settings.php:172
+msgid "Type Home Feature Image Title Here"
+msgstr ""
+
+#: core/theme-options/option-settings.php:142
+msgid "Home Feature Image Description One"
+msgstr ""
+
+#: core/theme-options/option-settings.php:144
+#: core/theme-options/option-settings.php:177
+msgid "Type Home Feature Image Description Here"
+msgstr ""
+
+#: core/theme-options/option-settings.php:148
+msgid "Home Feature Image Button Text One"
+msgstr ""
+
+#: core/theme-options/option-settings.php:150
+#: core/theme-options/option-settings.php:183
+msgid "Type Home Feature Image Button Text Here"
+msgstr ""
+
+#: core/theme-options/option-settings.php:154
+msgid "Home Feature Image Button Link One"
+msgstr ""
+
+#: core/theme-options/option-settings.php:156
+#: core/theme-options/option-settings.php:189
+msgid "Type Home Feature Image Button Link Here"
+msgstr ""
+
+#: core/theme-options/option-settings.php:161
+msgid "Home Feature Image Two"
+msgstr ""
+
+#: core/theme-options/option-settings.php:170
+msgid "Home Feature Image Title Two"
+msgstr ""
+
+#: core/theme-options/option-settings.php:175
+msgid "Home Feature Image Description Two"
+msgstr ""
+
+#: core/theme-options/option-settings.php:181
+msgid "Home Feature Image Button Text Two"
+msgstr ""
+
+#: core/theme-options/option-settings.php:187
+msgid "Home Feature Image Button Link Two"
+msgstr ""
+
+#: core/theme-options/option-settings.php:199
+msgid "More Slides"
+msgstr ""
+
+#: core/theme-options/option-settings.php:209
+msgid "Add Unlimited slides for your sideshow "
+msgstr ""
+
+#: core/theme-options/option-settings.php:244
+msgid "Site Intro Title"
+msgstr ""
+
+#: core/theme-options/option-settings.php:246
+msgid "Type here your site information text"
+msgstr ""
+
+#: core/theme-options/option-settings.php:250
+msgid "Site Description"
+msgstr ""
+
+#: core/theme-options/option-settings.php:252
+msgid "Type here your site description."
+msgstr ""
+
+#: core/theme-options/option-settings.php:256
+msgid "Blog Title"
+msgstr ""
+
+#: core/theme-options/option-settings.php:258
+msgid "Type here your blog title"
+msgstr ""
+
+#: core/theme-options/option-settings.php:262
+msgid "Blog Description"
+msgstr ""
+
+#: core/theme-options/option-settings.php:264
+msgid "Type here your Blog description."
+msgstr ""
+
+#: core/theme-options/option-settings.php:274
+msgid "More Sections"
+msgstr ""
+
+#: core/theme-options/option-settings.php:283
+msgid "Add More Sections and More Features on your website."
+msgstr ""
+
+#: core/theme-options/option-settings.php:317
+#: core/theme-options/option-settings.php:335
+#: core/theme-options/option-settings.php:353
+#: core/theme-options/option-settings.php:371
+msgid "Service one"
+msgstr ""
+
+#: core/theme-options/option-settings.php:319
+#: core/theme-options/option-settings.php:337
+#: core/theme-options/option-settings.php:355
+#: core/theme-options/option-settings.php:373
+msgid "Service Title"
+msgstr ""
+
+#: core/theme-options/option-settings.php:321
+#: core/theme-options/option-settings.php:339
+#: core/theme-options/option-settings.php:357
+#: core/theme-options/option-settings.php:375
+msgid "Type here your service title"
+msgstr ""
+
+#: core/theme-options/option-settings.php:322
+#: core/theme-options/option-settings.php:340
+#: core/theme-options/option-settings.php:358
+#: core/theme-options/option-settings.php:376
+msgid "Service  Icons"
+msgstr ""
+
+#: core/theme-options/option-settings.php:325
+#: core/theme-options/option-settings.php:343
+#: core/theme-options/option-settings.php:361
+#: core/theme-options/option-settings.php:379
+msgid "Service Icon (Using Bootstrap icons name) like: icon-tablet"
+msgstr ""
+
+#: core/theme-options/option-settings.php:325
+#: core/theme-options/option-settings.php:343
+#: core/theme-options/option-settings.php:361
+#: core/theme-options/option-settings.php:379
+msgid "Get your Bootstrap icons"
+msgstr ""
+
+#: core/theme-options/option-settings.php:326
+#: core/theme-options/option-settings.php:344
+#: core/theme-options/option-settings.php:362
+#: core/theme-options/option-settings.php:380
+msgid "Service Description"
+msgstr ""
+
+#: core/theme-options/option-settings.php:328
+#: core/theme-options/option-settings.php:346
+#: core/theme-options/option-settings.php:364
+#: core/theme-options/option-settings.php:382
+msgid "Type here your service description."
+msgstr ""
+
+#: core/theme-options/option-settings.php:329
+#: core/theme-options/option-settings.php:347
+#: core/theme-options/option-settings.php:365
+#: core/theme-options/option-settings.php:383
+msgid "Service  Link"
+msgstr ""
+
+#: core/theme-options/option-settings.php:331
+#: core/theme-options/option-settings.php:349
+#: core/theme-options/option-settings.php:367
+#: core/theme-options/option-settings.php:385
+msgid "Type here your service link"
+msgstr ""
+
+#: core/theme-options/option-settings.php:395
+msgid "More Services"
+msgstr ""
+
+#: core/theme-options/option-settings.php:404
+msgid "Add More Services on your Home Page."
+msgstr ""
+
+#: core/theme-options/option-settings.php:424
+msgid "Social media"
+msgstr ""
+
+#: core/theme-options/option-settings.php:438
+msgid "Enable Social media:"
+msgstr ""
+
+#: core/theme-options/option-settings.php:439
+msgid "Enable social media in contact page."
+msgstr ""
+
+#: core/theme-options/option-settings.php:440
+msgid "Enable Social media in footer section."
+msgstr ""
+
+#: core/theme-options/option-settings.php:443
+msgid "Twitter Link:"
+msgstr ""
+
+#: core/theme-options/option-settings.php:445
+msgid "Enter twitter link."
+msgstr ""
+
+#: core/theme-options/option-settings.php:448
+msgid "Linkedin Links:"
+msgstr ""
+
+#: core/theme-options/option-settings.php:450
+msgid "Enter linkedin link."
+msgstr ""
+
+#: core/theme-options/option-settings.php:454
+msgid "Facebook Links:"
+msgstr ""
+
+#: core/theme-options/option-settings.php:456
+msgid "Enter facebook link."
+msgstr ""
+
+#: core/theme-options/option-settings.php:460
+msgid "Google Plus Links:"
+msgstr ""
+
+#: core/theme-options/option-settings.php:462
+msgid "Enter google plus link."
+msgstr ""
+
+#: core/theme-options/option-settings.php:477
+msgid "Footer Customization"
+msgstr ""
+
+#: core/theme-options/option-settings.php:491
+msgid "Footer customization"
+msgstr ""
+
+#: core/theme-options/option-settings.php:493
+msgid "Enter your footer customization text "
+msgstr ""
+
+#: core/theme-options/option-settings.php:496
+msgid "Developed by text"
+msgstr ""
+
+#: core/theme-options/option-settings.php:498
+msgid "Enter developed by text"
+msgstr ""
+
+#: core/theme-options/option-settings.php:501
+msgid "Developed by link text"
+msgstr ""
+
+#: core/theme-options/option-settings.php:503
+msgid "Enter developed by link text  "
+msgstr ""
+
+#: core/theme-options/option-settings.php:506
+msgid "Developed by link"
+msgstr ""
+
+#: core/theme-options/option-settings.php:508
+msgid "Enter developed by link"
+msgstr ""
+
+#: core/theme-options/option-settings.php:527
+msgid "12 types Themes Colors Scheme"
+msgstr ""
+
+#: core/theme-options/option-settings.php:535
+msgid "Upgrade to Pro $39"
+msgstr ""
+
+#: core/theme-options/option-settings.php:543
+msgid "Responsive Photo Gallery"
+msgstr ""
+
+#: core/theme-options/option-settings.php:547
+msgid "8 Animation Effect"
+msgstr ""
+
+#: core/theme-options/option-settings.php:548
+msgid "5 Gallery Layout"
+msgstr ""
+
+#: core/theme-options/option-settings.php:549
+msgid "Unlimited Hover Color"
+msgstr ""
+
+#: core/theme-options/option-settings.php:550
+msgid "10 Color Opacity"
+msgstr ""
+
+#: core/theme-options/option-settings.php:551
+msgid "200+ Font Style"
+msgstr ""
+
+#: core/theme-options/option-settings.php:552
+msgid "2 Light Box"
+msgstr ""
+
+#: core/theme-options/option-settings.php:553
+msgid "All Gallery Shortcode"
+msgstr ""
+
+#: core/theme-options/option-settings.php:554
+msgid "Single Gallery Shortcode"
+msgstr ""
+
+#: core/theme-options/option-settings.php:555
+msgid "Browser Compatibility"
+msgstr ""
+
+#: core/theme-options/option-settings.php:556
+msgid "Retina Ready"
+msgstr ""
+
+#: core/theme-options/option-settings.php:557
+msgid "Fast & Friendly Support"
+msgstr ""
+
+#: core/theme-options/option-settings.php:560
+msgid "Upgrade to Pro $10"
+msgstr ""
