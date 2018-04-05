@@ -47,10 +47,10 @@ function stt_replace_content($content, $excerpt = false) {
 	
 	$content = str_replace(']]>', ']]&gt;', $content);
 
-	$content = preg_replace_callback("/\[include:([_a-zA-Z0-9-]+)( values:((\([a-zA-Z0-9_-]+:\"$text_format\"\))+))?\]/u", replace_include_cb, $content);
+	$content = preg_replace_callback("/\[include:([_a-zA-Z0-9-]+)( values:((\([a-zA-Z0-9_-]+:\"$text_format\"\))+))?\]/u", 'replace_include_cb', $content);
 
-	$content = preg_replace_callback("/\[link:([_a-zA-Z0-9-]+)( title:($text_format))?\]/u", replace_link_cb, $content);
-	$content = preg_replace_callback("/\[email:([_a-zA-Z0-9-]+)( title:($text_format))?\]/u", replace_email_cb, $content);
+	$content = preg_replace_callback("/\[link:([_a-zA-Z0-9-]+)( title:($text_format))?\]/u", 'replace_link_cb', $content);
+	$content = preg_replace_callback("/\[email:([_a-zA-Z0-9-]+)( title:($text_format))?\]/u", 'replace_email_cb', $content);
 	
 	$len = 0; $len2 = 1;
 	if ($excerpt) { // excerpts don't have some elements
@@ -64,9 +64,9 @@ function stt_replace_content($content, $excerpt = false) {
 		
 		//$content = preg_replace('#<ul>[^.]*?</ul>#', '', $content);
 	} else {
-		$content = preg_replace_callback("#\[image:([/_a-zA-Z0-9-]+\.[a-zA-Z0-9]+)( (caption):($text_format))?( no-shadow)?\]#u", replace_image_cb, $content);
-		$content = preg_replace_callback("/\[images-table:([_a-zA-Z0-9-]+) cols:([0-9]+)\]/", replace_images_table_cb, $content);
-		$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", replace_gallery_cb, $content);
+		$content = preg_replace_callback("#\[image:([/_a-zA-Z0-9-]+\.[a-zA-Z0-9]+)( (caption):($text_format))?( no-shadow)?\]#u", 'replace_image_cb', $content);
+		$content = preg_replace_callback("/\[images-table:([_a-zA-Z0-9-]+) cols:([0-9]+)\]/", 'replace_images_table_cb', $content);
+		$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
 
 		// Columns
 		$len = strlen($content);
@@ -92,7 +92,7 @@ function stt_replace_content($content, $excerpt = false) {
 		// Move the fullscreen galleries div outside the blog to avoid footer and header overlap it
 		// Additionally, each gallery div is associated to a set of images by the gallery's ID
 		$len3 = strlen($content);
-		$content = preg_replace_callback('#[\s]*\[gallery_snippet-([_a-zA-Z0-9-]+)\][\s]*#', replace_gallery_snippet_cb, $content);
+		$content = preg_replace_callback('#[\s]*\[gallery_snippet-([_a-zA-Z0-9-]+)\][\s]*#', 'replace_gallery_snippet_cb', $content);
 		if ($len3 != strlen($content)) { ?>
 			<script type="text/javascript">window.onload=function(){$('body').append($('.blueimp-gallery'));};</script><?php
 		}
@@ -267,10 +267,10 @@ function replace_gallery_cb($match) {
 		$config = json_decode(fread($fh, filesize($path)), true);
 		fclose($fh);
 		$title = '<p class="gallery-caption">' . $config['title'] . '</p>';
-		$wald_data['subtitles'] = $config['images'];
+		$walk_data['subtitles'] = $config['images'];
 	}
 	$images = get_images('galleries/' . $gallery, 'thumb-');
-	array_walk($images, walk_gallery_cb, $walk_data);
+	array_walk($images, 'walk_gallery_cb', $walk_data);
 	$gal_images = '<div id="links-' . $clean_name . '" style="text-align:center;" class="gallery">' . implode($images) . '</div>' . $title;
 
 	return $gal_images . '[gallery_snippet-' . $clean_name . ']';

@@ -12,7 +12,7 @@ add_filter('document_title_parts', 'wc_custom_shop_archive_title');
 
 function get_cart_title() {
 	global $woocommerce;
-	$cart_url = $woocommerce->cart->get_cart_url();
+	$cart_url = wc_get_cart_url();
 	$cart_contents_count = $woocommerce->cart->cart_contents_count;
 	$cart_contents = sprintf(_n('%d item', '%d items', $cart_contents_count, 'your-theme-slug'), $cart_contents_count);
 	$cart_total = $woocommerce->cart->get_cart_total();

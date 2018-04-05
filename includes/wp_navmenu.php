@@ -81,7 +81,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				$post = get_post(get_post_meta($item->ID, '_menu_item_object_id', true));
 
 				if (strpos($url, '.com/' . $post->post_name . '/') !== false and
-					strpos($classname, 'current_page_ancestor') === false) { // highlight parent menu
+					strpos($class_names, 'current_page_ancestor') === false) { // highlight parent menu
 					$class_names .= ' current_page_ancestor';
 				}				
 			}
@@ -138,7 +138,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				if ($cart_contents_count == 0) return;
 			} else if (strcasecmp($item->title, 'cart') == 0) {
 				global $woocommerce;
-				$cart_url = $woocommerce->cart->get_cart_url();
+				$cart_url = wc_get_cart_url();
 				$cart_contents_count = $woocommerce->cart->cart_contents_count;
 				$cart_contents = sprintf(_n('%d item', '%d items', $cart_contents_count, 'your-theme-slug'), $cart_contents_count);
 				$cart_total = $woocommerce->cart->get_cart_total();

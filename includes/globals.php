@@ -161,7 +161,7 @@ function get_page_url($slug, $title = '', $type = 'page', $rel = '') {
 		'post_type' => $type,
 		'post_status' => 'publish',
 		'showposts' => 1,
-		'caller_get_posts'=> 1,
+		'ignore_sticky_posts'=> 1,
 		'posts_per_page' => 1
 	);
 	$pages = get_posts($args);
