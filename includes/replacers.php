@@ -147,7 +147,7 @@ function replace_include_shortcode($atts) {
 		$values = explode(')', $values_str);
 		foreach ($values as $value) {
 			$kv = explode(':', $value);
-			$text = str_replace("'", '', $kv[1]);
+			$text = count($kv) > 1 ? str_replace("'", '', $kv[1]) : '';
 			$content = str_replace("{{{$kv[0]}}}", $text, $content);
 		}
 	}
@@ -267,7 +267,9 @@ function replace_gallery_cb($match) {
 		$config = json_decode(fread($fh, filesize($path)), true);
 		fclose($fh);
 		$title = '<p class="gallery-caption">' . $config['title'] . '</p>';
-		$walk_data['subtitles'] = $config['images'];
+		if (array_key_exists('images', $config)) {
+			$walk_data['subtitles'] = $config['images'];
+		}
 	}
 	$images = get_images('galleries/' . $gallery, 'thumb-');
 	array_walk($images, 'walk_gallery_cb', $walk_data);
@@ -292,7 +294,7 @@ function replace_images_table_cb($match) {
 		return '';
 	}
 	$cols = $match[2];
-	array_walk($images, walk_images_table_cb, "galleries/$gallery/");
+	array_walk($images, 'walk_images_table_cb', "galleries/$gallery/");
 
 	$table = '';
 	$i = 0;

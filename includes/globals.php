@@ -113,7 +113,7 @@ function get_downloads($dir) {
 	$list_str = fread($fh, filesize($path));
 	fclose($fh);
 	$list = json_decode($list_str, true);
-	array_walk($list['files'], walk_downloads_cb, "$dir/");
+	array_walk($list['files'], 'walk_downloads_cb', "$dir/");
 
 	return $list;
 }
