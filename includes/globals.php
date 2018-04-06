@@ -42,7 +42,7 @@ function add_page_path() {
 function get_banner_code($slug) {
 	global $post;
 	$path = "/images/banners/$slug.jpg";
-	if (!file_exists(ABSPATH . $path)) return '';
+	if (!file_exists(ABSPATH . $path)) return ''; // no banner for the page
 	return '<img class="banner" src="' . get_site_url() . $path . '" alt="' . $post->post_title . '" />';
 }
 
@@ -137,7 +137,7 @@ function get_filesize_str($file) {
 	$size = filesize($file);
 
 	$units = array('B', 'KB', 'MB', 'GB');
-	foreach ($units as $unit) {
+	foreach ($units as $unit) { // find nearest unit
 		if ($size < 1000) {
 			if ($unit == 'B' || $unit == 'KB') {
 				$size = (int)$size;

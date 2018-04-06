@@ -1,4 +1,10 @@
 <?php
+/*
+ * Functions ending with _cb are callbacks, used in manual replacements
+ * Functions ending with _shortcode are used by WP for replacing the associated shortcode
+ * *_cb are kept for backward compatibility and because the migration to shortcodes hasn't been completed yet.
+ */
+
 function stt_trim_words($text, $num_words = 55, $more = null) {
 	global $search_term_search;
 	if (!isset($search_term_search)) return $text;
@@ -296,6 +302,7 @@ function replace_images_table_cb($match) {
 	$cols = $match[2];
 	array_walk($images, 'walk_images_table_cb', "galleries/$gallery/");
 
+	// Create table
 	$table = '';
 	$i = 0;
 	foreach ($images as $image) {

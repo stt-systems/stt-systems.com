@@ -16,7 +16,6 @@ add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args');
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
-
 class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 	/**

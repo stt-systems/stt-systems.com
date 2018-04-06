@@ -15,7 +15,7 @@ function print_meta() {
 		return;
 	}
 	
-	$title = get_the_title() . ' | STT Systems';	
+	$title = get_the_title() . ' | STT Systems';
 	$mocap_category = get_category_by_slug('motion-capture')->term_id;
 	$scanners_category = get_category_by_slug('scanners')->term_id;
 	$news_category = get_category_by_slug('news')->term_id;

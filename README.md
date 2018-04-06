@@ -1,2 +1,0 @@
-# stt-systems.com
-
