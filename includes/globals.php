@@ -78,10 +78,7 @@ function print_page_title($slug = '', $title = '') {
 // Helper functions to deal with uploads (images and downloadable material)
 function my_get_url_for_path($path, $add_timestamp = true) {
 	if (!file_exists(ABSPATH . $path)) return '';
-	$url = get_site_url() . $path;
-	return $url;
-	//if (!$add_timestamp) return $url;
-	//return "$url?" . str_pad(filemtime(ABSPATH . $path) % 10000, 4, '0', STR_PAD_LEFT);
+	return get_site_url() . $path;
 }
 
 function my_get_image_url($name) { // there is a WP method called get_image_url
@@ -162,7 +159,7 @@ function get_page_url($slug, $title = '', $type = 'page', $rel = '') {
 		'post_type' => $type,
 		'post_status' => 'publish',
 		'showposts' => 1,
-		'ignore_sticky_posts'=> 1,
+		'ignore_sticky_posts' => 1,
 		'posts_per_page' => 1
 	);
 	$pages = get_posts($args);
