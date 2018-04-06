@@ -79,8 +79,9 @@ function print_page_title($slug = '', $title = '') {
 function my_get_url_for_path($path, $add_timestamp = true) {
 	if (!file_exists(ABSPATH . $path)) return '';
 	$url = get_site_url() . $path;
-	if (!$add_timestamp) return $url;
-	return "$url?" . str_pad(filemtime(ABSPATH . $path) % 10000, 4, '0', STR_PAD_LEFT);
+	return $url;
+	//if (!$add_timestamp) return $url;
+	//return "$url?" . str_pad(filemtime(ABSPATH . $path) % 10000, 4, '0', STR_PAD_LEFT);
 }
 
 function my_get_image_url($name) { // there is a WP method called get_image_url
