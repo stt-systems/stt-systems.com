@@ -191,7 +191,7 @@ function get_widget_recent_posts($cat) {
 	unset($query);
 }
 
-function get_customer_cases($cat_id, $number_of_posts) {
+function get_posts_for_category($cat_id, $number_of_posts) {
 	global $post;
 	query_posts(array(
 		'cat' => $cat_id,
@@ -213,7 +213,7 @@ function get_customer_cases($cat_id, $number_of_posts) {
 	return $cases;
 }
 
-function print_case_section($slug, $name, $cases, $is_cases_index = true) {?>
+function print_category_section($slug, $name, $cases, $is_cases_index = true) {?>
 	<div <?php if ($is_cases_index) { echo "id=\"$slug\" "; } ?>class="cases-section alternating-bg"><div class="container"><?php
 		if ($is_cases_index) {?>
 			<div class="row">

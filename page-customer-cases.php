@@ -8,7 +8,7 @@ $case_categories = get_categories(array(
 
 $sections = array();
 foreach ($case_categories as $cat) {
-	$cases = get_customer_cases($cat->term_id, 3);
+	$cases = get_posts_for_category($cat->term_id, 3);
 	
 	if (count($cases) > 0) {
 		array_push($sections, array(
@@ -31,7 +31,7 @@ foreach ($case_categories as $cat) {
 </div>
 <div class="content-wrapper body-wrapper blog-span blog-post-body"><?php
 	foreach ($sections as $section) {
-		print_case_section($section['slug'], $section['name'], $section['cases']);
+		print_category_section($section['slug'], $section['name'], $section['cases']);
 	} ?>
 </div>
 <?php get_footer(); ?>
