@@ -1,7 +1,9 @@
 <?php
 function my_wp_nav_menu_args($args = '') {
-	if (is_user_logged_in()) {
+	if (is_user_logged_in() and is_nav_menu('Store menu')) {
 		$args['menu'] = 'Store menu';
+	} else {
+		$args['menu'] = 'Home menu';
 	}
 	return $args;
 }
