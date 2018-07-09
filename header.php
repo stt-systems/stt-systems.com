@@ -52,6 +52,7 @@ wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/c
 	<?php endif; ?>
 </head>
 <body <?php body_class(); ?> >
+<?php if (!is_front_page()) { ?>
 <div class="menu_wrapper top_wrapper">
 	<div class="row">
 		<nav class="navbar navbar-default">
@@ -83,3 +84,4 @@ wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/c
 		</nav>
 	</div>
 </div>
+<?php } ?>
