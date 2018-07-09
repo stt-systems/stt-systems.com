@@ -16,12 +16,16 @@ function print_meta() {
 	}
 	
 	$title = get_the_title() . ' | STT Systems';
-	$mocap_category = get_category_by_slug('motion-capture')->term_id;
-	$scanners_category = get_category_by_slug('scanners')->term_id;
-	$news_category = get_category_by_slug('news')->term_id;
 	$url = get_permalink();
 	$type = 'article';
-	if (!is_front_page() and !is_page() and (in_category($news_category) or in_category($mocap_category) or in_category($scanners_category))) {
+
+	$mocap_category = get_category_by_slug('motion-capture');
+	$scanners_category = get_category_by_slug('scanners');
+	$news_category = get_category_by_slug('news');
+  $use_post_image = ($mocap_category and in_category($news_category->term_id)) or
+                    ($mocap_category and in_category($mocap_category->term_id)) or
+                    ($scanners_category and in_category($scanners_category->term_id));
+	if (!is_front_page() and !is_page() and $use_post_image) {
 		$image = get_post_meta($post->ID, 'image', true);
 	} else { 
 		if (is_front_page()) {
