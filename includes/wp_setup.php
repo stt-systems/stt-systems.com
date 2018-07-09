@@ -96,8 +96,13 @@ add_filter('image_size_names_choose', 'wpmayor_custom_image_sizes');
 add_filter('wp_trim_excerpt', 'stt_replace_excerpt');
 add_filter('wp_trim_words', 'stt_trim_words');
 
+function enqueue_theme_css() {
+  wp_enqueue_style('default', get_template_directory_uri() . '/css/style.min.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_theme_css');
+
 function stt_stylesheet_uri($uri) {
-	return $uri . '?' . filemtime(get_stylesheet_directory() . '/style.css');
+	return $uri . '?' . filemtime(get_stylesheet_directory() . '/css');
 }
 add_filter('stylesheet_uri', 'stt_stylesheet_uri');
 
