@@ -7,7 +7,7 @@ if not "%1"=="" set STYLE=%1
 
 for %%F in (*.js) do (
   echo uglify-js %%F...
-  call uglifyjs %%F --output %%~nF.js %STYLE%
+  call uglifyjs %%F --output ..\%%~nF.min.js %STYLE%
 )
 
 exit /b 0
