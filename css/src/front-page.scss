@@ -1,0 +1,24 @@
+h1 {
+  font-size: 48px;
+  font-weight: 200;
+  color: #ffffff;
+}
+h3 {
+  font-weight: 400;
+}
+.panel {
+  float: none;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 100px;
+  padding-bottom: 110px;
+  text-align: center;
+  border-radius: 0px;
+  background: #2c73b5;
+}
+.panel:hover {
+  background: #164f86;
+}
+.panel:hover h3 {
+  color: #cccccc;
+}

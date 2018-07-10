@@ -3,40 +3,26 @@ add_action('wp_head', 'schema_head');
 get_header();
 ?>
 
-<style>
-  h1 {
-    font-size: 48px;
-    font-weight: 200;
-    color: #ffffff;
-  }
-  .panel {
-    float: none;
-    display: table-cell;
-    vertical-align: middle;
-    padding-top: 60px;
-    padding-bottom: 70px;
-    text-align: center;    
-  }
-</style>
+<link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/front-page.min.css'); ?>" />
 
 <div>
 	<div class="row" style="display: table">
-    <div class="col-md-6 col-sm-6 panel" style="background: #2c73b5">
+    <div class="col-md-6 col-sm-6 panel">
       <div class="cold-md-3 col-sm-3"></div>
       <div class="col-md-6 col-sm-6">
         <div class="content-box">
           <h1>Motion Analysis Solutions</h1>
-          <a>Premium technologies for human motion studies. Ready to use by scientists, sports scientists and clinitians</a>
+          <h3>Premium technologies for human motion studies. Ready to use by scientists, sports scientists and clinitians</h3>
         </div>
       </div>
       <div class="cold-md-3 col-sm-3"></div>
     </div>
-    <div class="col-md-6 col-sm-6 panel" style="background: #164f86">
+    <div class="col-md-6 col-sm-6 panel">
       <div class="cold-md-3 col-sm-3"></div>
       <div class="col-md-6 col-sm-6">
         <div class="content-box">
           <h1>Industry 4.0</h1>
-          <a>Turn-key solutions for companies seeking smart and automated manufacturing &amp; monitoring processes</a>
+          <h3>Turn-key solutions for companies seeking smart and automated manufacturing &amp; monitoring processes</h3>
         </div>
       </div>
       <div class="cold-md-3 col-sm-3"></div>
