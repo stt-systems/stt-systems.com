@@ -1,4 +1,6 @@
 <?php
+if (!class_exists('WooCommerce')) return;
+
 require('woocommerce_shipping.php');
 
 function wc_custom_shop_archive_title($title) {
