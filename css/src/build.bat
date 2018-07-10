@@ -3,7 +3,7 @@
 echo Generating CSS...
 
 set STYLE=compressed
-if not "%1"=="" set style=%1
+if not "%1"=="" set STYLE=%1
 
 for %%F in (*.scss) do (
   echo sass %%F...
