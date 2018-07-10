@@ -152,6 +152,23 @@ function get_filesize_str($file) {
 	return ((int)($size * 100)) / 100 . $units[$i];
 }
 
+function get_page_permalink($slug, $type = 'page') {
+	$args = array(
+		'name' => $slug,
+		'post_type' => $type,
+		'post_status' => 'publish',
+		'showposts' => 1,
+		'ignore_sticky_posts' => 1,
+		'posts_per_page' => 1
+	);
+	$pages = get_posts($args);
+
+	if (!$pages) return '';
+	$page = array_pop($pages);
+
+  return get_permalink($page->ID);
+}
+
 // Return page URL from its slug
 function get_page_url($slug, $title = '', $type = 'page', $rel = '') {
 	$args = array(
