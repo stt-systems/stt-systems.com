@@ -5,7 +5,7 @@ get_header();
 
 <link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/front-page.min.css'); ?>" />
 
-<div>
+<div style="height: 100vh">
 	<div class="row" style="display: table">
     <div class="col-md-6 col-sm-6 panel">
       <div class="cold-md-3 col-sm-3"></div>
