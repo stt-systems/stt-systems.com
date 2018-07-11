@@ -1,7 +1,9 @@
 <?php
 function my_wp_nav_menu_args($args = '') {
   $ancestors = get_post_ancestors(get_post()->ID);
-  if (count($ancestors) == 0) return $args;
+  if (count($ancestors) == 0) {
+    $ancestors = array(get_post()->ID);
+  }
   
   $top_level = get_post(end($ancestors));
   $top_level_slug = $top_level->post_name;
