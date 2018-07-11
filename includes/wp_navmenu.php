@@ -1,10 +1,24 @@
 <?php
 function my_wp_nav_menu_args($args = '') {
-	if (is_user_logged_in() and is_nav_menu('Store menu')) {
-		$args['menu'] = 'Store menu';
+  $ancestors = get_post_ancestors(get_post()->ID);
+  if (count($ancestors) == 0) return $args;
+  
+  $top_level = get_post(end($ancestors));
+  $top_level_slug = $top_level->post_name;
+
+	if (is_user_logged_in()) {
+		$args['menu'] = "{$top_level_slug}_store";
 	} else {
-		$args['menu'] = 'Home menu';
+		$args['menu'] = "{$top_level_slug}";
 	}
+  
+  if (!is_nav_menu($args['menu'])) {
+    $args['menu'] = "{$top_level_slug}";
+  }
+  if (!is_nav_menu($args['menu'])) {
+    $args['menu'] = "capture";
+  }
+  
 	return $args;
 }
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args');
