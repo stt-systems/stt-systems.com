@@ -65,8 +65,7 @@ function stt_replace_content($content, $excerpt = false) {
 		$content = preg_replace("#\[gallery:([_a-zA-Z0-9/-]+)\]#", "", $content);
 
 		// Columns
-		$content = str_replace(array('[row]', '[100%]', '[66%]', '[50%]', '[33%]', '[25%]'), '', $content);
-		$content = str_replace(array('[/row]', '[/100%]', '[/66%]', '[/50%]', '[/33%]', '[/25%]'), '', $content);
+		$content = str_replace(array('[/row]', '[/column]'), '', $content);
 		
 		//$content = preg_replace('#<ul>[^.]*?</ul>#', '', $content);
 	} else {
@@ -76,16 +75,7 @@ function stt_replace_content($content, $excerpt = false) {
 
 		// Columns
 		$len = strlen($content);
-		$content = str_replace(array('[row]', '[100%]', '[66%]', '[50%]', '[33%]', '[25%]'),
-			array('<div class="row">',
-			 '<div class="col-md-12 col-sm-12">',
-			 '<div class="col-md-8 col-sm-8" style="padding-left: 15px;">',
-			 '<div class="col-md-6 col-sm-6">',
-			 '<div class="col-md-4 col-sm-4">',
-			 '<div class="col-md-3 col-sm-3">'
-			),
-			$content);
-		$content = str_replace(array('[/row]', '[/100%]', '[/66%]', '[/50%]', '[/33%]', '[/25%]'), '</div>', $content);
+		$content = str_replace(array('[/row]', '[/column]'), '</div>', $content);
 		$len2 = strlen($content);
 		if ($len == $len2) {
 			$content = "<div class=\"row\"><div class=\"col-md-12 col-sm-12\">$content";
@@ -112,6 +102,52 @@ function stt_replace_content($content, $excerpt = false) {
 }
 
 // Callbacks for custom commands in post content
+function replace_row_shortcode($atts) {
+	extract(shortcode_atts(array(
+	), $atts, 'include'));
+
+	return "<div class=\"row\">";
+}
+function replace_column_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'size' => '100',
+    'align' => 'left',
+    'background' => '',
+    'pos' => '',
+	), $atts, 'include'));
+
+  $class = "";
+  $style = "";
+  if ($size == "100") {
+    $class = "col-md-12 col-sm-12";
+  } else if ($size == "66") {
+    $class = "col-md-8 col-sm-8";
+    $style = "padding-left:15px;";
+  } else if ($size == "50") {
+    $class = "col-md-6 col-sm-6";
+  } else if ($size == "33") {
+    $class = "col-md-4 col-sm-4";
+  } else if ($size == "25") {
+    $class = "col-md-3 col-sm-3";
+  }
+  
+  if ($pos != '') {
+    $class .= " $pos";
+  }
+  
+  if ($align == "center") {
+    $style .= "text-align:center;";
+  } else if ($align == "right") {
+    $style .= "text-align:right;";
+  }
+  
+  if ($background != '') {
+    $style .= "background-color: $background;";
+  }
+
+  return "<div class=\"$class\" style=\"$style\">";
+}
+
 function replace_vspace_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'size' => '10',
@@ -504,6 +540,8 @@ function add_stt_shortcodes() {
 	add_shortcode('download',      'replace_download_shortcode');
 	add_shortcode('downloads',     'replace_downloads_shortcode');
 	add_shortcode('all-downloads', 'replace_all_downloads_shortcode');
+  add_shortcode('row',           'replace_row_shortcode');
+  add_shortcode('column',        'replace_column_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
