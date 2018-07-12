@@ -1,7 +1,22 @@
 @import "_colors.scss";
 
+.style-base-class {
+  font-size: 30px;
+  font-weight: 100;
+}
+.style-base-class p {
+  font-weight: 100;
+}
+.style-base-class h2 {
+  font-size: 48px;
+  font-weight: 200;
+  text-transform: none;
+  padding-bottom: 45px;
+}
+
 .style-white {
-  color: $color-black;
+  @extend .style-base-class;
+  color: $color-gray;
   background-color: $color-white;
 }
 .style-white h2 {
@@ -9,6 +24,7 @@
 }
 
 .style-light {
+  @extend .style-base-class;
   color: $color-gray;
   background-color: $color-light;
 }
@@ -17,6 +33,7 @@
 }
 
 .style-dark {
+  @extend .style-base-class;
   color: $color-gray;
   background-color: $color-black;
 }
@@ -25,6 +42,7 @@
 }
 
 .style-sports {
+  @extend .style-base-class;
   color: $color-white;
   background-color: $color-sports;
 }
