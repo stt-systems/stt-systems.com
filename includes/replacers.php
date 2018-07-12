@@ -274,7 +274,7 @@ function replace_image_shortcode($atts) {
 	}
 	
 	$img = '';
-	$image_url = my_get_image_url("single/$name");
+	$image_url = my_get_image_url("$name");
 	if ($lazy == 'true') {
 		$loading_img = get_template_directory_uri() . "/images/loading.gif";
 		$img = do_shortcode("$caption_pre<img src=\"$loading_img\" data-src=\"$image_url\" $class alt=\"$alt\" />$caption_post");
