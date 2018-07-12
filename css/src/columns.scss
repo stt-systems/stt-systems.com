@@ -1,0 +1,46 @@
+.extra p {
+  margin: 0;
+}
+.extra .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+.extra .row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 25px 50px 25px;
+}
+.col-extra {
+  justify-content: center;
+}
+.col-extra:before {
+  background-color: inherit;
+	content: '';
+	position: absolute;
+	height: 100%;
+	z-index: -1;
+	width: 100vw;
+}
+.col-extra:first-of-type:before {
+	right: 0;
+}
+.col-extra:last-of-type:before {
+	left: 0;
+}
+.col-extra:only-of-type:before {
+	width: 200vw;
+  left: -50vw;
+}
+.extra: before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 100vw;
+	height: 100%;
+	transform: translate(-50%, 0);
+}

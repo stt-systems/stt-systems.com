@@ -113,7 +113,6 @@ function replace_column_shortcode($atts) {
 		'size' => '100',
     'align' => 'left',
     'background' => '',
-    'pos' => '',
 	), $atts, 'include'));
 
   $class = "";
@@ -131,10 +130,6 @@ function replace_column_shortcode($atts) {
     $class = "col-md-3 col-sm-3";
   }
   
-  if ($pos != '') {
-    $class .= " $pos";
-  }
-  
   if ($align == "center") {
     $style .= "text-align:center;";
   } else if ($align == "right") {
@@ -145,7 +140,7 @@ function replace_column_shortcode($atts) {
     $style .= "background-color: $background;";
   }
 
-  return "<div class=\"$class\" style=\"$style\">";
+  return "<div class=\"$class col-extra\" style=\"$style\">";
 }
 
 function replace_vspace_shortcode($atts) {
