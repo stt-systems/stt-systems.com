@@ -112,16 +112,16 @@ function replace_column_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'size' => '100',
     'align' => 'left',
-    'background' => '',
+    'style' => 'white',
 	), $atts, 'include'));
 
   $class = "";
-  $style = "";
+  $stylesheet = "";
   if ($size == "100") {
     $class = "col-md-12 col-sm-12";
   } else if ($size == "66") {
     $class = "col-md-8 col-sm-8";
-    $style = "padding-left:15px;";
+    $stylesheet = "padding-left:15px;";
   } else if ($size == "50") {
     $class = "col-md-6 col-sm-6";
   } else if ($size == "33") {
@@ -131,16 +131,12 @@ function replace_column_shortcode($atts) {
   }
   
   if ($align == "center") {
-    $style .= "text-align:center;";
+    $stylesheet .= "text-align:center;";
   } else if ($align == "right") {
-    $style .= "text-align:right;";
+    $stylesheet .= "text-align:right;";
   }
   
-  if ($background != '') {
-    $style .= "background-color: $background;";
-  }
-
-  return "<div class=\"$class col-extra\" style=\"$style\">";
+  return "<div class=\"$class col-extra style-$style\" style=\"$stylesheet\">";
 }
 
 function replace_vspace_shortcode($atts) {

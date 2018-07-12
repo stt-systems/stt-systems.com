@@ -1,0 +1,33 @@
+@import "_colors.scss";
+
+.style-white {
+  color: $color-black;
+  background-color: $color-white;
+}
+.style-white h2 {
+  color: $color-black;
+}
+
+.style-light {
+  color: $color-gray;
+  background-color: $color-light;
+}
+.style-light h2 {
+  color: $color-white;
+}
+
+.style-dark {
+  color: $color-gray;
+  background-color: $color-black;
+}
+.style-dark h2 {
+  color: $color-white;
+}
+
+.style-sports {
+  color: $color-white;
+  background-color: $color-sports;
+}
+.style-sports h2 {
+  color: $color-black;
+}
