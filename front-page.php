@@ -5,7 +5,7 @@ get_header();
 
 <link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/front-page.min.css'); ?>" />
 
-<div style="height: 100vh">
+<div style="height: 80vh">
 	<div class="row" style="display: table; height: 100%">
     <div class="col-md-6 col-sm-6 panel">
       <a style="display: block" href="<?php echo get_page_permalink("capture"); ?>">
