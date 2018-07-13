@@ -139,6 +139,18 @@ function replace_column_shortcode($atts) {
   return "<div class=\"$class col-extra style-$style\" style=\"$stylesheet\">";
 }
 
+function replace_strip_image_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'name' => '',
+    'height' => '100',
+	), $atts, 'include'));
+  
+  $image = my_get_image_url("$name");
+  $height = $height . "px";
+  
+  return "<div class=\"extend-full\" style=\"background-image: url($image); height: $height;\"></div>";
+}
+
 function replace_vspace_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'size' => '10',
@@ -533,6 +545,7 @@ function add_stt_shortcodes() {
 	add_shortcode('all-downloads', 'replace_all_downloads_shortcode');
   add_shortcode('row',           'replace_row_shortcode');
   add_shortcode('column',        'replace_column_shortcode');
+  add_shortcode('strip-image',   'replace_strip_image_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
