@@ -93,20 +93,7 @@ body, html {
   margin-right: auto;
 }
 
-.navbar-header img {
-  max-width: 153px;
-}
-
 @media (max-width: 768px) {
-  .navbar-header img {
-    padding-top: 4px;
-    max-height: 40px;
-  }
-
-  .navbar-header li > a {
-    font-weight: 400;
-  }
-
   .footer-logo-col {
     display: none !important;
   }

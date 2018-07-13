@@ -151,8 +151,15 @@ ul li.current_page_item a {
   background: #fff;
 }
 
-.navbar-header {
+.navbar-left-header {
   float: right;
+}
+.navbar-right-header {
+  float: left;
+}
+
+.navbar-left-header img {
+  max-width: 153px;
 }
 
 @media (max-width: 991px) {
@@ -161,7 +168,7 @@ ul li.current_page_item a {
   }
 }
 @media (min-width: 768px) and (max-width: 1100px) {
-  .navbar-header {
+  .navbar-left-header {
     float: left;
   }
 }
@@ -171,8 +178,17 @@ ul li.current_page_item a {
     padding-bottom: 5px;
   }
 
-  .navbar-header {
+  .navbar-left-header {
     float: left !important;
+  }
+
+  .navbar-left-header img {
+    padding-top: 4px;
+    max-height: 40px;
+  }
+
+  .navbar-left-header li > a {
+    font-weight: 400;
   }
 
   .dropdown-menu {

@@ -58,10 +58,8 @@ wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/c
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="col-sm-12 col-md-3">
-					<div class="navbar-header" id="navbar-header">
-						<div class="logo pull-left">
+					<div class="navbar-left-header" id="navbar-left-header">
 						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo my_get_image_url('logo/logo.png', false); ?>" height="86" alt="STT's logo" rel="nofollow"/></a>
-						</div>
 					</div>
 					<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#stt-navbar-collapse">
 						<span class="sr-only"><?php _e('Toggle navigation','weblizar'); ?></span>
@@ -70,7 +68,7 @@ wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/c
 						<span class="icon-bar"></span>
 					</button>
 				</div>
-				<div class="col-sm-12 col-md-9">
+				<div class="col-sm-12 col-md-6">
 					<div class="collapse navbar-collapse" id="stt-navbar-collapse"><?php
 						wp_nav_menu(array(
 							'theme_location' => 'primary',
@@ -78,6 +76,11 @@ wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/c
 							'menu_class'     => 'nav navbar-nav navbar-left',
 							'walker'         => new wp_bootstrap_navwalker())
 						); ?>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-3">
+					<div class="navbar-right-header" id="navbar-right-header">
+						<a href="<?php echo home_url('/capture/'); ?>"><img src="<?php echo my_get_image_url('logo/logo.png', false); ?>" height="86" alt="STT's logo" rel="nofollow"/></a>
 					</div>
 				</div>
 			</div>
