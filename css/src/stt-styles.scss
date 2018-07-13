@@ -5,7 +5,12 @@
   font-weight: 100;
 }
 .style-base-class p {
-  font-weight: 100;
+}
+.style-base-class h1 {
+  font-size: 70px;
+  font-weight: 200;
+  text-transform: none;
+  padding-bottom: 45px;
 }
 .style-base-class h2 {
   font-size: 48px;
