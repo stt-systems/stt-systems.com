@@ -49,6 +49,9 @@ function get_banner_code($slug) {
 // Prints the banner of the page (or the title, if no banner)
 function print_page_title($slug = '', $title = '') {
 	global $post;
+  
+  if (is_page()) return;
+  
 	if ($slug == '') {
 		if (is_category()) {
 			$category = get_queried_object();
@@ -67,12 +70,12 @@ function print_page_title($slug = '', $title = '') {
 		$h1_hidden = 'hidden';
 	} ?>
 
-	<header><div class="top-title-wrapper boxshadow">
+	<div class="top-title-wrapper boxshadow">
 		<?php echo $banner_code; ?>
 		<?php if ($banner_code == '') { ?><div class="container row col-md-12 col-sm-12 page-info"><?php } ?>
 		<h1 class="h1-page-title" <?php echo $h1_hidden; ?>><?php echo wptexturize($title); ?></h1>
 		<?php if ($banner_code == '') { ?></div><?php } ?>
-	</div></header><?php
+	</div><?php
 }
 
 // Helper functions to deal with uploads (images and downloadable material)

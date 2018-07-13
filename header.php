@@ -70,7 +70,7 @@ wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/c
 <?php if (!is_front_page()) { ?>
 <div class="menu_wrapper top_wrapper">
 	<div class="row">
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default" style="background:#f9f9fc">
 			<div class="container-fluid">
 				<div class="col-sm-12 col-md-3">
 					<div class="navbar-left-header" id="navbar-left-header">
