@@ -1,39 +1,30 @@
 <?php
 function sanitize_output($buffer) {
   $search = array(
-	'/\>[^\S ]+/s', // strip white spaces after tags, except space
-	'/[^\S ]+\</s', // strip white spaces before tags, except space
-	'/\>[ ]+/s',    // strip multiple spaces after tags
-	'/[ ]+\</s',    // strip multiple spaces before tags
-	'/[\t]+/s',
-	'/ [ ]+/',
-	'#(</div>)<br[ /]*>#',
-	'#<br[ /]*>(<div)#',
-  '#<p>\s*+(<br\s*/*>)?\s*</p>#i',
-	'~\s?<p>(\s|&nbsp;)+</p>\s?~'
+  // Uglify HTML
+	'/\>[^\S ]+/s' => '>',  // strip white spaces after tags, except space
+	'/[^\S ]+\</s' => '<',  // strip white spaces before tags, except space
+	'/\>[ ]+/s'    => '> ', // strip multiple spaces after tags
+	'/[ ]+\</s'    => ' <',   // strip multiple spaces before tags
+	'/ [ ]+/'      => ' ',
+  // Remove unnecesary breaks
+	'#(</div>)<br[ /]*>#' => '$1',
+	'#<br[ /]*>(<div)#'   => '$1',
+  '#<p>(<div)#'         => '$1',
+  '#(</div>)</p>#'      => '$1',
+  // everything below this point will be just deleted
+  '#<p>\s*+(<br\s*/*>)?\s*</p>#i' => '',
+	'~\s?<p>(\s|&nbsp;)+</p>\s?~'   => '',
+	'/[\t]+/s'                      => '',
+	'#\<br[ /]*\>#'                 => '',
   );
 
-  $replace = array(
-	'>',
-	'<',
-	'> ',
-	' <',
-	'',
-	' ',
-	'$1',
-	'$1',
-	'',
-	''
-  );
-
-  return preg_replace($search, $replace, $buffer);
+  return preg_replace(array_keys($search), array_values($search), $buffer);
 }
 ob_start("sanitize_output");
-
 wp_enqueue_style('style', get_stylesheet_uri());
 //wp_enqueue_style('gallery', my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/blueimp-gallery.min.css', false));
 wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
-
 ?>
 
 <!DOCTYPE HTML>
