@@ -1,3 +1,8 @@
+body, html {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
 p:empty {
   display: none;
 }
@@ -24,17 +29,12 @@ p:empty {
   -moz-box-sizing: border-box;
 }
 
-.content-box .read-more:hover i, a {
+.content-box .read-more:hover i {
   text-decoration: none;
 }
 
 .share-buttons, nav ol, nav ul {
   list-style: none;
-}
-
-body, html {
-  min-height: 100%;
-  overflow-x: hidden;
 }
 
 .navigation, .posts-list, .social-icons > ul {
