@@ -1740,3 +1740,9 @@ table.hover tbody tr:nth-child(odd) {
 .page-path a:hover {
   color: darken($path-link-color, 20) !important;
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -138,6 +138,7 @@ function replace_column_shortcode($atts) {
   }
   
   if ($align == "center") {
+    $class .= " center";
     $stylesheet .= "text-align:center;";
   } else if ($align == "right") {
     $stylesheet .= "text-align:right;";
