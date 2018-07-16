@@ -1,3 +1,5 @@
+@import "_colors.scss";
+
 body, html {
   min-height: 100%;
   overflow-x: hidden;
@@ -1728,4 +1730,13 @@ table.hover tbody tr:nth-child(odd) {
   -o-transition: color 0.3s;
 }
 
+.page-path {
+  color: #cbcbcb !important;
+}
 
+.page-path a {
+  color: $path-link-color !important;
+}
+.page-path a:hover {
+  color: darken($path-link-color, 20) !important;
+}

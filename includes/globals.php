@@ -25,7 +25,7 @@ function my_file_get_contents($url) {
 function add_page_path() {
 	$path = get_ancestors(get_the_ID(), 'page');
 	if (count($path) > 0) { ?>
-		<div class="blog-post-details"><?php
+		<div class="blog-post-details page-path"><?php
 		for ($i = count($path) - 1; $i >= 0; --$i) {
 			$item = get_post($path[$i]);
 			if ($item->post_password != '') { // suggestion: use password 'hide' and page template 'redirect'

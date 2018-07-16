@@ -1,4 +1,11 @@
 <?php
+$page_style_array = get_post_custom_values("style");
+if (empty($page_style_array)) {
+  $style_name = "base-class";
+} else {
+  $style_name = $page_style_array[0];
+}
+$page_style = "style-$style_name";
 if (!is_page()) {
 	if (!is_single()) { ?>
 		<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a></h2><?php
@@ -29,7 +36,7 @@ if ($post->post_type == 'page') {
 	add_page_path();
 } ?>
 <div class="space-sep20"></div>
-<div class="blog-post-body"><?php
+<div class="blog-post-body <?php echo "$page_style";?>"><?php
 	echo stt_replace_content(get_the_content());
 	if ($post->post_type == 'post') {
 		add_share_buttons();
