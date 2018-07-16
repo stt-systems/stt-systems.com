@@ -139,9 +139,10 @@ function replace_column_shortcode($atts) {
   
   if ($align == "center") {
     $class .= " center";
-    $stylesheet .= "text-align:center;";
   } else if ($align == "right") {
-    $stylesheet .= "text-align:right;";
+    $class .= " right";
+  } else if ($align == "left") {
+    $class .= " left";
   }
   
   $inner_html = "";
@@ -154,7 +155,11 @@ function replace_column_shortcode($atts) {
     $stylesheet .= "padding-top:0;padding-bottom:0;";
   }
   
-  return "<div class=\"$class col-extra style-$style\" style=\"$stylesheet\">$inner_html";
+  if ($stylesheet != '') {
+    $stylesheet = "style=\"$stylesheet\"";
+  }
+  
+  return "<div class=\"$class col-extra style-$style\" $stylesheet>$inner_html";
 }
 
 function replace_vspace_shortcode($atts) {
@@ -258,22 +263,22 @@ function replace_image_shortcode($atts) {
 		'name' => '',
 		'caption' => '',
 		'shadow' => 'true',
+    'icon' => 'false',
 		'alt' => '',
 		'lazy' => 'false',
 		'page' => '',
-		'url' => ''
+		'url' => '',
 	), $atts, 'image'));
-		
+
+	$class = '';
+  
 	$caption_pre = '';
 	$caption_post = '';
 	if ($caption != '') { // use caption
 		$caption_pre = '[caption width="5000" align="aligncenter"]';
 		$caption_post = $caption . '[/caption]';
 	}
-	$class = '';
-	if (strcasecmp($shadow, 'true') == 0) {
-		$class = ' class="boxshadow"';
-	}
+
 	if (empty($alt)) {
 		if (!empty($caption)) {
 			$alt = $caption;
@@ -281,14 +286,29 @@ function replace_image_shortcode($atts) {
 			$alt = $name;			
 		}
 	}
+  
+  $size = '';
+  if (strcasecmp($icon, 'true') == 0) {
+    $size = 'width="112" height="112"';
+    $class .= 'icon';
+    $shadow = 'false';
+  }
 	
+	if (strcasecmp($shadow, 'true') == 0) {
+		$class .= 'boxshadow';
+	}
+  
+  if ($class != '') {
+		$class = " class=\"$class\"";
+  }
+
 	$img = '';
 	$image_url = my_get_image_url("$name");
 	if ($lazy == 'true') {
 		$loading_img = get_template_directory_uri() . "/images/loading.gif";
-		$img = do_shortcode("$caption_pre<img src=\"$loading_img\" data-src=\"$image_url\" $class alt=\"$alt\" />$caption_post");
+		$img = do_shortcode("$caption_pre<img src=\"$loading_img\" data-src=\"$image_url\" $class alt=\"$alt\" $size/>$caption_post");
 	} else {
-		$img = do_shortcode("$caption_pre<img src=\"$image_url\" $class alt=\"$alt\" />$caption_post");
+		$img = do_shortcode("$caption_pre<img src=\"$image_url\" $class alt=\"$alt\" $size/>$caption_post");
 	}
 	
 	if (!empty($page)) return get_page_url($page, $img);
