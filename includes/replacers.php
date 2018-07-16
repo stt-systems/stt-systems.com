@@ -104,9 +104,14 @@ function stt_replace_content($content, $excerpt = false) {
 // Callbacks for custom commands in post content
 function replace_row_shortcode($atts) {
 	extract(shortcode_atts(array(
+    'id' => '',
 	), $atts, 'include'));
 
-	return "<div class=\"row\">";
+  if ($id != "") {
+    $id = "id=$id";
+  }
+  
+	return "<div $id class=\"row\">";
 }
 function replace_column_shortcode($atts) {
 	extract(shortcode_atts(array(
