@@ -1771,3 +1771,11 @@ table.hover tbody tr:nth-child(odd) {
 .icon {
   margin-bottom: 25px;
 }
+
+.panel {
+  float: none;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 0px;
+}
