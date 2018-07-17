@@ -105,7 +105,7 @@ function stt_replace_content($content, $excerpt = false) {
 function replace_row_shortcode($atts) {
 	extract(shortcode_atts(array(
     'id' => '',
-	), $atts, 'include'));
+	), $atts, 'row'));
 
   if ($id != "") {
     $id = "id=$id";
@@ -120,7 +120,7 @@ function replace_column_shortcode($atts) {
     'style' => 'white',
     'image' => '',
     'height' => '',
-	), $atts, 'include'));
+	), $atts, 'column'));
 
   $class = "";
   $stylesheet = "";
@@ -165,7 +165,7 @@ function replace_column_shortcode($atts) {
 function replace_vspace_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'size' => '10',
-	), $atts, 'include'));
+	), $atts, 'vspace'));
 
 	return "<div class=\"space-sep$size\"></div>";
 }
