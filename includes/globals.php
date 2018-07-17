@@ -173,6 +173,28 @@ function get_page_permalink($slug, $type = 'page') {
 }
 
 // Return page URL from its slug
+function get_page_url($slug, $type = 'page', $rel = '') {
+	$args = array(
+		'name' => $slug,
+		'post_type' => $type,
+		'post_status' => 'publish',
+		'showposts' => 1,
+		'ignore_sticky_posts' => 1,
+		'posts_per_page' => 1
+	);
+	$pages = get_posts($args);
+
+	if (!$pages) return '';
+	$page = array_pop($pages);
+
+	if ($rel != '') {
+		$rel = " rel=\"$rel\"";
+	}
+
+	return '<a href="' . get_permalink($page->ID) . '"' . $rel . '>';
+}
+
+// Return a link to a page from its slug
 function get_page_link($slug, $title = '', $type = 'page', $rel = '') {
 	$args = array(
 		'name' => $slug,
