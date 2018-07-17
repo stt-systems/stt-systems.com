@@ -76,7 +76,7 @@ function print_related_pages() {
 	
 	?><h4>Related pages</h4><p><?php
 	foreach ($pages as $page) {
-		echo get_page_url($page) . '<br/>';
+		echo get_page_link($page) . '<br/>';
 	} ?>
 	</p><?php
 }

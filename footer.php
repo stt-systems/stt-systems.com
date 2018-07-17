@@ -7,7 +7,7 @@
 					<img src="<?php echo my_get_image_url('logo/logo-footer.png', false); ?>" class="footer-logo" height="171" alt="STT's logo" />
 				</div>
 				<div class="col-lg-2 col-md-3 col-sm-3 footer-col">
-					<div class="footer-title"><?php echo get_page_url('contact-info', 'Contact', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
+					<div class="footer-title"><?php echo get_page_link('contact-info', 'Contact', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
 					<div class="textwidget">
 						<p>Phone: (+34) 943 31 77 77</p>
 						<p>Fax: (+34) 943 31 64 31</p>
@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 footer-col">
-					<div class="footer-title"><?php echo get_page_url('news', 'Recent', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
+					<div class="footer-title"><?php echo get_page_link('news', 'Recent', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
 					<div class="textwidget">
 						<?php get_widget_recent_posts(''); ?>
 					</div>

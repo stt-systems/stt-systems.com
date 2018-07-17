@@ -213,7 +213,7 @@ function replace_include_shortcode($atts) {
 
 // Links
 function replace_link_cb($match) {
-	return get_page_url($match[1], count($match) > 3 ? $match[3] : '');
+	return get_page_link($match[1], count($match) > 3 ? $match[3] : '');
 }
 function replace_link_shortcode($atts) {
 	extract(shortcode_atts(array(
@@ -222,7 +222,7 @@ function replace_link_shortcode($atts) {
 		'title' => '',
 	), $atts, 'link'));
 	
-	if ($page != '') return get_page_url($page, $title);
+	if ($page != '') return get_page_link($page, $title);
 	if ($url != '') return "<a href=\"$url\" class=\"external\" target=\"_blank\">$title</a>";
 	return $title;
 }
@@ -311,7 +311,7 @@ function replace_image_shortcode($atts) {
 		$img = do_shortcode("$caption_pre<img src=\"$image_url\" $class alt=\"$alt\" $size/>$caption_post");
 	}
 	
-	if (!empty($page)) return get_page_url($page, $img);
+	if (!empty($page)) return get_page_link($page, $img);
 	if (!empty($url)) return "<a href=\"$url\" class=\"external\" target=\"_blank\">$img</a>";
 	
 	return $img;
