@@ -195,7 +195,7 @@ function get_page_url($slug, $type = 'page', $rel = '') {
 }
 
 // Return a link to a page from its slug
-function get_page_link($slug, $title = '', $type = 'page', $rel = '') {
+function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
 	$args = array(
 		'name' => $slug,
 		'post_type' => $type,
@@ -272,7 +272,7 @@ function print_category_section($slug, $name, $cases, $is_cases_index = true) {?
 			}?>
 			<div class="col-md-4 col-sm-4">
 				<img src="<?php echo my_get_image_url('featured-images/' . $case['slug'] . '.jpg'); ?>" class="boxshadow" alt="Customer case" />
-				<h4 style="text-align: center;"><?php echo get_page_link($case['slug'], '', 'post'); ?></h4><?php
+				<h4 style="text-align: center;"><?php echo get_page_full_link($case['slug'], '', 'post'); ?></h4><?php
 				$date = new DateTime($case['date']);
 				echo $date->format('M j, Y'); ?>
 			</div>
