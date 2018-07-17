@@ -18,17 +18,16 @@ function print_social_img($name) {
 	<div class="space-sep20"></div>
 	<div class="row">
 		<div class="blog-post-body">
-			<div class="col-md-4 col-sm-4">
-				<b>STT Systems</b><br>
-				Zuatzu Business Park<br>
-				Easo Building, 2nd Floor<br>
-				20018 San Sebasti&aacute;n, Spain<br>
+			<div class="col-md-4 col-sm-4 tight-paragraphs">
+				<p><b>STT Systems</b></p>
+				<p>Zuatzu Business Park</p>
+				<p>Easo Building, 2nd Floor</p>
+				<p>20018 San Sebasti&aacute;n, Spain</p>
 			</div>
-			<div class="col-md-4 col-sm-4">
-				<br>
-				Phone: (+34) 943 31 77 77<br>
-				Fax: (+34) 943 31 64 31<br>
-				<a href="mailto:info@stt-systems.com">info@stt-systems.com</a><br>
+			<div class="col-md-4 col-sm-4 tight-paragraphs" style="margin-top: 25px">
+				<p>Phone: (+34) 943 31 77 77</p>
+				<p>Fax: (+34) 943 31 64 31</p>
+				<p><a href="mailto:info@stt-systems.com">info@stt-systems.com</a></p>
 				<!-- Social icons by Martz: http://martz90.deviantart.com/art/Circle-Icons-Pack-371172325 -->
 				<div class="contact-social">
 					<a href="https://www.facebook.com/STTSystems" title="Facebook" target="_blank"><?php print_social_img('facebook'); ?></a>

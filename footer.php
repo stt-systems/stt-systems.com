@@ -7,8 +7,8 @@
 					<img src="<?php echo my_get_image_url('logo/logo-footer.png', false); ?>" class="footer-logo" height="171" alt="STT's logo" />
 				</div>
 				<div class="col-lg-2 col-md-3 col-sm-3 footer-col">
-					<div class="textwidget">
 					<div class="footer-title"><?php echo get_page_full_link('contact-info', 'Contact', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
+					<div class="textwidget tight-paragraphs">
 						<p>Phone: (+34) 943 31 77 77</p>
 						<p>Fax: (+34) 943 31 64 31</p>
 						<p><a href="mailto:info@stt-systems.com">info@stt-systems.com</a></p>
