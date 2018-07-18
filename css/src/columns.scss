@@ -57,17 +57,3 @@
   width: 200vw;
   left: -50vw;
 }
-
-.extend-full, .extend-left {
-  padding-left: 100vw;
-  margin-left: -100vw;
-}
-.extend-full, .extend-right {
-  padding-right: 100vw;
-  margin-right: -100vw;
-}
-.extend-full {
-  background-size: 100vw;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
