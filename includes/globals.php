@@ -88,6 +88,13 @@ function my_get_image_url($name) { // there is a WP method called get_image_url
 	return my_get_url_for_path("/images/$name");
 }
 
+function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
+	$url = my_get_image_url($name);
+  $rgba = "rgba($color, $alpha)";
+  
+  return "linear-gradient($rgba, $rgba), url($url)";
+}
+
 function get_images($path, $not_pre = '') {
 	$dir = "./images/$path";
 	if (!is_dir(ABSPATH . $dir)) return array();
