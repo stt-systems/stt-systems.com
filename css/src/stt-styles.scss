@@ -19,6 +19,21 @@
     text-transform: none;
     padding-bottom: 45px;
   }
+
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+  }
+  li:before {
+    content: '\25CF ';
+    font-size: 30px;
+    margin-right: 10px;
+  }
+  li.light:before {
+    color: $color-gray !important;
+  }
 }
 
 .style-white {
@@ -67,5 +82,9 @@
     h2 {
       color: $color-black;
     }
+  }
+
+  li:before {
+    color: $color-sports;
   }
 }
