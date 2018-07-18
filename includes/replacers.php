@@ -49,31 +49,15 @@ function stt_replace_excerpt($text, $raw_excerpt = '') {
 }
 
 function stt_replace_content($content, $excerpt = false) {
-	$text_format = '[\'\.\p{L} 0-9():,;-]+';
-	
 	$content = str_replace(']]>', ']]&gt;', $content);
 
-	$content = preg_replace_callback("/\[include:([_a-zA-Z0-9-]+)( values:((\([a-zA-Z0-9_-]+:\"$text_format\"\))+))?\]/u", 'replace_include_cb', $content);
-
-	$content = preg_replace_callback("/\[link:([_a-zA-Z0-9-]+)( title:($text_format))?\]/u", 'replace_link_cb', $content);
-	$content = preg_replace_callback("/\[email:([_a-zA-Z0-9-]+)( title:($text_format))?\]/u", 'replace_email_cb', $content);
-	
 	$len = 0; $len2 = 1;
 	if ($excerpt) { // excerpts don't have some elements
-		$content = preg_replace("#\[image:([/_a-zA-Z0-9-]+\.[a-zA-Z0-9]+)( (caption):($text_format))?( no-shadow)?\]#u", "", $content);
-		$content = preg_replace("/\[images-table:([_a-zA-Z0-9-]+) cols:([0-9]+)\]/", "", $content);
-		$content = preg_replace("#\[gallery:([_a-zA-Z0-9/-]+)\]#", "", $content);
-
-		// Columns
 		$content = str_replace(array('[/row]', '[/column]'), '', $content);
-		
-		//$content = preg_replace('#<ul>[^.]*?</ul>#', '', $content);
 	} else {
-		$content = preg_replace_callback("#\[image:([/_a-zA-Z0-9-]+\.[a-zA-Z0-9]+)( (caption):($text_format))?( no-shadow)?\]#u", 'replace_image_cb', $content);
 		$content = preg_replace_callback("/\[images-table:([_a-zA-Z0-9-]+) cols:([0-9]+)\]/", 'replace_images_table_cb', $content);
 		$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
 
-		// Columns
 		$len = strlen($content);
 		$content = str_replace(array('[/row]', '[/column]'), '</div>', $content);
 		$len2 = strlen($content);
@@ -171,23 +155,6 @@ function replace_vspace_shortcode($atts) {
 }
 
 // Include: insert another page into this
-function replace_include_cb($match) {
-	$page = get_page_by_path('templates/' . $match[1]);
-	$content = $page ? $page->post_content : '';
-	
-	$n = count($match);
-	if ($n > 3) {
-		$values_str = str_replace('(', '', $match[3]);
-		$values = explode(')', $values_str);
-		foreach ($values as $value) {
-			$kv = explode(':', $value);
-			$text = str_replace('"', '', $kv[1]);
-			$content = str_replace("{{{$kv[0]}}}", $text, $content);
-		}
-	}
-	
-	return $content;
-}
 function replace_include_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'page' => '',
@@ -212,9 +179,6 @@ function replace_include_shortcode($atts) {
 }
 
 // Links
-function replace_link_cb($match) {
-	return get_page_full_link($match[1], count($match) > 3 ? $match[3] : '');
-}
 function replace_link_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'page' => '',
@@ -228,9 +192,6 @@ function replace_link_shortcode($atts) {
 }
 
 // E-mail
-function replace_email_cb($match) {
-	return '<a href="mailto:' . $match[1] . '@stt-systems.com">' . (count($match) > 3 ? $match[3] : $match[1] . '@stt-systems.com') . '</a>';
-}
 function replace_email_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'to' => '',
@@ -244,20 +205,6 @@ function replace_email_shortcode($atts) {
 	return "<a href=\"mailto:$to@stt-systems.com\">$title</a>";
 }
 
-function replace_image_cb($match) {
-	$caption_pre = '';
-	$caption_post = '';
-	if (count($match) > 4 and $match[3] == 'caption') { // use caption
-		$caption_pre = '[caption width="5000" align="aligncenter"]';
-		$caption_post = $match[4] . '[/caption]';
-	}
-	$class = ' class="boxshadow"';
-	if (count($match) > 3 and end($match) == ' no-shadow') {
-		$class = '';
-	}
-
-	return $caption_pre . '<img src="' . my_get_image_url('single/' . $match[1]) . '"' . $class .' alt="' . $match[1] . '" />' . $caption_post;
-}
 function replace_image_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
