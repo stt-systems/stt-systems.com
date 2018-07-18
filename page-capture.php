@@ -5,58 +5,42 @@ get_header();
 
 <link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/front-page.min.css'); ?>" />
 
-<div style="height: 80vh; width: 100vw; margin: 0; padding: 0">
-	<div class="row" style="display: table; height: 50%; width: 100%">
-    <div class="col-md-6 col-sm-6 panel">
-      <a style="display: block" href="<?php echo get_page_permalink("3d-optical-motion-capture"); ?>">
-      <div class="col-md-2 col-sm-2"></div>
-      <div class="col-md-8 col-sm-8">
-        <div class="content-box">
-          <h1>3DMA</h1>
-          <h3>Comprehensive solutions for 3D motion analysis</h3>
-        </div>
+<div class="row" style="display: table; height: 80vh; width: 100%; margin: 0; padding: 0">
+  <div class="col-md-4 col-sm-4 panel" style="background-image: <?php echo css_darken_image("3dma-background.jpg");?>">
+    <a style="display: block" href="<?php echo get_page_permalink("cycling-3dma"); ?>">
+    <div class="col-md-2 col-sm-2"></div>
+    <div class="col-md-8 col-sm-8">
+      <div class="content-box">
+        <h1>3DMA</h1>
+        <h3>Comprehensive solutions for 3D motion analysis</h3>
       </div>
-      <div class="col-md-2 col-sm-2"></div>
-      </a>
     </div>
-    <div class="col-md-6 col-sm-6 panel">
-      <a style="display: block" href="<?php echo get_page_permalink("2d-optical-motion-capture"); ?>">
-      <div class="col-md-2 col-sm-2"></div>
-      <div class="col-md-8 col-sm-8">
-        <div class="content-box">
-          <h1>2DMA</h1>
-          <h3>Video-based mocap systems</h3>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-2"></div>
-      </a>
-    </div>
+    <div class="col-md-2 col-sm-2"></div>
+    </a>
   </div>
-	<div class="row" style="display: table; height: 50%; width: 100%">
-    <div class="col-md-6 col-sm-6 panel">
-      <a style="display: block" href="<?php echo get_page_permalink("inertial-motion-capture"); ?>">
-      <div class="col-md-2 col-sm-2"></div>
-      <div class="col-md-8 col-sm-8">
-        <div class="content-box">
-          <h1>Inertial</h1>
-          <h3>Premium IMU sensors and software</h3>
-        </div>
+  <div class="col-md-4 col-sm-4 panel" style="background-image: <?php echo css_darken_image("2dma-background.jpg");?>">
+    <a style="display: block" href="<?php echo get_page_permalink("2d-optical-motion-capture"); ?>">
+    <div class="col-md-2 col-sm-2"></div>
+    <div class="col-md-8 col-sm-8">
+      <div class="content-box">
+        <h1>2DMA</h1>
+        <h3>Video-based mocap systems</h3>
       </div>
-      <div class="col-md-2 col-sm-2"></div>
-      </a>
     </div>
-    <div class="col-md-6 col-sm-6 panel">
-      <a style="display: block" href="<?php echo get_page_permalink("support"); ?>">
-      <div class="col-md-2 col-sm-2"></div>
-      <div class="col-md-8 col-sm-8">
-        <div class="content-box">
-          <h1>Support</h1>
-          <h3>Always glad to help you</h3>
-        </div>
+    <div class="col-md-2 col-sm-2"></div>
+    </a>
+  </div>
+  <div class="col-md-4 col-sm-4 panel" style="background-image: <?php echo css_darken_image("inertial-background.jpg");?>">
+    <a style="display: block" href="<?php echo get_page_permalink("inertial-motion-capture"); ?>">
+    <div class="col-md-2 col-sm-2"></div>
+    <div class="col-md-8 col-sm-8">
+      <div class="content-box">
+        <h1>Inertial</h1>
+        <h3>Premium IMU sensors and software</h3>
       </div>
-      <div class="col-md-2 col-sm-2"></div>
-      </a>
     </div>
+    <div class="col-md-2 col-sm-2"></div>
+    </a>
   </div>
 </div>
 
