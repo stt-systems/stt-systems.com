@@ -4,6 +4,8 @@
   font-size: 28px;
   font-weight: 100;
 
+  color: $color-gray;
+
   h1 {
     font-size: 70px;
     font-weight: 200;
@@ -22,7 +24,6 @@
 .style-white {
   @extend .style-base-class;
 
-  color: $color-gray;
   background-color: $color-white;
 
   h2 {
@@ -33,7 +34,6 @@
 .style-light {
   @extend .style-base-class;
 
-  color: $color-gray;
   background-color: $color-light;
 
   h2 {
@@ -44,7 +44,6 @@
 .style-dark {
   @extend .style-base-class;
 
-  color: $color-gray;
   background-color: $color-black;
 
   h2 {
