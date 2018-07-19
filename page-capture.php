@@ -7,19 +7,6 @@ get_header();
 
 <div class="row" style="display: table; height: 80vh; width: 100%; margin: 0; padding: 0">
   <div class="col-md-4 col-sm-4 panel">
-    <a href="<?php echo get_page_permalink("cycling-3dma"); ?>">
-    <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8">
-      <div class="content-box">
-        <h1>3DMA</h1>
-        <h3>Comprehensive solutions for 3D motion analysis</h3>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-2"></div>
-    </a>
-    <div class="panel-bg" style="background-image: <?php echo css_darken_image("3dma-background.jpg");?>"></div>
-  </div>
-  <div class="col-md-4 col-sm-4 panel">
     <a href="<?php echo get_page_permalink("2d-optical-motion-capture"); ?>">
     <div class="col-md-2 col-sm-2"></div>
     <div class="col-md-8 col-sm-8">
@@ -31,6 +18,19 @@ get_header();
     <div class="col-md-2 col-sm-2"></div>
     </a>
     <div class="panel-bg" style="background-image: <?php echo css_darken_image("2dma-background.jpg");?>"></div>
+  </div>
+  <div class="col-md-4 col-sm-4 panel">
+    <a href="<?php echo get_page_permalink("cycling-3dma"); ?>">
+    <div class="col-md-2 col-sm-2"></div>
+    <div class="col-md-8 col-sm-8">
+      <div class="content-box">
+        <h1>3DMA</h1>
+        <h3>Comprehensive solutions for 3D motion analysis</h3>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-2"></div>
+    </a>
+    <div class="panel-bg" style="background-image: <?php echo css_darken_image("3dma-background.jpg");?>"></div>
   </div>
   <div class="col-md-4 col-sm-4 panel">
     <a href="<?php echo get_page_permalink("inertial-motion-capture"); ?>">
