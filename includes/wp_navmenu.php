@@ -1,12 +1,22 @@
 <?php
-function my_wp_nav_menu_args($args = '') {
+function is_page_valid() {
+  if (is_404() or strpos(get_page_template(), 'page-empty.php') !== false) return false;
+  return true;
+}
+function get_top_level_slug() {
+  if (is_page_valid() === false) return 'capture';
+  
   $ancestors = get_post_ancestors(get_post()->ID);
   if (count($ancestors) == 0) {
     $ancestors = array(get_post()->ID);
   }
   
   $top_level = get_post(end($ancestors));
-  $top_level_slug = $top_level->post_name;
+
+  return $top_level->post_name;  
+}
+function my_wp_nav_menu_args($args = '') {
+  $top_level_slug = get_top_level_slug();
 
 	if (is_user_logged_in()) {
 		$args['menu'] = "{$top_level_slug}_store";
@@ -35,7 +45,6 @@ add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args');
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
 class wp_bootstrap_navwalker extends Walker_Nav_Menu {
-
 	/**
 	 * @see Walker::start_lvl()
 	 * @since 3.0.0
@@ -59,9 +68,14 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 		$do_not_highlight_current = false;
-		if ((strpos(get_page_template(), 'page-empty.php') !== false) or is_404()) {
-			$do_not_highlight_current = true;
-		}
+    if (is_page_valid()) {
+      $post = get_post(get_post_meta($item->ID, '_menu_item_object_id', true));
+      if (get_post()->post_name == 'capture' and $post->post_name == 'capture') {
+        $do_not_highlight_current = true;
+      }
+    } else {
+      $do_not_highlight_current = true;
+    }
 		
 		/**
 		 * Dividers, Headers or Disabled
@@ -95,19 +109,18 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ($depth === 0 and $do_not_highlight_current == false) {
 				global $wp;
 				$url = home_url(add_query_arg(array(), $wp->request));
-				$post = get_post(get_post_meta($item->ID, '_menu_item_object_id', true));
 
 				if (strpos($url, '.com/' . $post->post_name . '/') !== false and
-					strpos($class_names, 'current_page_ancestor') === false) { // highlight parent menu
+            strpos($class_names, 'current_page_ancestor') === false) { // highlight parent menu
 					$class_names .= ' current_page_ancestor';
 				}				
 			}
 			
 			if ($do_not_highlight_current === true) {
 				$class_names = str_replace('current_page_ancestor', '', $class_names);
-			}
-			
-			if (in_array('current-menu-item', $classes)) {
+				$class_names = str_replace('current_page_item', '', $class_names);
+				$class_names = str_replace('current-menu-item', '', $class_names);        
+			} else if (in_array('current-menu-item', $classes)) {
 				$class_names .= ' active';
 			}
 
@@ -122,14 +135,14 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$atts['target'] = !empty($item->target) ? $item->target : '';
 			$atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
 
-			// If item has_children add atts to a.
+			// If item has_children add atts to <a>
 			$atts['href']   = $args->has_children ? '' : $item->url; // do not link to parent pages
 			if ($depth === 0) {
 				if ($args->has_children) {
 					$atts['class']					= 'dropdown-toggle';
 					$atts['aria-haspopup']	= 'true';
 					$atts['data-toggle']		= 'dropdown';
-				} else if (empty($do_not_highlight_current)) {
+				} else if ($do_not_highlight_current === false) {
 					$atts['class']					= 'dropdown-top-selected';					
 				}
 			}
