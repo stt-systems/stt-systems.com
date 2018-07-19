@@ -3,10 +3,20 @@
 echo Generating CSS...
 
 set STYLE=compressed
-if not "%1"=="" set STYLE=%1
+if "%1"=="expanded" (
+  set STYLE=expanded
+  shift /1
+)
 
-del ..\*.css 2> nul
-for %%F in (*.scss) do call :sass %%F
+set FILES=*.scss
+if not "%1"=="" (
+  if "%STYLE%"=="expanded" for /f "tokens=1,* delims= " %%a in ("%*") do set FILES=%%b
+  if not "%STYLE%"=="expanded" set FILES=%*
+)
+
+if "%1"=="" del ..\*.css 2> nul
+
+for %%F in (%FILES%) do call :sass %%F
 
 exit /b 0
 
