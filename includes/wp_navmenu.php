@@ -1,20 +1,4 @@
 <?php
-function is_page_valid() {
-  if (is_404() or strpos(get_page_template(), 'page-empty.php') !== false) return false;
-  return true;
-}
-function get_top_level_slug() {
-  if (is_page_valid() === false) return 'capture';
-  
-  $ancestors = get_post_ancestors(get_post()->ID);
-  if (count($ancestors) == 0) {
-    $ancestors = array(get_post()->ID);
-  }
-  
-  $top_level = get_post(end($ancestors));
-
-  return $top_level->post_name;  
-}
 function my_wp_nav_menu_args($args = '') {
   $top_level_slug = get_top_level_slug();
 
