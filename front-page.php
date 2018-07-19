@@ -18,6 +18,7 @@ get_header();
       </div>
       <div class="col-md-2 col-sm-2"></div>
       </a>
+      <div class="panel-bg"></div>
     </div>
     <div class="col-md-6 col-sm-6 panel">
       <a style="display: block" href="<?php echo get_page_permalink("industry"); ?>">
@@ -30,6 +31,7 @@ get_header();
       </div>
       <div class="col-md-2 col-sm-2"></div>
       </a>
+      <div class="panel-bg"></div>
     </div>
   </div>
 </div>
