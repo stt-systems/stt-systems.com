@@ -8,11 +8,10 @@ if (empty($page_style_array)) {
 $page_style = "style-$style_name";
 if (!is_page()) {
 	if (!is_single()) {
-    if ($wp_query->current_post % 2 == 0) { ?>
-      <div class="col-md-3 col-sm-3">
-      </div><?php
+    if ($wp_query->current_post % 2 == 0) {
+      print_thumbnail();
     }?>
-    <div class="col-md-9 col-sm-9">
+    <div class="col-md-8 col-sm-8 element-to-truncate">
 		<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a></h2><?php
 	} else { ?>
 		<div class="space-sep20"></div><?php
@@ -52,8 +51,7 @@ if ($post->post_type == 'page') {
 <?php
 if (!is_page() and !is_single()) { ?>
   </div><?php
-  if ($wp_query->current_post % 2 == 1) { ?>
-    <div class="col-md-3 col-sm-3">
-    </div><?php
+  if ($wp_query->current_post % 2 == 1) {
+    print_thumbnail();
   }
 }?>

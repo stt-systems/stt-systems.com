@@ -106,6 +106,16 @@ function my_get_image_url($name) { // there is a WP method called get_image_url
 	return my_get_url_for_path("/images/$name");
 }
 
+function print_thumbnail() { ?>
+  <div class="col-md-4 col-sm-4" style="padding-top: 60px"><?php
+    if (has_post_thumbnail()) {
+      $post_thumbnail_id = get_post_thumbnail_id();
+      $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id); ?>
+      <img src="<?php echo $post_thumbnail_url; ?>" class="blog-thumbnail" /><?php
+    } ?>
+  </div><?php
+}
+
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
 	$url = my_get_image_url($name);
   $rgba = "rgba($color, $alpha)";
