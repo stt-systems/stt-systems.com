@@ -2,19 +2,24 @@
 
 echo Generating CSS...
 
-set STYLE=compressed
-if "%1"=="expanded" (
-  set STYLE=expanded
+set PRODUCTION=
+set STYLE=expanded
+if "%1"=="production" (
+  echo Production mode...
+  set PRODUCTION=yes
+  set STYLE=compressed
   shift /1
+) else (
+  echo Development mode...
 )
 
 set FILES=*.scss
 if not "%1"=="" (
-  if "%STYLE%"=="expanded" for /f "tokens=1,* delims= " %%a in ("%*") do set FILES=%%b
-  if not "%STYLE%"=="expanded" set FILES=%*
+  if not "%PRODUCTION%"=="" for /f "tokens=1,* delims= " %%a in ("%*") do set FILES=%%b
+  if "%PRODUCTION%"=="" set FILES=%*
 )
 
-if "%1"=="" del ..\*.css 2> nul
+if "%FILES%"=="*.scss" del ..\*.css 2> nul
 
 for %%F in (%FILES%) do call :sass %%F
 

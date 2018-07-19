@@ -2,19 +2,24 @@
 
 echo Generating JS...
 
-set STYLE=--compress
-if "%1"=="beautify" (
-  set STYLE=--beautify
+set PRODUCTION=
+set STYLE=--beautify
+if "%1"=="production" (
+  echo Production mode...
+  set PRODUCTION=yes
+  set STYLE=--compress
   shift /1
+) else (
+  echo Development mode...
 )
 
 set FILES=*.js
 if not "%1"=="" (
-  if "%STYLE%"=="--beautify" for /f "tokens=1,* delims= " %%a in ("%*") do set FILES=%%b
-  if not "%STYLE%"=="--beautify" set FILES=%*
+  if not "%PRODUCTION%"=="" for /f "tokens=1,* delims= " %%a in ("%*") do set FILES=%%b
+  if "%PRODUCTION%"=="" set FILES=%*
 )
 
-if "%1"=="" del ..\*.js 2> nul
+if "%FILES%"=="*.js" del ..\*.js 2> nul
 
 for %%F in (%FILES%) do (
   echo uglify-js %%F...
