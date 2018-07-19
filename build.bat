@@ -1,6 +1,6 @@
 @echo off
 
-set MODE=production
+set MODE=
 if not "%1"=="" set MODE=%1
 
 pushd css\src
