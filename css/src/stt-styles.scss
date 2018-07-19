@@ -66,25 +66,45 @@
   }
 }
 
-.style-sports {
+@mixin links($base-color) {
   a {
-    color: $color-sports;
+    color: $base-color;
   }
   a:hover {
-    color: darken($color-sports, 20) !important;
+    color: darken($base-color, 20) !important;
   }
-  
+
+  .inner-links a:after {
+    content: '\21E3';
+    visibility: visible;
+    margin-left: 5px;
+  }
+  .inner-links a:not(:first-child) {
+    border-left: 1px solid $base-color;
+    padding-left: 15px;
+  }
+  .inner-links a:not(:last-child):after {
+    margin-right: 15px;
+  }
+}
+
+@mixin colored($base-color) {
   .style-colored {
     @extend .style-base-class;
     color: $color-white;
-    background-color: $color-sports;
+    background-color: $base-color;
     
     h2 {
       color: $color-black;
     }
-  }
+  }  
 
   li:before {
     color: $color-sports;
   }
+}
+
+.style-sports {
+  @include links($color-sports);
+  @include colored($color-sports);
 }
