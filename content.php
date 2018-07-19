@@ -11,7 +11,7 @@ if (!is_page()) {
     if ($wp_query->current_post % 2 == 0) {
       print_thumbnail();
     }?>
-    <div class="col-md-8 col-sm-8 element-to-truncate">
+    <div class="col-md-8 col-sm-8">
 		<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a></h2><?php
 	} else { ?>
 		<div class="space-sep20"></div><?php

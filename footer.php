@@ -61,7 +61,6 @@
 </footer>
 <?php wp_footer(); ?>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/menu.min.js', false); ?>"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/youtube-autoresizer.min.js', false); ?>"></script>
