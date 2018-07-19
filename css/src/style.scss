@@ -1771,9 +1771,25 @@ table.hover tbody tr:nth-child(odd) {
   text-align: center;
   border: 0;
   border-radius: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.panel-bg {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  padding-top: 50%;
+  margin-top: -50%;
+  padding-left: 50%;
+  margin-left: -50%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+.panel > a {
+  position: relative;
+  display: block;
+  z-index: 10;
 }
 
 .extend-full, .extend-left {

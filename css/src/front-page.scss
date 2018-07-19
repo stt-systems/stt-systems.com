@@ -3,14 +3,24 @@ h1 {
   font-weight: 200;
   color: #ffffff;
 }
+
 h3 {
   font-size: 24px;
   font-weight: 300;
   color: #cfcfcf;
 }
-.panel {
+
+.panel-bg {
   background-color: #0069aa;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  transform: scale(1, 1);
 }
-.panel:hover {
+.panel-bg:hover, a:hover + .panel-bg {
   background-color: #164f86;
+  transform: scale(1.05, 1.05);
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
