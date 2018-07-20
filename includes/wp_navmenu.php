@@ -93,8 +93,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ($depth === 0 and $do_not_highlight_current == false) {
 				global $wp;
 				$url = home_url(add_query_arg(array(), $wp->request));
-
-				if (strpos($url, '.com/' . $post->post_name . '/') !== false and
+				$post_url = get_site_url() . '/' . $post->post_name;
+				if ($post->post_name != 'capture' and
+						strpos($url, $post_url) !== false and
             strpos($class_names, 'current_page_ancestor') === false) { // highlight parent menu
 					$class_names .= ' current_page_ancestor';
 				}				
