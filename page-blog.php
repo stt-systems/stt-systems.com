@@ -13,8 +13,16 @@ print_page_title(); ?>
   if (have_posts()) {
     while (have_posts()) { ?>
       <div class="row"><?php
+      if ($wp_query->current_post % 2 == 0) {
+        print_thumbnail();
+      } ?>
+      <div class="col-md-8 col-sm-8"><?php
       the_post();
       get_template_part('content'); ?>
+      </div><?php
+      if ($wp_query->current_post % 2 == 1) {
+        print_thumbnail();
+      } ?>
       </div><?php
     }
   } ?>
