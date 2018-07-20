@@ -1,23 +1,27 @@
 @import "_colors.scss";
 
 .style-base-class {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 100;
 
   color: $color-gray;
 
-  h1 {
-    font-size: 80px;
+  @mixin header() {
     font-weight: 200;
     text-transform: none;
     padding-bottom: 45px;
   }
-
+  h1 {
+    @include header();
+    font-size: 80px;
+  }
   h2 {
+    @include header();
     font-size: 48px;
-    font-weight: 200;
-    text-transform: none;
-    padding-bottom: 45px;
+  }
+  h3 {
+    @include header();
+    font-size: 28px;
   }
 
   ul {
