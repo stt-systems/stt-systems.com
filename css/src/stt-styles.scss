@@ -9,7 +9,7 @@
   @mixin header() {
     font-weight: 200;
     text-transform: none;
-    padding-bottom: 45px;
+    padding-bottom: 40px;
   }
   h1 {
     @include header();
