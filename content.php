@@ -42,7 +42,11 @@ if ($post->post_type == 'page') {
 } ?>
 <div class="space-sep20"></div>
 <div class="blog-post-body <?php echo "$page_style";?>"><?php
-  echo stt_replace_content(get_the_content());
+	if (!is_page() and !is_single()) {
+		the_excerpt();
+	} else {
+		the_content();
+	}
   if ($post->post_type == 'post') {
     add_share_buttons();
   } ?>

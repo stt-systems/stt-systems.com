@@ -41,41 +41,32 @@ function stt_trim_words($text, $num_words = 55, $more = null) {
 function stt_replace_excerpt($text, $raw_excerpt = '') {
 	if ($raw_excerpt != '') return stt_replace_content($raw_excerpt, true);
 
-	$content = stt_replace_content(get_the_content(''), true);
-	$excerpt_length = apply_filters('excerpt_length', 60);
-	$excerpt_more = apply_filters('excerpt_more', '[&hellip;]');
-	
-	return stt_trim_words($content, $excerpt_length, $excerpt_more);
+	$content = stt_replace_content(get_the_content());
+	$content = apply_filters('the_content', $content);
+
+	return wp_trim_words($content);
 }
 
-function stt_replace_content($content, $excerpt = false) {
+function stt_replace_content($content) {
 	$content = str_replace(']]>', ']]&gt;', $content);
 
 	$len = 0; $len2 = 1;
-	if ($excerpt) { // excerpts don't have some elements
-		$content = str_replace(array('[/row]', '[/column]'), '', $content);
-	} else {
-		$content = preg_replace_callback("/\[images-table:([_a-zA-Z0-9-]+) cols:([0-9]+)\]/", 'replace_images_table_cb', $content);
-		$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
+	$content = preg_replace_callback("/\[images-table:([_a-zA-Z0-9-]+) cols:([0-9]+)\]/", 'replace_images_table_cb', $content);
+	$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
 
-		$len = strlen($content);
-		$content = str_replace(array('[/row]', '[/column]'), '</div>', $content);
-		$len2 = strlen($content);
-		if ($len == $len2) {
-			$content = "<div class=\"row\"><div class=\"col-md-12 col-sm-12\">$content";
-		}
+	$len = strlen($content);
+	$content = str_replace(array('[/row]', '[/column]'), '</div>', $content);
+	$len2 = strlen($content);
+	if ($len == $len2) {
+		$content = "<div class=\"row\"><div class=\"col-md-12 col-sm-12\">$content";
 	}
 	
-	$content = apply_filters('the_content', $content); // filter at the end to avoid ghost <br>'s to be included
-	
-	if (!$excerpt) {
-		// Move the fullscreen galleries div outside the blog to avoid footer and header overlap it
-		// Additionally, each gallery div is associated to a set of images by the gallery's ID
-		$len3 = strlen($content);
-		$content = preg_replace_callback('#[\s]*\[gallery_snippet-([_a-zA-Z0-9-]+)\][\s]*#', 'replace_gallery_snippet_cb', $content);
-		if ($len3 != strlen($content)) { ?>
-			<script type="text/javascript">window.onload=function(){$('body').append($('.blueimp-gallery'));};</script><?php
-		}
+	// Move the fullscreen galleries div outside the blog to avoid footer and header overlap it
+	// Additionally, each gallery div is associated to a set of images by the gallery's ID
+	$len3 = strlen($content);
+	$content = preg_replace_callback('#[\s]*\[gallery_snippet-([_a-zA-Z0-9-]+)\][\s]*#', 'replace_gallery_snippet_cb', $content);
+	if ($len3 != strlen($content)) { ?>
+		<script type="text/javascript">window.onload=function(){$('body').append($('.blueimp-gallery'));};</script><?php
 	}
 	
 	if ($len == $len2) {
