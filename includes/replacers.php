@@ -194,7 +194,7 @@ function replace_image_shortcode($atts) {
   
   $size = '';
   if (strcasecmp($icon, 'true') == 0) {
-    $size = 'width="112" height="112"';
+    $size = 'width="80" height="80"';
     $class .= 'icon';
     $shadow = 'false';
   }
