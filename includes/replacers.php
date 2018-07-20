@@ -5,39 +5,6 @@
  * *_cb are kept for backward compatibility and because the migration to shortcodes hasn't been completed yet.
  */
 
-function stt_trim_words($text, $num_words = 55, $more = null) {
-	global $search_term_search;
-	if (!isset($search_term_search)) return $text;
-	
-	$text = wp_strip_all_tags($text);
-	$words_array = preg_split('/[\n\r\t ]+/', $text, -1, PREG_SPLIT_NO_EMPTY);
-	$sep = ' ';
-	if (count($words_array) > $num_words) { // more words than required
-		$matches = preg_grep($search_term_search, $words_array);
-		if (count($matches) > 0) {
-			reset($matches);
-			$offset = key($matches); // position of first occurrence
-			if ($offset < $num_words) { // if it is within the original trimmed text, keep it.
-				$offset = 0;
-			} else {
-				$offset -= 5; // do not show the term at the beginning
-			}
-			
-			$words_array = array_slice($words_array, $offset, $num_words);
-			$text = implode($sep, $words_array) . ' ' .$more;
-			if ($offset > 0) {
-				$text = "$more $text";
-			}
-		} else {
-			$text = implode($sep, $words_array);
-		}
-	} else {
-		$text = implode($sep, $words_array);
-	}
-	
-	return $text;
-}
-
 function stt_replace_excerpt($text, $raw_excerpt = '') {
 	if ($raw_excerpt != '') return stt_replace_content($raw_excerpt, true);
 
@@ -467,7 +434,7 @@ function display_search_results($results, $title) {
 	
 	<div class="alternating-bg"><div class="container">
 	<h3 style="text-align: center;"><?php echo $title; ?></h3><?php
-		uasort($results, search_cmp);
+		uasort($results, 'search_cmp');
 		foreach ($results as $res) { ?>
 			<div class="row" style="padding-bottom: 35px"><div class="col-md-12 col-sm-12">
 				<h4 style="margin-bottom: 0px"><a href="<?php echo get_permalink($res['id']); ?>"><?php

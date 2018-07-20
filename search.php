@@ -1,4 +1,39 @@
-<?php get_header(); ?>
+<?php get_header();
+
+function trim_to_search_result($text, $num_words = 55, $more = null) {
+	global $search_term_search;
+	if (!isset($search_term_search)) return $text;
+	
+	$text = wp_strip_all_tags($text);
+	$words_array = preg_split('/[\n\r\t ]+/', $text, -1, PREG_SPLIT_NO_EMPTY);
+	$sep = ' ';
+	if (count($words_array) > $num_words) { // more words than required
+		$matches = preg_grep($search_term_search, $words_array);
+		if (count($matches) > 0) {
+			reset($matches);
+			$offset = key($matches); // position of first occurrence
+			if ($offset < $num_words) { // if it is within the original trimmed text, keep it.
+				$offset = 0;
+			} else {
+				$offset -= 5; // do not show the term at the beginning
+			}
+			
+			$words_array = array_slice($words_array, $offset, $num_words);
+			$text = implode($sep, $words_array) . ' ' .$more;
+			if ($offset > 0) {
+				$text = "$more $text";
+			}
+		} else {
+			$text = implode($sep, $words_array);
+		}
+	} else {
+		$text = implode($sep, $words_array);
+	}
+	
+	return $text;
+}
+
+?>
 <div class="top-title-wrapper">
     <div class="container">
         <div class="row">
@@ -52,11 +87,11 @@
 	
 	$results = array(
 		'pages' => array(),
-		'news' => array(),
-		'customer-cases' => array()
+		'blog' => array(),
 	);
-	$news_cat_id = get_category_by_slug('news')->term_id;
-	$customer_cases_cat_id = get_category_by_slug('customer-cases')->term_id;
+
+	$excerpt_length = apply_filters('excerpt_length', 55);
+	$excerpt_more = apply_filters('excerpt_more', ' ' . '[&hellip;]');
 
 	$any_result = false;
 	if (have_posts()) {
@@ -64,17 +99,16 @@
 			the_post();
 			$type = '';
 			if ($post->post_name != 'home') {
-				if (in_category('news')) {
-					$type = 'news';
-				} else if (post_is_in_descendant_category($customer_cases_cat_id)) {
-					$type = 'customer-cases';
+				if (in_category('blog')) {
+					$type = 'blog';
 				} else {
 					$type = 'pages';
 				}
 			}
 
 			if ($type != '' and $post->post_password == '') {
-				$excerpt = get_the_excerpt();
+				$content = apply_filters('the_content', get_the_content());
+				$excerpt = trim_to_search_result($content, $excerpt_length, $excerpt_more);
 				$excerpt = preg_replace($search_term_search, '<mark>\0</mark>', $excerpt);
 				$title = preg_replace($search_term_search, '<mark>\0</mark>', $post->post_title);
 				array_push($results[$type], array(
@@ -91,8 +125,7 @@
 
 		if ($any_result) {
 			display_search_results($results['pages'], 'Pages');
-			display_search_results($results['customer-cases'], 'Customer cases');
-			display_search_results($results['news'], 'News');
+			display_search_results($results['blog'], 'Customer cases');
 		}
 	}
 
