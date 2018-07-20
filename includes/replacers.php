@@ -145,7 +145,7 @@ function replace_link_shortcode($atts) {
 	), $atts, 'link'));
 	
 	if ($page != '') return get_page_full_link($page, $title);
-	if ($url != '') return "<a href=\"$url\" class=\"external\" target=\"_blank\">$title</a>";
+	if ($url != '') return "<a href=\"$url\" target=\"_blank\">$title</a>";
 	return $title;
 }
 
@@ -217,7 +217,7 @@ function replace_image_shortcode($atts) {
 	}
 	
 	if (!empty($page)) return get_page_full_link($page, $img);
-	if (!empty($url)) return "<a href=\"$url\" class=\"external\" target=\"_blank\">$img</a>";
+	if (!empty($url)) return "<a href=\"$url\" target=\"_blank\">$img</a>";
 	
 	return $img;
 }
