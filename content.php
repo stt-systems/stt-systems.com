@@ -9,8 +9,6 @@ $page_style = "style-$style_name";
 if (!is_page()) {
 	if (!is_single()) { ?>
 		<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a></h2><?php
-	} else { ?>
-		<div class="space-sep20"></div><?php
 	}
 	if ($post->post_type == 'post') { ?>
 		<div class="blog-post-details">
