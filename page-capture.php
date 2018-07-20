@@ -1,9 +1,8 @@
 <?php
 add_action('wp_head', 'schema_head');
 get_header();
+wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 ?>
-
-<link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/front-page.min.css'); ?>" />
 
 <div class="row" style="display: table; height: 80vh; width: 100%; margin: 0; padding: 0">
   <div class="col-md-4 col-sm-4 panel">

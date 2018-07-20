@@ -22,9 +22,6 @@ function sanitize_output($buffer) {
   return preg_replace(array_keys($search), array_values($search), $buffer);
 }
 ob_start("sanitize_output");
-wp_enqueue_style('style', get_stylesheet_uri());
-//wp_enqueue_style('gallery', my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/blueimp-gallery.min.css', false));
-wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
 ?>
 
 <!DOCTYPE HTML>
