@@ -39,6 +39,10 @@ p:empty {
   list-style: none;
 }
 
+.share-buttons li:before {
+  content: '' !important;
+}
+
 .navigation, .posts-list, .social-icons > ul {
   list-style-type: none;
 }
