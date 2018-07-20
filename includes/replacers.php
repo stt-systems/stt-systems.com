@@ -175,7 +175,7 @@ function replace_image_shortcode($atts) {
 		'url' => '',
 	), $atts, 'image'));
 
-	$class = '';
+	$class = 'rounded ';
   
 	$caption_pre = '';
 	$caption_post = '';

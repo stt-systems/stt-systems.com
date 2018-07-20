@@ -107,11 +107,11 @@ function my_get_image_url($name) { // there is a WP method called get_image_url
 }
 
 function print_thumbnail() { ?>
-  <div class="col-md-4 col-sm-4" style="padding-top: 60px"><?php
+  <div class="col-md-4 col-sm-4"><?php
     if (has_post_thumbnail()) {
       $post_thumbnail_id = get_post_thumbnail_id();
       $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id); ?>
-      <img src="<?php echo $post_thumbnail_url; ?>" class="blog-thumbnail" /><?php
+      <img src="<?php echo $post_thumbnail_url; ?>" class="rounded blog-thumbnail boxshadow" /><?php
     } ?>
   </div><?php
 }

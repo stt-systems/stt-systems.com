@@ -249,7 +249,7 @@ body .syntaxhighlighter {
   margin-top: 0 !important;
 }
 
-.blog-post-body img, .woocommerce div.product div.images img, .woocommerce ul.products li.product a img {
+img.rounded, .woocommerce div.product div.images img, .woocommerce ul.products li.product a img {
   max-width: 95%;
   height: auto;
   display: block;

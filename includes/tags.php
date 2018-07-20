@@ -64,7 +64,7 @@ function print_related_pages() {
 		$tags = wp_get_post_tags($post->ID, array('fields' => 'ids'));
 		$related = array();
 		foreach ($tags as $tag) {
-			$term_meta = get_option( "taxonomy_term_$tag" );
+			$term_meta = get_option("taxonomy_term_$tag");
 			if (empty($term_meta['related_pages'])) continue;
 			$related = array_merge($related, explode(',', $term_meta['related_pages']));
 		}

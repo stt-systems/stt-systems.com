@@ -47,7 +47,7 @@ if ($post->post_type == 'page') {
 	} else {
 		the_content();
 	}
-  if ($post->post_type == 'post') {
+  if ($post->post_type == 'post' and is_single()) {
     add_share_buttons();
   } ?>
 </div>
