@@ -1,3 +1,4 @@
 **/*.min.css
 js/*.js
 .vscode/
+css/*.map
