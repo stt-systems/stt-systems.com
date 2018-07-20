@@ -37,7 +37,7 @@ function print_social_img($name) {
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
-				<img src="<?php echo my_get_image_url('stt_building_1_sm.jpg'); ?>" class="boxshadow" alt="STT's building"/>
+				<img src="<?php echo my_get_image_url('stt_building_1_sm.jpg'); ?>" class="rounded boxshadow" alt="STT's building"/>
 			</div>
 		</div>
 	</div>
