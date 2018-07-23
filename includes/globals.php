@@ -88,7 +88,7 @@ function print_page_title($slug = '', $title = '') {
 		$h1_hidden = 'hidden';
 	} ?>
 
-	<div class="top-title-wrapper boxshadow">
+	<div class="top-title-wrapper">
 		<?php echo $banner_code; ?>
 		<?php if ($banner_code == '') { ?><div class="container row col-md-12 col-sm-12"><?php } ?>
 		<h1 class="page-title" <?php echo $h1_hidden; ?>><?php echo wptexturize($title); ?></h1>
