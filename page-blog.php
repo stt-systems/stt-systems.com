@@ -21,9 +21,9 @@ print_page_title();
   if (have_posts()) {
     while (have_posts()) {
       the_post();
-      $style = 'style-white';
+      $style = 'style-ultra-light';
       if ($wp_query->current_post % 2 == 1) {
-        $style = 'style-light';
+        $style = 'style-white';
       } ?>
       <div class="row"><?php
       if ($wp_query->current_post % 2 == 0) {
