@@ -1,5 +1,5 @@
 <?php if ( post_password_required() ): ?>
-	<?php _e( 'This post is password protected. Enter the password to view any comments.', 'weblizar' ); ?></p>
+	<?php _e( 'This post is password protected. Enter the password to view any comments.', 'stt' ); ?></p>
 	<?php return; endif; ?>
     <?php if ( have_comments() ): ?>
 	 <div class="comments">
@@ -9,15 +9,15 @@
 			<div class="title-seperator"></div>
 		</div>			
 			<ol class="comments-list">
-			<?php wp_list_comments( array( 'callback' => 'weblizar_comment' ) ); ?>
+			<?php wp_list_comments( array( 'callback' => 'comment_cb' ) ); ?>
 			</ol>
 		</div>
 	</div>		
 	<?php endif; ?>
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ): ?>
 		<nav id="comment-nav-below">			
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'weblizar' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'weblizar' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'stt' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'stt' ) ); ?></div>
 		</nav>
 		<?php endif;  ?>
 <?php if ( comments_open() ) : ?>
@@ -37,10 +37,10 @@
 		'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
 		'comment_field'=> '<div class="form-group clearfix"><label for="message" class="control-label col-xs-2"> Message *</label>
 		<div class="col-xs-8"><textarea name="comment" id="comment" class="form-control"></textarea></div></div><div class="space-sep-10"></div>',		
-		'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'weblizar' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'weblizar').'</a>' . '</p>',
+		'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'stt' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?", 'stt').'</a>' . '</p>',
 		
 		'class_submit' => 'btn btn-primary',
-		'label_submit'=>__( 'Send','weblizar'),
+		'label_submit'=>__( 'Send','stt'),
 		'comment_notes_before'=> '',
 		'comment_notes_after'=>'<div class="form-group clearfix"><label class="control-label col-xs-2"></label><div class="col-xs-6">                    <input type="submit" class="btn btn-primary" value="Send">                </div>
             </div>',

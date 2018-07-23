@@ -2,7 +2,7 @@
 <header>
 <div class="page-template top-title-wrapper boxshadow">
 	<div class="container row col-md-12 col-sm-12 page-info">
-		<h1 class="h1-page-title"><?php printf( 'Tag: %s', single_tag_title("", false)); ?></h1>				
+		<h1 class="page-title"><?php printf( 'Tag: %s', single_tag_title("", false)); ?></h1>				
 	</div>
 </div>
 </header>
@@ -19,10 +19,10 @@
 			} ?>
 			<div class="pagination"><?php
 				if (get_next_posts_link()) {
-					next_posts_link('<span class="prev">&larr;</span>'.__('Older posts', 'weblizar' ) );
+					next_posts_link('<span class="prev">&larr;</span>'.__('Older posts', 'stt' ) );
 				}
 				if (get_previous_posts_link()) {
-					previous_posts_link( __( 'Newer posts', 'weblizar' ). '<span class="next">&rarr;</span>' );
+					previous_posts_link( __( 'Newer posts', 'stt' ). '<span class="next">&rarr;</span>' );
 				} ?>
 			</div>
 		</div>

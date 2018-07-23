@@ -38,7 +38,7 @@ function trim_to_search_result($text, $num_words = 55, $more = null) {
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 page-info">
-                <h1 class="h1-page-title"><?php printf(__('Search Results for: %s', 'weblizar'), '<span>' . get_search_query() . '</span>'); ?></h1>
+                <h1 class="page-title"><?php printf(__('Search Results for: %s', 'stt'), '<span>' . get_search_query() . '</span>'); ?></h1>
             </div>
         </div>
     </div>
@@ -132,11 +132,11 @@ function trim_to_search_result($text, $num_words = 55, $more = null) {
 	if (!$any_result) { ?>
 		<div class="blog-span">
 			<header class="entry-header">
-				<h1 class="entry-title"><?php _e('Nothing Found', 'weblizar'); ?></h1>
+				<h1 class="entry-title"><?php _e('Nothing Found', 'stt'); ?></h1>
 			</header>
 
 			<div class="entry-content">
-				<p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'weblizar'); ?></p>
+				<p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'stt'); ?></p>
 			</div>
 		</div><?php
 	} ?>

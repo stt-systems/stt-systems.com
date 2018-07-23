@@ -90,8 +90,8 @@ function print_page_title($slug = '', $title = '') {
 
 	<div class="top-title-wrapper boxshadow">
 		<?php echo $banner_code; ?>
-		<?php if ($banner_code == '') { ?><div class="container row col-md-12 col-sm-12 page-info"><?php } ?>
-		<h1 class="h1-page-title" <?php echo $h1_hidden; ?>><?php echo wptexturize($title); ?></h1>
+		<?php if ($banner_code == '') { ?><div class="container row col-md-12 col-sm-12"><?php } ?>
+		<h1 class="page-title" <?php echo $h1_hidden; ?>><?php echo wptexturize($title); ?></h1>
 		<?php if ($banner_code == '') { ?></div><?php } ?>
 	</div><?php
 }

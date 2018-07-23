@@ -87,10 +87,6 @@
     padding-bottom: 0;
   }
 
-  .h1-page-title {
-    float: none;
-  }
-
   .h2-page-desc {
     border-left: none;
     float: none;
@@ -429,7 +425,7 @@
   }
 }
 @media (max-width: 1200px) {
-  body .h1-page-title {
+  body h1.page-title {
     font-size: 20px;
   }
 

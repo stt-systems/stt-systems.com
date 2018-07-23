@@ -36,10 +36,10 @@ print_page_title();
   } ?>
   <div class="pagination"><?php
     if (get_next_posts_link()) {
-      next_posts_link('<span class="prev">&larr;</span>' . __('Older news', 'weblizar'));
+      next_posts_link('<span class="prev">&larr;</span>' . __('Older news', 'stt'));
     }
     if (get_previous_posts_link()) {
-      previous_posts_link(__('Newer news', 'weblizar') . '<span class="next">&rarr;</span>');
+      previous_posts_link(__('Newer news', 'stt') . '<span class="next">&rarr;</span>');
     } ?>
 	</div>
 </div>

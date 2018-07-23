@@ -3,15 +3,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 page-info">
-                <h1 class="h1-page-title">
+                <h1 class="page-title">
 				<?php if ( is_day() ) : ?>
-				<?php  _e( "Daily Archives:", 'weblizar' ); echo (get_the_date()); ?>
+				<?php  _e( "Daily Archives:", 'stt' ); echo (get_the_date()); ?>
 				<?php elseif ( is_month() ) : ?>
-				<?php  _e( "Monthly Archives:", 'weblizar' ); echo (get_the_date( 'F Y' )); ?>
+				<?php  _e( "Monthly Archives:", 'stt' ); echo (get_the_date( 'F Y' )); ?>
 				<?php elseif ( is_year() ) : ?>
-				<?php  _e( "Yearly Archives:", 'weblizar' );  echo (get_the_date( 'Y' )); ?>
+				<?php  _e( "Yearly Archives:", 'stt' );  echo (get_the_date( 'Y' )); ?>
 				<?php else : ?>
-				<?php _e( "Blog Archives", 'weblizar' ); ?>
+				<?php _e( "Blog Archives", 'stt' ); ?>
 				<?php endif; ?>				
 				</h1>				
             </div>
@@ -31,10 +31,10 @@
 				
 				<div class="pagination">
 					<?php if ( get_next_posts_link() ): ?>
-						<?php next_posts_link('<span class="prev">&larr;</span>'.__('Older posts', 'weblizar' ) ); ?>
+						<?php next_posts_link('<span class="prev">&larr;</span>'.__('Older posts', 'stt' ) ); ?>
 						<?php endif; ?>
 						<?php if ( get_previous_posts_link() ): ?>
-						<?php previous_posts_link( __( 'Newer posts', 'weblizar' ). '<span class="next">&rarr;</span>' ); ?>
+						<?php previous_posts_link( __( 'Newer posts', 'stt' ). '<span class="next">&rarr;</span>' ); ?>
 						<?php endif; ?>					
 					
 				</div>

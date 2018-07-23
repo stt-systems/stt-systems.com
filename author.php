@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 page-info">
-                <h1 class="h1-page-title"><?php printf( __( 'Author Archives: %s', 'weblizar' ), get_the_author() ); ?></h1>				
+                <h1 class="page-title"><?php printf( __( 'Author Archives: %s', 'stt' ), get_the_author() ); ?></h1>				
             </div>
         </div>
     </div>
@@ -20,11 +20,11 @@
 					endwhile; ?>				 
 				<div class="pagination"><?php
 					if ( get_next_posts_link() ):
-					next_posts_link('<span class="prev">&larr;</span>'.__('Older posts', 'weblizar' ) );
+					next_posts_link('<span class="prev">&larr;</span>'.__('Older posts', 'stt' ) );
 					endif;
 					
 					if ( get_previous_posts_link() ): 
-					previous_posts_link( __( 'Newer posts', 'weblizar' ). '<span class="next">&rarr;</span>' ); 
+					previous_posts_link( __( 'Newer posts', 'stt' ). '<span class="next">&rarr;</span>' ); 
 					endif; ?>
 				</div>
 			</div>

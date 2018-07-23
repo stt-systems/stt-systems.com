@@ -51,7 +51,7 @@ ob_start("sanitize_output");
 						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo my_get_image_url('logo/logo.png', false); ?>" height="86" alt="STT's logo" rel="nofollow"/></a>
 					</div>
 					<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#stt-navbar-collapse">
-						<span class="sr-only"><?php _e('Toggle navigation','weblizar'); ?></span>
+						<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>

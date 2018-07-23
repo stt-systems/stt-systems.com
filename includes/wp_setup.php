@@ -13,10 +13,10 @@ function set_tag_cloud_sizes($args) {
 add_filter('widget_tag_cloud_args', 'set_tag_cloud_sizes');
 
 // Function To get the Options-DATA
-function weblizar_get_options() {
+function stt_get_options() {
 	return wp_parse_args(
-		get_option('weblizar_options', array()),
-		apply_filters('weblizar_options', array())
+		get_option('stt_options', array()),
+		apply_filters('stt_options', array())
 	);
 }
 
@@ -39,12 +39,12 @@ function stt_setup() {
 	}
 
 	// Load text domain for translation-ready
-	//load_theme_textdomain('weblizar', WL_TEMPLATE_DIR_CORE . '/lang');
+	//load_theme_textdomain('stt', WL_TEMPLATE_DIR_CORE . '/lang');
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails'); //supports featured image
 
 	// This theme uses wp_nav_menu() in one location.
-	//register_nav_menu('primary', __('Primary Menu', 'weblizar'));
+	//register_nav_menu('primary', __('Primary Menu', 'stt'));
 
 	// Theme support
 	$args = array('default-color' => '000000');
@@ -63,9 +63,9 @@ add_filter('the_content_more_link', 'stt_content_more');
 // Widget area
 function stt_widgets_init() {
 	register_sidebar(array(
-		'name'          => __('Footer Widget Area', 'weblizar'),
+		'name'          => __('Footer Widget Area', 'stt'),
 		'id'            => 'footer-widget-area',
-		'description'   => __('footer widget area', 'weblizar'),
+		'description'   => __('footer widget area', 'stt'),
 		'before_widget' => '<div class="col-md-3 col-sm-3 footer-col">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<div class="footer-title">',
