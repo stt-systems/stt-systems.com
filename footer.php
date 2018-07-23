@@ -17,13 +17,12 @@
 						<p>20018 San Sebasti&aacute;n, Spain</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-4 footer-col">
-					<div class="footer-title"><?php echo get_page_full_link('news', 'Recent', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
+				<div class="col-lg-5 col-md-4 col-sm-4 footer-col">
+					<div class="footer-title">SITEMAP</div>
 					<div class="textwidget">
-						<?php get_widget_recent_posts(''); ?>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-3 col-sm-3 footer-col">
+				<div class="col-md-3 col-sm-3 footer-col">
 					<div class="textwidget">
 						<div class="sidebar-content tags blog-search">
 						<form method="get" id="searchform" action="<?php echo site_url();?>">
