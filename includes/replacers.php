@@ -388,6 +388,7 @@ function replace_downloads_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'title' => 'Downloads',
+		'type' => 'list', // list, gallery
 	), $atts, 'downloads'));
 	
 	if ($name == '') {
@@ -398,14 +399,48 @@ function replace_downloads_shortcode($atts) {
 	$downloads = get_downloads($name);
 	if (!count($downloads['files'])) return '';
 	
+	if (!empty($title)) {
+		$title = "<h4>$title</h4>";
+	}
+
+	if ($type == 'gallery') {
+		$table = '';
+		$counter = 0;
+		foreach ($downloads['files'] as $file) {
+			if ($counter % 3 == 0) {
+				$table .= '<div class="row compact">';
+			}
+			$ext = strtolower(pathinfo($file['path'], PATHINFO_EXTENSION));
+			if ($ext == 'pdf') {
+			}
+			// NOFOLLOW: do not pass link juice for PDFs on sidebars
+			$table .= '<div class="col-md-4 col-sm-4 center">';
+			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';;
+			$table .= '<img src="' . my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . "/images/pdf.png") . '" />';
+			$table .= $file['title'];
+			$table .= '</a></div>';
+			if ($counter % 3 == 2) {
+				$table .= '</div>';
+			}
+			++$counter;
+		}
+
+		if ($counter % 3 != 0) {
+			while ($counter % 3 != 0) {
+				$table .= '<div class="col-md-4 col-sm-4"></div>';
+				++$counter;
+			}
+			$table .= '</div>';
+		}
+
+		return "<div class=\"container\">$table</div>";
+	}
+
+	// $type == 'list'
 	$list = array();
 	foreach ($downloads['files'] as $file) {
 		// NOFOLLOW: do not pass link juice for PDFs on sidebars
 		array_push($list, '<a href="' . $file['file'] . '" rel="nofollow">' . $file['title'] . '</a>');
-	}
-
-	if (!empty($title)) {
-		$title = "<h4>$title</h4>";
 	}
 
 	return "$title<p>" . implode($list, '</p><p>') . '</p>';
