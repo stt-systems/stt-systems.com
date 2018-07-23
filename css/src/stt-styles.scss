@@ -60,6 +60,16 @@
   }
 }
 
+.style-ultra-light {
+  @extend .style-base-class;
+
+  background-color: #f2f2f3;
+
+  h2 {
+    color: $color-white;
+  }
+}
+
 .style-dark {
   @extend .style-base-class;
 
