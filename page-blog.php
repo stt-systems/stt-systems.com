@@ -26,16 +26,11 @@ print_page_title();
         $style = 'style-white';
       } ?>
       <div class="row"><?php
-      if ($wp_query->current_post % 2 == 0) {
-        print_thumbnail($style);
-      } ?>
+      print_thumbnail($style); ?>
       <div class="col-md-8 col-sm-8 col-extra <?php echo $style; ?>">
   		<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a></h3><?php
       get_template_part('content'); ?>
-      </div><?php
-      if ($wp_query->current_post % 2 == 1) {
-        print_thumbnail($style);
-      } ?>
+      </div>
       </div><?php
     }
   } ?>
