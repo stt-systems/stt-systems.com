@@ -3,6 +3,7 @@
 body, html {
   min-height: 100%;
   overflow-x: hidden;
+  font-size: 14px;
 }
 
 p:empty {
@@ -110,16 +111,68 @@ p.gallery-caption {
   font-size: 14px !important;
 }
 
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif !important;
+  margin: 0 0 20px;
+  color: #3a3a3a;
+}
+
+h1 {
+  font-size: 28px;
+}
+h2 {
+  font-size: 22px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 15px;
+}
+h6 {
+  font-size: 14px;
+}
+
 h1.page-title {
   margin: 0 10px 10px 0;
-  font-size: 26px;
   color: #fff;
   float: none;
   color: #fff;
   font-weight: 100;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.top-title-wrapper > h1 {
+  line-height: 20px;
 }
 h1 a, h1 a:focus, h1 a:hover, h2 a, h2 a:focus, h2 a:hover {
   color: #fff;
+}
+.blog-post-body h3:first-child, .blog-post-body h4:first-child {
+  margin-top: 0 !important;
+}
+body .h4-section-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #4b4b4b;
+  font-weight: 600;
+  line-height: 28px;
+}
+h2.widgettitle {
+  color: #4b4b4b;
+  font-size: 15px;
+  font-weight: 500;
+}
+.h4-body-title {
+  font-size: 18px;
+  color: #4b4b4b;
+  font-weight: 400;
 }
 
 .textwidget a:hover {
@@ -200,6 +253,7 @@ iframe {
   border: 0;
 }
 
+/* Galleries */
 .gallery {
   width: 100%;
   margin: 15px auto 35px;
@@ -239,6 +293,7 @@ iframe {
   color: #fff !important;
 }
 
+/* Syntax highlighting */
 body .syntaxhighlighter {
   border-radius: 4px;
   padding: 7px;
@@ -252,9 +307,6 @@ body .syntaxhighlighter {
     padding: 5px;
     width: 100% !important;
   }
-}
-.blog-post-body h3:first-child, .blog-post-body h4:first-child {
-  margin-top: 0 !important;
 }
 
 img.rounded, .woocommerce div.product div.images img, .woocommerce ul.products li.product a img {
@@ -963,7 +1015,7 @@ body, button, html, input, select, textarea {
   font-weight: 100;
 }
 
-.h1-page-title, p {
+p {
   line-height: 20px;
 }
 
@@ -1002,42 +1054,8 @@ body, button, html, input, select, textarea {
   padding-bottom: 35px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Fira Sans", Helvetica, Arial, sans-serif !important;
-  margin: 0 0 20px;
-  color: #3a3a3a;
-}
-
 body, li, p {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-}
-
-h1 {
-  font-size: 28px;
-}
-
-h2 {
-  font-size: 22px;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-h4 {
-  font-size: 16px;
-}
-
-h5 {
-  font-size: 15px;
-}
-
-body, h6 {
-  font-size: 14px;
-}
-
-h6 {
-  color: #7a7a7a;
 }
 
 a:focus, a:hover {
@@ -1090,29 +1108,8 @@ blockquote span {
   margin-right: 50px;
 }
 
-
-body .h4-section-title {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #4b4b4b;
-  font-weight: 600;
-  line-height: 28px;
-}
-
-h2.widgettitle {
-  color: #4b4b4b;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.h4-body-title {
-  font-size: 18px;
-  color: #4b4b4b;
-  font-weight: 400;
-}
-
 b, strong, time {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .space-sep10 {
