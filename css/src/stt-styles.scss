@@ -40,9 +40,37 @@
   }
 }
 
+@mixin links($base-color) {
+  a {
+    color: $base-color;
+  }
+  a:hover {
+    color: darken($base-color, 20) !important;
+  }
+
+  .inner-links {
+    padding-top: 15px;
+
+    a:after {
+      content: '\21E3';
+      visibility: visible;
+      margin-left: 5px;
+    }
+    a:not(:first-child) {
+      border-left: 1px solid $base-color;
+      padding-left: 15px;
+    }
+    a:not(:last-child):after {
+      margin-right: 15px;
+    }
+  }
+}
+
 .style-white {
   @extend .style-base-class;
 
+  @include links($color-black);
+  
   background-color: $color-white;
 
   h2 {
@@ -53,6 +81,8 @@
 .style-light {
   @extend .style-base-class;
 
+  @include links($color-white);
+  
   background-color: $color-light;
 
   h2 {
@@ -63,42 +93,24 @@
 .style-ultra-light {
   @extend .style-base-class;
 
+  @include links($color-black);
+  
   background-color: #f2f2f3;
 
   h2 {
-    color: $color-white;
+    color: $color-black;
   }
 }
 
 .style-dark {
   @extend .style-base-class;
 
+  @include links($color-white);
+
   background-color: $color-black;
 
   h2 {
     color: $color-white;
-  }
-}
-
-@mixin links($base-color) {
-  a {
-    color: $base-color;
-  }
-  a:hover {
-    color: darken($base-color, 20) !important;
-  }
-
-  .inner-links a:after {
-    content: '\21E3';
-    visibility: visible;
-    margin-left: 5px;
-  }
-  .inner-links a:not(:first-child) {
-    border-left: 1px solid $base-color;
-    padding-left: 15px;
-  }
-  .inner-links a:not(:last-child):after {
-    margin-right: 15px;
   }
 }
 
