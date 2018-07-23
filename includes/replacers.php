@@ -387,6 +387,7 @@ function replace_download_shortcode($atts) {
 function replace_downloads_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
+		'title' => 'Downloads',
 	), $atts, 'downloads'));
 	
 	if ($name == '') {
@@ -403,7 +404,11 @@ function replace_downloads_shortcode($atts) {
 		array_push($list, '<a href="' . $file['file'] . '" rel="nofollow">' . $file['title'] . '</a>');
 	}
 
-	return '<h4>Downloads</h4><p>' . implode($list, '<br>') . '</p>';
+	if (!empty($title)) {
+		$title = "<h4>$title</h4>";
+	}
+
+	return "$title<p>" . implode($list, '</p><p>') . '</p>';
 }
 function replace_all_downloads_shortcode() {
 	$downloads = get_downloads_area_list();
