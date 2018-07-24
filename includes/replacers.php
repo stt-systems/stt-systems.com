@@ -418,18 +418,24 @@ function replace_downloads_shortcode($atts) {
 			}
 			$ext = strtolower(pathinfo($file['path'], PATHINFO_EXTENSION));
 			$thumbnail_url = '';
+			$thumbnail_alt = '';
 			if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg') {
 				$thumbnail_url = $file['file'];
+				$thumbnail_alt = $file['title'];
 			} else {
 				if ($ext == 'docx') $ext = 'doc';
 				if ($ext == 'xlsx') $ext = 'xls';
 				if ($ext == 'pptx') $ext = 'ppt';
 				$thumbnail_url = my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png");
 			}
+			if ($thumbnail_alt != '') {
+				$thumbnail_alt = "alt=\"$thumbnail_alt\"";
+			}
+
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
 			$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\">";
 			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';
-			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded\" src=\"$thumbnail_url\" height=\"128\" /></div>";
+			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded\" src=\"$thumbnail_url\" height=\"128\" $thumbnail_alt/></div>";
 			$table .= $file['title'];
 			$table .= '</a></div>';
 			if ($counter % $cols == $cols - 1) {
