@@ -46,7 +46,7 @@ function add_page_path() {
 		<div class="blog-post-details page-path"><?php
 		for ($i = count($path) - 1; $i >= 0; --$i) {
 			$item = get_post($path[$i]);
-			if ($item->post_password != '') { // suggestion: use password 'hide' and page template 'redirect'
+			if ($item->post_password != '' || get_page_template_slug($item->ID) == 'template-empty.php') { // suggestion: use password 'hide' and page template 'redirect'
 				echo $item->post_title . ' &raquo; ';
 			} else {
 				echo '<a href="' . get_permalink($path[$i]) . '">' . $item->post_title . '</a> &raquo; ';
