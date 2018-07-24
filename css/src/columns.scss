@@ -30,16 +30,6 @@
     padding-right: 10px;
   }
 }
-.extra:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100vw;
-  height: 100%;
-  transform: translate(-50%, 0);
-}
 
 .col-extra {
   justify-content: center;
