@@ -406,29 +406,41 @@ function replace_downloads_shortcode($atts) {
 	if ($type == 'gallery') {
 		$table = '';
 		$counter = 0;
+		$cols = min(count($downloads['files']), 5);
+		$col_class = $cols > 3 ? 2 : 4;
+		$col_spacer = (12 - $cols * $col_class) / 2;
 		foreach ($downloads['files'] as $file) {
-			if ($counter % 3 == 0) {
+			if ($counter % $cols == 0) {
 				$table .= '<div class="row compact">';
+				if ($col_spacer > 0) {
+					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
+				}
 			}
 			$ext = strtolower(pathinfo($file['path'], PATHINFO_EXTENSION));
 			if ($ext == 'pdf') {
 			}
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
-			$table .= '<div class="col-md-4 col-sm-4 center">';
+			$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\">";
 			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';;
 			$table .= '<img src="' . my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . "/images/pdf.png") . '" />';
 			$table .= $file['title'];
 			$table .= '</a></div>';
-			if ($counter % 3 == 2) {
+			if ($counter % $cols == $cols - 1) {
+				if ($col_spacer > 0) {
+					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
+				}
 				$table .= '</div>';
 			}
 			++$counter;
 		}
 
-		if ($counter % 3 != 0) {
-			while ($counter % 3 != 0) {
-				$table .= '<div class="col-md-4 col-sm-4"></div>';
+		if ($counter % $cols != 0) {
+			while ($counter % $cols != 0) {
+				$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\"></div>";
 				++$counter;
+			}
+			if ($col_spacer > 0) {
+				$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
 			}
 			$table .= '</div>';
 		}
