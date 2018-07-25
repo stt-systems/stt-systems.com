@@ -678,10 +678,6 @@ div.blog-post div.span10 {
   color: #aaa;
 }
 
-.pagination {
-  margin-bottom: 20px;
-}
-
 .text-input {
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -1465,6 +1461,7 @@ table {
   width: 100%;
   margin: 0 auto;
   padding-left: 50px;
+  margin-bottom: 20px;
 }
 
 .pagination a {
@@ -1475,7 +1472,10 @@ table {
   font-size: 14px;
 }
 
-.pagination .next, .pagination .prev, .pagination a.current, .pagination a:hover {
+.pagination .next, .pagination .prev, .pagination a.current {
+  color: #3498DB;
+}
+.pagination a:hover {
   background-color: #f7f7f7;
   color: #3498DB;
 }
