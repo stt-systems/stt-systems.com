@@ -17,22 +17,44 @@
 						<p>20018 San Sebasti&aacute;n, Spain</p>
 					</div>
 				</div>
-				<div class="col-md-5 col-sm-5 footer-col">
+				<div class="col-md-5 col-sm-5 footer-col"><?php
+				if (get_top_level_slug() == "capture") { ?>
 					<div class="footer-title">SITEMAP</div>
 					<div class="textwidget">
-					<div class="row"><?php
-					?>
-					</div>
-					</div>
-				</div>
-				<div class="col-md-2 col-sm-2 footer-col">
-					<div class="textwidget">
-						<div class="sidebar-content tags blog-search">
-						<form method="get" id="searchform" action="<?php echo site_url();?>">
-							<input type="text" class="blog-search-input text-input" name="s" id="s" placeholder="Search&hellip;">
-							<button class="blog-search-button icon-search ">&#xf002;</button>
-						</form>
+					<div class="row">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-4 col-sm-4"><?php
+									echo '<p><b>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</b></p>';
+									echo '<p>' . get_page_full_link('sports-3dma') . '</p>';
+									echo '<p>' . get_page_full_link('cycling-3dma') . '</p>';
+									echo '<p>' . get_page_full_link('golf-3dma') . '</p>';
+									echo '<p>' . get_page_full_link('clinical-3dma') . '</p>';
+									echo '<p>' . get_page_full_link('running-3dma') . '</p>';
+									echo '<p>' . get_page_full_link('human-3dma') . '</p>';
+									echo '<p>' . get_page_full_link('eddo', 'EDDO') . '</p>'; ?>
+								</div>
+								<div class="col-md-4 col-sm-4"><?php
+									echo '<p><b>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</b></p>';
+									echo '<p>' . get_page_full_link('bikefit', 'BikeFit') . '</p>'; ?>
+								</div>
+								<div class="col-md-4 col-sm-4"><?php
+									echo '<p><b>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</b></p>';
+									echo '<p>' . get_page_full_link('isen') . '</p>';
+									echo '<p>' . get_page_full_link('stt-iws', 'STT-IWS') . '</p>'; ?>
+								</div>
+							</div>
 						</div>
+					</div>
+					</div><?php
+				} ?>
+				</div>
+				<div class="col-md-3 col-sm-3 footer-col">
+					<div class="sidebar-content tags blog-search">
+					<form method="get" id="searchform" action="<?php echo site_url();?>">
+						<input type="text" class="blog-search-input text-input" name="s" id="s" placeholder="Search&hellip;">
+						<button class="blog-search-button icon-search ">&#xf002;</button>
+					</form>
 					</div>
 				</div>
 				</div>

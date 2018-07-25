@@ -174,12 +174,23 @@ h2.widgettitle {
   font-weight: 400;
 }
 
-.textwidget a:hover {
-  color: #0069aa;
+.textwidget {
+  color: #d4d4d4;
+  p {
+    margin-bottom: 0 !important;
+  }
+  a {
+    color: #d4d4d4;
+  }
+  a[href^=mailto] {
+    color: #428bca;
+  }
+  a:hover {
+    color: #0069aa;
+  }
 }
 
-.tight-paragraphs p {
-  margin-bottom: 0 !important;  
+.sitemap {
 }
 
 .recent-post {
@@ -1620,11 +1631,6 @@ table.hover td, table.hover th {
 
 table.hover tbody tr:nth-child(odd) {
   background-color: #fafafa;
-}
-
-.textwidget {
-  color: #D4D4D4;
-  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
 }
 
 .gallery-caption {
