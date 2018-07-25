@@ -11,5 +11,9 @@ print_page_title();
 <?php
 	the_post();
 	get_template_part('content'); ?>
-</div>
-<?php get_footer(); ?>
+</div> <?php
+if (get_post()->post_name == "contact-info") { ?>
+	<div class="map-overlay" onClick="style.pointerEvents='none'"></div>
+	<iframe class="boxshadow" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11899828.893803455!2d-0.04826216972901577!3d43.267522259849265!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b06b579c8b15%3A0x2ad284836fa91c7!2sStt+Ingenier%C3%ADa+y+Sistemas+S.L.!5e0!3m2!1ses!2s!4v1422375720004" height="450" style="display:block;width:100%"></iframe><?php
+}
+get_footer(); ?>

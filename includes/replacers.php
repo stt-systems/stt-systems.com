@@ -487,6 +487,20 @@ function replace_all_downloads_shortcode() {
 	return '<table>' . $table . '</table>';
 }
 
+function get_social_img($name) {
+	$url = WL_TEMPLATE_DIR_URI . '/images/social-media/' . $name . '.png';	
+	return '<img src="' . $url . '" width="32" height="32" alt="' . $name . '" />';
+}
+function replace_social_links_shortcode() {
+	$code = "<div class=\"contact-social\">
+		<a href=\"https://www.facebook.com/STTSystems\" title=\"Facebook\" target=\"_blank\">". get_social_img('facebook') . "</a>
+		<a href=\"https://twitter.com/sttsystems\" title=\"Twitter\" target=\"_blank\">" . get_social_img('twitter') . "</a>
+		<a href=\"https://www.linkedin.com/company/stt-systems\" title=\"LinkedIn\" target=\"_blank\">" . get_social_img('linkedin') . "</a>
+		<a href=\"https://www.youtube.com/user/SttSystems\" title=\"Youtube\" target=\"_blank\">" . get_social_img('youtube') . "</a>
+		</div>";
+	return $code;
+}
+
 function search_cmp($a, $b) {
 	$field = 'id';
 	if ($a[$field] == $b[$field]) return 0;
@@ -529,6 +543,8 @@ function add_share_buttons() {
 }
 
 function add_stt_shortcodes() {
+  add_shortcode('row',           'replace_row_shortcode');
+  add_shortcode('column',        'replace_column_shortcode');
 	add_shortcode('v-space',       'replace_vspace_shortcode');
 	add_shortcode('include',       'replace_include_shortcode');
 	add_shortcode('link',          'replace_link_shortcode');
@@ -539,8 +555,7 @@ function add_stt_shortcodes() {
 	add_shortcode('download',      'replace_download_shortcode');
 	add_shortcode('downloads',     'replace_downloads_shortcode');
 	add_shortcode('all-downloads', 'replace_all_downloads_shortcode');
-  add_shortcode('row',           'replace_row_shortcode');
-  add_shortcode('column',        'replace_column_shortcode');
+	add_shortcode('social-links',  'replace_social_links_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
