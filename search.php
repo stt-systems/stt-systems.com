@@ -1,5 +1,4 @@
-<?php get_header();
-
+<?php
 function trim_to_search_result($text, $num_words = 55, $more = null) {
 	global $search_term_search;
 	if (!isset($search_term_search)) return $text;
@@ -33,16 +32,9 @@ function trim_to_search_result($text, $num_words = 55, $more = null) {
 	return $text;
 }
 
+get_header();
+print_page_title('', sprintf(__('Search results for: %s', 'stt'), '<span>' . get_search_query() . '</span>'));
 ?>
-<div class="top-title-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 page-info">
-                <h1 class="page-title"><?php printf(__('Search Results for: %s', 'stt'), '<span>' . get_search_query() . '</span>'); ?></h1>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="space-sep20"></div>
 <div class="content-wrapper body-wrapper blog-post blog-span">
 	<?php
