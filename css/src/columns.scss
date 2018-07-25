@@ -19,6 +19,9 @@
     flex-direction: column;
     padding: 22px 15px 22px 15px;
   }
+  .row .compact > .center {
+    width: 195px;
+  }
   .row > [class*='col-']:first-of-type {
     padding-left: 10px !important;
   }

@@ -413,7 +413,7 @@ function replace_downloads_shortcode($atts) {
 			if ($counter % $cols == 0) {
 				$table .= '<div class="row compact">';
 				if ($col_spacer > 0) {
-					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
+					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer\"></div>";
 				}
 			}
 			$ext = strtolower(pathinfo($file['path'], PATHINFO_EXTENSION));
@@ -440,7 +440,7 @@ function replace_downloads_shortcode($atts) {
 			$table .= '</a></div>';
 			if ($counter % $cols == $cols - 1) {
 				if ($col_spacer > 0) {
-					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
+					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer\"></div>";
 				}
 				$table .= '</div>';
 			}
