@@ -1,4 +1,4 @@
-<?php
+<?php //Template Name:Posts index
 get_header();
 wp_enqueue_style('columns', get_template_directory_uri() . '/css/columns.min.css');
 print_page_title();
