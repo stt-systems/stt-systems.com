@@ -17,14 +17,15 @@
 						<p>20018 San Sebasti&aacute;n, Spain</p>
 					</div>
 				</div>
-				<div class="col-md-5 col-sm-5 footer-col"><?php
-				wp_reset_query();
-				$top_slug = get_top_level_slug();
-				if ($top_slug == "capture") { ?>
-					<div class="footer-title">SITEMAP</div>
+				<div class="col-md-5 col-sm-5 footer-col">
+				<div class="footer-title">SITEMAP</div>
 					<div class="textwidget">
 					<div class="container" style="padding:0">
 						<div class="row">
+						<?php
+						wp_reset_query();
+						$top_slug = get_top_level_slug();
+						if ($top_slug == "capture") { ?>
 							<div class="col-md-4 col-sm-4"><?php
 								echo '<p><b>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</b></p>';
 								echo '<p>' . get_page_full_link('sports-3dma') . '</p>';
@@ -43,11 +44,11 @@
 								echo '<p><b>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</b></p>';
 								echo '<p>' . get_page_full_link('isen') . '</p>';
 								echo '<p>' . get_page_full_link('stt-iws', 'STT-IWS') . '</p>'; ?>
-							</div>
+							</div><?php
+						} ?>
 						</div>
-						</div>
-					</div><?php
-				} ?>
+					</div>
+					</div>
 				</div>
 				<div class="col-md-3 col-sm-3 footer-col">
 					<div class="sidebar-content tags blog-search">
