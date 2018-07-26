@@ -9,13 +9,15 @@ function get_current_url() {
 }
 
 function get_top_level_slug() {
-  if (is_page_valid() === false) return 'capture';
-  
-  $ancestors = get_post_ancestors(get_post()->ID);
+	if (is_front_page()) return '';
+
+	if (is_page_valid() === false) return 'capture';
+
+	$ancestors = get_post_ancestors(get_post()->ID);
   if (count($ancestors) == 0) {
     $ancestors = array(get_post()->ID);
   }
-  
+	
   $top_level = get_post(end($ancestors));
 
   return $top_level->post_name;  
