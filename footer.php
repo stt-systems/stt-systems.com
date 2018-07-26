@@ -45,6 +45,18 @@
 								echo '<p>' . get_page_full_link('isen') . '</p>';
 								echo '<p>' . get_page_full_link('stt-iws', 'STT-IWS') . '</p>'; ?>
 							</div><?php
+						} else { ?>
+							<div class="col-md-4 col-sm-4"><?php
+								echo '<p><b>' . get_page_full_link('capture', 'Capture') . '</b></p>';
+								echo '<p>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</p>';
+								echo '<p>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</p>';
+								echo '<p>' . get_page_full_link('inertial', 'Inertial') . '</p>';
+								echo '<p>' . get_page_full_link('contact-support', 'Support') . '</p>'; ?>
+							</div>
+							<div class="col-md-4 col-sm-4"><?php
+								echo '<p><b>' . get_page_full_link('industry', 'Industry') . '</b></p>';
+								echo '<p>' . get_page_full_link('rdi', 'R+D+i') . '</p>'; ?>
+							</div><?php
 						} ?>
 						</div>
 					</div>
