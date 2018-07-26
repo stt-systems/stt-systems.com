@@ -1,5 +1,6 @@
 <?php //Template Name:Posts index
-$cat = get_category_by_slug(get_post()->post_name);
+$category_name = get_post()->post_name;
+$cat = get_category_by_slug($category_name);
 if ($cat === False) {
 	header('Location: ' . get_site_url());
 	exit;
@@ -23,10 +24,6 @@ print_page_title();
   </div>
   </div>
   <?php
-  $category_name = get_top_level_slug();
-  if ($category_name == 'capture') {
-    $category_name = 'blog';
-  }
   $paged = get_query_var('paged') ? get_query_var('paged') : 1;
   query_posts(array(
     'category_name' => $category_name,
