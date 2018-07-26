@@ -1,4 +1,10 @@
 <?php //Template Name:Posts index
+$cat = get_category_by_slug(get_post()->post_name);
+if ($cat === False) {
+	header('Location: ' . get_site_url());
+	exit;
+}
+
 get_header();
 wp_enqueue_style('columns', get_template_directory_uri() . '/css/columns.min.css');
 print_page_title();
@@ -6,8 +12,12 @@ print_page_title();
 <div class="space-sep20"></div>
 <div class="content-wrapper body-wrapper blog-post blog-span container extra">
   <div class="row">
-  <div class="col-md-12 col-sm-12 col-extra style-white center">
-    <h1>Blog</h1>
+  <div class="col-md-12 col-sm-12 col-extra style-white center"><?php
+    echo '<h1>' . $cat->name . '</h1>';
+		$cat_description = category_description($cat->term_id);
+		if (!empty($cat_description)) {
+			echo $cat_description;
+		} ?>
   </div>
   </div>
   <?php
