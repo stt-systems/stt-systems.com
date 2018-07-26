@@ -1008,17 +1008,17 @@ body, button, html, input, select, textarea {
 }
 
 .footer .copyright {
-  color: #414141;
+  color: #a3a3a3;
   height: 40px;
   width: 100%;
   font-size: 13px;
-  background-color: #fff;
-}
-
-.footer .copyright .copyright-text {
-  line-height: 40px;
-  color: #a3a3a3;
   font-weight: 100;
+  line-height: 40px;
+  background-color: #fff;
+
+  a, a:visited {
+    color: #a3a3a3;
+  }
 }
 
 p {
