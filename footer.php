@@ -19,34 +19,33 @@
 				</div>
 				<div class="col-md-5 col-sm-5 footer-col"><?php
 				wp_reset_query();
-				if (get_top_level_slug() == "capture") { ?>
+				$top_slug = get_top_level_slug();
+				if ($top_slug == "capture") { ?>
 					<div class="footer-title">SITEMAP</div>
 					<div class="textwidget">
-					<div class="row">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-4 col-sm-4"><?php
-									echo '<p><b>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</b></p>';
-									echo '<p>' . get_page_full_link('sports-3dma') . '</p>';
-									echo '<p>' . get_page_full_link('cycling-3dma') . '</p>';
-									echo '<p>' . get_page_full_link('golf-3dma') . '</p>';
-									echo '<p>' . get_page_full_link('clinical-3dma') . '</p>';
-									echo '<p>' . get_page_full_link('running-3dma') . '</p>';
-									echo '<p>' . get_page_full_link('human-3dma') . '</p>';
-									echo '<p>' . get_page_full_link('eddo', 'EDDO') . '</p>'; ?>
-								</div>
-								<div class="col-md-4 col-sm-4"><?php
-									echo '<p><b>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</b></p>';
-									echo '<p>' . get_page_full_link('bikefit', 'BikeFit') . '</p>'; ?>
-								</div>
-								<div class="col-md-4 col-sm-4"><?php
-									echo '<p><b>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</b></p>';
-									echo '<p>' . get_page_full_link('isen') . '</p>';
-									echo '<p>' . get_page_full_link('stt-iws', 'STT-IWS') . '</p>'; ?>
-								</div>
+					<div class="container" style="padding:0">
+						<div class="row">
+							<div class="col-md-4 col-sm-4"><?php
+								echo '<p><b>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</b></p>';
+								echo '<p>' . get_page_full_link('sports-3dma') . '</p>';
+								echo '<p>' . get_page_full_link('cycling-3dma') . '</p>';
+								echo '<p>' . get_page_full_link('golf-3dma') . '</p>';
+								echo '<p>' . get_page_full_link('clinical-3dma') . '</p>';
+								echo '<p>' . get_page_full_link('running-3dma') . '</p>';
+								echo '<p>' . get_page_full_link('human-3dma') . '</p>';
+								echo '<p>' . get_page_full_link('eddo', 'EDDO') . '</p>'; ?>
+							</div>
+							<div class="col-md-4 col-sm-4"><?php
+								echo '<p><b>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</b></p>';
+								echo '<p>' . get_page_full_link('bikefit', 'BikeFit') . '</p>'; ?>
+							</div>
+							<div class="col-md-4 col-sm-4"><?php
+								echo '<p><b>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</b></p>';
+								echo '<p>' . get_page_full_link('isen') . '</p>';
+								echo '<p>' . get_page_full_link('stt-iws', 'STT-IWS') . '</p>'; ?>
 							</div>
 						</div>
-					</div>
+						</div>
 					</div><?php
 				} ?>
 				</div>
