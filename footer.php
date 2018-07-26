@@ -17,10 +17,11 @@
 						<p>20018 San Sebasti&aacute;n, Spain</p>
 					</div>
 				</div>
-				<div class="col-md-5 col-sm-5 footer-col">
+				<div class="col-md-1 col-sm-1 footer-col"></div>
+				<div class="col-md-4 col-sm-4 footer-col">
 				<div class="footer-title">SITEMAP</div>
 					<div class="textwidget">
-					<div class="container" style="padding:0">
+					<div class="container">
 						<div class="row">
 						<?php
 						wp_reset_query();
@@ -36,7 +37,7 @@
 								echo '<p>' . get_page_full_link('human-3dma') . '</p>';
 								echo '<p>' . get_page_full_link('eddo', 'EDDO') . '</p>'; ?>
 							</div>
-							<div class="col-md-4 col-sm-4"><?php
+							<div class="col-md-3 col-sm-3"><?php
 								echo '<p><b>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</b></p>';
 								echo '<p>' . get_page_full_link('bikefit', 'BikeFit') . '</p>'; ?>
 							</div>
