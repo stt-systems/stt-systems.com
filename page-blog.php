@@ -11,10 +11,13 @@ print_page_title();
   </div>
   </div>
   <?php
-  $top_level_slug = get_top_level_slug();
+  $category_name = get_top_level_slug();
+  if ($category_name == 'capture') {
+    $category_name = 'blog';
+  }
   $paged = get_query_var('paged') ? get_query_var('paged') : 1;
   query_posts(array(
-    'category_name' => "blog-$top_level_slug",
+    'category_name' => $category_name,
     'posts_per_page' => 10,
     'paged' => $paged
   ));
