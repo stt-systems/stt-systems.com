@@ -10,7 +10,9 @@ wp_enqueue_style('columns', get_template_directory_uri() . '/css/columns.min.css
 print_page_title();
 ?>
 <div class="space-sep20"></div>
-<div class="content-wrapper body-wrapper blog-post blog-span container extra">
+<div class="content-wrapper body-wrapper blog-post blog-span container extra"> <?php
+  add_page_path(); ?>
+  <div class="space-sep20"></div>
   <div class="row">
   <div class="col-md-12 col-sm-12 col-extra style-white center"><?php
     echo '<h1>' . $cat->name . '</h1>';
