@@ -50,7 +50,7 @@
 								echo '<p><b>' . get_page_full_link('capture', 'Capture') . '</b></p>';
 								echo '<p>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</p>';
 								echo '<p>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</p>';
-								echo '<p>' . get_page_full_link('inertial', 'Inertial') . '</p>';
+								echo '<p>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</p>';
 								echo '<p>' . get_page_full_link('contact-support', 'Support') . '</p>'; ?>
 							</div>
 							<div class="col-md-4 col-sm-4"><?php
