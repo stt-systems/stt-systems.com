@@ -18,6 +18,7 @@
 					</div>
 				</div>
 				<div class="col-md-5 col-sm-5 footer-col"><?php
+				wp_reset_query();
 				if (get_top_level_slug() == "capture") { ?>
 					<div class="footer-title">SITEMAP</div>
 					<div class="textwidget">
