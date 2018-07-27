@@ -15,6 +15,7 @@ p:empty {
 }
 
 .boxshadow, .cases-menu a:hover, .cases-section a.seemore, .thumb64 {
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
 }
@@ -28,6 +29,7 @@ p:empty {
 }
 
 .carousel-container .carousel-item, .text-input {
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
@@ -48,13 +50,13 @@ p:empty {
   list-style-type: none;
 }
 
-.contact-social a img {
-  display: inline;
-  margin-top: 5px;
-}
-
 .contact-social a {
-  margin-right: 10px;
+  img {
+    display: inline;
+  }
+  a {
+    margin-right: 10px;
+  }
 }
 
 #menu-home-menu, #stt-navbar-collapse {
@@ -71,19 +73,20 @@ p:empty {
   margin-top: -450px;
 }
 
-.share-buttons img {
-  height: 16px !important;
-  display: inline !important;
-}
+.share-buttons {
+  img {
+    display: inline !important;
+  }
 
-.share-buttons a:hover {
-  filter: drop-shadow(0 0 5px #888);
-  -webkit-filter: drop-shadow(0 0 5px #888);
-}
+  a:hover {
+    filter: drop-shadow(0 0 5px #888);
+    -webkit-filter: drop-shadow(0 0 5px #888);
+  }
 
-.share-buttons li {
-  display: inline;
-  margin: 2px;
+  li {
+    display: inline;
+    margin: 2px;
+  }
 }
 
 #clientsCarousel img {
@@ -455,6 +458,7 @@ table:not(.clean) {
   border-spacing: 0;
   border: 1px solid #ddd !important;
   border-radius: 7px !important;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
 }
@@ -893,7 +897,6 @@ body, button, html, input, select, textarea {
 .content-box h4 i {
   width: 40px;
   height: auto;
-  display: inline-block;
   font-size: 32px;
   float: left;
   margin: 0 10px 0 0;
@@ -1511,6 +1514,7 @@ table {
 }
 
 .social-icons .facebook-icon, .social-icons .twitter-icon {
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
@@ -1567,7 +1571,6 @@ table {
   text-indent: -9999px;
   background-color: #fafafa;
   border: 1px solid #f3f3f3;
-  display: inline-block;
   margin: 0 5px 5px 0;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
