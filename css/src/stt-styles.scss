@@ -134,3 +134,15 @@
   @include links($color-sports);
   @include colored($color-sports);
 }
+.style-clinical {
+  @include links($color-clinical);
+  @include colored($color-clinical);
+}
+.style-human {
+  @include links($color-human);
+  @include colored($color-human);
+}
+.style-isen {
+  @include links($color-isen);
+  @include colored($color-isen);
+}
