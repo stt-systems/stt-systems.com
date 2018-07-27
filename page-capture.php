@@ -12,6 +12,9 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div class="content-box">
         <h1>2DMA</h1>
         <h3>Video-based mocap systems</h3>
+        <div class="product-links">
+          <img src="<?php echo my_get_image_url('icons/products/cycling.png'); ?>" />
+        </div>
       </div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
@@ -25,6 +28,15 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div class="content-box">
         <h1>3DMA</h1>
         <h3>Comprehensive solutions for 3D motion analysis</h3>
+        <div class="product-links">
+          <img src="<?php echo my_get_image_url('icons/products/sports.png'); ?>" />
+          <img src="<?php echo my_get_image_url('icons/products/cycling.png'); ?>" />
+          <img src="<?php echo my_get_image_url('icons/products/golf.png'); ?>" />
+          <img src="<?php echo my_get_image_url('icons/products/running.png'); ?>" />
+          <img src="<?php echo my_get_image_url('icons/products/clinical.png'); ?>" />
+          <img src="<?php echo my_get_image_url('icons/products/human.png'); ?>" />
+          <img src="<?php echo my_get_image_url('icons/products/eddo.png'); ?>" />
+        </div>
       </div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
@@ -38,6 +50,9 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div class="content-box">
         <h1>Inertial</h1>
         <h3>Premium IMU sensors and software</h3>
+        <div class="product-links">
+          <img src="<?php echo my_get_image_url('icons/products/clinical.png'); ?>" />
+        </div>
       </div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
