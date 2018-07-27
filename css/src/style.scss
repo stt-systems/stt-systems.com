@@ -1492,71 +1492,45 @@ table {
   color: #3498DB;
 }
 
-.social-icons .googleplus-icon {
-  background-image: url(../images/social-media/social-media-googlePlus.png);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #e8e8e8;
-}
-
-.social-icons .googleplus-icon:hover {
-  background-color: #d94a39;
-  border: 1px solid #bb3424;
-}
-
-.social-icons .linkedin-icon {
-  background-image: url(../images/social-media/social-media-linkedIn.png);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #e8e8e8;
-}
-
-.social-icons .facebook-icon, .social-icons .twitter-icon {
+.social-icons {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-}
 
-.social-icons .linkedin-icon:hover {
-  background-color: #71b2d0;
-  border: 1px solid #4b9dc3;
-}
+  .googleplus-icon {
+    background-image: url(../images/social-media/social-media-googlePlus.png);
+  }
+  .googleplus-icon:hover {
+    background-color: #d94a39;
+  }
 
-.social-icons .twitter-icon {
-  background-image: url(../images/social-media/social-media-twitter.png);
-  box-sizing: border-box;
-  border: 1px solid #e8e8e8;
-}
+  .linkedin-icon {
+    background-image: url(../images/social-media/social-media-linkedIn.png);
+  }
+  .linkedin-icon:hover {
+    background-color: #71b2d0;
+  }
 
-.social-icons .twitter-icon:hover {
-  background-color: #00a0d1;
-  border: 1px solid #00799e;
-}
+  .twitter-icon {
+    background-image: url(../images/social-media/social-media-twitter.png);
+  }
+  .twitter-icon:hover {
+    background-color: #00a0d1;
+  }
 
-.social-icons .facebook-icon {
-  background-image: url(../images/social-media/social-media-facebook.png);
-  box-sizing: border-box;
-  border: 1px solid #e8e8e8;
-}
+  .facebook-icon {
+    background-image: url(../images/social-media/social-media-facebook.png);
+  }
+  .facebook-icon:hover {
+    background-color: #3b5998;
+  }
 
-.social-icons .facebook-icon:hover {
-  background-color: #3b5998;
-  border: 1px solid #2d4373;
-}
-
-.social-icons .youtube-icon {
-  background-image: url(../images/social-media/social-media-youtube.png);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #e8e8e8;
-}
-
-.social-icons .youtube-icon:hover {
-  background-color: #c4302b;
-  border: 1px solid #9a2622;
+  .youtube-icon {
+    background-image: url(../images/social-media/social-media-youtube.png);
+  }
+  .youtube-icon:hover {
+    background-color: #c4302b;
+  }
 }
 
 .social-icons > ul {
