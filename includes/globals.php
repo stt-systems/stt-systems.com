@@ -274,53 +274,6 @@ function get_posts_for_category($cat_id, $number_of_posts) {
 	return $cases;
 }
 
-function print_category_section($slug, $name, $cases, $is_cases_index = true) {?>
-	<div <?php if ($is_cases_index) { echo "id=\"$slug\" "; } ?>class="cases-section alternating-bg"><div class="container"><?php
-		if ($is_cases_index) {?>
-			<div class="row">
-				<div class="col-md-12 col-sm-12">
-					<a href="<?php echo get_site_url() . "/$slug"; ?>">
-					<h3><?php echo $name; ?></h3></a>
-				</div>
-			</div><?php
-		}
-		$i = 0;
-		foreach ($cases as $case) {
-			if ($i % 3 == 0) {?>
-				<div class="row"><?php
-			}?>
-			<div class="col-md-4 col-sm-4">
-				<img src="<?php echo my_get_image_url('featured-images/' . $case['slug'] . '.jpg'); ?>" class="boxshadow" alt="Customer case" />
-				<h4 style="text-align: center;"><?php echo get_page_full_link($case['slug'], '', 'post'); ?></h4><?php
-				$date = new DateTime($case['date']);
-				echo $date->format('M j, Y'); ?>
-			</div>
-			<?php
-			if ($i % 3 == 2) {?>
-				</div><?php
-			}
-			++$i;
-		}
-		
-		// Didn't finished with a closing row?
-		if ($i % 3 != 0) {?>
-			</div>
-			<?php
-		}
-		
-		if ($is_cases_index) {?>
-			<div class="space-sep20"></div>
-			<a class="seemore" href="<?php echo get_site_url() . '/' . $slug; ?>">
-			See more&hellip;
-			</a><?php
-		}
-		?>
-		<div class="space-sep20"></div>
-		<div class="space-sep20"></div>
-	</div></div>
-	<?php
-}
-
 if (!function_exists('post_is_in_descendant_category')) {
 	function post_is_in_descendant_category($cats, $_post=null) {
 		foreach ((array)$cats as $cat) {
