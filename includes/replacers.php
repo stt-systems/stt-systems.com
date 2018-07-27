@@ -458,6 +458,23 @@ function replace_downloads_shortcode($atts) {
 			$table .= '</div>';
 		}
 
+		if ($counter <= $cols) {
+			// Add fake row to avoid overflowing the prvious row
+			$table .= '<div class="row compact" style="max-height:0">';
+			if ($col_spacer > 0) {
+				$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
+			}
+			++$counter;
+			while ($counter % $cols != 0) {
+				$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\"></div>";
+				++$counter;
+			}
+			if ($col_spacer > 0) {
+				$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
+			}
+			$table .= '</div>';
+		}
+
 		return "<div class=\"container\">$table</div>";
 	}
 
