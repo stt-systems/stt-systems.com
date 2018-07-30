@@ -24,7 +24,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div class="col-md-2 col-sm-2"></div>
       <div class="col-md-8 col-sm-8">
         <div class="content-box">
-          <h1>Industry 4.0</h1>
+          <h1>Industry 4.0 Projects</h1>
           <h3>Turn-key solutions for companies seeking smart and automated manufacturing &amp; monitoring processes</h3>
         </div>
       </div>
