@@ -32,6 +32,13 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+
+  .row .fake {
+    max-height: 0;
+  }
+  .row .fake [class*='col-'] {
+    padding: 0;
+  }
 }
 
 .col-extra {

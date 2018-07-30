@@ -144,6 +144,7 @@ function my_get_download_url($path) {
 
 function walk_downloads_cb(&$value, $key, $base) {
 	$value['path'] = ABSPATH . "/downloads/$base" . $value['file'];
+	$value['filename'] = $value['file'];
 	$value['file'] = my_get_download_url($base . $value['file']);
 }
 
@@ -155,6 +156,7 @@ function get_downloads($dir) {
 	$list_str = fread($fh, filesize($path));
 	fclose($fh);
 	$list = json_decode($list_str, true);
+	$list['base_dir'] = ABSPATH . "/downloads/$dir";
 	array_walk($list['files'], 'walk_downloads_cb', "$dir/");
 
 	return $list;

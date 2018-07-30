@@ -389,6 +389,7 @@ function replace_downloads_shortcode($atts) {
 		'name' => '',
 		'title' => 'Downloads',
 		'type' => 'list', // list, gallery
+		'zip' => 'yes', // generates a zip file, valid only for gallery type
 	), $atts, 'downloads'));
 	
 	if ($name == '') {
@@ -460,7 +461,7 @@ function replace_downloads_shortcode($atts) {
 
 		if ($counter <= $cols) {
 			// Add fake row to avoid overflowing the prvious row
-			$table .= '<div class="row compact" style="max-height:0">';
+			$table .= '<div class="row compact fake">';
 			if ($col_spacer > 0) {
 				$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
 			}
@@ -475,7 +476,20 @@ function replace_downloads_shortcode($atts) {
 			$table .= '</div>';
 		}
 
-		return "<div class=\"container\">$table</div>";
+		$download_all = '';
+		if ($zip == 'yes') {
+			$zip_file = new ZipArchive;
+			if ($zip_file->open($downloads['base_dir'] . "/$name.zip", ZipArchive::CREATE)) {
+					foreach ($downloads['files'] as $file) {
+					$zip_file->addFile($file['path'], $file['filename']);
+				}
+				$zip_file->close();
+				$zip_url = my_get_download_url("$name/$name.zip");
+				$download_all = "<div><a href=\"$zip_url\">Download all (ZIP)</a></div>";
+			}
+		}
+
+		return "<div class=\"container\">$table</div>$download_all";
 	}
 
 	// $type == 'list'
