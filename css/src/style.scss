@@ -1807,3 +1807,24 @@ img.blog-thumbnail {
     width: 32px;
   }
 }
+
+.area-logo {
+  margin-top: 20px;
+  height: 60px;
+
+  a, a:hover, a:visited {
+    color: #777;
+  }
+  img {
+    float: left;
+    margin-right: 7px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 60px;
+  }
+}

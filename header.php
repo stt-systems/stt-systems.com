@@ -48,7 +48,7 @@ ob_start("sanitize_output");
 			<div class="container-fluid">
 				<div class="col-sm-12 col-md-3">
 					<div class="navbar-left-header" id="navbar-left-header">
-						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo my_get_image_url('logo/logo.png', false); ?>" height="86" alt="STT's logo" rel="nofollow"/></a>
+						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo my_get_image_url('logo/logo.png', false); ?>" height="78" alt="STT's logo" rel="nofollow" style="margin-top:5px"/></a>
 					</div>
 					<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#stt-navbar-collapse">
 						<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
@@ -68,9 +68,18 @@ ob_start("sanitize_output");
 					</div>
 				</div>
 				<div class="col-sm-12 col-md-3">
-					<div class="navbar-right-header" id="navbar-right-header">
-						<a href="<?php echo home_url('/capture/'); ?>"><img src="<?php echo my_get_image_url('logo/logo.png', false); ?>" height="86" alt="STT's logo" rel="nofollow"/></a>
-					</div>
+					<div class="area-logo"><?php
+					$area = get_top_level_slug();
+					$area_url = home_url("/$area/");
+					$area_logo = my_get_image_url("logo/$area.png", false);
+					$area_name = "Motion Analysis Solutions";
+					if ($area == 'industry') {
+						$area_name = "Industry 4.0 Projects";
+					}
+					echo "<a href=\"$area_url\">";
+					echo "<img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/>";
+					echo "<p>$area_name</p>"; ?>
+					</a></div>
 				</div>
 			</div>
 		</nav>
