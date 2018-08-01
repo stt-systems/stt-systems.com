@@ -6,57 +6,53 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
 
 <div class="row" style="display: table; height: 80vh; width: 100%; margin: 0; padding: 0">
   <div class="col-md-4 col-sm-4 panel">
-    <a href="<?php echo get_page_permalink("2d-optical-motion-capture"); ?>">
     <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8">
-      <div class="content-box">
+    <div class="col-md-8 col-sm-8" style="z-index:10">
+      <a href="<?php echo get_page_permalink("2d-optical-motion-capture"); ?>">
         <h1>2DMA</h1>
         <h3>Video-based mocap systems</h3>
-        <div class="product-links">
-          <img src="<?php echo my_get_image_url('icons/products/cycling.png'); ?>" />
-        </div>
-      </div>
+      </a>
+      <div class="product-links"><?php
+        echo get_product_icon_link('bikefit', 'cycling');
+        echo get_product_icon_link('cycling-2dma', 'cycling');
+      ?></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    </a>
     <div class="panel-bg" style="background-image: <?php echo css_darken_image("2dma-background.jpg");?>"></div>
   </div>
   <div class="col-md-4 col-sm-4 panel">
-    <a href="<?php echo get_page_permalink("cycling-3dma"); ?>">
     <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8">
-      <div class="content-box">
+    <div class="col-md-8 col-sm-8" style="z-index:10">
+      <a href="<?php echo get_page_permalink("cycling-3dma"); ?>">
         <h1>3DMA</h1>
         <h3>Comprehensive solutions for 3D motion analysis</h3>
-        <div class="product-links">
-          <img src="<?php echo my_get_image_url('icons/products/sports.png'); ?>" />
-          <img src="<?php echo my_get_image_url('icons/products/cycling.png'); ?>" />
-          <img src="<?php echo my_get_image_url('icons/products/golf.png'); ?>" />
-          <img src="<?php echo my_get_image_url('icons/products/running.png'); ?>" />
-          <img src="<?php echo my_get_image_url('icons/products/clinical.png'); ?>" />
-          <img src="<?php echo my_get_image_url('icons/products/human.png'); ?>" />
-          <img src="<?php echo my_get_image_url('icons/products/eddo.png'); ?>" />
-        </div>
-      </div>
+      </a>
+      <div class="product-links"><?php
+        echo get_product_icon_link('sports-3dma', 'sports');
+        echo get_product_icon_link('cycling-3dma', 'cycling');
+        echo get_product_icon_link('golf-3dma', 'golf');
+        echo get_product_icon_link('running-3dma', 'running');
+        echo get_product_icon_link('clinical-3dma', 'clinical');
+        echo get_product_icon_link('human-3dma', 'human');
+        echo get_product_icon_link('eddo', 'eddo');
+      ?></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    </a>
     <div class="panel-bg" style="background-image: <?php echo css_darken_image("3dma-background.jpg");?>"></div>
   </div>
   <div class="col-md-4 col-sm-4 panel">
-    <a href="<?php echo get_page_permalink("inertial-motion-capture"); ?>">
     <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8">
-      <div class="content-box">
+    <div class="col-md-8 col-sm-8" style="z-index:10">
+      <a href="<?php echo get_page_permalink("inertial-motion-capture"); ?>">
         <h1>Inertial</h1>
         <h3>Premium IMU sensors and software</h3>
-        <div class="product-links">
-          <img src="<?php echo my_get_image_url('icons/products/clinical.png'); ?>" />
-        </div>
-      </div>
+      </a>
+      <div class="product-links"><?php
+        echo get_product_icon_link('isen', 'clinical');
+        echo get_product_icon_link('stt-iws', 'clinical');
+      ?></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    </a>
     <div class="panel-bg" style="background-image: <?php echo css_darken_image("inertial-background.jpg");?>"></div>
   </div>
 </div>
