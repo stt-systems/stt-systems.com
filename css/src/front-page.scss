@@ -10,19 +10,32 @@ h3 {
   color: #cfcfcf;
 }
 
-.panel-bg {
-  background-color: #0069aa;
-  -moz-transition: all .5s;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  transform: scale(1, 1);
+
+.panel {
+  float: none;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  overflow: hidden;
 }
-.panel-bg:hover, a:hover + .panel-bg {
-  background-color: #164f86;
-  transform: scale(1.05, 1.05);
-  -moz-transition: all .5s;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+.panel [class*='col-'] {
+  z-index: 10;
+}
+.panel-bg {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  padding-top: 50%;
+  margin-top: -50%;
+  padding-left: 50%;
+  margin-left: -50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #0069aa;
 }
 
 @mixin product($name) {

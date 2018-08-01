@@ -7,7 +7,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
 <div class="row" style="display: table; height: 80vh; width: 100%; margin: 0; padding: 0">
   <div class="col-md-4 col-sm-4 panel">
     <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8" style="z-index:10">
+    <div class="col-md-8 col-sm-8">
       <a href="<?php echo get_page_permalink("2d-optical-motion-capture"); ?>">
         <h1>2DMA</h1>
         <h3>Video-based mocap systems</h3>
@@ -23,8 +23,8 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
   </div>
   <div class="col-md-4 col-sm-4 panel">
     <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8" style="z-index:10">
       <a href="<?php echo get_page_permalink("cycling-3dma"); ?>">
+    <div class="col-md-8 col-sm-8">
         <h1>3DMA</h1>
         <h3>Comprehensive solutions for 3D motion analysis</h3>
       </a>
@@ -44,7 +44,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
   </div>
   <div class="col-md-4 col-sm-4 panel">
     <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8" style="z-index:10">
+    <div class="col-md-8 col-sm-8">
       <a href="<?php echo get_page_permalink("inertial-motion-capture"); ?>">
         <h1>Inertial</h1>
         <h3>Premium IMU sensors and software</h3>
