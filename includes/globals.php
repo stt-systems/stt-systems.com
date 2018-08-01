@@ -276,6 +276,29 @@ function get_posts_for_category($cat_id, $number_of_posts) {
 	return $cases;
 }
 
+function get_product_icon_link($slug, $icon) {
+	$args = array(
+		'name' => $slug,
+		'post_type' => 'page',
+		'post_status' => 'publish',
+		'showposts' => 1,
+		'ignore_sticky_posts' => 1,
+		'posts_per_page' => 1
+	);
+	$pages = get_posts($args);
+
+	if (!$pages) return '';
+	$page = array_pop($pages);
+
+	$title = $page->post_title;
+
+	$url = get_permalink($page->ID);
+	$img_src = my_get_image_url("icons/products/$icon.png");
+	$link = "<a href=\"$url\" style=\"width: 32px\"><img src=\"$img_src\" /></a>";
+
+	return $link;
+}
+
 if (!function_exists('post_is_in_descendant_category')) {
 	function post_is_in_descendant_category($cats, $_post=null) {
 		foreach ((array)$cats as $cat) {
