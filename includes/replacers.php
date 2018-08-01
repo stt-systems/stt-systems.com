@@ -411,12 +411,6 @@ function replace_downloads_shortcode($atts) {
 		$col_class = $cols > 3 ? 2 : 4;
 		$col_spacer = (12 - $cols * $col_class) / 2;
 		foreach ($downloads['files'] as $file) {
-			if ($counter % $cols == 0) {
-				$table .= '<div class="row compact">';
-				if ($col_spacer > 0) {
-					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer\"></div>";
-				}
-			}
 			$ext = strtolower(pathinfo($file['path'], PATHINFO_EXTENSION));
 			$thumbnail_url = '';
 			$thumbnail_alt = '';
@@ -433,18 +427,27 @@ function replace_downloads_shortcode($atts) {
 				$thumbnail_alt = "alt=\"$thumbnail_alt\"";
 			}
 
+			if ($counter % $cols == 0) {
+				$table .= '<div class="row compact">';
+				if ($col_spacer > 0) {
+					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer\"></div>";
+				}
+			}
+
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
 			$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\">";
 			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';
 			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded\" src=\"$thumbnail_url\" height=\"128\" $thumbnail_alt/></div>";
 			$table .= $file['title'];
 			$table .= '</a></div>';
+
 			if ($counter % $cols == $cols - 1) {
 				if ($col_spacer > 0) {
 					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer\"></div>";
 				}
 				$table .= '</div>';
 			}
+
 			++$counter;
 		}
 
