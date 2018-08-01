@@ -25,10 +25,38 @@ h3 {
   transition: all .5s;
 }
 
+@mixin product($name) {
+  .#{$name} {
+    background-image: url("../images/products/#{$name}.png");
+    background-size: cover;
+  }
+
+  .#{$name}:hover {
+    background-image: url("../images/products/#{$name}-hover.png");
+  }
+}
+
 .product-links {
-  margin-top: 45px;
-  img {
+  margin-top: 40px;
+
+  a {
+    display: inline-block;
     width: 32px;
+    height: 32px;
     margin: 5px;
   }
+  span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+  }
+
+  @include product(sports);
+  @include product(cycling);
+  @include product(golf);
+  @include product(running);
+  @include product(clinical);
+  @include product(human);
+  @include product(eddo);
+  @include product(isen);
 }

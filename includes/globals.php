@@ -294,7 +294,7 @@ function get_product_icon_link($slug, $icon) {
 
 	$url = get_permalink($page->ID);
 	$img_src = my_get_image_url("icons/products/$icon.png");
-	$link = "<a href=\"$url\" style=\"width: 32px\"><img src=\"$img_src\" /></a>";
+	$link = "<a href=\"$url\"><span class=\"$icon\"></span></a>";
 
 	return $link;
 }
