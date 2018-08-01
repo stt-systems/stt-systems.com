@@ -68,7 +68,7 @@ ob_start("sanitize_output");
 					</div>
 				</div>
 				<div class="col-sm-12 col-md-3">
-					<div class="area-logo"><?php
+					<div class="image-text"><?php
 					$area = get_top_level_slug();
 					$area_url = home_url("/$area/");
 					$area_logo = my_get_image_url("logo/$area.png", false);

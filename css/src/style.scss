@@ -1760,9 +1760,9 @@ img.blog-thumbnail {
 }
 
 .image {
-  position:relative;
-  overflow:hidden;
-  padding-bottom:100%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
 }
 .image img {
     position: absolute;
@@ -1773,7 +1773,7 @@ img.blog-thumbnail {
     transform: translateX(-50%) translateY(-50%);
 }
 
-.area-logo {
+.image-text {
   margin-top: 20px;
   height: 60px;
 
