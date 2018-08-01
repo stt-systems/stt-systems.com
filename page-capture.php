@@ -23,8 +23,8 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
   </div>
   <div class="col-md-4 col-sm-4 panel">
     <div class="col-md-2 col-sm-2"></div>
-      <a href="<?php echo get_page_permalink("cycling-3dma"); ?>">
     <div class="col-md-8 col-sm-8">
+      <a href="<?php echo get_page_permalink("3d-optical-motion-capture"); ?>">
         <h1>3DMA</h1>
         <h3>Comprehensive solutions for 3D motion analysis</h3>
       </a>
