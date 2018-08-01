@@ -12,10 +12,11 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
         <h1>2DMA</h1>
         <h3>Video-based mocap systems</h3>
       </a>
-      <div class="product-links"><?php
+      <div id="2dma-products" class="product-links"><?php
         echo get_product_icon_link('bikefit', 'cycling');
         echo get_product_icon_link('cycling-2dma', 'cycling');
       ?></div>
+      <div id="current-2dma-product" class="product-name"></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
     <div class="panel-bg" style="background-image: <?php echo css_darken_image("2dma-background.jpg");?>"></div>
@@ -27,7 +28,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
         <h1>3DMA</h1>
         <h3>Comprehensive solutions for 3D motion analysis</h3>
       </a>
-      <div class="product-links"><?php
+      <div id="3dma-products" class="product-links"><?php
         echo get_product_icon_link('sports-3dma', 'sports');
         echo get_product_icon_link('cycling-3dma', 'cycling');
         echo get_product_icon_link('golf-3dma', 'golf');
@@ -36,6 +37,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
         echo get_product_icon_link('human-3dma', 'human');
         echo get_product_icon_link('eddo', 'eddo');
       ?></div>
+      <div id="current-3dma-product" class="product-name"></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
     <div class="panel-bg" style="background-image: <?php echo css_darken_image("3dma-background.jpg");?>"></div>
@@ -47,10 +49,11 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
         <h1>Inertial</h1>
         <h3>Premium IMU sensors and software</h3>
       </a>
-      <div class="product-links"><?php
+      <div id="inertial-products" class="product-links"><?php
         echo get_product_icon_link('isen', 'clinical');
         echo get_product_icon_link('stt-iws', 'clinical');
       ?></div>
+      <div id="current-inertial-product" class="product-name"></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
     <div class="panel-bg" style="background-image: <?php echo css_darken_image("inertial-background.jpg");?>"></div>
@@ -77,5 +80,25 @@ $n = count($clients); ?>
   } ?>
   </div>
 </div>
+
+<script>
+$(document).ready(function() {
+  $('#2dma-products .product').hover(function() {
+    $('#current-2dma-product').text($(this).text())
+  }, function() {
+    $('#current-2dma-product').text('');    
+  });
+  $('#3dma-products .product').hover(function() {
+    $('#current-3dma-product').text($(this).text())
+  }, function() {
+    $('#current-3dma-product').text('');    
+  });
+  $('#inertial-products .product').hover(function() {
+    $('#current-inertial-product').text($(this).text())
+  }, function() {
+    $('#current-inertial-product').text('');    
+  });
+});
+</script>
 
 <?php get_footer(); ?>
