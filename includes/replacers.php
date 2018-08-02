@@ -140,7 +140,7 @@ function replace_link_shortcode($atts) {
 	), $atts, 'link'));
 
 	if ($page != '') return get_page_full_link($page, $title);
-	if (is_empy($title)) $title = $url;
+	if ($title == '') $title = $url;
 	if ($url != '') return "<a href=\"$url\" target=\"_blank\">$title</a>";
 	return $title;
 }
