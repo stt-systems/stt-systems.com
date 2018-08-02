@@ -15,12 +15,13 @@ Basic row
 Use ```[row] ... [/row]``` to enclose a region and ```[column] ... [/column]```to create a block.
 
 - __[row]__
- - __id__: id used to identify the region for linking purposes
+    - __id__: id used to identify the region for linking purposes
+    - 
 - __[column]__ up to 4 blocks can be included per region. Optionally a style, alignment and background image can be defined.
- - __size__: 100 (default), 66, 50, 33, 25. Indicates the percentage of the page width that the column will take.
- - __style__: white (default), ultra-light, light, dark, colored. The _colored_ style takes its settings from the _style_ custom-field of the page (accepted values: sports, clinical, human, isen).
- - __align__: center, left (defaut), right.
- - __iamge__: name of the image located at ```<page_url>/images/```. In addition, indicate the __height__ in pixels.
+    - __size__: 100 (default), 66, 50, 33, 25. Indicates the percentage of the page width that the column will take.
+    - __style__: white (default), ultra-light, light, dark, colored. The _colored_ style takes its settings from the _style_ custom-field of the page (accepted values: sports, clinical, human, isen).
+    - __align__: center, left (defaut), right.
+    - __iamge__: name of the image located at ```<page_url>/images/```. In addition, indicate the __height__ in pixels.
 
 It is possible to create an index of regions, using the ```inner-links``` class and the rows' id (see example below).
 
@@ -82,17 +83,26 @@ Each entry has a __file__ (containg the full filename), and a __title__.
 ## Other shortcodes:
 
 - __[video]__
- - __name__: video code
- - __caption__: optional caption to add
- - __type__: youtube, facebook
- - __time__: time within video where to start playing (YouTube only)
-- __quote__:
- - __text__
- - __title__
- - __author__
- - __style__: quote
--
+    - __name__: video code
+    - __caption__: optional caption to add
+    - __type__: youtube, facebook
+    - __time__: time within video where to start playing (YouTube only)
+- __[quote]__:
+    - __text__
+    - __title__
+    - __author__
+    - __style__: quote
 
+## FTP structure
+
+- /
+    - images: single images are stored here (no sub dirs). Can include @2x version for HDPI displays.
+        - logos: logos used in menus, SEO...
+        - clients: client icons to be used in clients banners
+        - icons: small images to be used in pages
+    - downloads: base path for downloads
+        - [donwload_group]
+            - index.json: index file for the download group, in JSON format
 
 ## Full example
 
