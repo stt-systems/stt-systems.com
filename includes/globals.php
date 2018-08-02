@@ -149,7 +149,7 @@ function walk_downloads_cb(&$value, $key, $base) {
 }
 
 function get_downloads($dir) {
-	$path = ABSPATH . "/downloads/$dir/files.txt";
+	$path = ABSPATH . "/downloads/$dir/index.json";
 	if (!file_exists($path)) return array('files' => array());
 
 	$fh = fopen($path, 'r');
