@@ -162,10 +162,10 @@ function replace_image_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'caption' => '',
-		'shadow' => 'true',
-    'icon' => 'false',
+		'shadow' => 'yes',
+    'icon' => 'no',
 		'alt' => '',
-		'lazy' => 'false',
+		'lazy' => 'no',
 		'page' => '',
 		'url' => '',
 	), $atts, 'image'));
@@ -188,13 +188,13 @@ function replace_image_shortcode($atts) {
 	}
   
   $size = '';
-  if (strcasecmp($icon, 'true') == 0) {
+  if (strcasecmp($icon, 'true') == 0 || strcasecmp($icon, 'yes') == 0) {
     $size = 'width="80" height="80"';
     $class .= 'icon';
     $shadow = 'false';
   }
 	
-	if (strcasecmp($shadow, 'true') == 0) {
+	if (strcasecmp($shadow, 'true') == 0 || strcasecmp($shadow, 'yes') == 0) {
 		$class .= 'boxshadow';
 	}
   
@@ -204,7 +204,7 @@ function replace_image_shortcode($atts) {
 
 	$img = '';
 	$image_url = my_get_image_url("$name");
-	if ($lazy == 'true') {
+	if (strcasecmp($lazy, 'true') == 0 || strcasecmp($lazy, 'yes') == 0) {
 		$loading_img = get_template_directory_uri() . "/images/loading.gif";
 		$img = do_shortcode("$caption_pre<img src=\"$loading_img\" data-src=\"$image_url\" $class alt=\"$alt\" $size/>$caption_post");
 	} else {
