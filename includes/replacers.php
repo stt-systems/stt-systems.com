@@ -372,7 +372,7 @@ function replace_download_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'title' => 'Download'
-	), $atts, 'downloads'));
+	), $atts, 'download'));
 	
 	$download = my_get_download_url($name);
 	if ($download == '') return '';
