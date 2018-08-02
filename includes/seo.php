@@ -83,20 +83,20 @@ function schema_head() {
 	{
 		"@context": "https://schema.org",
 		"@type": "WebSite",
-		"url": "https://www.stt-systems.com",
+		"url": "${URL}",
 		"name": "STT Systems",
 		"alternateName": "STT Ingenier\u00eda y Sistemas",
 		"potentialAction": {
 			"@type": "SearchAction",
-			"target": "https://www.stt-systems.com/?s={search_term_string}",
+			"target": "${URL}/?s={search_term_string}",
 			"query-input": "required name=search_term_string"
 		}
 	},{
 		"@context": "https://schema.org",
 		"@type": "Organization",
 		"name": "STT Systems",
-		"logo": "https://www.stt-systems.com/images/logo/stt-social.jpg",
-		"url": "https://www.stt-systems.com/",
+		"logo": "${URL}/images/logos/stt-social.jpg",
+		"url": "${URL}/",
 		"sameAs": [
 			"https://www.facebook.com/STTSystems/",
 			"https://www.instagram.com/stt.systems",
@@ -107,8 +107,8 @@ function schema_head() {
 	},{
 		"@context": "https://schema.org",
 		"@type": "Organization",
-		"url": "https://www.stt-systems.com",
-		"logo": "https://www.stt-systems.com/images/logo/logo@2x.png",
+		"url": "${URL}",
+		"logo": "${URL}/images/logos/logo@2x.png",
 		"contactPoint": [{
 			"@type": "ContactPoint",
 			"telephone": "(+34) 943 31 77 77",
@@ -127,6 +127,8 @@ function schema_head() {
 		}]
 	}
 	]'));
+
+	$structured_data = str_replace('${URL}', get_site_url(), $structured_data);
 	
 	echo "<script type=\"application/ld+json\">$structured_data</script>";
 }
