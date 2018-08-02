@@ -16,46 +16,39 @@ function stt_replace_excerpt($text, $raw_excerpt = '') {
 
 function stt_replace_content($content) {
 	$content = str_replace(']]>', ']]&gt;', $content);
-
-	$len = 0; $len2 = 1;
 	$content = preg_replace_callback("/\[images-table:([_a-zA-Z0-9-]+) cols:([0-9]+)\]/", 'replace_images_table_cb', $content);
 	$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
 
-	$len = strlen($content);
-	$content = str_replace(array('[/row]', '[/column]'), '</div>', $content);
-	$len2 = strlen($content);
-	if ($len == $len2) {
-		$content = "<div class=\"row\"><div class=\"col-md-12 col-sm-12\">$content";
-	}
-	
+	//$content = "<div class=\"row\"><div class=\"col-md-12 col-sm-12\">$content";
+
 	// Move the fullscreen galleries div outside the blog to avoid footer and header overlap it
 	// Additionally, each gallery div is associated to a set of images by the gallery's ID
-	$len3 = strlen($content);
+	$len = strlen($content);
 	$content = preg_replace_callback('#[\s]*\[gallery_snippet-([_a-zA-Z0-9-]+)\][\s]*#', 'replace_gallery_snippet_cb', $content);
-	if ($len3 != strlen($content)) { ?>
+	if ($len != strlen($content)) { ?>
 		<script type="text/javascript">window.onload=function(){$('body').append($('.blueimp-gallery'));};</script><?php
 	}
 	
-	if ($len == $len2) {
-		$content .= '</div></div>';
-	}
-	
+	//$content .= '</div></div>';
+
 	return $content;
 }
 
 // Callbacks for custom commands in post content
-function replace_row_shortcode($atts) {
+function replace_row_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
     'id' => '',
 	), $atts, 'row'));
 
   if ($id != "") {
     $id = "id=$id";
-  }
+	}
+	
+	$content = do_shortcode($content);
   
-	return "<div $id class=\"row\">";
+	return "<div $id class=\"row\">$content</div>";
 }
-function replace_column_shortcode($atts) {
+function replace_column_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'size' => '100',
     'align' => 'left',
@@ -98,10 +91,12 @@ function replace_column_shortcode($atts) {
   }
   
   if ($stylesheet != '') {
-    $stylesheet = "style=\"$stylesheet\"";
+    $stylesheet = " style=\"$stylesheet\"";
   }
   
-  return "<div class=\"$class col-extra style-$style\" $stylesheet>$inner_html";
+	$content = do_shortcode($content);
+
+  return "<div class=\"$class col-extra style-$style\"$stylesheet>$inner_html$content</div>";
 }
 
 function replace_vspace_shortcode($atts) {
