@@ -33,7 +33,7 @@ function print_meta() {
 			$title = "STT Systems";
 			$type = 'website';
 		}
-		$image = 'logo/stt-social.jpg';
+		$image = 'logos/stt-social.jpg';
 	}
 	?>
 	
