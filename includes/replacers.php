@@ -287,26 +287,6 @@ function replace_images_table_cb($match) {
 }
 
 // Videos
-function replace_youtube_cb($match) {
-	$caption = '';
-	if (count($match) > 3) { // use caption
-		$caption = '<p>' . $match[3] . '</p>';
-	}
-
-	return '<div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $match[1]. '?rel=0;3&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;player=html5" frameborder=0 allowfullscreen></iframe>' . $caption . '</div>';
-}
-function replace_facebook_cb($match) {
-	$caption = '';
-	if (count($match) > 3) { // use caption
-		$caption = '<p>' . $match[3] . '</p>';
-	}
-	
-	$url = $match[1];
-	$url = str_replace('/', '%2F', $url);
-	$url = str_replace(':', '%3A', $url);
-
-	return '<div class="youtube" style="text-align: center"><iframe width="560" height="315" style="margin-top: 5px" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F' . $url . '&amp;show_text=0&amp" frameborder=0 allowfullscreen></iframe>' . $caption . '</div>';
-}
 function replace_video_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
@@ -334,14 +314,6 @@ function replace_video_shortcode($atts) {
 	return '';
 }
 
-function replace_quote_cb($match) {
-	$author = '';
-	if (count($match) > 3) { // has author
-		$author = ' <span>' . $match[3] . '</span>';
-	}
-
-	return '<blockquote>"' . $match[1] . '"' . $author . '</blockquote>';
-}
 function replace_quote_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'text' => '',
