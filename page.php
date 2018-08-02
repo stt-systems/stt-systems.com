@@ -1,4 +1,4 @@
-<?php //Template Name:Columns
+<?php
 if ($post->post_type == 'page') {
 	add_action('wp_head', 'add_page_breadcrumblist');
 }
