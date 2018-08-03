@@ -497,6 +497,7 @@ function replace_social_links_shortcode() {
 	$code = "<div class=\"contact-social\">
 		<a href=\"https://www.facebook.com/STTSystems\" title=\"Facebook\" target=\"_blank\">". get_social_img('facebook') . "</a>
 		<a href=\"https://twitter.com/sttsystems\" title=\"Twitter\" target=\"_blank\">" . get_social_img('twitter') . "</a>
+		<a href=\"https://www.instagram.com/stt.systems\" title=\"Instagram\" target=\"_blank\">" . get_social_img('instagram') . "</a>
 		<a href=\"https://www.linkedin.com/company/stt-systems\" title=\"LinkedIn\" target=\"_blank\">" . get_social_img('linkedin') . "</a>
 		<a href=\"https://www.youtube.com/user/SttSystems\" title=\"Youtube\" target=\"_blank\">" . get_social_img('youtube') . "</a>
 		</div>";
@@ -537,10 +538,10 @@ function add_share_buttons() {
 	$url = urlencode(get_permalink());
 	$title = htmlentities(urlencode(get_the_title())); ?>
 	<ul class="share-buttons">
-		<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url; ?>" target="_blank" title="Share on Facebook"><img src="<?php echo WL_TEMPLATE_DIR_URI . '/images/flat_web_icon_set/color/Facebook.png'; ?>" alt="Facebook" /></a></li>
-		<li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fwww.stt-systems.com&amp;text=<?php echo $title; ?>%20-%20<?php echo $url; ?>&amp;via=STTSystems" target="_blank" title="Tweet"><img src="<?php echo WL_TEMPLATE_DIR_URI . '/images/flat_web_icon_set/color/Twitter.png'; ?>" alt="Twitter" /></a></li>
-		<li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>" target="_blank" title="Share on LinkedIn"><img src="<?php echo WL_TEMPLATE_DIR_URI . '/images/flat_web_icon_set/color/LinkedIn.png'; ?>" alt="LinkedIn" /></a></li>
-		<li><a href="mailto:?subject=<?php echo $title; ?>&amp;body=Read this: <?php echo $url; ?>" target="_blank" title="Email"><img src="<?php echo WL_TEMPLATE_DIR_URI . '/images/flat_web_icon_set/color/Email.png'; ?>" alt="Email" /></a></li>
+		<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url; ?>" target="_blank" title="Share on Facebook"><?php echo get_social_img('facebook'); ?></a></li>
+		<li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fwww.stt-systems.com&amp;text=<?php echo $title; ?>%20-%20<?php echo $url; ?>&amp;via=STTSystems" target="_blank" title="Tweet"><?php echo get_social_img('twitter'); ?></a></li>
+		<li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>" target="_blank" title="Share on LinkedIn"><?php echo get_social_img('linkedin'); ?></a></li>
+		<li><a href="mailto:?subject=<?php echo $title; ?>&amp;body=Read this: <?php echo $url; ?>" target="_blank" title="Email"><?php echo get_social_img('email'); ?></a></li>
 	</ul><?php
 }
 
