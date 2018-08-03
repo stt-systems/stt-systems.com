@@ -108,7 +108,18 @@ function my_get_url_for_path($path, $add_timestamp = true) {
 	return get_site_url() . $path;
 }
 
-function my_get_image_url($name) { // there is a WP method called get_image_url
+function my_get_image_url($name, $upload = FALSE) { // there is a WP method called get_image_url
+	if ($upload) {
+		$upload_dir = wp_upload_dir();
+		$url = $upload_dir['baseurl'] . "/$name";
+
+		if (is_ssl()) {
+			$url = str_replace('http://', 'https://', $url);
+		}
+
+		return $url;
+	}
+
 	return my_get_url_for_path("/images/$name");
 }
 
