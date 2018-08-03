@@ -169,7 +169,6 @@ function replace_image_shortcode($atts) {
 		'lazy' => 'no',
 		'page' => '',
 		'url' => '',
-		'upload' => 'yes',
 	), $atts, 'image'));
 
 	$class = 'rounded ';
@@ -189,14 +188,11 @@ function replace_image_shortcode($atts) {
 		}
 	}
 
-	$upload = strcasecmp($upload, 'true') == 0 || strcasecmp($upload, 'yes') == 0;
-  
   $size = '';
   if (strcasecmp($icon, 'true') == 0 || strcasecmp($icon, 'yes') == 0) {
     $size = 'width="80" height="80"';
     $class .= 'icon';
 		$shadow = 'false';
-		$upload = FALSE;
   }
 	
 	if (strcasecmp($shadow, 'true') == 0 || strcasecmp($shadow, 'yes') == 0) {
@@ -208,7 +204,7 @@ function replace_image_shortcode($atts) {
   }
 
 	$img = '';
-	$image_url = my_get_image_url("$name", $upload);
+	$image_url = my_get_image_url("$name");
 	if (strcasecmp($lazy, 'true') == 0 || strcasecmp($lazy, 'yes') == 0) {
 		$loading_img = get_template_directory_uri() . "/images/loading.gif";
 		$img = do_shortcode("$caption_pre<img src=\"$loading_img\" data-src=\"$image_url\" $class alt=\"$alt\" $size/>$caption_post");
