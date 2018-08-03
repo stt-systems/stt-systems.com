@@ -19,7 +19,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div id="current-2dma-product" class="product-name"></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    <div class="panel-bg" style="background-image: <?php echo css_darken_image("2dma-background.jpg");?>"></div>
+    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/2dma.jpg");?>"></div>
   </div>
   <div class="col-md-4 col-sm-4 panel">
     <div class="col-md-2 col-sm-2"></div>
@@ -40,7 +40,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div id="current-3dma-product" class="product-name"></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    <div class="panel-bg" style="background-image: <?php echo css_darken_image("3dma-background.jpg");?>"></div>
+    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/3dma.jpg");?>"></div>
   </div>
   <div class="col-md-4 col-sm-4 panel">
     <div class="col-md-2 col-sm-2"></div>
@@ -56,7 +56,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div id="current-inertial-product" class="product-name"></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    <div class="panel-bg" style="background-image: <?php echo css_darken_image("inertial-background.jpg");?>"></div>
+    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/inertial.jpg");?>"></div>
   </div>
 </div>
 
