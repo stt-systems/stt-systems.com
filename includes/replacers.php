@@ -557,11 +557,10 @@ function replace_post_list_shortcode($atts) {
 		'details' => false,
 	), $atts, 'post-list'));
 
-	$tag_id = $tag != '' ? get_term_by('slug', $tag, 'post_tag')->term_id : '';
-
 	global $wp_query;
   query_posts(array(
-		'tag_id' => $tag_id,
+		'tag_name' => $tag,
+		'category_name' => $category,
     'posts_per_page' => $count,
     'paged' => $paged
 	));
