@@ -45,7 +45,7 @@ h3 {
   }
 
   .#{$name}:hover {
-    background-image: url("../images/products/#{$name}-hover.png");
+    transform: scale(1.08);
   }
 }
 
