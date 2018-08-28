@@ -590,6 +590,25 @@ function replace_post_list_shortcode($atts) {
 	return $post_list;
 }
 
+function replace_collapse_shortcode($atts, $content = null) {
+	extract(shortcode_atts(array(
+		'id' => '',
+		'title' => '',
+		'class' => '',
+		'collapsed' => false,
+	), $atts, 'collapse'));
+
+	$content = do_shortcode($content);
+
+	$code = "<h3><a href=\"#$id\" class=\"collapsed\" data-toggle=\"collapse\">
+  					<span class=\"if-collapsed\">&#9654; $title</span>
+  					<span class=\"if-not-collapsed\">&#9660; $title</span>
+					</a></h3>";
+	$code .= "<div id=\"$id\" class=\"collapse\" class=\"$class\">$content</div>";
+
+	return $code;
+}
+
 function add_stt_shortcodes() {
   add_shortcode('row',           'replace_row_shortcode');
   add_shortcode('column',        'replace_column_shortcode');
@@ -606,6 +625,7 @@ function add_stt_shortcodes() {
 	add_shortcode('social-links',  'replace_social_links_shortcode');
 	add_shortcode('image-table',   'replace_image_table_shortcode');
 	add_shortcode('post-list',     'replace_post_list_shortcode');
+	add_shortcode('collapse',      'replace_collapse_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
