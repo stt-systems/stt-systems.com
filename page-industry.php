@@ -29,27 +29,6 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
   </div>
 </div>
 
-<?php
-$clients = get_images('clients');
-$n = count($clients); ?>
-<div class="container-fluid boxshadow">
-<div id="clientsCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-bottom: 0px">
-  <div class="carousel-inner" style="background: #565656;"><?php
-  $i = 0;
-  foreach ($clients as $client) {
-    if ($i % 8 == 0) { ?>
-      <div class="item<?php if ($i == 0) { echo ' active'; } ?>">
-      <div class="row"><?php
-    } ?>
-    <img src="<?php echo my_get_image_url("clients/$client"); ?>" alt="Client <?php echo $client; ?>"/><?php
-    if (($i + 1) % 8 == 0 || $i == $n - 1) { ?>
-      </div></div><?php
-    }
-    ++$i;
-  } ?>
-  </div>
-</div>
-
 <script>
 $(document).ready(function() {
   $('#2dma-products .product').hover(function() {
