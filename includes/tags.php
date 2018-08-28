@@ -74,10 +74,10 @@ function print_related_pages() {
 
 	if (count($pages) == 0) return;
 	
-	?><h4>Related pages</h4><p><?php
+	?><h4>Related pages</h4><?php
 	foreach ($pages as $page) {
 		echo '<p>' . get_page_full_link($page) . '</p>';
 	} ?>
-	</p><?php
+	<?php
 }
 ?>
