@@ -295,7 +295,7 @@ function replace_video_shortcode($atts) {
 		'name' => '',
 		'caption' => '',
 		'type' => 'youtube',
-		'time' => ''
+		'time' => '',
 	), $atts, 'video'));
 	
 	if ($caption != '') {

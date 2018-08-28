@@ -80,6 +80,7 @@ $n = count($clients); ?>
   } ?>
   </div>
 </div>
+</div>
 
 <script>
 $(document).ready(function() {
