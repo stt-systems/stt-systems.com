@@ -604,7 +604,7 @@ function replace_collapse_shortcode($atts, $content = null) {
   					<span class=\"if-collapsed\">&#9654; $title</span>
   					<span class=\"if-not-collapsed\">&#9660; $title</span>
 					</a></h3>";
-	$code .= "<div id=\"$id\" class=\"collapse\" class=\"$class\">$content</div>";
+	$code .= "<div id=\"$id\" class=\"collapse $class\">$content</div>";
 
 	return $code;
 }
