@@ -13,14 +13,17 @@ function get_top_level_slug() {
 
 	if (is_page_valid() === false) return 'capture';
 
-	$ancestors = get_post_ancestors(get_post()->ID);
-  if (count($ancestors) == 0) {
-    $ancestors = array(get_post()->ID);
-  }
-	
-  $top_level = get_post(end($ancestors));
+	$url_base = site_url();
+	$url_base = substr($url_base, strpos($url_base, '://') + 3);
 
-  return $top_level->post_name;  
+	$url = get_current_url();
+	$url = substr($url, strpos($url, '://') + 3);
+
+	if (strpos($url, $url_base) != 0) return '';
+
+	$path = substr($url, strlen($url_base) + 1);
+	
+	return substr($path, 0, strpos($path, '/'));
 }
 
 function my_file_get_contents($url) {	
