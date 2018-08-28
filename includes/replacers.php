@@ -16,7 +16,6 @@ function stt_replace_excerpt($text, $raw_excerpt = '') {
 
 function stt_replace_content($content) {
 	$content = str_replace(']]>', ']]&gt;', $content);
-	$content = preg_replace_callback("/\[images-table:([_a-zA-Z0-9-]+) cols:([0-9]+)\]/", 'replace_images_table_cb', $content);
 	$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
 
 	//$content = "<div class=\"row\"><div class=\"col-md-12 col-sm-12\">$content";
@@ -255,27 +254,32 @@ function walk_images_table_cb(&$value, $key, $base) {
 	$value = "<td><img src=\"$path\" style=\"max-height: 100px;\"></img></td>";
 }
 
-function replace_images_table_cb($match) {
-	$gallery = $match[1];
-	$images = get_images("galleries/$gallery");
+function replace_images_table_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'name' => '',
+		'columns' => '5',
+	), $atts, 'images-table'));
+
+	if ($name == '') return '';
+
+	$images = get_files_in_dir($name, '', array('txt'));
 	if (!count($images)) return '';
 	
-	if (count($match) < 3 || $match[2] <= 0) {
+	if ($columns <= 2) {
 		echo 'Error: wrong number of columns for image-table\n';
 		return '';
 	}
-	$cols = $match[2];
-	array_walk($images, 'walk_images_table_cb', "galleries/$gallery/");
+	array_walk($images, 'walk_images_table_cb', $name);
 
 	// Create table
 	$table = '';
 	$i = 0;
 	foreach ($images as $image) {
-		if ($i % $cols == 0) {
+		if ($i % $columns == 0) {
 			$table .= '<tr>';
 		}
 		$table .= $image;
-		if ($i % $cols == $cols - 1) {
+		if ($i % $columns == $columns - 1) {
 			$table .= '</tr>';
 		}
 		++$i;
@@ -558,6 +562,7 @@ function add_stt_shortcodes() {
 	add_shortcode('downloads',     'replace_downloads_shortcode');
 	add_shortcode('all-downloads', 'replace_all_downloads_shortcode');
 	add_shortcode('social-links',  'replace_social_links_shortcode');
+	add_shortcode('images-table',  'replace_images_table_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
