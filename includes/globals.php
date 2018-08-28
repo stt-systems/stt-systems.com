@@ -122,14 +122,17 @@ function get_upload_url($name) {
 		return $url;
 }
 
-function print_thumbnail($style='') { ?>
-  <div class="col-md-4 col-sm-4 col-extra <?php echo $style; ?>"><?php
-    if (has_post_thumbnail()) {
-      $post_thumbnail_id = get_post_thumbnail_id();
-      $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id); ?>
-      <img src="<?php echo $post_thumbnail_url; ?>" class="rounded blog-thumbnail boxshadow" /><?php
-    } ?>
-  </div><?php
+function get_post_thumbnail($style='') {
+	$thumbnail = '<div class="col-md-4 col-sm-4 col-extra ' . $style . '">';
+	
+	if (has_post_thumbnail()) {
+		$post_thumbnail_id = get_post_thumbnail_id();
+		$post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
+		$thumbnail .= '<img src="' . $post_thumbnail_url . '" class="rounded blog-thumbnail boxshadow" />';
+	}
+	$thumbnail .= '</div>';
+	
+	return $thumbnail;
 }
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
