@@ -83,7 +83,7 @@ function replace_column_shortcode($atts, $content = null) {
   $inner_html = "";
   
   if ($image != "") {  
-    $image_url = my_get_image_url("$image");
+    $image_url = get_upload_url("$image");
     $height = $height . "px";
   
     $inner_html .= "<div class=\"extend-full\" style=\"background-image: url($image_url); height: $height;\"></div>";
@@ -204,7 +204,7 @@ function replace_image_shortcode($atts) {
   }
 
 	$img = '';
-	$image_url = my_get_image_url("$name");
+	$image_url = get_upload_url("$name");
 	if (strcasecmp($lazy, 'true') == 0 || strcasecmp($lazy, 'yes') == 0) {
 		$loading_img = get_template_directory_uri() . "/images/loading.gif";
 		$img = do_shortcode("$caption_pre<img src=\"$loading_img\" data-src=\"$image_url\" $class alt=\"$alt\" $size/>$caption_post");
@@ -223,8 +223,8 @@ function replace_gallery_snippet_cb($match) {
 }
 
 function walk_gallery_cb(&$value, $key, $data) {
-	$path = my_get_image_url($data['base'] . $value);
-	$thumb = my_get_image_url($data['base'] . "thumb-$value");
+	$path = get_upload_url($data['base'] . $value);
+	$thumb = get_upload_url($data['base'] . "thumb-$value");
 	$value = '<a href="' . $path . '" data-gallery="#blueimp-gallery-' . $data['gallery'] . '" class="thumb64" style="background-image:url(\'' . $thumb . '\');" data-thumbnail="' . $thumb . '"></a>';
 }
 function replace_gallery_cb($match) {
@@ -243,7 +243,7 @@ function replace_gallery_cb($match) {
 			$walk_data['subtitles'] = $config['images'];
 		}
 	}
-	$images = get_images('galleries/' . $gallery, 'thumb-');
+	$images = get_files_in_dir("galleries/$gallery", 'thumb-', array('txt'));
 	array_walk($images, 'walk_gallery_cb', $walk_data);
 	$gal_images = '<div id="links-' . $clean_name . '" style="text-align:center;" class="gallery">' . implode($images) . '</div>' . $title;
 
@@ -251,8 +251,7 @@ function replace_gallery_cb($match) {
 }
 
 function walk_images_table_cb(&$value, $key, $base) {
-	$path = my_get_image_url($base . $value);
-	$thumb = my_get_image_url($base . 'thumb-' . $value);
+	$path = get_upload_url("$base/$value");
 	$value = "<td><img src=\"$path\" style=\"max-height: 100px;\"></img></td>";
 }
 

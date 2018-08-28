@@ -43,7 +43,7 @@ function print_meta() {
 	<meta property="og:type" content="<?php echo $type; ?>" />
 	<meta property="og:title" content="<?php echo $title; ?>" />
 	<meta property="og:url" content="<?php echo $url; ?>" />
-	<meta property="og:image" content="<?php echo my_get_image_url($image); ?>" />
+	<meta property="og:image" content="<?php echo get_upload_url($image); ?>" />
 	<?php
 	if (is_front_page()) {?>
 		<meta property="og:site_name" content="STT Systems" /><?php
@@ -51,7 +51,7 @@ function print_meta() {
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content="<?php echo $title; ?>" />
-	<meta name="twitter:image" content="<?php echo my_get_image_url($image); ?>" />
+	<meta name="twitter:image" content="<?php echo get_upload_url($image); ?>" />
 	<meta name="twitter:site" content="@STTSystems" />
 	<meta name="twitter:creator" content="@STTSystems" />
 	<?php

@@ -48,7 +48,7 @@ ob_start("sanitize_output");
 			<div class="container-fluid">
 				<div class="col-sm-12 col-md-3">
 					<div class="navbar-left-header" id="navbar-left-header">
-						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo my_get_image_url('logos/logo.png', false); ?>" height="78" alt="STT's logo" rel="nofollow" style="margin-top:5px"/></a>
+						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_upload_url('logos/logo.png', false); ?>" height="78" alt="STT's logo" rel="nofollow" style="margin-top:5px"/></a>
 					</div>
 					<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#stt-navbar-collapse">
 						<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
@@ -76,7 +76,7 @@ ob_start("sanitize_output");
 					);
 					if (array_key_exists($area, $areas)) {
 						$area_url = home_url("/$area/");
-						$area_logo = my_get_image_url("logos/$area.png", false);
+						$area_logo = get_upload_url("logos/$area.png", false);
 						echo "<a href=\"$area_url\">";
 						echo "<img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/>";
 						echo "<p>$areas[$area]</p></a>";

@@ -111,7 +111,7 @@ function my_get_url_for_path($path, $add_timestamp = true) {
 	return site_url($path);
 }
 
-function my_get_image_url($name) { // there is a WP method called get_image_url
+function get_upload_url($name) {
 		$upload_dir = wp_upload_dir();
 		$url = $upload_dir['baseurl'] . "/$name";
 
@@ -133,17 +133,19 @@ function print_thumbnail($style='') { ?>
 }
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
-	$url = my_get_image_url($name);
+	$url = get_upload_url($name);
   $rgba = "rgba($color, $alpha)";
   
   return "linear-gradient($rgba, $rgba), url($url)";
 }
 
-function get_images($path, $not_pre = '') {
-	$dir = "./images/$path";
-	if (!is_dir(ABSPATH . $dir)) return array();
+function get_files_in_dir($path, $exclude_preffix = '', $exclude_exts = array()) {
+	$upload_dir = wp_upload_dir();
+	$dir = $upload_dir['path'] . "/$path";
+	if (!is_dir($dir)) return array();
 
-	$files = preg_grep('/^(' . ($not_pre != '' ? "{$not_pre}[.]*|" : '') . '[\w0-9-_]+@2x\.[a-zA-Z0-9]+|\.|\.\.|(.+\.txt))/', scandir($dir), PREG_GREP_INVERT);
+	$extensions = count($exclude_exts) ? '|(.+\.' . join(')|(.+\.', $exclude_exts) . ')' : '';
+	$files = preg_grep('/^(' . ($exclude_preffix != '' ? "{$exclude_preffix}[.]*|" : '') . "[\w0-9-_]+@2x\.[a-zA-Z0-9]+|\.|\.\.$extensions)/", scandir($dir), PREG_GREP_INVERT);
 
 	return array_values($files);
 }
@@ -303,7 +305,7 @@ function get_product_icon_link($slug, $icon) {
 	$title = $page->post_title;
 
 	$url = get_permalink($page->ID);
-	$img_src = my_get_image_url("icons/products/$icon.png");
+	$img_src = get_upload_url("icons/products/$icon.png");
 	$link = "<a href=\"$url\"><span class=\"product $icon\">$title</span></a>";
 
 	return $link;
