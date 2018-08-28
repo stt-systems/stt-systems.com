@@ -99,7 +99,7 @@ add_filter('the_excerpt', 'shortcode_unautop');
 add_filter('the_excerpt', 'do_shortcode');
 
 function enqueue_theme_css() {
-	wp_enqueue_style('bootstrap', 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
+	wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
   wp_enqueue_style('default', get_template_directory_uri() . '/css/style.min.css');
 	wp_enqueue_style('stt-styles', get_template_directory_uri() . '/css/stt-styles.min.css');
 }
