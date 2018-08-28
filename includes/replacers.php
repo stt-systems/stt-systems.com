@@ -254,7 +254,7 @@ function walk_images_table_cb(&$value, $key, $base) {
 	$value = "<td><img src=\"$path\" style=\"max-height: 100px;\"></img></td>";
 }
 
-function replace_images_table_shortcode($atts) {
+function replace_image_table_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'columns' => '5',
@@ -562,7 +562,7 @@ function add_stt_shortcodes() {
 	add_shortcode('downloads',     'replace_downloads_shortcode');
 	add_shortcode('all-downloads', 'replace_all_downloads_shortcode');
 	add_shortcode('social-links',  'replace_social_links_shortcode');
-	add_shortcode('images-table',  'replace_images_table_shortcode');
+	add_shortcode('image-table',   'replace_image_table_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
