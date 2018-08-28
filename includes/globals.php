@@ -67,7 +67,7 @@ function get_banner_code($slug) {
 	global $post;
 	$path = "/images/banners/$slug.jpg";
 	if (!file_exists(ABSPATH . $path)) return ''; // no banner for the page
-	return '<img class="banner" src="' . get_site_url() . $path . '" alt="' . $post->post_title . '" />';
+	return '<img class="banner" src="' . site_url($path) . '" alt="' . $post->post_title . '" />';
 }
 
 // Prints the banner of the page (or the title, if no banner)
@@ -105,7 +105,7 @@ function print_page_title($slug = '', $title = '') {
 // Helper functions to deal with uploads (images and downloadable material)
 function my_get_url_for_path($path, $add_timestamp = true) {
 	if (!file_exists(ABSPATH . $path)) return '';
-	return get_site_url() . $path;
+	return site_url($path);
 }
 
 function my_get_image_url($name) { // there is a WP method called get_image_url
