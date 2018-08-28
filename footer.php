@@ -21,7 +21,7 @@
 				<div class="col-md-4 col-sm-4 footer-col">
 				<div class="footer-title">SITEMAP</div>
 					<div class="textwidget">
-					<div class="container">
+					<div style="padding-left: 15px">
 						<div class="row">
 						<?php
 						wp_reset_query();
