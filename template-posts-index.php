@@ -22,30 +22,14 @@ print_page_title();
 			echo $cat_description;
 		} ?>
   </div>
-  </div>
-  <?php
+  </div><?php
   $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-  query_posts(array(
-    'category_name' => $category_name,
-    'posts_per_page' => 10,
-    'paged' => $paged
-  ));
-  if (have_posts()) {
-    while (have_posts()) {
-      the_post();
-      $style = 'style-ultra-light';
-      if ($wp_query->current_post % 2 == 1) {
-        $style = 'style-white';
-      } ?>
-      <div class="row"><?php
-      print_thumbnail($style); ?>
-      <div class="col-md-8 col-sm-8 col-extra <?php echo $style; ?>">
-  		<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a></h3><?php
-      get_template_part('content'); ?>
-      </div>
-      </div><?php
-    }
-  } ?>
+  echo replace_post_list_shortcode(array(
+    'category' => $category_name,
+    'count' => 10,
+    'paged' => $paged,
+    'details' => true,
+  )); ?>
   <div class="pagination"><?php
     if (get_next_posts_link()) {
       next_posts_link(__('&larr; Older posts', 'stt'));

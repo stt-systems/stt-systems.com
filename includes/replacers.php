@@ -548,6 +548,48 @@ function add_share_buttons() {
 	</ul><?php
 }
 
+function replace_post_list_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'tag' => '',
+		'category' => '',
+		'count' => '100',
+		'paged' => '1',
+		'details' => false,
+	), $atts, 'post-list'));
+
+	$tag_id = $tag != '' ? get_term_by('slug', $tag, 'post_tag')->term_id : '';
+
+	global $wp_query;
+  query_posts(array(
+		'tag_id' => $tag_id,
+    'posts_per_page' => $count,
+    'paged' => $paged
+	));
+	
+	$post_list = '';
+  if (have_posts()) {
+    while (have_posts()) {
+      the_post();
+      $style = 'style-ultra-light';
+      if ($wp_query->current_post % 2 == 1) {
+        $style = 'style-white';
+      }
+      $post_list .= '<div class="row">';
+      $post_list .= get_post_thumbnail($style);
+			$post_list .= "<div class=\"col-md-8 col-sm-8 col-extra $style\">";
+			$post_list .= '<h3><a href="' . get_permalink() . '" title="' . the_title_attribute(array('echo' => false)) . '" >' . get_the_title() . '</a></h3>';
+			ob_start();
+			set_query_var('post_details', $details);
+      get_template_part('content');
+			$post_list .= ob_get_contents();
+			ob_end_clean();
+      $post_list .= '</div></div>';
+    }
+  }
+
+	return $post_list;
+}
+
 function add_stt_shortcodes() {
   add_shortcode('row',           'replace_row_shortcode');
   add_shortcode('column',        'replace_column_shortcode');
@@ -563,6 +605,7 @@ function add_stt_shortcodes() {
 	add_shortcode('all-downloads', 'replace_all_downloads_shortcode');
 	add_shortcode('social-links',  'replace_social_links_shortcode');
 	add_shortcode('image-table',   'replace_image_table_shortcode');
+	add_shortcode('post-list',     'replace_post_list_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
