@@ -9,7 +9,7 @@ print_page_title(); ?>
 			the_post();
 			get_template_part('content'); ?>
 		</div>
-		<div class="col-md-3 col-sm-3">
+		<div class="col-md-3 col-sm-3 related-pages">
 			<div class="space-sep50"></div>
 			<?php print_related_pages(); ?>
 		</div>
