@@ -122,10 +122,13 @@ function get_upload_url($name) {
 		return $url;
 }
 
-function get_post_thumbnail($style='') {
+function get_post_thumbnail($style = '') {
 	$thumbnail = '<div class="col-md-4 col-sm-4 col-extra ' . $style . '">';
 	
-	if (has_post_thumbnail()) {
+	$fields = get_post_custom(get_the_ID());
+	if (array_key_exists('youtube', $fields)) {
+		$thumbnail .= get_youtube_video($fields['youtube'][0]);
+	} else if (has_post_thumbnail()) {
 		$post_thumbnail_id = get_post_thumbnail_id();
 		$post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
 		$thumbnail .= '<img src="' . $post_thumbnail_url . '" class="rounded blog-thumbnail boxshadow" />';
