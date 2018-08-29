@@ -541,6 +541,8 @@ function replace_post_list_shortcode($atts) {
 		'count' => '100',
 		'paged' => '1',
 		'details' => false,
+		'style1' => 'ultra-light',
+		'style2' => 'white',
 	), $atts, 'post-list'));
 
 	global $wp_query;
@@ -555,9 +557,9 @@ function replace_post_list_shortcode($atts) {
   if (have_posts()) {
     while (have_posts()) {
       the_post();
-      $style = 'style-ultra-light';
+      $style = "style-$style1";
       if ($wp_query->current_post % 2 == 1) {
-        $style = 'style-white';
+        $style = "style-$style2";
       }
       $post_list .= '<div class="row">';
       $post_list .= get_post_thumbnail($style);
