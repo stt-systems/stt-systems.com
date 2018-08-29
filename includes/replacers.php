@@ -298,22 +298,8 @@ function replace_video_shortcode($atts) {
 		'time' => '',
 	), $atts, 'video'));
 	
-	if ($caption != '') {
-		$caption = "<p>$caption</p>";
-	}
-	
-	if ($type == 'youtube') {
-		if ($time != '') {
-			$time = "&start=$time";
-		}
-		return "<div class=\"youtube\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$name?rel=0;3&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;player=html5$time\" frameborder=0 allowfullscreen></iframe>$caption</div>";
-	}
-	if ($type == 'facebook') {
-		$from = array('/'  , ':'  );
-		$to   = array('%2F', '%3A');
-		$url = str_replace($from, $to, $url);
-		return "<div class=\"youtube\" style=\"text-align: center\"><iframe width=\"560\" height=\"315\" style=\"margin-top: 5px\" src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" frameborder=0 allowfullscreen></iframe>$caption</div>";
-	}
+	if ($type == 'youtube') return get_youtube_video($name, $caption, $time);
+	if ($type == 'facebook') return get_facebook_video($name, $caption);
 	return '';
 }
 
