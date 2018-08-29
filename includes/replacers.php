@@ -580,13 +580,13 @@ function replace_collapse_shortcode($atts, $content = null) {
 		'id' => '',
 		'title' => '',
 		'class' => '',
-		'collapsed' => 'false',
+		'collapsed' => 'true',
 	), $atts, 'collapse'));
 
 	$content = do_shortcode($content);
 
 	$class_a = 'class="collapsed"';
-	if ($collapsed != 'false') {
+	if ($collapsed == 'false') {
 		$class_a = '';
 		$class = "in $class";
 	}
