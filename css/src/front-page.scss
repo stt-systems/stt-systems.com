@@ -10,7 +10,6 @@ h3 {
   color: #cfcfcf;
 }
 
-
 .panel {
   float: none;
   display: table-cell;
@@ -26,17 +25,23 @@ h3 {
 }
 .panel-bg {
   position: absolute;
-  width: 200%;
+  width: 150%;
   height: 200%;
   padding-top: 50%;
   margin-top: -50%;
-  padding-left: 50%;
-  margin-left: -50%;
+  padding-left: 25%;
+  margin-left: -25%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
   background-color: #0069aa;
+  background-position: center center;
 }
+.panel-bg.bottom {
+  height: 100%;
+  bottom: 0;
+  background-position: center bottom;
+}
+
 
 @mixin product($name) {
   .#{$name} {
