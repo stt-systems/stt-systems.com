@@ -72,7 +72,7 @@ ob_start("sanitize_output");
 					$area = get_top_level_slug();
 					$areas = array(
 						'capture' => 'Motion Analysis Solutions',
-						'industry' => 'Industry 4.0 Projects',
+						'industry' => 'Industry 4.0',
 					);
 					if (array_key_exists($area, $areas)) {
 						$area_url = home_url("/$area/");
