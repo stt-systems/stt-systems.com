@@ -20,6 +20,12 @@ h3 {
   padding: 0;
   overflow: hidden;
 
+  h1, h3 {
+    .highlighted {
+      background-color: #00000088;
+      color: #fff;
+    }
+  }
 
   [class*='col-'] {
     z-index: 10;
