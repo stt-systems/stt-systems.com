@@ -30,7 +30,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       </div>
       <div class="col-md-2 col-sm-2"></div>
       </a>
-      <div class="panel-bg bottom" style="background-image: <?php echo css_darken_image("backgrounds/industry.jpg", 0.0);?>"></div>
+      <div class="panel-bg bottom right" style="background-image: <?php echo css_darken_image("backgrounds/industry.jpg", 0.3);?>"></div>
     </div>
   </div>
 </div>
