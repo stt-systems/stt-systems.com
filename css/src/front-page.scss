@@ -54,6 +54,10 @@ h3 {
   }
 }
 
+.row::before, .row::after, .container-fluid::before, .container-fluid::after {
+  content: none;
+}
+
 @mixin product($name) {
   .#{$name} {
     background-image: url("../images/products/#{$name}.png");
