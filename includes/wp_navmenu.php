@@ -12,7 +12,7 @@ function my_wp_nav_menu_args($args = '') {
     $args['menu'] = "{$top_level_slug}";
   }
   if (!is_nav_menu($args['menu'])) {
-    $args['menu'] = "capture";
+    $args['menu'] = 'front-page';
   }
   
 	return $args;
