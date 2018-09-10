@@ -70,15 +70,14 @@ ob_start("sanitize_output");
 					<div class="image-text"><?php
 					$area = get_top_level_slug();
 					$areas = array(
-						'motion-analysis' => 'Motion Analysis Solutions',
-						'industry' => 'Industry 4.0',
+						'motion-analysis',
+						'industry',
 					);
-					if (array_key_exists($area, $areas)) {
+					if (in_array($area, $areas)) {
 						$area_url = home_url("/$area/");
 						$area_logo = get_upload_url("logos/$area.png", false);
 						echo "<a href=\"$area_url\">";
-						echo "<img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/>";
-						echo "<p>$areas[$area]</p></a>";
+						echo "<img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
 					} ?>
 					</div>
 				</div>
