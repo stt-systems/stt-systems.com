@@ -11,7 +11,7 @@ function get_current_url() {
 function get_top_level_slug() {
 	if (is_front_page()) return '';
 
-	if (is_page_valid() === false) return 'capture';
+	if (is_page_valid() === false) return 'motion-analysis';
 
 	$url_base = site_url();
 	$url_base = substr($url_base, strpos($url_base, '://') + 3);
