@@ -41,7 +41,6 @@ ob_start("sanitize_output");
 	<?php endif; ?>
 </head>
 <body <?php body_class(); ?> >
-<?php if (!is_front_page()) { ?>
 <div class="menu_wrapper top_wrapper">
 	<div class="row">
 		<nav class="navbar navbar-default" style="background:#f2f2f3">
@@ -87,4 +86,3 @@ ob_start("sanitize_output");
 		</nav>
 	</div>
 </div>
-<?php } ?>
