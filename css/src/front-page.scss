@@ -1,23 +1,26 @@
 h1 {
   font-size: 64px;
-  font-weight: 200;
+  font-weight: 300;
   color: #ffffff;
+  text-shadow: 0px 0px 6px #00000066;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 300;
-  color: #cfcfcf;
+  color: #f4f4f4;
+  text-shadow: 0px 0px 6px #00000066;
 }
 
 .panel {
   float: none;
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: bottom;
   text-align: center;  
   border: 0;
   border-radius: 0;
   padding: 0;
+  padding-bottom: 40px;
   overflow: hidden;
 
   h1, h3 {
@@ -25,7 +28,7 @@ h3 {
       background-color: #00000088;
       color: #fff;
     }
-  }
+ }
 
   [class*='col-'] {
     z-index: 10;
@@ -107,4 +110,8 @@ h3 {
   color: #cfcfcf;
   margin-top: 10px;
   height: 50px;
+}
+
+.footer > .container {
+  padding-bottom: 20px;
 }
