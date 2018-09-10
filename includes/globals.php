@@ -164,9 +164,14 @@ function get_facebook_video($name, $caption = '') {
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
 	$url = get_upload_url($name);
-  $rgba = "rgba($color, $alpha)";
+	$code = "url($url)";
+
+	if ($alpha > 0) {
+		$rgba = "rgba($color, $alpha)";
+		$code = "linear-gradient($rgba, $rgba), $code";
+	}
   
-  return "linear-gradient($rgba, $rgba), url($url)";
+  return $code;
 }
 
 function get_files_in_dir($path, $exclude_preffix = '', $exclude_exts = array()) {
