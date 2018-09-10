@@ -26,7 +26,7 @@
 						<?php
 						wp_reset_query();
 						$top_slug = get_top_level_slug();
-						if ($top_slug == 'capture') { ?>
+						if ($top_slug == 'motion-analysis') { ?>
 							<div class="col-md-4 col-sm-4"><?php
 								echo '<p><b>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</b></p>';
 								echo '<p>' . get_page_full_link('sports-3dma') . '</p>';
@@ -55,7 +55,7 @@
 							</div><?php
 						} else { ?>
 							<div class="col-md-4 col-sm-4"><?php
-								echo '<p><b>' . get_page_full_link('capture', 'Capture') . '</b></p>';
+								echo '<p><b>' . get_page_full_link('motion-analysis', 'Motion Analysis') . '</b></p>';
 								echo '<p>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</p>';
 								echo '<p>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</p>';
 								echo '<p>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</p>';

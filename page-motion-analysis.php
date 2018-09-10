@@ -4,7 +4,7 @@ get_header();
 wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 ?>
 
-<div class="row" style="display: table; height: 80vh; width: 100%; margin: 0">
+<div class="row" style="display: table; height: 90vh; width: 100%; margin: 0">
   <div class="col-md-4 col-sm-4 panel">
     <div class="col-md-2 col-sm-2"></div>
     <div class="col-md-8 col-sm-8">
@@ -56,7 +56,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div id="current-inertial-product" class="product-name"></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/inertial.jpg", 0);?>"></div>
+    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/inertial.jpg", 0.2);?>"></div>
   </div>
 </div>
 

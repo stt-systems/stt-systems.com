@@ -71,7 +71,7 @@ ob_start("sanitize_output");
 					<div class="image-text"><?php
 					$area = get_top_level_slug();
 					$areas = array(
-						'capture' => 'Motion Analysis Solutions',
+						'motion-analysis' => 'Motion Analysis Solutions',
 						'industry' => 'Industry 4.0',
 					);
 					if (array_key_exists($area, $areas)) {

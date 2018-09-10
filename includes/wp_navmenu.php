@@ -54,7 +54,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 		$do_not_highlight_current = false;
     if (is_page_valid()) {
       $post = get_post(get_post_meta($item->ID, '_menu_item_object_id', true));
-      if (get_post()->post_name == 'capture' and $post->post_name == 'capture') {
+      if (get_post()->post_name == 'motion-analysis' and $post->post_name == 'motion-analysis') {
         $do_not_highlight_current = true;
       }
     } else {
@@ -94,7 +94,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				global $wp;
 				$url = home_url(add_query_arg(array(), $wp->request));
 				$post_url = get_site_url() . '/' . $post->post_name;
-				if ($post->post_name != 'capture' and
+				if ($post->post_name != 'motion-analysis' and
 						strpos($url, $post_url) !== false and
             strpos($class_names, 'current_page_ancestor') === false) { // highlight parent menu
 					$class_names .= ' current_page_ancestor';

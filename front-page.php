@@ -4,15 +4,15 @@ get_header();
 wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 ?>
 
-<div style="height: 100vh">
+<div style="height: 90vh">
 	<div class="row" style="display: table; height: 100%">
     <div class="col-md-6 col-sm-6 panel">
-      <a style="display: block" href="<?php echo get_page_permalink("capture"); ?>">
+      <a style="display: block" href="<?php echo get_page_permalink("motion-analysis"); ?>">
       <div class="col-md-2 col-sm-2"></div>
       <div class="col-md-8 col-sm-8">
         <div class="content-box">
           <h1>Motion Analysis Solutions</h1>
-          <h3>Premium technologies for human motion studies. Ready to use by scientists, sports scientists and clinitians</h3>
+          <h3>Premium technologies for human motion studies. Ready to use by sports scientists, clinicians and researchers</h3>
         </div>
       </div>
       <div class="col-md-2 col-sm-2"></div>
