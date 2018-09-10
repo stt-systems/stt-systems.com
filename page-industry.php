@@ -14,7 +14,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       </a>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/machine-vision.jpg");?>"></div>
+    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/machine-vision.jpg", 0);?>"></div>
   </div>
   <div class="col-md-6 col-sm-6 panel">
     <div class="col-md-2 col-sm-2"></div>
@@ -25,7 +25,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       </a>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/product-configurators.jpg");?>"></div>
+    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/product-configurators.jpg", 0);?>"></div>
   </div>
 </div>
 

@@ -17,7 +17,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       </div>
       <div class="col-md-2 col-sm-2"></div>
       </a>
-      <div class="panel-bg bottom" style="background-image: <?php echo css_darken_image("backgrounds/capture.jpg", 0.6);?>"></div>
+      <div class="panel-bg bottom left" style="background-image: <?php echo css_darken_image("backgrounds/capture.jpg", 0);?>"></div>
     </div>
     <div class="col-md-6 col-sm-6 panel">
       <a style="display: block" href="<?php echo get_page_permalink("industry"); ?>">
@@ -30,7 +30,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       </div>
       <div class="col-md-2 col-sm-2"></div>
       </a>
-      <div class="panel-bg bottom right" style="background-image: <?php echo css_darken_image("backgrounds/industry.jpg", 0.3);?>"></div>
+      <div class="panel-bg bottom right" style="background-image: <?php echo css_darken_image("backgrounds/industry.jpg", 0);?>"></div>
     </div>
   </div>
 </div>
