@@ -1118,65 +1118,23 @@ b, strong, time {
   font-weight: 600;
 }
 
-.space-sep10 {
-  clear: both;
-  display: block;
-  height: 10px;
+@mixin spacer($size) {
+  .space-sep#{$size} {
+    clear: both;
+    display: block;
+    height: #{$size}px;
+  }
 }
-
-.space-sep20 {
-  clear: both;
-  display: block;
-  height: 20px;
-}
-
-.space-sep30 {
-  clear: both;
-  display: block;
-  height: 30px;
-}
-
-.space-sep40 {
-  clear: both;
-  display: block;
-  height: 40px;
-}
-
-.space-sep50 {
-  clear: both;
-  display: block;
-  height: 50px;
-}
-
-.space-sep60 {
-  clear: both;
-  display: block;
-  height: 60px;
-}
-
-.space-sep70 {
-  clear: both;
-  display: block;
-  height: 70px;
-}
-
-.space-sep80 {
-  clear: both;
-  display: block;
-  height: 80px;
-}
-
-.space-sep90 {
-  clear: both;
-  display: block;
-  height: 90px;
-}
-
-.space-sep100 {
-  clear: both;
-  display: block;
-  height: 100px;
-}
+@include spacer(10);
+@include spacer(20);
+@include spacer(30);
+@include spacer(40);
+@include spacer(50);
+@include spacer(60);
+@include spacer(70);
+@include spacer(80);
+@include spacer(90);
+@include spacer(100);
 
 .page-info {
   padding-top: 30px;
