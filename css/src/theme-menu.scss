@@ -13,11 +13,12 @@
 
 .navbar {
   margin-bottom: 0;
+  background: #f2f2f3f1;
+  box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, .05);
 }
 
 .navbar-default {
   border-width: 0;
-  background-color: #fff;
 }
 
 #menu-home-menu, #stt-navbar-collapse {

@@ -41,7 +41,7 @@ ob_start("sanitize_output");
 	<?php endif; ?>
 </head>
 <body <?php body_class(); ?> >
-		<nav class="navbar navbar-default navbar-fixed-top" style="background:#f2f2f3f1">
+		<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="row">
 			<div class="container-fluid">
 				<div class="col-sm-12 col-md-3">
