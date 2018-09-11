@@ -1146,19 +1146,18 @@ b, strong, time {
 .not-found-40x {
   overflow: hidden;
   margin-bottom: 60px;
-}
+  h2 {
+    font-size: 180px;
+    margin: 30px 0;
+    line-height: 180px;
+  }
 
-.not-found-40x h2 {
-  font-size: 180px;
-  margin: 30px 0;
-  line-height: 180px;
-}
-
-.not-found-40x p {
-  font-size: 28px;
-  color: #9a9a9a;
-  margin-bottom: 40px !important;
-  line-height: 32px;
+  p {
+    font-size: 28px;
+    color: #9a9a9a;
+    margin-bottom: 40px !important;
+    line-height: 32px;
+  }
 }
 
 .search-404 {
