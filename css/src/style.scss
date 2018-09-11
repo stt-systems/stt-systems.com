@@ -437,6 +437,8 @@ table:not(.clean):not(.shop_attributes) td, table:not(.clean):not(.shop_attribut
 
 table {
   font-size: 16px;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 table.clean, table.shop_attributes {
@@ -1413,11 +1415,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 textarea {
   overflow: auto;
   vertical-align: top;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 .pagination {
