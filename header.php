@@ -46,7 +46,7 @@ ob_start("sanitize_output");
 			<div class="container-fluid">
 				<div class="col-sm-12 col-md-3">
 					<div class="navbar-left-header" id="navbar-left-header">
-						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_upload_url('logos/logo.png', false); ?>" height="78" alt="STT's logo" rel="nofollow" style="margin-top:5px"/></a>
+						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_upload_url('logos/logo.png', false); ?>" height="<?php echo STT_USE_LARGE_NAVBAR ? 78 : 37?>" alt="STT's logo" rel="nofollow" style="margin-top:5px"/></a>
 					</div>
 					<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#stt-navbar-collapse">
 						<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
@@ -76,7 +76,8 @@ ob_start("sanitize_output");
 						$area_url = home_url("/$area/");
 						$area_logo = get_upload_url("logos/$area.png", false);
 						echo "<a href=\"$area_url\">";
-						echo "<img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
+						$image_height = STT_USE_LARGE_NAVBAR ? 60 : 30;
+						echo "<img src=\"$area_logo\" height=\"$image_height\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
 					} ?>
 					</div>
 				</div>
