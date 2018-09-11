@@ -1,5 +1,7 @@
 <?php
 get_header();
+if (STT_USE_LARGE_NAVBAR) echo '<div class="space-sep91"></div>';
+else echo '<div class="space-sep43"></div>';
 print_page_title(); ?>
 <div class="space-sep20"></div>
 <div class="content-wrapper body-wrapper blog-post blog-span container">
