@@ -251,7 +251,7 @@ function replace_gallery_cb($match) {
 
 function walk_images_table_cb(&$value, $key, $base) {
 	$path = get_upload_url("$base/$value");
-	$value = "<td><img src=\"$path\" style=\"max-height: 100px;\"></img></td>";
+	$value = "<td><img src=\"$path\" style=\"max-height: 90px; max-width: 80%\"></img></td>";
 }
 
 function replace_image_table_shortcode($atts) {
