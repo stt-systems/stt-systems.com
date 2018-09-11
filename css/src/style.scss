@@ -445,6 +445,11 @@ table.clean, table.shop_attributes {
   table-layout: fixed;
 }
 
+table.clean.images {
+  border-spacing: 20px;
+  border-collapse: separate;
+}
+
 table:not(.clean) {
   max-width: 100%;
   margin-left: auto;

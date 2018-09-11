@@ -286,7 +286,7 @@ function replace_image_table_shortcode($atts) {
 	}
 
 	if ($table == '') return '';
-	return "<table class=\"clean\">$table</table>";
+	return "<table class=\"clean images\">$table</table>";
 }
 
 // Videos
