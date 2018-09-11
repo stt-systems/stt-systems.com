@@ -6,23 +6,17 @@
 
   color: $color-gray;
 
-  @mixin header() {
-    font-weight: 200;
-    text-transform: none;
-    padding-bottom: 10px;
+  @mixin header($name, $size) {
+    #{$name} {
+      font-size: #{$size}px;
+      font-weight: 300;
+      text-transform: none;
+      padding-bottom: 10px;
+    }
   }
-  h1 {
-    @include header();
-    font-size: 80px;
-  }
-  h2 {
-    @include header();
-    font-size: 48px;
-  }
-  h3 {
-    @include header();
-    font-size: 28px;
-  }
+  @include header(h1, 80);
+  @include header(h2, 48);
+  @include header(h3, 28);
 
   ul {
     padding-left: 0;
