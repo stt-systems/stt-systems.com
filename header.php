@@ -41,9 +41,8 @@ ob_start("sanitize_output");
 	<?php endif; ?>
 </head>
 <body <?php body_class(); ?> >
-<div class="menu_wrapper top_wrapper">
-	<div class="row">
 		<nav class="navbar navbar-default" style="background:#f2f2f3">
+		<div class="row">
 			<div class="container-fluid">
 				<div class="col-sm-12 col-md-3">
 					<div class="navbar-left-header" id="navbar-left-header">
@@ -82,6 +81,5 @@ ob_start("sanitize_output");
 					</div>
 				</div>
 			</div>
+		</div>
 		</nav>
-	</div>
-</div>

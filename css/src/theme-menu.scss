@@ -20,6 +20,11 @@
   background-color: #fff;
 }
 
+#menu-home-menu, #stt-navbar-collapse {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
 .container-fluid {
   padding: 0;
 }
@@ -145,10 +150,6 @@
 
 ul li.current_page_item a {
   color: #fff !important;
-}
-
-.menu_wrapper {
-  background: #fff;
 }
 
 .navbar-left-header {
