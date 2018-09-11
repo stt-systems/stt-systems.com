@@ -4,7 +4,7 @@ get_header();
 wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 ?>
 
-<div style="height: 90vh">
+<div style="height: 100vh">
 	<div class="row" style="display: table; height: 100%">
     <div class="col-md-6 col-sm-6 panel">
       <a style="display: block" href="<?php echo get_page_permalink("motion-analysis"); ?>">

@@ -4,7 +4,7 @@ get_header();
 wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 ?>
 
-<div class="row" style="display: table; height: 90vh; width: 100%; margin: 0">
+<div class="row" style="display: table; height: 100vh; width: 100%; margin: 0">
   <div class="col-md-4 col-sm-4 panel">
     <div class="col-md-2 col-sm-2"></div>
     <div class="col-md-8 col-sm-8">
