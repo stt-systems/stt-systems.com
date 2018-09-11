@@ -122,7 +122,7 @@
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.scrollTo.min.js', false); ?>"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.unveil.min.js', false); ?>"></script>
 
-<link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/fonts/firasans/stylesheet.css', false); ?>" />
+<link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/fonts/sourcesans/stylesheet.css', false); ?>" />
 <link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/theme-menu.min.css', false); ?>" />
 <?php if (!STT_USE_LARGE_NAVBAR) { ?>
 <link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/theme-menu-small.min.css', false); ?>" />
