@@ -960,7 +960,7 @@ body, button, html, input, select, textarea {
   padding: 0 0 8px;
   margin: 0 0 15px;
   color: #428bca;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 14pt;
 }
 
@@ -1662,13 +1662,14 @@ table.hover tbody tr:nth-child(odd) {
 
 .page-path {
   color: #cbcbcb !important;
-}
+  font-weight: 300;
 
-.page-path a {
-  color: $path-link-color !important;
-}
-.page-path a:hover {
-  color: darken($path-link-color, 20) !important;
+  a {
+    color: $path-link-color !important;
+  }
+  a:hover {
+    color: darken($path-link-color, 20) !important;
+  }
 }
 
 .left {
