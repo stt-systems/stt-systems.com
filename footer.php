@@ -124,6 +124,9 @@
 
 <link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/fonts/firasans/stylesheet.css', false); ?>" />
 <link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/theme-menu.min.css', false); ?>" />
+<?php if (!STT_USE_LARGE_NAVBAR) { ?>
+<link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/theme-menu-small.min.css', false); ?>" />
+<?php } ?>
 <link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/font-awesome.min.css', false); ?>" />
 <link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/flat-blue.min.css', false); ?>" />
 <link rel="stylesheet" property="stylesheet" type="text/css" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/responsive.min.css', false); ?>" />
