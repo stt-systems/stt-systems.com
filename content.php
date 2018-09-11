@@ -31,7 +31,7 @@ if (!is_page()) {
 if ($post->post_type == 'page') {
 	add_page_path();
 }
-echo get_page_top_spacer(); ?>
+?>
 <div class="blog-post-body <?php echo "$page_style";?>"><?php
 	if (!is_page() and !is_single()) {
 		the_excerpt();

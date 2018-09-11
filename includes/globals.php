@@ -347,8 +347,8 @@ function get_product_icon_link($slug, $icon) {
 }
 
 function get_page_top_spacer() {
-	if (STT_USE_LARGE_NAVBAR) return '<div class="space-sep20"></div>';
-	return '<div class="space-sep60"></div>';
+	if (STT_USE_LARGE_NAVBAR) return '<div class="space-sep100"></div>';
+	return '<div class="space-sep50"></div>';
 }
 
 if (!function_exists('post_is_in_descendant_category')) {
