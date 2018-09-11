@@ -3,6 +3,10 @@ h1 {
   font-weight: 300;
   color: #ffffff;
   text-shadow: 0px 0px 6px #00000066;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h3 {
@@ -10,13 +14,14 @@ h3 {
   font-weight: 300;
   color: #f4f4f4;
   text-shadow: 0px 0px 6px #00000066;
+  height: 3em;
 }
 
 .panel {
   float: none;
   display: table-cell;
   vertical-align: bottom;
-  text-align: center;  
+  text-align: center;
   border: 0;
   border-radius: 0;
   padding: 0;
