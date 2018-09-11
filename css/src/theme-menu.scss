@@ -202,3 +202,7 @@ ul li.current_page_item a {
     overflow-y: initial;
   }
 }
+
+body.admin-bar .navbar {
+  top: 28px !important;
+}
