@@ -5,8 +5,7 @@ if ($post->post_type == 'page') {
 get_header();
 wp_enqueue_style('columns', get_template_directory_uri() . '/css/columns.min.css');
 print_page_title();
-?>
-<div class="space-sep20"></div>
+echo get_page_top_spacer(); ?>
 <div class="content-wrapper body-wrapper blog-post blog-span container extra">
 <?php
 	the_post();

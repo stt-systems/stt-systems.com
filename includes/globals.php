@@ -346,6 +346,11 @@ function get_product_icon_link($slug, $icon) {
 	return $link;
 }
 
+function get_page_top_spacer() {
+	if (STT_USE_LARGE_NAVBAR) return '<div class="space-sep20"></div>';
+	return '<div class="space-sep60"></div>';
+}
+
 if (!function_exists('post_is_in_descendant_category')) {
 	function post_is_in_descendant_category($cats, $_post=null) {
 		foreach ((array)$cats as $cat) {

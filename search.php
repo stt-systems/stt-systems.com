@@ -34,8 +34,7 @@ function trim_to_search_result($text, $num_words = 55, $more = null) {
 
 get_header();
 print_page_title('', sprintf(__('Search results for: %s', 'stt'), '<span>' . get_search_query() . '</span>'));
-?>
-<div class="space-sep20"></div>
+echo get_page_top_spacer(); ?>
 <div class="content-wrapper body-wrapper blog-post blog-span">
 	<?php
 	$search_string = get_search_query();

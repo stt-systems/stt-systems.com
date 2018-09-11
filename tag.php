@@ -6,7 +6,7 @@
 	</div>
 </div>
 </header>
-<div class="space-sep20"></div>
+<?php echo get_page_top_spacer(); ?>
 <div class="content-wrapper body-wrapper blog-post blog-span container">
 <div class="blog-post-body">
 	<div class="row">

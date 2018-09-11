@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php get_header();
+echo get_page_top_spacer(); ?>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 col-sm-12">			

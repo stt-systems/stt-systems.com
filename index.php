@@ -1,7 +1,7 @@
 <?php
 get_header();
-print_page_title($post); ?>
-<div class="space-sep20"></div>
+print_page_title($post);
+echo get_page_top_spacer(); ?>
 <div class="content-wrapper">
 	<div class="body-wrapper">
 		<div class="blog-post">

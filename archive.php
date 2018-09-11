@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-<div class="space-sep20"></div>	
+<?php echo get_page_top_spacer(); ?>
 
 <div class="content-wrapper"><div class="body-wrapper">
     <div class="container">
