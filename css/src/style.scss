@@ -6,6 +6,16 @@ body, html {
   font-size: 14px;
 }
 
+// Workaround to avoid inner links to fall behind navbar
+// http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/#method-D
+.row[id] {
+  border-top: 90px solid transparent;
+  margin-top: -90px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
 p:empty {
   display: none;
 }
