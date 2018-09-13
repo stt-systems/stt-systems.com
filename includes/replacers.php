@@ -437,7 +437,7 @@ function replace_downloads_shortcode($atts) {
 		}
 
 		$download_all = '';
-		if ($zip == 'yes') {
+		if ($zip == 'yes_test') { // temporary disabled until writing permissions are clarified
 			$zip_file = new ZipArchive;
 			if ($zip_file->open($downloads['base_dir'] . "/$name.zip", ZipArchive::CREATE)) {
 					foreach ($downloads['files'] as $file) {
