@@ -56,7 +56,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div id="current-inertial-product" class="product-name"></div>
     </div>
     <div class="col-md-2 col-sm-2"></div>
-    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/inertial.jpg", 0.2);?>"></div>
+    <div class="panel-bg" style="background-image: <?php echo css_darken_image("backgrounds/inertial.jpg", 0);?>"></div>
   </div>
 </div>
 
