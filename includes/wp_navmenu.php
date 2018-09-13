@@ -118,7 +118,14 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
 
 			// If item has_children add atts to <a>
-			$atts['href']   = $args->has_children ? '' : $item->url; // do not link to parent pages
+			$atts['href']   = $item->url;
+			if ($args->has_children) {
+				$template = get_page_template_slug(get_post_meta($item->ID, '_menu_item_object_id', true));
+				if ($template == 'template-empty.php') { // do not link to empty parent pages
+					$atts['href'] = '';
+				}
+			}
+
 			if ($depth === 0) {
 				if ($args->has_children) {
 					$atts['class']					= 'dropdown-toggle';
