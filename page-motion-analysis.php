@@ -10,7 +10,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
     <div class="col-md-8 col-sm-8">
       <a href="<?php echo get_page_permalink("2d-optical-motion-capture"); ?>">
         <h1>2DMA</h1>
-        <h3 style="height: 2em">Video-based mocap systems</h3>
+        <h3 style="height: 2em">Video-based motion analysis systems</h3>
       </a>
       <div id="2dma-products" class="product-links"><?php
         echo get_product_icon_link('bikefit', 'cycling');
@@ -26,7 +26,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
     <div class="col-md-8 col-sm-8">
       <a href="<?php echo get_page_permalink("3d-optical-motion-capture"); ?>">
         <h1>3DMA</h1>
-        <h3 style="height: 2em">Comprehensive solutions for 3D motion analysis</h3>
+        <h3 style="height: 2em">Comprehensive solutions for full-body 3D motion analysis</h3>
       </a>
       <div id="3dma-products" class="product-links"><?php
         echo get_product_icon_link('sports-3dma', 'sports');
@@ -47,7 +47,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
     <div class="col-md-8 col-sm-8">
       <a href="<?php echo get_page_permalink("inertial-motion-capture"); ?>">
         <h1>Inertial</h1>
-        <h3 style="height: 2em">Premium IMU sensors and software</h3>
+        <h3 style="height: 2em">Flexible IMU configurations for full-body kinematic analysis</h3>
       </a>
       <div id="inertial-products" class="product-links"><?php
         echo get_product_icon_link('isen', 'clinical');
