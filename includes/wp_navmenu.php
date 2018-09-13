@@ -53,10 +53,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 		$do_not_highlight_current = false;
     if (is_page_valid()) {
-      $post = get_post(get_post_meta($item->ID, '_menu_item_object_id', true));
-      if (get_post()->post_name == 'motion-analysis' and $post->post_name == 'motion-analysis') {
-        $do_not_highlight_current = true;
-      }
+			$post = get_post(get_post_meta($item->ID, '_menu_item_object_id', true));
     } else {
       $do_not_highlight_current = true;
     }
