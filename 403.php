@@ -1,4 +1,5 @@
-<?php get_header();
+<?php header('HTTP/1.0 403 forbidden');
+get_header();
 echo get_page_top_spacer(); ?>
 <div class="container">
 	<div class="row">
