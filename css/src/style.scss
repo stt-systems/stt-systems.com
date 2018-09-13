@@ -6,6 +6,14 @@ body, html {
   font-size: 14px;
 }
 
+body, button, html, input, select, textarea {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
+  color: #878787;
+  margin: 0;
+  font-size: 13px;
+  background-color: #fff;
+}
+
 // Workaround to avoid inner links to fall behind navbar
 // http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/#method-D
 .row[id] {
@@ -203,21 +211,20 @@ h2.widgettitle {
 .recent-post {
   margin-bottom: 4px;
   border-bottom: 1px solid #888;
+
+  a {
+    color: #fff;
+    font-weight: 100;
+    padding-bottom: 2px;
+  }
+  a:hover {
+    color: $color-stt;
+  }
 }
 
 .recent-post:last-child {
   margin-bottom: 4px;
   border-bottom: 0;
-}
-
-.recent-posts a {
-  color: #fff;
-  font-weight: 100;
-  padding-bottom: 2px;
-}
-
-.recent-posts a:hover {
-  color: $color-stt;
 }
 
 .fa {
@@ -239,13 +246,6 @@ h2.widgettitle {
   -o-filter: grayscale(50%);
   -ms-filter: grayscale(50%);
 }
-
-.youtube, body .syntaxhighlighter {
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-}
-
 .thumb64:hover {
   filter: grayscale(0);
   -webkit-filter: grayscale(0);
@@ -254,17 +254,23 @@ h2.widgettitle {
   -ms-filter: grayscale(0);
 }
 
+.youtube, body .syntaxhighlighter {
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+}
+
 .youtube {
   max-width: 560px;
   margin: 0 auto 15px;
   display: block;
   border-radius: 7px;
   background: #fff;
-}
 
-.youtube p {
-  font-size: 14px;
-  padding-bottom: 5px;
+  p {
+    font-size: 14px;
+    padding-bottom: 5px;
+  }
 }
 
 iframe {
@@ -351,22 +357,22 @@ img.rounded, .woocommerce div.product div.images img, .woocommerce ul.products l
   margin-bottom: 1.5em;
   max-width: 100%;
   font-size: 14px;
-}
 
-.wp-caption img {
-  margin: 8px auto;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-}
-
-.cases-menu a:hover, .cases-section a.seemore, table:not(.clean) {
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+  img {
+    margin: 8px auto;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+  }
 }
 
 .wp-caption .wp-caption-text {
   font-size: 14px;
   margin: 0.8075em 0;
+}
+
+.cases-menu a:hover, .cases-section a.seemore, table:not(.clean) {
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
 }
 
 .cases-menu {
@@ -375,18 +381,18 @@ img.rounded, .woocommerce div.product div.images img, .woocommerce ul.products l
   padding-bottom: 10px;
   font-size: 18px;
   font-weight: 100;
-}
 
-.cases-menu a {
-  color: #fff;
-}
+  a {
+    color: #fff;
+  }
 
-.cases-menu a:hover {
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.1);
+  a:hover {
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media (max-width: 768px) {
@@ -611,42 +617,47 @@ body .syntaxhighlighter .gutter, body .syntaxhighlighter a, body .syntaxhighligh
 
 .blog-post {
   position: relative;
-}
 
-div.blog-post div.span10 {
-  padding: 0 0 0 60px;
-}
+  .span10 {
+    padding: 0 0 0 60px;
+  }
 
-.blog-post .blog-post-body {
-  font-size: 18px;
-  font-weight: 100;
-  color: #000000;
-}
+  .blog-post-body {
+    font-size: 18px;
+    font-weight: 100;
+    color: #000000;
+  }
 
-.blog-post .blog-post-details {
-  width: 100%;
-  overflow: hidden;
-  color: #000000;
-}
+  .blog-post-details {
+    width: 100%;
+    overflow: hidden;
+    color: #000000;
 
-.blog-post .blog-post-details .blog-post-details-item {
-  font-size: 14px;
-}
+    .blog-post-details-item {
+      font-size: 14px;
+    }
+  }
 
-.blog-post a h2, .blog-post h2 a {
-  color: #279fbb;
-  -webkit-transition: 0.5s color;
-  -moz-transition: 0.5s color;
-  -o-transition: 0.5s color;
-  transition: 0.5s color;
-}
+  a h2, h2 a {
+    color: #279fbb;
+    -webkit-transition: 0.5s color;
+    -moz-transition: 0.5s color;
+    -o-transition: 0.5s color;
+    transition: 0.5s color;
+  }
 
-.blog-post h2 a:hover {
-  color: #3a3a3a;
-}
+  h2 a:hover {
+    color: #3a3a3a;
+  }
 
-.blog-post h2 {
-  margin-bottom: 10px;
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    line-height: 1.45;
+    margin: 0 0 20px;
+  }
 }
 
 .row .post-content {
@@ -666,42 +677,42 @@ div.blog-post div.span10 {
 .posts-list {
   padding: 0;
   margin: 0;
-}
 
-.posts-list li {
-  display: block;
-  overflow: hidden;
-  margin: 0 0 15px;
-}
+  li {
+    display: block;
+    overflow: hidden;
+    margin: 0 0 15px;
+  }
 
-.posts-list .posts-list-thumbnail {
-  float: left;
-  -webkit-transition: opacity 0.5s;
-  -moz-transition: opacity 0.5s;
-  -o-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-}
+  .posts-list-thumbnail {
+    float: left;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+  }
 
-.posts-list .posts-list-thumbnail img {
-  border-radius: 2px;
-}
+  .posts-list-thumbnail img {
+    border-radius: 2px;
+  }
 
-.posts-list .posts-list-thumbnail:hover {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+  .posts-list-thumbnail:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+  }
+
+  .posts-list-title {
+    display: block;
+  }
+  
+  .posts-list-meta {
+    font-size: 12px;
+    color: #aaa;
+  }
 }
 
 .posts-list-content {
   padding: 0 0 0 75px;
-}
-
-.posts-list .posts-list-title {
-  display: block;
-}
-
-.posts-list .posts-list-meta {
-  font-size: 12px;
-  color: #aaa;
 }
 
 .text-input {
@@ -779,19 +790,6 @@ div.blog-post div.span10 {
   top: 20px;
   font-weight: 400;
   font-size: 11px;
-}
-
-.blog-post p {
-  line-height: 1.45;
-  margin: 0 0 20px;
-}
-
-body, button, html, input, select, textarea {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
-  color: #878787;
-  margin: 0;
-  font-size: 13px;
-  background-color: #fff;
 }
 
 .btn, .footer .copyright, .footer .footer-col .footer-content input[type=submit], .footer .footer-col .footer-title, .sidebar-icon-item {
@@ -1737,14 +1735,15 @@ img.blog-thumbnail {
   position: relative;
   overflow: hidden;
   padding-bottom: 100%;
-}
-.image img {
+
+  img {
     position: absolute;
     max-width: 100%;
     max-height: 100%;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+  }
 }
 
 .image-text {
