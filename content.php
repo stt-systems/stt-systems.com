@@ -24,11 +24,10 @@ if (!is_page()) {
 					<span class="fa fa-tags"></span><?php the_tags('', ', ', '<br />'); ?>
 				</div><?php
 			} ?>
+			<div class="space-sep<?php echo is_single() ? 20 : 10 ?>"></div>
 		</div><?php
 	}
-}
-
-if ($post->post_type == 'page') {
+} else {
 	add_page_path();
 }
 ?>
