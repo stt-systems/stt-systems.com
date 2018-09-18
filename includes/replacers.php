@@ -593,7 +593,7 @@ function replace_collapse_shortcode($atts, $content = null) {
 		$class = "in $class";
 	}
 
-	$code = "<h3><a href=\"#$id\" $class_a data-toggle=\"collapse\">
+	$code = "<h3 class=\"collapse-header\"><a href=\"#$id\" $class_a data-toggle=\"collapse\">
   					<span class=\"if-collapsed\">&#9654; $title</span>
   					<span class=\"if-not-collapsed\">&#9660; $title</span>
 					</a></h3>";

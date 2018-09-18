@@ -1771,6 +1771,10 @@ img.blog-thumbnail {
   margin: 0
 }
 
+h3.collapse-header {
+  margin-top: 10px;
+  margin-bottom: 10px;  
+}
 [data-toggle="collapse"].collapsed .if-not-collapsed {
   display: none;
 }
