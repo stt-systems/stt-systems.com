@@ -1087,15 +1087,25 @@ body {
 }
 
 blockquote {
-  border-left: 2px solid #c3c3c3;
-  padding: 0 0 0 25px;
-  color: #AFAFAF;
+  border: 0;
+  padding: 0;
+  color: color(light);
   font-style: italic;
-  margin: 1em 40px;
+  font-size: 19px;
 
-  span {
+  a {
+    color: color(light) !important;
+    font-style: italic;  
+  }
+
+  span,.author, .other {
+    font-size: 17px;
+    display: block;
     font-style: normal;
-    color: #8F8F8F;
+    color: color(gray);
+  }
+  .author {
+    margin-top: 10px;
   }
 }
 

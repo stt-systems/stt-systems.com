@@ -308,11 +308,23 @@ function replace_quote_shortcode($atts) {
 		'text' => '',
 		'title' => '',
 		'author' => '',
+		'source' => '',
+		'url' => '',
 		'style' => 'quote',
 	), $atts, 'quote'));
 	
 	if (!empty($author)) { // has author
-		$author = " <span>$author</span>";
+		$tokens = preg_split('/\r\n|\r|\n/', $author);
+		$author = '';
+		$class = "author";
+		foreach ($tokens as $token) {
+			$author = "$author<span class=\"$class\">$token</span>";
+			$class = "other";
+		}
+
+		if ($url != '') {
+			$author = "<a href=\"$url\" target=\"_blank\">$author</a>";
+		}
 	}
 	
 	if ($style == 'quote') {
@@ -323,7 +335,13 @@ function replace_quote_shortcode($atts) {
 		$title = "<span><h4>$title</h4></span>";
 	}
 
-	return "<blockquote>$title$text$author</blockquote>";
+	if ($source != '') {
+		$text = "<a href=\"$source\" target=\"_blank\">$text</a>";
+	}
+
+	$code = "<blockquote>$title$text$author</blockquote>";
+
+	return $code;
 }
 
 // Downloads
