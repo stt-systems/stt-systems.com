@@ -1,68 +1,68 @@
 @import "_colors.scss";
 
 .loading i:first-child:after, .loading i:first-child:before, .loading i:last-child:after, .loading i:last-child:before {
-  background: $color-stt;
+  background: color(stt);
 }
 
 .navigation > li:hover > a, .navigation > li:hover > a > i, .navigation > li > .activelink, .navigation > li > a:focus > span.label-nav-sub::before, .navigation > li > a:hover, .navigation > li > a:hover > span.label-nav-sub::before {
-  color: $color-stt;
+  color: color(stt);
 }
 
 .mobile-menu-button, .mobile-nav, .slider-fixed-container {
-  background-color: $color-stt;
+  background-color: color(stt);
 }
 
 .navigation > li:hover > a > span.label-nav-sub::before {
-  color: $color-stt;
+  color: color(stt);
 }
 
 .navigation > li > a.activelink:before {
-  border-color: transparent transparent $color-stt;
+  border-color: transparent transparent color(stt);
 }
 
 .navigation > li:hover > a:after {
-  background-color: $color-stt;
+  background-color: color(stt);
   bottom: 0;
 }
 
 #header, .top-title-wrapper {
-  border-color: $color-stt;
+  border-color: color(stt);
 }
 
 .sticky-header .navigation > li:hover > a span {
-  color: $color-stt;
+  color: color(stt);
 }
 
 #header:after {
-  border-bottom: $color-stt;
+  border-bottom: color(stt);
 }
 
 .accordion .title h4, .blog-post .blog-post-details-item i, .blog-post .blog-read-more a, .blog-post .blog-span h2, .blog-post h2 a, .blog-post-icon i, .blog-post-quote:after, .body-wrapper .tags a, .body-wrapper a:hover, .bottom-body a:hover, .content-box h4 i, .content-box.content-style2 h4 i, .feature-arrows .feature-arrow, .item-img-overlay .portfolio-zoom, .item-img-overlay .portfolio-zoom:hover, .item-img-overlay i, .navigation ul li:hover > a, .section-etabs a:hover, .section-tabs .tab a.active, .side-navigation .menu-item.current-menu-item a, .side-navigation .menu-item:hover a, .side-navigation .menu-item:hover a:after, .tagcloud a, .team-member .team-member-position, .team-member-progress .team-member-position, .top-body a:hover, a.list-group-item.active, a.tool-tip, body .tab a, body .tabs-vertical .tab a, body .white-text .feature-details a:hover, ul.icon-content-list-container li.icon-content-single .icon-box i {
-  color: $color-stt;
+  color: color(stt);
 }
 
 ::selection {
-  background-color: $color-stt;
+  background-color: color(stt);
 }
 
 ::-moz-selection {
-  background-color: $color-stt;
+  background-color: color(stt);
 }
 
 .callout-box {
-  border-left-color: $color-stt;
+  border-left-color: color(stt);
 }
 
 .feature .feature-content, .team-member .team-member-content {
-  border-top-color: $color-stt;
+  border-top-color: color(stt);
 }
 
 .section-parallax, .team-member-progress-bar {
-  background-color: $color-stt;
+  background-color: color(stt);
 }
 
 .blog-masonry .blog-post-quote {
-  border-top: 2px solid $color-stt;
+  border-top: 2px solid color(stt);
 }
 
 .item-img-overlay, .item-img-overlay i:hover {
@@ -70,7 +70,7 @@
 }
 
 body .section-content.section-image {
-  background-color: $color-stt;
+  background-color: color(stt);
   background-color: rgba(52, 152, 219, 0.8);
 }
 
@@ -83,16 +83,16 @@ body .section-content.section-image {
 }
 
 .section-parallax.secion-color-bg:before {
-  background-color: $color-stt;
+  background-color: color(stt);
   background-color: rgba(52, 152, 219, 0.8);
 }
 
 .accordion .active, .blog-post-quote, .blog-search .blog-search-button, .body-wrapper .tags a:hover, .btn.btn-primary, .button.alter:active, .button.alter:hover, .callout-box.callout-box2, .carousel-container .carousel-icon:hover, .comments-list .children .comment:before, .content-box.content-style4 h4 i, .content-box.style5 h4 i, .content-style3:hover .content-style3-icon, .dark-accordion.accordion .title.active, .dropcaps.dropcaps-color-style, .feature-arrows .feature-arrow:hover, .portfolio-filter li a.portfolio-selected, .portfolio-filter li a:hover, .price-table .price-label-badge, .price-table .price-table-header, .process-step, .progress .progress-bar, .section-content.section-color-bg, .section-content.section-services, .section-subscribe .subscribe-button.icon-envelope-alt, .single-process:after, .tab.active, .testimonial-big, .top-title-wrapper, body .button, body a.button, body button.button, button.button-main, button.button.alter:active, button.button.alter:hover, input[type=submit], input[type=button], table.table thead tr {
-  background-color: $color-stt;
+  background-color: color(stt);
 }
 
 .highlighted-text, .tagcloud a:hover {
-  background-color: $color-stt;
+  background-color: color(stt);
   color: #fff;
 }
 
@@ -101,31 +101,31 @@ body .section-content.section-image {
 }
 
 .accordion .title, .blog-post-date .day, .blog-post-date .month, .button.alter, .content-style3 .content-style3-icon, .feature .feature-content a, .feature .feature-details i, .icons-list.colored-list li:before, .process-details h4, body .tp-caption.main_color_text, button.button.alter, span.colored, strong.colored {
-  color: $color-stt;
+  color: color(stt);
 }
 
 .button.alter, body .button, body a.button, body button.button, button.button.alter, input[type=submit], input[type=button] {
-  border-color: $color-stt;
+  border-color: color(stt);
 }
 
 .button.button-white {
-  color: $color-stt !important;
+  color: color(stt) !important;
 }
 
 .pagination .next, .pagination .prev, .pagination a.current, .pagination a:hover, .price-table .price-label {
-  color: $color-stt;
+  color: color(stt);
 }
 
 .body-wrapper .tags a, .footer .copyright {
-  border-color: $color-stt;
+  border-color: color(stt);
 }
 
 .feature-arrows .feature-arrow:hover, .flickr_badge_wrapper .flickr_badge_image img:hover {
-  border-color: $color-stt;
+  border-color: color(stt);
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: $color-stt;
+  background-color: color(stt);
   color: #fff;
 }
 
@@ -150,19 +150,19 @@ body .section-content.section-image {
 .dropdown .fa-angle-down {
   background-color: #FFF;
   border: 1px solid #121212;
-  color: $color-stt;
+  color: color(stt);
 }
 
 li.dropdown.active .fa-angle-down, li.dropdown:hover .fa-angle-down {
   background-color: #FFF;
   border: 1px solid #fff;
-  color: $color-stt;
+  color: color(stt);
 }
 
 .comments-list .children .comment:after {
-  border-color: transparent transparent transparent $color-stt;
+  border-color: transparent transparent transparent color(stt);
 }
 
 .comments-list .children .comment:before {
-  background-color: $color-stt;
+  background-color: color(stt);
 }

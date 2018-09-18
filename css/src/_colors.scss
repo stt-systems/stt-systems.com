@@ -1,10 +1,21 @@
-$color-stt: #1d62ee;
-$color-white: #ffffff;
-$color-light: #d3d3d3;
-$color-gray: #797979;
-$color-black: #12121b;
-$color-sports: #b61d22;
-$color-clinical: #62c300;
-$color-human: #0062ae;
-$color-isen: #0062ae;
-$path-link-color: #ababaf;
+$colors: (
+  stt: #1d62ee,
+  white: #ffffff,
+  light: #d3d3d3,
+  gray: #797979,
+  black: #12121b,
+  sports: #b61d22,
+  clinical: #62c300,
+  human: #0062ae,
+  isen: #0062ae,
+  path-link: #ababaf
+);
+
+@function color($name) {
+  @if map-has-key($map: $colors, $key: $name) {
+    @return map-get($map: $colors, $key: $name);
+  }
+
+  @warn "Unknown `#{$name}` in $colors.";
+  @return null;
+}

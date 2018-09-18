@@ -201,7 +201,7 @@ h2.widgettitle {
     color: #428bca;
   }
   a:hover {
-    color: $color-stt;
+    color: color(stt);
   }
   [class*='col-'] {
     padding-left: 0px !important;
@@ -218,7 +218,7 @@ h2.widgettitle {
     padding-bottom: 2px;
   }
   a:hover {
-    color: $color-stt;
+    color: color(stt);
   }
 }
 
@@ -376,7 +376,7 @@ img.rounded, .woocommerce div.product div.images img, .woocommerce ul.products l
 }
 
 .cases-menu {
-  background-color: $color-stt;
+  background-color: color(stt);
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 18px;
@@ -412,7 +412,7 @@ img.rounded, .woocommerce div.product div.images img, .woocommerce ul.products l
 }
 
 .cases-section h3:hover {
-  color: $color-stt;
+  color: color(stt);
   font-weight: 100;
 }
 
@@ -428,7 +428,7 @@ img.rounded, .woocommerce div.product div.images img, .woocommerce ul.products l
   padding: 15px;
   border: none;
   border-radius: 5px;
-  background-color: $color-stt;
+  background-color: color(stt);
   color: #fff;
   font-weight: 100;
 }
@@ -490,7 +490,7 @@ table:not(.clean):not(.shop_table) {
 }
 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-  background-color: $color-stt !important;
+  background-color: color(stt) !important;
 }
 
 .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
@@ -498,7 +498,7 @@ table:not(.clean):not(.shop_table) {
 }
 
 table.blue th, table:not(.clean):not(.shop_attributes) th {
-  background-color: $color-stt;
+  background-color: color(stt);
 }
 
 table.blue th a, table.blue th a:hover, table:not(.clean):not(.shop_attributes) th a, table:not(.clean):not(.shop_attributes) th a:hover {
@@ -757,7 +757,7 @@ body .syntaxhighlighter .gutter, body .syntaxhighlighter a, body .syntaxhighligh
 
 .blog-search .blog-search-button {
   border: 0;
-  background-color: $color-stt;
+  background-color: color(stt);
   width: 30px;
   height: 30px;
   text-align: center;
@@ -1079,7 +1079,7 @@ body, li, p {
 
 a:focus, a:hover {
   text-decoration: none !important;
-  color: $color-stt;
+  color: color(stt);
 }
 
 body {
@@ -1533,7 +1533,7 @@ textarea {
 }
 
 .woocommerce div.product form.cart .button {
-  background-color: $color-stt !important;
+  background-color: color(stt) !important;
 }
 
 table, table.table {
@@ -1664,7 +1664,7 @@ table.hover tbody tr:nth-child(odd) {
 }
 
 .content-box:hover [class*=" flaticon-"]:before {
-  color: $color-stt;
+  color: color(stt);
   transition: color 0.3s;
   -moz-transition: color 0.3s;
   -webkit-transition: color 0.3s;
@@ -1676,10 +1676,10 @@ table.hover tbody tr:nth-child(odd) {
   font-weight: 300;
 
   a {
-    color: $path-link-color !important;
+    color: color(path-link) !important;
   }
   a:hover {
-    color: darken($path-link-color, 20) !important;
+    color: darken(color(path-link), 20) !important;
   }
 }
 

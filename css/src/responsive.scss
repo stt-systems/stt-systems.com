@@ -769,7 +769,7 @@
   }
 
   ul li.current_page_ancestor a.dropdown-toggle, ul li.current_page_ancestor a.dropdown-top-selected {
-    background-color: $color-stt;
+    background-color: color(stt);
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .15);
     color: #fff !important;
   }

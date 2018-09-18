@@ -4,7 +4,7 @@
   font-size: 22px;
   font-weight: 200;
 
-  color: $color-gray;
+  color: color(gray);
 
   @mixin header($name, $size) {
     #{$name} {
@@ -30,7 +30,7 @@
     margin-right: 10px;
   }
   li.light:before {
-    color: $color-gray !important;
+    color: color(gray) !important;
   }
 }
 
@@ -63,80 +63,74 @@
 .style-white {
   @extend .style-base-class;
 
-  @include links($color-black);
+  @include links(color(black));
   
-  background-color: $color-white;
+  background-color: color(white);
 
   h2 {
-    color: $color-black;
+    color: color(black);
   }
 }
 
 .style-light {
   @extend .style-base-class;
 
-  @include links($color-white);
+  @include links(color(white));
   
-  background-color: $color-light;
+  background-color: color(light);
 
   h2 {
-    color: $color-white;
+    color: color(white);
   }
 }
 
 .style-ultra-light {
   @extend .style-base-class;
 
-  @include links($color-black);
+  @include links(color(black));
   
   background-color: #f2f2f3;
 
   h2 {
-    color: $color-black;
+    color: color(black);
   }
 }
 
 .style-dark {
   @extend .style-base-class;
 
-  @include links($color-white);
+  @include links(color(white));
 
-  background-color: $color-black;
+  background-color: color(black);
 
   h2 {
-    color: $color-white;
+    color: color(white);
   }
 }
 
 @mixin colored($base-color) {
   .style-colored {
     @extend .style-base-class;
-    color: $color-white;
+    color: color(white);
     background-color: $base-color;
     
     h2 {
-      color: $color-black;
+      color: color(black);
     }
   }  
 
   li:before {
-    color: $color-sports;
+    color: color(sports);
   }
 }
 
-.style-sports {
-  @include links($color-sports);
-  @include colored($color-sports);
+@mixin colored_style($name) {
+  .style-#{$name} {
+    @include links(color($name));
+    @include colored(color($name));
+  }
 }
-.style-clinical {
-  @include links($color-clinical);
-  @include colored($color-clinical);
-}
-.style-human {
-  @include links($color-human);
-  @include colored($color-human);
-}
-.style-isen {
-  @include links($color-isen);
-  @include colored($color-isen);
-}
+@include colored_style(sports);
+@include colored_style(clinical);
+@include colored_style(human);
+@include colored_style(isen);
