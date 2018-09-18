@@ -308,20 +308,17 @@ function replace_quote_shortcode($atts) {
 		'text' => '',
 		'title' => '',
 		'author' => '',
-		'style' => '',
+		'style' => 'quote',
 	), $atts, 'quote'));
 	
 	if (!empty($author)) { // has author
 		$author = " <span>$author</span>";
 	}
 	
-	if (empty($style)) {
-		$style = 'quote';
-	}
-	
 	if ($style == 'quote') {
 		$text = "\"$text\"";
 	}
+
 	if (!empty($title)) {
 		$title = "<span><h4>$title</h4></span>";
 	}
