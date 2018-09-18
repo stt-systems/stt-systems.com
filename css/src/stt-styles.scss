@@ -60,10 +60,24 @@
   }
 }
 
+@mixin buttons($bg-color, $text-color, $role) {
+  .btn.btn-#{$role} {
+    border-color: $bg-color;
+    background-color: $bg-color;
+    color: $text-color;
+
+    &:hover {
+      opacity: 0.8;
+      color: $text-color !important;
+    }
+  }
+}
+
 .style-white {
   @extend .style-base-class;
 
   @include links(color(black));
+  @include buttons(color(black), color(white), 'primary');
   
   background-color: color(white);
 
@@ -76,6 +90,7 @@
   @extend .style-base-class;
 
   @include links(color(white));
+  @include buttons(color(white), color(light), 'primary');
   
   background-color: color(light);
 
@@ -88,6 +103,7 @@
   @extend .style-base-class;
 
   @include links(color(black));
+  @include buttons(color(black), color(white), 'primary');
   
   background-color: #f2f2f3;
 
@@ -100,6 +116,7 @@
   @extend .style-base-class;
 
   @include links(color(white));
+  @include buttons(color(white), color(black), 'primary');
 
   background-color: color(black);
 
@@ -117,6 +134,8 @@
     h2 {
       color: color(black);
     }
+
+    @include buttons(color(white), $base-color, 'primary');
   }  
 
   li:before {
@@ -128,8 +147,10 @@
   .style-#{$name} {
     @include links(color($name));
     @include colored(color($name));
+    @include buttons(color($name), color(white), 'secondary');
   }
 }
+
 @include colored_style(sports);
 @include colored_style(clinical);
 @include colored_style(human);

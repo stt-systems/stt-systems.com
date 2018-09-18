@@ -599,6 +599,38 @@ function replace_collapse_shortcode($atts, $content = null) {
 	return $code;
 }
 
+function replace_button_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'label' => '',
+		'page' => '',
+		'download' => '',
+		'url' => '',
+		'style' => '',
+	), $atts, 'button'));
+
+	if ($page != '') {
+		$page_url = get_page_url($page, 'page', $label);
+		if ($page_url == '') return '';
+
+		$url = $page_url['url'];
+		$label = $page_url['title'];
+	} else if ($download != '') {
+		$url = my_get_download_url($download);
+	}
+
+	if ($url == '') return '';
+
+	$role = 'primary';
+	if ($style != '') {
+		$role = 'secondary';
+		$style = "style-$style";
+	}
+
+	$code = "<span class=\"$style\"><a class=\"btn btn-$role\" href=\"$url\">$label</a></span>";
+
+	return $code;
+}
+
 function add_stt_shortcodes() {
   add_shortcode('row',           'replace_row_shortcode');
   add_shortcode('column',        'replace_column_shortcode');
@@ -616,6 +648,7 @@ function add_stt_shortcodes() {
 	add_shortcode('image-table',   'replace_image_table_shortcode');
 	add_shortcode('post-list',     'replace_post_list_shortcode');
 	add_shortcode('collapse',      'replace_collapse_shortcode');
+	add_shortcode('button',        'replace_button_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
