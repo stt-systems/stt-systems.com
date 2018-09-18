@@ -262,8 +262,7 @@ function get_page_permalink($slug, $type = 'page') {
   return get_permalink($page->ID);
 }
 
-// Return a link to a page from its slug
-function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
+function get_page_url($slug, $type = 'page', $title = '') {
 	$args = array(
 		'name' => $slug,
 		'post_type' => $type,
@@ -280,12 +279,28 @@ function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
 	if ($title == '') { // custom title
 		$title = $page->post_title;
 	}
-	
+
+	$url = get_permalink($page->ID);
+
+	return array(
+		'url' => $url,
+		'title' => $title,
+	);
+}
+
+// Return a link to a page from its slug
+function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
+	$page_url = get_page_url($slug, $type, $title);
+	if ($page_url == '') return '';
+
+	$url = $page_url['url'];
+	$title = $page_url['title'];
+
 	if ($rel != '') {
 		$rel = " rel=\"$rel\"";
 	}
 
-	return '<a href="' . get_permalink($page->ID) . '"' . $rel . ">$title</a>";
+	return "<a href=\"$url\"$rel\">$title</a>";
 }
 
 function get_widget_recent_posts($cat) {
@@ -324,22 +339,12 @@ function get_posts_for_category($cat_id, $number_of_posts) {
 }
 
 function get_product_icon_link($slug, $icon) {
-	$args = array(
-		'name' => $slug,
-		'post_type' => 'page',
-		'post_status' => 'publish',
-		'showposts' => 1,
-		'ignore_sticky_posts' => 1,
-		'posts_per_page' => 1
-	);
-	$pages = get_posts($args);
+	$page_url = get_page_url($slug);
+	if ($page_url == '') return '';
 
-	if (!$pages) return '';
-	$page = array_pop($pages);
+	$url = $page_url['url'];
+	$title = $page_url['title'];
 
-	$title = $page->post_title;
-
-	$url = get_permalink($page->ID);
 	$img_src = get_upload_url("icons/products/$icon.png");
 	$link = "<a href=\"$url\"><span class=\"product $icon\">$title</span></a>";
 
