@@ -12,8 +12,8 @@
 				<?php  _e( "Yearly Archives:", 'stt' );  echo (get_the_date( 'Y' )); ?>
 				<?php else : ?>
 				<?php _e( "Blog Archives", 'stt' ); ?>
-				<?php endif; ?>				
-				</h1>				
+				<?php endif; ?>
+				</h1>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
 			<?php 	while(have_posts()):the_post();
 					global $more; $more = 0; 
 					get_template_part( 'content', get_post_format() );
-					endwhile; ?>				
+					endwhile; ?>
 				
 				<div class="pagination">
 					<?php if ( get_next_posts_link() ): ?>
@@ -35,7 +35,7 @@
 						<?php endif; ?>
 						<?php if ( get_previous_posts_link() ): ?>
 						<?php previous_posts_link( __( 'Newer posts', 'stt' ). '<span class="next">&rarr;</span>' ); ?>
-						<?php endif; ?>					
+						<?php endif; ?>
 					
 				</div>
 			</div>
