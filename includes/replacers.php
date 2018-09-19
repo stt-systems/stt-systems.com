@@ -654,12 +654,10 @@ function replace_button_shortcode($atts) {
 function replace_list_button_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'text' => '',
+		'page' => '',
 		'width' => '25',
 	), $atts, 'list-button'));
 
-	$text = str_replace("&#091;", "[", $text);
-	$text = str_replace("&#093;", "]", $text);
-	$text = do_shortcode($text);
 	$content = do_shortcode($content);
 
 	$col_text = 'col-md-3';
@@ -670,6 +668,10 @@ function replace_list_button_shortcode($atts, $content = null) {
 	} else if ($width == '50') {
 		$col_text = 'col-md-6';
 		$col_button = 'col-md-6';
+	}
+
+	if ($page != '') {
+		$text = get_page_full_link($page, $text);
 	}
 
 	return "<div class=\"row\"><div class=\"col-sm-12 $col_text\">$text</div><div class=\"col-sm-12 $col_button\">$content</div></div>";
