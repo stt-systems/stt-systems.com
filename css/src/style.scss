@@ -1089,17 +1089,18 @@ body {
 blockquote {
   border: 0;
   padding: 0;
-  color: color(light);
+  color: color(path-link);
   font-style: italic;
-  font-size: 19px;
+  font-size: 22px;
+  font-weight: 400;
 
   a {
-    color: color(light) !important;
+    color: color(path-link) !important;
     font-style: italic;  
   }
 
   span,.author, .other {
-    font-size: 17px;
+    font-size: 18px;
     display: block;
     font-style: normal;
     color: color(gray);
