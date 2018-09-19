@@ -651,6 +651,30 @@ function replace_button_shortcode($atts) {
 	return $code;
 }
 
+function replace_list_button_shortcode($atts, $content = null) {
+	extract(shortcode_atts(array(
+		'text' => '',
+		'width' => '25',
+	), $atts, 'list-button'));
+
+	$text = str_replace("&#091;", "[", $text);
+	$text = str_replace("&#093;", "]", $text);
+	$text = do_shortcode($text);
+	$content = do_shortcode($content);
+
+	$col_text = 'col-md-3';
+	$col_button = 'col-md-9';
+	if ($width == '33') {
+		$col_text = 'col-md-4';
+		$col_button = 'col-md-8';
+	} else if ($width == '50') {
+		$col_text = 'col-md-6';
+		$col_button = 'col-md-6';
+	}
+
+	return "<div class=\"row\"><div class=\"col-sm-12 $col_text\">$text</div><div class=\"col-sm-12 $col_button\">$content</div></div>";
+}
+
 function add_stt_shortcodes() {
   add_shortcode('row',           'replace_row_shortcode');
   add_shortcode('column',        'replace_column_shortcode');
@@ -669,6 +693,7 @@ function add_stt_shortcodes() {
 	add_shortcode('post-list',     'replace_post_list_shortcode');
 	add_shortcode('collapse',      'replace_collapse_shortcode');
 	add_shortcode('button',        'replace_button_shortcode');
+	add_shortcode('list-button',   'replace_list_button_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
