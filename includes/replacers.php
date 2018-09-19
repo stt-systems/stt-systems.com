@@ -18,8 +18,6 @@ function stt_replace_content($content) {
 	$content = str_replace(']]>', ']]&gt;', $content);
 	$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
 
-	//$content = "<div class=\"row\"><div class=\"col-md-12 col-sm-12\">$content";
-
 	// Move the fullscreen galleries div outside the blog to avoid footer and header overlap it
 	// Additionally, each gallery div is associated to a set of images by the gallery's ID
 	$len = strlen($content);
@@ -27,8 +25,6 @@ function stt_replace_content($content) {
 	if ($len != strlen($content)) { ?>
 		<script type="text/javascript">window.onload=function(){$('body').append($('.blueimp-gallery'));};</script><?php
 	}
-	
-	//$content .= '</div></div>';
 
 	return $content;
 }
@@ -40,12 +36,12 @@ function replace_row_shortcode($atts, $content = null) {
 	), $atts, 'row'));
 
   if ($id != "") {
-    $id = "id=$id";
+    $id = " id=$id";
 	}
 	
 	$content = do_shortcode($content);
   
-	return "<div $id class=\"row\">$content</div>";
+	return "<div$id class=\"row\">$content</div>";
 }
 function replace_column_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
