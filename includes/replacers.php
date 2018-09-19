@@ -624,6 +624,7 @@ function replace_button_shortcode($atts) {
 		'download' => '',
 		'url' => '',
 		'style' => '',
+		'align' => '',
 	), $atts, 'button'));
 
 	if ($page != '') {
@@ -644,7 +645,12 @@ function replace_button_shortcode($atts) {
 		$style = "style-$style";
 	}
 
-	$code = "<span class=\"$style\"><a class=\"btn btn-$role\" href=\"$url\">$label</a></span>";
+	$btn_class = "btn btn-$role";
+	if ($align != '') {
+		$btn_class = "$btn_class";
+	}
+
+	$code = "<span class=\"$style\" style=\"left: 200px\"><a class=\"$btn_class\" href=\"$url\">$label</a></span>";
 
 	return $code;
 }

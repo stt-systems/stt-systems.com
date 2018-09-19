@@ -799,7 +799,8 @@ body .syntaxhighlighter .gutter, body .syntaxhighlighter a, body .syntaxhighligh
 .btn {
   border-radius: 3px;
   border: 0;
-  margin: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 
   &.btn-primary {
     color: #fff;
