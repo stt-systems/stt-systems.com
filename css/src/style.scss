@@ -1031,6 +1031,17 @@ body .syntaxhighlighter .gutter, body .syntaxhighlighter a, body .syntaxhighligh
   a, a:visited {
     color: #a3a3a3;
   }
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 }
 
 p {
@@ -1050,17 +1061,6 @@ p {
 
 .footer .social-icons .social-media-icon:hover {
   border: none;
-}
-
-.footer .copyright:before {
-  position: absolute;
-  display: block;
-  content: "";
-  height: 1px;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 #header, .body-wrapper, .footer-wrapper, .navigation, .page-info, .sidebar, sub, sup {
