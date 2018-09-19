@@ -1136,7 +1136,10 @@ blockquote {
   width: 100%;
 }
 
-b, strong, time {
+b {
+  font-weight: 500;
+}
+strong, time {
   font-weight: 600;
 }
 
