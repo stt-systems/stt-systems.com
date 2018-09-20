@@ -1099,7 +1099,7 @@ blockquote {
     font-style: italic;  
   }
 
-  span,.author, .other {
+  span, .author, .other {
     font-size: 18px;
     display: block;
     font-style: normal;
@@ -1107,6 +1107,13 @@ blockquote {
   }
   .author {
     margin-top: 10px;
+  }
+}
+.style-dark blockquote {
+  color: color(white);
+
+  span, .author, .other {
+    font-weight: 400;
   }
 }
 
