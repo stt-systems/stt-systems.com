@@ -677,6 +677,21 @@ function replace_list_button_shortcode($atts, $content = null) {
 	return "<div class=\"row\"><div class=\"col-sm-12 $col_text\">$text</div><div class=\"col-sm-12 $col_button\">$content</div></div>";
 }
 
+function replace_distributor_shortcode($atts, $content = null) {
+	extract(shortcode_atts(array(
+		'name' => '',
+		'logo' => '',
+		'products' => '',
+	), $atts, 'distributor'));
+
+	$logo_url = get_upload_url("$logo");
+	$logo_img = "<img src=\"$logo_url\" alt=\"$name\" width=\"90%\"/>";
+
+	$content = do_shortcode($content);
+
+	return "<div class=\"row\" style=\"text-align: left\"><div class=\"col-sm-3\">$logo_img</div><div class=\"col-sm-6\"><h3>$name</h3>$content</div><div class=\"col-sm-3\">$products</div></div>";
+}
+
 function add_stt_shortcodes() {
   add_shortcode('row',           'replace_row_shortcode');
   add_shortcode('column',        'replace_column_shortcode');
@@ -696,6 +711,7 @@ function add_stt_shortcodes() {
 	add_shortcode('collapse',      'replace_collapse_shortcode');
 	add_shortcode('button',        'replace_button_shortcode');
 	add_shortcode('list-button',   'replace_list_button_shortcode');
+	add_shortcode('distributor',   'replace_distributor_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
