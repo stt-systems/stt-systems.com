@@ -65,7 +65,7 @@ $clients = get_files_in_dir('clients/capture');
 $n = count($clients); ?>
 <div class="container-fluid">
 <div id="clientsCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-bottom: 0">
-  <div class="carousel-inner" style="background: #565656;"><?php
+  <div class="carousel-inner" style="background: #d3d3d3;"><?php
   $i = 0;
   foreach ($clients as $client) {
     if ($i % 8 == 0) { ?>
