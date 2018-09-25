@@ -796,7 +796,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 		$type_str = "<span class=\"type\">$type_str<span id=\"current\"></span></span>";
 	}
 
-	wp_enqueue_script('distributors');
+	wp_enqueue_script('product-hovering');
 
 	return "<div class=\"row distributor\" style=\"text-align: left\">" .
 				 "<div class=\"col-sm-1 country\"><span>$country</span></div>" .
@@ -829,8 +829,8 @@ function add_stt_shortcodes() {
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
 
-function distributors_shortcode_wp_enqueue_scripts() {
-	wp_register_script('distributors', get_template_directory_uri() . '/js/distributors.min.js');
+function product_hovering_shortcode_wp_enqueue_scripts() {
+	wp_register_script('product-hovering', get_template_directory_uri() . '/js/product-hovering.min.js');
 }
-add_action('wp_enqueue_scripts', 'distributors_shortcode_wp_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'product_hovering_shortcode_wp_enqueue_scripts');
 ?>
