@@ -1857,14 +1857,22 @@ h3.collapse-header {
     padding-bottom: 0;
   }
 
-  a {
-    width: 24px;
-    height: 24px;
-    margin: 3px;
-  }
-  span {
-    width: 24px;
-    height: 24px;
+  .product-links {
+    [class*='col-'] {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    a {
+      width: 24px;
+      height: 24px;
+      margin: 0px;
+      margin-left: 5px;
+    }
+    .product {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   .country, .logo {
@@ -1873,5 +1881,37 @@ h3.collapse-header {
   }
   .country {
     font-weight: 500;
+  }
+
+  .type {
+    margin-left: 3px;
+
+    @mixin type($name) {
+      .#{$name} {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        margin-left: 4px;
+        margin-bottom: -5px;
+    
+        background-image: url("../images/distributor-#{$name}.png");
+        background-size: cover;
+
+        /* Hide text */
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+    @include type(premium);
+    @include type(exclusive);
+
+    #current {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      margin-left: 6px;
+      height: 26px;
+    }
   }
 }

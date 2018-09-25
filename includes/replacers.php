@@ -687,6 +687,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 		'logo' => '',
 		'products' => '',
 		'country' => '',
+		'type' => 'premium',
 	), $atts, 'distributor'));
 
 	$logo_url = get_upload_url("$logo");
@@ -765,10 +766,33 @@ function replace_distributor_shortcode($atts, $content = null) {
 		}
 	}
 
+	$types_metadata = array(
+		'premium' => __('(Premium distributor and trainer)'),
+		'exclusive' => __('(Exclusive reseller)'),
+	);
+	if (strpos('premium', $type) === false) {
+		if ($type == '') {
+			$type = 'premium';
+		} else {
+			$type = 'premium,' . $type;
+		}
+	}
+	$types = preg_split('/[,;: ]+/', $type);
+	$type_str = '';
+	foreach ($types as $type) {
+		$label = $types_metadata[$type];
+		$type_str .= " <span class=\"$type\">$label</span>";
+	}
+	if (!empty($type_str)) {
+		$type_str = "<span class=\"type\">$type_str<span id=\"current\"></span></span>";
+	}
+
+	wp_enqueue_script('distributors');
+
 	return "<div class=\"row distributor\" style=\"text-align: left\">" .
 				 "<div class=\"col-sm-1 country\"><span>$country</span></div>" .
 				 "<div class=\"col-sm-2 logo\">$logo_img</div>" .
-				 "<div class=\"col-sm-5\"><h3>$name</h3>$content</div>" .
+				 "<div class=\"col-sm-5 contact\"><h3>$name$type_str</h3>$content</div>" .
 				 "<div class=\"col-sm-4 product-links\">$products_list</div></div>";
 }
 
@@ -795,4 +819,9 @@ function add_stt_shortcodes() {
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
+
+function distributors_shortcode_wp_enqueue_scripts() {
+	wp_register_script('distributors', get_template_directory_uri() . '/js/distributors.min.js');
+}
+add_action('wp_enqueue_scripts', 'distributors_shortcode_wp_enqueue_scripts');
 ?>
