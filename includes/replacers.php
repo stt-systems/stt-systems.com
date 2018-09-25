@@ -682,6 +682,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 		'name' => '',
 		'logo' => '',
 		'products' => '',
+		'country' => '',
 	), $atts, 'distributor'));
 
 	$logo_url = get_upload_url("$logo");
@@ -689,13 +690,82 @@ function replace_distributor_shortcode($atts, $content = null) {
 
 	$content = do_shortcode($content);
 
-	$products = preg_split('/[,;: ]+/', $products);
-	foreach ($products as $key => $product) {
-		$products[$key] = '<div>' . get_page_full_link($product) . '</div>';
-	}
-	$products_list = join('', $products);
+	$products_metadata = array(
+		'sports-3dma' => array(
+			'icon' => 'sports',
+			'family' => '3dma',
+		),
+		'cycling-3dma' => array(
+			'icon' => 'cycling',
+			'family' => '3dma',
+		),
+		'golf-3dma' => array(
+			'icon' => 'golf',
+			'family' => '3dma',
+		),
+		'running-3dma' => array(
+			'icon' => 'running',
+			'family' => '3dma',
+		),
+		'clinical-3dma' => array(
+			'icon' => 'clinical',
+			'family' => '3dma',
+		),
+		'human-3dma' => array(
+			'icon' => 'human',
+			'family' => '3dma',
+		),
+		'eddo' => array(
+			'icon' => 'eddo',
+			'family' => '3dma',
+		),
+		'bikefit' => array(
+			'icon' => 'cycling',
+			'family' => '2dma',
+		),
+		'cycling-2dma' => array(
+			'icon' => 'cycling',
+			'family' => '2dma',
+		),
+		'isen' => array(
+			'icon' => 'clinical',
+			'family' => 'inertial',
+		),
+	);
 
-	return "<div class=\"row distributor\" style=\"text-align: left\"><div class=\"col-sm-3\">$logo_img</div><div class=\"col-sm-6\"><h3>$name</h3>$content</div><div class=\"col-sm-3 products\">$products_list</div></div>";
+	$products = preg_split('/[,;: ]+/', $products);
+	$products_by_family = array(
+		'2dma' => array(
+			'name' => __('2DMA'),
+			'list' => array(),
+		),
+		'3dma' => array(
+			'name' => __('3DMA'),
+			'list' => array(),
+		),
+		'inertial' => array(
+			'name' => __('Inertial'),
+			'list' => array(),
+		),
+	);
+	foreach ($products as $key => $product) {
+		$icon = get_product_icon_link($product, $products_metadata[$product]['icon']);
+		$products_by_family[$products_metadata[$product]['family']]['list'][] = $icon;
+	}
+
+	$products_list = '';
+	foreach ($products_by_family as $key => $family) {
+		if (!empty($family['list'])) {
+			$products_list .= '<div class="row"><div class="col-sm-12 col-md-2"><b>' . $family['name'] . '</b></div>' .
+												'<div class="col-sm-12 col-md-10">' . join('', $family['list']) . '</div></div>';
+		}
+	}
+
+	return "<div class=\"row distributor\" style=\"text-align: left\">" .
+				 "<div class=\"col-sm-1 country\"><span>$country</span></div>" .
+				 "<div class=\"col-sm-2 logo\">$logo_img</div>" .
+				 "<div class=\"col-sm-5\"><h3>$name</h3>$content</div>" .
+				 "<div class=\"col-sm-4 product-links\">$products_list</div></div>";
 }
 
 function add_stt_shortcodes() {
