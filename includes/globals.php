@@ -303,14 +303,19 @@ function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
 	return "<a href=\"$url\"$rel>$title</a>";
 }
 
-function get_url_link($url, $title, $blank = true, $nofollow = false) {
+function get_url_link($url, $title = '', $blank = true, $nofollow = false) {
 	$target = '';
 	if ($blank) {
 		$target = ' target="_blank"';
 	}
+
 	$rel = '';
 	if ($nofollow) {
 		$rel = ' rel="nofollow"';
+	}
+
+	if (empty($title)) {
+		$title = $url;
 	}
 
 	return "<a href=\"$url\"$target$rel>$title</a>";
