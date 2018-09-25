@@ -146,12 +146,16 @@ function replace_email_shortcode($atts) {
 		'to' => '',
 		'title' => '',
 	), $atts, 'email'));
+
+	if (strpos($to, '@') === false) {
+		$to .= '@stt-systems.com';
+	}
 	
 	if ($title == '') {
-		$title = "$to@stt-systems.com";
+		$title = $to;
 	}
 		
-	return "<a href=\"mailto:$to@stt-systems.com\">$title</a>";
+	return "<a href=\"mailto:$to\">$title</a>";
 }
 
 function replace_image_shortcode($atts) {
