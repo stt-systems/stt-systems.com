@@ -123,15 +123,14 @@ print_page_title('', sprintf(__('Search results for: %s', 'stt'), '<span>' . get
 	}
 
 	if (!$any_result) { ?>
-		<div class="blog-span">
-			<header class="entry-header">
-				<h1 class="entry-title"><?php _e('Nothing Found', 'stt'); ?></h1>
-			</header>
-
-			<div class="entry-content">
-				<p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'stt'); ?></p>
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<div class="not-found-40x">
+				<h2><?php echo __('Nothing Found'); ?><i class="iscon-remove-sign skin-text"></i></h2>
+				<p><?php echo __('Sorry, but nothing matched your search criteria. Please try again with some different keywords.'); ?></p> 
 			</div>
-		</div><?php
+		</div>
+	</div><?php
 	} ?>
 </div>
 <?php get_footer(); ?>
