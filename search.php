@@ -33,8 +33,10 @@ function trim_to_search_result($text, $num_words = 55, $more = null) {
 }
 
 get_header();
+echo get_page_top_spacer(true);
 print_page_title('', sprintf(__('Search results for: %s', 'stt'), '<span>' . get_search_query() . '</span>'));
-echo get_page_top_spacer(); ?>
+?>
+<div class="space-sep20"></div>
 <div class="content-wrapper body-wrapper blog-post blog-span">
 	<?php
 	$search_string = get_search_query();
@@ -54,7 +56,7 @@ echo get_page_top_spacer(); ?>
 			'$',
 			'^',
 			'*',
-			'|'
+			'|',
 		), array(
 			'\\\\',
 			'\\[',
@@ -71,7 +73,7 @@ echo get_page_top_spacer(); ?>
 			'\\$',
 			'\\^',
 			'\\*',
-			'\\|'
+			'\\|',
 		), $search_string);
 	$search_terms = preg_split('/[\s,;]+/', $search_string);
 	$search_term_search = '/(' . implode('|', $search_terms) . ')/iu';
