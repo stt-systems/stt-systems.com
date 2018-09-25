@@ -689,7 +689,13 @@ function replace_distributor_shortcode($atts, $content = null) {
 
 	$content = do_shortcode($content);
 
-	return "<div class=\"row\" style=\"text-align: left\"><div class=\"col-sm-3\">$logo_img</div><div class=\"col-sm-6\"><h3>$name</h3>$content</div><div class=\"col-sm-3\">$products</div></div>";
+	$products = preg_split('/[,;: ]+/', $products);
+	foreach ($products as $key => $product) {
+		$products[$key] = '<div>' . get_page_full_link($product) . '</div>';
+	}
+	$products_list = join('', $products);
+
+	return "<div class=\"row distributor\" style=\"text-align: left\"><div class=\"col-sm-3\">$logo_img</div><div class=\"col-sm-6\"><h3>$name</h3>$content</div><div class=\"col-sm-3 products\">$products_list</div></div>";
 }
 
 function add_stt_shortcodes() {

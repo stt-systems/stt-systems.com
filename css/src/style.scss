@@ -1798,3 +1798,14 @@ h3.collapse-header {
 [data-toggle="collapse"]:not(.collapsed) .if-collapsed {
   display: none;
 }
+
+.row .distributor {
+  .products {
+    font-size: 14px;
+  }
+
+  padding-top: 25px;
+  &:not(:last-of-type) {
+    padding-bottom: 25px;
+  }
+}
