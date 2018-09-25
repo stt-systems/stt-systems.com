@@ -34,7 +34,7 @@
   }
 }
 
-@mixin links($base-color) {
+@mixin links($base-color, $inner-link-color: $base-color) {
   a {
     color: $base-color;
   }
@@ -45,13 +45,20 @@
   .inner-links {
     padding-top: 15px;
 
+    a {
+      color: $inner-link-color;
+    }
+    a:hover {
+      color: darken($inner-link-color, 20) !important;
+    }
+
     a:after {
       content: '\21E3';
       visibility: visible;
       margin-left: 5px;
     }
     a:not(:first-child) {
-      border-left: 1px solid $base-color;
+      border-left: 1px solid $inner-link-color;
       padding-left: 15px;
     }
     a:not(:last-child):after {
@@ -76,7 +83,7 @@
 .style-white {
   @extend .style-base-class;
 
-  @include links(color(black));
+  @include links(color(black), color(stt));
   @include buttons(color(black), color(white), 'primary');
   
   background-color: color(white);
