@@ -136,7 +136,7 @@ function replace_link_shortcode($atts) {
 
 	if ($page != '') return get_page_full_link($page, $title);
 	if ($title == '') $title = $url;
-	if ($url != '') return "<a href=\"$url\" target=\"_blank\">$title</a>";
+	if ($url != '') return get_url_link($url, $title);
 	return $title;
 }
 
@@ -212,7 +212,7 @@ function replace_image_shortcode($atts) {
 	}
 	
 	if (!empty($page)) return get_page_full_link($page, $img);
-	if (!empty($url)) return "<a href=\"$url\" target=\"_blank\">$img</a>";
+	if (!empty($url)) return get_url_link($url, $img);
 	
 	return $img;
 }
@@ -323,7 +323,7 @@ function replace_quote_shortcode($atts) {
 		}
 
 		if ($url != '') {
-			$author = "<a href=\"$url\" target=\"_blank\">$author</a>";
+			$author = get_url_link($url, $author);
 		}
 	}
 	
@@ -336,7 +336,7 @@ function replace_quote_shortcode($atts) {
 	}
 
 	if ($source != '') {
-		$text = "<a href=\"$source\" target=\"_blank\">$text</a>";
+		$text = get_url_link($source, $text);
 	}
 
 	$code = "<blockquote>$title$text$author</blockquote>";
@@ -354,7 +354,7 @@ function replace_download_shortcode($atts) {
 	$download = my_get_download_url($name);
 	if ($download == '') return '';
 	// NOFOLLOW: do not pass link juice for PDFs on sidebars
-	return "<a href=\"$download\" rel=\"nofollow\">$title</a>";
+	return get_url_link($download, $title, $nofollow = true);
 }
 function replace_downloads_shortcode($atts) {
 	extract(shortcode_atts(array(
@@ -460,7 +460,7 @@ function replace_downloads_shortcode($atts) {
 				}
 				$zip_file->close();
 				$zip_url = my_get_download_url("$name/$name.zip");
-				$download_all = "<div><a href=\"$zip_url\">Download all (ZIP)</a></div>";
+				$download_all = '<div>' . get_url_link($zip_url, 'Download all (ZIP)', $blank = false) . '</div>';
 			}
 		}
 
@@ -471,7 +471,7 @@ function replace_downloads_shortcode($atts) {
 	$list = array();
 	foreach ($downloads['files'] as $file) {
 		// NOFOLLOW: do not pass link juice for PDFs on sidebars
-		array_push($list, '<a href="' . $file['file'] . '" rel="nofollow">' . $file['title'] . '</a>');
+		array_push($list, get_url_link($file['file'], $file['title'], $nofollow = true));
 	}
 
 	return "$title<p>" . implode($list, '</p><p>') . '</p>';
@@ -523,9 +523,7 @@ function display_search_results($results, $title) {
 		uasort($results, 'search_cmp');
 		foreach ($results as $res) { ?>
 			<div class="row" style="padding-bottom: 35px"><div class="col-md-12 col-sm-12">
-				<h4 style="margin-bottom: 0px"><a href="<?php echo get_permalink($res['id']); ?>"><?php
-					echo $res['title']; ?>
-				</a></h4><?php
+				<h4 style="margin-bottom: 0px"><?php echo get_url_link(get_permalink($res['id']), $res['title']); ?></h4><?php
 				if ($res['date']) {
 					$date = new DateTime($res['date']);
 					echo '<div style="padding-left: 20px; color: #848484;">' . $date->format('Y-M-d') . '</div>';

@@ -303,6 +303,19 @@ function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
 	return "<a href=\"$url\"$rel>$title</a>";
 }
 
+function get_url_link($url, $title, $blank = true, $nofollow = false) {
+	$target = '';
+	if ($blank) {
+		$target = ' target="_blank"';
+	}
+	$rel = '';
+	if ($nofollow) {
+		$rel = ' rel="nofollow"';
+	}
+
+	return "<a href=\"$url\"$target$rel>$title</a>";
+}
+
 function get_widget_recent_posts($cat) {
 	$query = new WP_Query(array('category_name' => $cat, 'posts_per_page' => 5));
 	if ($query->have_posts()) {
