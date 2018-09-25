@@ -686,12 +686,19 @@ function replace_distributor_shortcode($atts, $content = null) {
 		'products' => '',
 		'country' => '',
 		'type' => 'premium',
+		'url' => '',
 	), $atts, 'distributor'));
+
+	$content = do_shortcode($content);
 
 	$logo_url = get_upload_url("$logo");
 	$logo_img = "<img src=\"$logo_url\" alt=\"$name\" width=\"90%\"/>";
 
-	$content = do_shortcode($content);
+	if (!empty($url)) {
+		$name = get_url_link($url, $name);
+		$logo_img = get_url_link($url, $logo_img);
+		$content = '<p>Website: ' . get_url_link($url) . '</p>' . $content;
+	}
 
 	$products_metadata = array(
 		'sports-3dma' => array(
