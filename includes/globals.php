@@ -345,7 +345,6 @@ function get_product_icon_link($slug, $icon) {
 	$url = $page_url['url'];
 	$title = $page_url['title'];
 
-	$img_src = get_upload_url("icons/products/$icon.png");
 	$link = "<a href=\"$url\"><span class=\"product $icon\">$title</span></a>";
 
 	return $link;
