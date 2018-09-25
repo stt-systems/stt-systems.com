@@ -300,7 +300,7 @@ function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
 		$rel = " rel=\"$rel\"";
 	}
 
-	return "<a href=\"$url\"$rel\">$title</a>";
+	return "<a href=\"$url\"$rel>$title</a>";
 }
 
 function get_widget_recent_posts($cat) {
