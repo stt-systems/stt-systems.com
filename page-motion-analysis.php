@@ -2,6 +2,7 @@
 add_action('wp_head', 'schema_head');
 get_header();
 wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
+wp_enqueue_script('product-hovering');
 ?>
 
 <div class="row" style="display: table; height: 100vh; width: 100%; margin: 0">
@@ -81,25 +82,5 @@ $n = count($clients); ?>
   </div>
 </div>
 </div>
-
-<script>
-$(document).ready(function() {
-  $('#2dma-products .product').hover(function() {
-    $('#current-2dma-product').text($(this).text())
-  }, function() {
-    $('#current-2dma-product').text('');
-  });
-  $('#3dma-products .product').hover(function() {
-    $('#current-3dma-product').text($(this).text())
-  }, function() {
-    $('#current-3dma-product').text('');
-  });
-  $('#inertial-products .product').hover(function() {
-    $('#current-inertial-product').text($(this).text())
-  }, function() {
-    $('#current-inertial-product').text('');
-  });
-});
-</script>
 
 <?php get_footer(); ?>
