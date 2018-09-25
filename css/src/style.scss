@@ -1848,8 +1848,10 @@ h3.collapse-header {
 .row .distributor {
   font-size: 18px;
 
-  padding-top: 25px;
-  &:not(:last-of-type) {
+  &:nth-child(odd):not(:last-child) {
+    padding-top: 25px;
+  }
+  &:nth-child(even) {
     padding-bottom: 25px;
   }
 
@@ -1858,6 +1860,8 @@ h3.collapse-header {
   }
 
   .product-links {
+    margin-top: 0px;
+
     [class*='col-'] {
       padding: 0px;
       margin: 0px;
@@ -1879,12 +1883,15 @@ h3.collapse-header {
     }
   }
 
-  .country, .logo {
+  .logo {
     display: flex;
     align-items: center;
   }
   .country {
-    font-weight: 500;
+    display: flex;
+    margin-top: 8px;
+    justify-content: flex-start;
+    font-weight: 700;
   }
 
   .type {

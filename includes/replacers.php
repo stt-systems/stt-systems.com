@@ -799,9 +799,12 @@ function replace_distributor_shortcode($atts, $content = null) {
 	wp_enqueue_script('product-hovering');
 
 	return "<div class=\"row distributor\" style=\"text-align: left\">" .
-				 "<div class=\"col-sm-1 country\"><span>$country</span></div>" .
-				 "<div class=\"col-sm-2 logo\">$logo_img</div>" .
-				 "<div class=\"col-sm-5 contact\"><h3>$name$type_str</h3>$content</div>" .
+				 "<div class=\"col-sm-3 country\">$country</div>" .
+				 "<div class=\"col-sm-5\"><h3>$name$type_str</h3></div>" .
+				 "<div class=\"col-sm-4 product-links\"></div></div>" .
+				 "<div class=\"row distributor\" style=\"text-align: left\">" .
+				 "<div class=\"col-sm-3 logo\">$logo_img</div>" .
+				 "<div class=\"col-sm-5 contact\">$content</div>" .
 				 "<div class=\"col-sm-4 product-links\">$products_list</div></div>";
 }
 
