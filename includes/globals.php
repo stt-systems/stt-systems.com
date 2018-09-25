@@ -83,11 +83,11 @@ function print_page_title($slug = '', $title = '') {
 		if (is_category()) {
 			$category = get_queried_object();
 			$slug = $category->slug;
-		} else {
+		} else if ($post) {
 			$slug = $post->post_name;
 		}
 	}
-	if ($title == '') {
+	if ($title == '' && $post) {
 		$title = $post->post_title;
 	}
 	
