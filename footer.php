@@ -76,7 +76,7 @@
 					<div class="sidebar-content tags blog-search">
 					<form method="get" id="searchform" action="<?php echo site_url();?>">
 						<input type="text" class="blog-search-input text-input" name="s" id="s" placeholder="Search&hellip;">
-						<button class="blog-search-button icon-search ">&#xf002;</button>
+						<button class="blog-search-button"><i class="fas fa-search"></i></button>
 					</form>
 					</div>
 				</div>
