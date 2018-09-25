@@ -1394,7 +1394,6 @@ legend {
 button, input, select, textarea {
   font-size: 100%;
   margin: 0;
-  vertical-align: baseline;
   vertical-align: middle;
 }
 
@@ -1799,13 +1798,82 @@ h3.collapse-header {
   display: none;
 }
 
-.row .distributor {
-  .products {
-    font-size: 14px;
+@mixin product($name) {
+  .#{$name} {
+    background-image: url("../images/products/#{$name}.png");
+    background-size: cover;
   }
+
+  .#{$name}:hover {
+    transform: scale(1.08);
+  }
+}
+
+.product-links {
+  margin-top: 40px;
+
+  a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+  }
+  span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+
+    /* Hide text */
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  @include product(sports);
+  @include product(cycling);
+  @include product(golf);
+  @include product(running);
+  @include product(clinical);
+  @include product(human);
+  @include product(eddo);
+  @include product(isen);
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 300;
+  color: #cfcfcf;
+  margin-top: 10px;
+  height: 50px;
+}
+
+.row .distributor {
+  font-size: 18px;
 
   padding-top: 25px;
   &:not(:last-of-type) {
     padding-bottom: 25px;
+  }
+
+  h3 {
+    padding-bottom: 0;
+  }
+
+  a {
+    width: 24px;
+    height: 24px;
+    margin: 3px;
+  }
+  span {
+    width: 24px;
+    height: 24px;
+  }
+
+  .country, .logo {
+    display: flex;
+    align-items: center;
+  }
+  .country {
+    font-weight: 500;
   }
 }
