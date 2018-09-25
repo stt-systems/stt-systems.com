@@ -11,7 +11,7 @@ function my_wp_nav_menu_args($args = '') {
   if (!is_nav_menu($args['menu'])) {
     $args['menu'] = "{$top_level_slug}";
   }
-  if (!is_nav_menu($args['menu'])) {
+  if (is_404() || !is_nav_menu($args['menu'])) {
     $args['menu'] = 'front-page';
   }
   
