@@ -770,6 +770,10 @@ function replace_distributor_shortcode($atts, $content = null) {
 												'<div class="col-sm-12 col-md-10">' . join('', $family['list']) . '</div></div>';
 		}
 	}
+	if (!empty($products_list)) {
+		$products_list .= '<div class="row"><div class="col-sm-12 col-md-2"></div>' .
+											'<div class="col-sm-12 col-md-10" id="current"></div></div>';
+	}
 
 	$types_metadata = array(
 		'premium' => __('(Premium distributor and trainer)'),
