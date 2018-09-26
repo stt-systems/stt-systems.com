@@ -11,6 +11,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div class="col-md-2 col-sm-2"></div>
       <div class="col-md-8 col-sm-8">
         <div class="content-box">
+          <img src="<?php echo get_upload_url("logos/motion-analysis-single.png"); ?>" alt="Motion analysis solution" width="120px" />
           <h1 style="height: 3em">Motion Analysis Solutions</h1>
           <h3>Premium technologies for human motion studies. Ready to use by sports scientists, clinicians and researchers</h3>
         </div>
@@ -24,6 +25,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       <div class="col-md-2 col-sm-2"></div>
       <div class="col-md-8 col-sm-8">
         <div class="content-box">
+          <img src="<?php echo get_upload_url("logos/industry-single.png"); ?>" alt="Industry 4.0" width="120px" />
           <h1 style="height: 3em">Industry 4.0</h1>
           <h3>Turn-key solutions for companies seeking smart and automated manufacturing &amp; monitoring processes</h3>
         </div>
