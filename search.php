@@ -117,8 +117,8 @@ print_page_title('', sprintf(__('Search results for: %s', 'stt'), '<span>' . get
 		}
 
 		if ($any_result) {
-			display_search_results($results['pages'], 'Pages');
-			display_search_results($results['blog'], 'Customer cases');
+			display_search_results($results['pages'], __('Pages'));
+			display_search_results($results['blog'], __('Blog'));
 		}
 	}
 

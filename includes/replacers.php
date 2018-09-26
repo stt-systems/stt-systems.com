@@ -78,7 +78,7 @@ function replace_column_shortcode($atts, $content = null) {
   $inner_html = "";
   
   if ($image != "") {  
-    $image_url = get_upload_url("$image");
+    $image_url = get_upload_url($image);
     $height = $height . "px";
   
     $inner_html .= "<div class=\"extend-full\" style=\"background-image: url($image_url); height: $height;\"></div>";
