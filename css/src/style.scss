@@ -1727,18 +1727,36 @@ table.hover tbody tr:nth-child(odd) {
   margin-bottom: 20px;
 }
 
-.extend-full, .extend-left {
+.extend-full {
   padding-left: 100vw;
   margin-left: -100vw;
-}
-.extend-full, .extend-right {
   padding-right: 100vw;
   margin-right: -100vw;
-}
-.extend-full {
   background-size: 100vw;
   background-repeat: no-repeat;
   background-position: center center;
+}
+.row {
+  > [class*="col-"]:first-of-type:not(:only-of-type) {
+    .extend-full {
+      padding-left: 50vw;
+      margin-left: -50vw;
+      padding-right: 62px;
+      margin-right: -62px;
+      background-size: cover;
+      background-position: right center;
+    }
+  }
+  > [class*="col-"]:last-of-type:not(:only-of-type) {
+    .extend-full {
+      padding-left: 62px;
+      margin-left: -62px;
+      padding-right: 50vw;
+      margin-right: -50vw;
+      background-size: cover;
+      background-position: left center;
+    }
+  }
 }
 
 img.blog-thumbnail {
