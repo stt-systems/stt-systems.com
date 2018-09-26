@@ -689,6 +689,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 		'url' => '',
 	), $atts, 'distributor'));
 
+	$products = strtolower($products);
 	$content = do_shortcode($content);
 
 	$logo_url = get_upload_url("$logo");
