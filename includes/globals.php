@@ -159,7 +159,7 @@ function get_facebook_video($name, $caption = '') {
 	$to   = array('%2F', '%3A');
 	$name = str_replace($from, $to, $name);
 
-	return "<div class=\"youtube\" style=\"text-align: center\"><iframe width=\"560\" height=\"315\" style=\"margin-top: 5px\" src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" frameborder=0 allowfullscreen></iframe>$caption</div>";
+	return "<div class=\"youtube\" style=\"text-align:center\"><iframe width=\"560\" height=\"315\" style=\"margin-top:5px\" src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" frameborder=0 allowfullscreen></iframe>$caption</div>";
 }
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {

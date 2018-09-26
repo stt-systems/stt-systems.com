@@ -58,7 +58,7 @@ function replace_column_shortcode($atts, $content = null) {
     $class = "col-md-12 col-sm-12";
   } else if ($size == "66") {
     $class = "col-md-8 col-sm-8";
-    $stylesheet = "padding-left:15px;";
+    $stylesheet = "padding-left:15px";
   } else if ($size == "50") {
     $class = "col-md-6 col-sm-6";
   } else if ($size == "33") {
@@ -79,10 +79,10 @@ function replace_column_shortcode($atts, $content = null) {
   
   if ($image != "") {  
     $image_url = get_upload_url($image);
-    $height = $height . "px";
+    $height .= "px";
   
-    $inner_html .= "<div class=\"extend-full\" style=\"background-image: url($image_url); height: $height;\"></div>";
-    $stylesheet .= "padding-top:0;padding-bottom:0;";
+    $inner_html .= "<div class=\"extend-full\" style=\"background-image:url($image_url);height:$height\"></div>";
+    $stylesheet .= ";padding-top:0;padding-bottom:0";
   }
   
   if ($stylesheet != '') {
@@ -251,7 +251,7 @@ function replace_gallery_cb($match) {
 
 function walk_images_table_cb(&$value, $key, $base) {
 	$path = get_upload_url("$base/$value");
-	$value = "<td><img src=\"$path\" style=\"max-height: 90px; max-width: 80%\"/></td>";
+	$value = "<td><img src=\"$path\" style=\"max-height:90px;max-width:80%\"/></td>";
 }
 
 function replace_image_table_shortcode($atts) {
@@ -519,16 +519,16 @@ function display_search_results($results, $title) {
 	?>
 	
 	<div class="alternating-bg"><div class="container">
-	<h3 style="text-align: center;"><?php echo $title; ?></h3><?php
+	<h3 style="text-align:center;"><?php echo $title; ?></h3><?php
 		uasort($results, 'search_cmp');
 		foreach ($results as $res) { ?>
-			<div class="row" style="padding-bottom: 35px"><div class="col-md-12 col-sm-12">
-				<h4 style="margin-bottom: 0px"><?php echo get_url_link(get_permalink($res['id']), $res['title']); ?></h4><?php
+			<div class="row" style="padding-bottom:35px"><div class="col-md-12 col-sm-12">
+				<h4 style="margin-bottom:0"><?php echo get_url_link(get_permalink($res['id']), $res['title']); ?></h4><?php
 				if ($res['date']) {
 					$date = new DateTime($res['date']);
-					echo '<div style="padding-left: 20px; color: #848484;">' . $date->format('Y-M-d') . '</div>';
+					echo '<div style="padding-left:20px;color:#848484;">' . $date->format('Y-M-d') . '</div>';
 				}
-				echo '<div style="padding-left: 20px">' . $res['excerpt'] . '</div>';
+				echo '<div style="padding-left:20px">' . $res['excerpt'] . '</div>';
 				?>
 			</div></div>
 			<?php
@@ -648,7 +648,7 @@ function replace_button_shortcode($atts) {
 		$btn_class = "$btn_class";
 	}
 
-	$code = "<span class=\"$style\" style=\"left: 200px\"><a class=\"$btn_class\" href=\"$url\">$label</a></span>";
+	$code = "<span class=\"$style\" style=\"left:200px\"><a class=\"$btn_class\" href=\"$url\">$label</a></span>";
 
 	return $code;
 }
@@ -798,11 +798,11 @@ function replace_distributor_shortcode($atts, $content = null) {
 
 	wp_enqueue_script('product-hovering');
 
-	return "<div class=\"row distributor\" style=\"text-align: left\">" .
+	return "<div class=\"row distributor\" style=\"text-align:left\">" .
 				 "<div class=\"col-sm-3 country\">$country</div>" .
 				 "<div class=\"col-sm-5\"><h3>$name$type_str</h3></div>" .
 				 "<div class=\"col-sm-4 product-links\"></div></div>" .
-				 "<div class=\"row distributor\" style=\"text-align: left\">" .
+				 "<div class=\"row distributor\" style=\"text-align:left\">" .
 				 "<div class=\"col-sm-3 logo\">$logo_img</div>" .
 				 "<div class=\"col-sm-5 contact\">$content</div>" .
 				 "<div class=\"col-sm-4 product-links\">$products_list</div></div>";
