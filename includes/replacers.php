@@ -760,8 +760,11 @@ function replace_distributor_shortcode($atts, $content = null) {
 		),
 	);
 	foreach ($products as $key => $product) {
-		$icon = get_product_icon_link($product, $products_metadata[$product]['icon']);
-		$products_by_family[$products_metadata[$product]['family']]['list'][] = $icon;
+		$product_meta = $products_metadata[$product];
+		$icon = get_product_icon_link($product, $product_meta['icon']);
+		if (!in_array($icon, $products_by_family[$product_meta['family']]['list'])) {
+			$products_by_family[$product_meta['family']]['list'][] = $icon;
+		}
 	}
 
 	$products_list = '';
