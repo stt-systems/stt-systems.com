@@ -27,6 +27,10 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
   </div>
 </div>
 
+<?php
+echo get_clients_carousel('industry', 8);
+?>
+
 <script>
 $(document).ready(function() {
   $('#2dma-products .product').hover(function() {
