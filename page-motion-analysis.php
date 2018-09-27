@@ -65,7 +65,7 @@ wp_enqueue_script('product-hovering');
 $clients = get_files_in_dir('clients/capture');
 $n = count($clients); ?>
 <div class="container-fluid">
-<div id="clientsCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-bottom:0">
+<div id="clients-carousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-bottom:0">
   <div class="carousel-inner" style="background:#fff"><?php
   $i = 0;
   foreach ($clients as $client) {
