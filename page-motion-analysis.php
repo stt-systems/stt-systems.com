@@ -62,25 +62,5 @@ wp_enqueue_script('product-hovering');
 </div>
 
 <?php
-$clients = get_files_in_dir('clients/capture');
-$n = count($clients); ?>
-<div class="container-fluid">
-<div id="clients-carousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-bottom:0">
-  <div class="carousel-inner" style="background:#fff"><?php
-  $i = 0;
-  foreach ($clients as $client) {
-    if ($i % 8 == 0) { ?>
-      <div class="item<?php if ($i == 0) { echo ' active'; } ?>">
-      <div class="row"><?php
-    } ?>
-    <img src="<?php echo get_upload_url("clients/capture/$client"); ?>" alt="Client <?php echo $client; ?>"/><?php
-    if (($i + 1) % 8 == 0 || $i == $n - 1) { ?>
-      </div></div><?php
-    }
-    ++$i;
-  } ?>
-  </div>
-</div>
-</div>
-
-<?php get_footer(); ?>
+echo get_clients_carousel('capture', 8);
+get_footer(); ?>

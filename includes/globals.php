@@ -380,6 +380,33 @@ function get_page_top_spacer($tight = false) {
 	return "<div class=\"space-sep$size\"></div>";
 }
 
+function get_clients_carousel($name, $cols) {
+	$clients = get_files_in_dir("clients/$name");
+
+	$n = count($clients);
+	if ($n == 0) return '';
+
+	$html = '<div class="container-fluid">';
+	$html .= '<div id="clients-carousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-bottom:0">';
+	$html .= '<div class="carousel-inner" style="background:#fff">';
+	$i = 0;
+	foreach ($clients as $client) {
+		if ($i % $cols == 0) {
+			$active = $i == 0 ? ' active' : '';
+			$html .= '<div class="item' . $active . '">';
+			$html .= '<div class="row">';
+		}
+		$html .= '<img src="' . get_upload_url("clients/$name/$client") . '" alt="' . "Client $client" . '"/>';
+		if (($i + 1) % $cols == 0 || $i == $n - 1) {
+			$html .= '</div></div>';
+		}
+		++$i;
+	}
+	$html .= '</div></div></div>';
+
+	return $html;
+}
+
 if (!function_exists('post_is_in_descendant_category')) {
 	function post_is_in_descendant_category($cats, $_post=null) {
 		foreach ((array)$cats as $cat) {
