@@ -112,8 +112,7 @@ function replace_include_shortcode($atts) {
 	$the_page = get_page_by_path("templates/$page");
 	$content = $the_page ? $the_page->post_content : '';
 	
-	$n = count($params);
-	if ($n > 0) {
+	if (count($params) > 0) {
 		$values_str = str_replace('(', '', $params);
 		$values = explode(')', $values_str);
 		foreach ($values as $value) {
