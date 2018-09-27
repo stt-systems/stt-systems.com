@@ -127,7 +127,7 @@ function get_upload_url($name) {
 }
 
 function get_post_thumbnail($style = '') {
-	$thumbnail = '<div class="col-md-4 col-sm-4 col-extra ' . $style . '">';
+	$thumbnail = '<div class="col-md-4 col-sm-4 col-extra center ' . $style . '">';
 	
 	$fields = get_post_custom(get_the_ID());
 	if (array_key_exists('youtube', $fields)) {
