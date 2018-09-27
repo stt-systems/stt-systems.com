@@ -9,9 +9,6 @@
     display: flex;
     flex-wrap: wrap;
 
-    > [class*="col-"] {
-      padding: 5px;
-    }
     > [class*="col-"]:first-of-type {
       padding-left: 10px !important;
     }
@@ -73,4 +70,7 @@
     width: 200vw;
     left: -50vw;
   }
+
+  padding-bottom: 5px;
+  padding-top: 10px;
 }
