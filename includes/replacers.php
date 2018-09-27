@@ -188,13 +188,13 @@ function replace_image_shortcode($atts) {
 	}
 
   $size = '';
-  if (strcasecmp($icon, 'true') == 0 || strcasecmp($icon, 'yes') == 0) {
+  if (str2bool($icon)) {
     $size = 'width="80" height="80"';
     $class .= 'icon';
 		$shadow = 'false';
   }
 	
-	if (strcasecmp($shadow, 'true') == 0 || strcasecmp($shadow, 'yes') == 0) {
+	if (str2bool($shadow)) {
 		$class .= 'boxshadow';
 	}
   
@@ -204,7 +204,7 @@ function replace_image_shortcode($atts) {
 
 	$img = '';
 	$image_url = get_upload_url("$name");
-	if (strcasecmp($lazy, 'true') == 0 || strcasecmp($lazy, 'yes') == 0) {
+	if (str2bool($lazy)) {
 		$loading_img = get_template_directory_uri() . "/images/loading.gif";
 		$img = do_shortcode("$caption_pre<img src=\"$loading_img\" data-src=\"$image_url\" $class alt=\"$alt\" $size/>$caption_post");
 	} else {

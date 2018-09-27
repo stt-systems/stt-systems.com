@@ -26,6 +26,10 @@ function get_top_level_slug() {
 	return substr($path, 0, strpos($path, '/'));
 }
 
+function str2bool($str) {
+	return strcasecmp($str, 'yes') == 0 || strcasecmp($str, 'true') == 0;
+}
+
 function my_file_get_contents($url) {	
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
