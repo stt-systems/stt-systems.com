@@ -556,15 +556,32 @@ function replace_post_list_shortcode($atts) {
 		'details' => false,
 		'style1' => 'ultra-light',
 		'style2' => 'white',
+		'sortby' => 'date',
 	), $atts, 'post-list'));
 
-	global $wp_query;
-  query_posts(array(
+	$search_params = array(
 		'tag_name' => $tag,
 		'category_name' => $category,
     'posts_per_page' => $count,
-    'paged' => $paged
-	));
+		'paged' => $paged,
+	);
+	
+	$sortby = strtolower($sortby);
+	if ($sortby == 'date' || $sortby == 'title') {
+		$search_params['sortby'] = $sortby;
+		if ($sortby == 'title') {
+			$search_params['order'] = 'ASC';
+		} else {
+			$search_params['order'] = 'DESC';
+		}
+	} else {
+		$search_params['sortby'] = 'meta_value';
+		$search_params['meta_key'] = $sortby;
+		$search_params['order'] = 'ASC';
+	}
+
+	global $wp_query;
+  query_posts($search_params);
 	
 	$post_list = '';
   if (have_posts()) {
