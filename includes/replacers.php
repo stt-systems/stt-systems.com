@@ -551,7 +551,7 @@ function replace_post_list_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'tag' => '',
 		'category' => '',
-		'count' => '100',
+		'count' => '-1',
 		'paged' => '1',
 		'details' => false,
 		'style1' => 'ultra-light',
