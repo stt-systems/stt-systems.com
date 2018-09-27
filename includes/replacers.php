@@ -91,7 +91,7 @@ function replace_column_shortcode($atts, $content = null) {
   
 	$content = do_shortcode($content);
 
-  return "<div class=\"$class col-extra style-$style\"$stylesheet>$inner_html$content</div>";
+  return "<div class=\"$class col-extra style-$style\"$stylesheet>$inner_html<div>$content</div></div>";
 }
 
 function replace_vspace_shortcode($atts) {
