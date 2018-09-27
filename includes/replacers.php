@@ -170,7 +170,7 @@ function replace_image_shortcode($atts) {
 		'url' => '',
 	), $atts, 'image'));
 
-	$class = 'rounded ';
+	$class = 'rounded';
   
 	$caption_pre = '';
 	$caption_post = '';
@@ -190,16 +190,16 @@ function replace_image_shortcode($atts) {
   $size = '';
   if (str2bool($icon)) {
     $size = 'width="80" height="80"';
-    $class .= 'icon';
+    $class .= ' icon';
 		$shadow = 'false';
   }
 	
 	if (str2bool($shadow)) {
-		$class .= 'boxshadow';
+		$class .= ' boxshadow';
 	}
   
   if ($class != '') {
-		$class = " class=\"$class\"";
+		$class = "class=\"$class\"";
   }
 
 	$img = '';
