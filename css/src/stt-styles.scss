@@ -36,10 +36,10 @@
 
 @mixin links($base-color, $inner-link-color: $base-color) {
   a {
-    color: $base-color;
+    color: color(black);
   }
   a:hover {
-    color: darken($base-color, 20) !important;
+    color: darken(color(black), 20) !important;
   }
 
   .inner-links {
