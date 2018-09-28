@@ -15,11 +15,6 @@
     > [class*="col-"]:last-of-type {
       padding-right: 10px !important;
     }
-    > [class*="col-"][class*="-3"],
-    > [class*="col-"][class*="-4"] {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
 
     .compact {
       > [class*="col-"] {
