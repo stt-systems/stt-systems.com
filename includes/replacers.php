@@ -595,8 +595,8 @@ function replace_post_list_shortcode($atts) {
         $style = "style-$style2";
       }
       $post_list .= '<div class="row">';
-      $post_list .= get_post_thumbnail($style);
 			$post_list .= "<div class=\"col-md-8 col-sm-8 col-extra $style\">";
+      $post_list .= get_post_thumbnail();
 			$post_list .= '<h3><a href="' . get_permalink() . '" title="' . the_title_attribute(array('echo' => false)) . '" >' . get_the_title() . '</a></h3>';
 			ob_start();
 			set_query_var('post_details', $details);
