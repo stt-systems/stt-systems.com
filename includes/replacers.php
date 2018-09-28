@@ -557,8 +557,6 @@ function replace_post_list_shortcode($atts) {
 		'count' => '-1',
 		'paged' => '1',
 		'details' => false,
-		'style1' => 'ultra-light',
-		'style2' => 'white',
 		'sortby' => 'date',
 	), $atts, 'post-list'));
 
@@ -590,13 +588,9 @@ function replace_post_list_shortcode($atts) {
   if (have_posts()) {
     while (have_posts()) {
       the_post();
-      $style = "style-$style1";
-      if ($wp_query->current_post % 2 == 1) {
-        $style = "style-$style2";
-      }
-      $post_list .= '<div class="row">';
-			$post_list .= "<div class=\"col-md-8 col-sm-8 col-extra $style\">";
+      $post_list .= '<div class="row blog-list style-white">';
       $post_list .= get_post_thumbnail();
+			$post_list .= "<div class=\"col-md-8 col-sm-8\">";
 			$post_list .= '<h3><a href="' . get_permalink() . '" title="' . the_title_attribute(array('echo' => false)) . '" >' . get_the_title() . '</a></h3>';
 			ob_start();
 			set_query_var('post_details', $details);
