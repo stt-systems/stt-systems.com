@@ -364,7 +364,6 @@ function replace_downloads_shortcode($atts) {
 		'name' => '',
 		'title' => 'Downloads',
 		'type' => 'list', // list, gallery
-		'zip' => 'yes', // generates a zip file, valid only for gallery type
 	), $atts, 'downloads'));
 	
 	if ($name == '') {
@@ -455,16 +454,8 @@ function replace_downloads_shortcode($atts) {
 		}
 
 		$download_all = '';
-		if ($zip == 'yes_test') { // temporary disabled until writing permissions are clarified
-			$zip_file = new ZipArchive;
-			if ($zip_file->open($downloads['base_dir'] . "/$name.zip", ZipArchive::CREATE)) {
-					foreach ($downloads['files'] as $file) {
-					$zip_file->addFile($file['path'], $file['filename']);
-				}
-				$zip_file->close();
-				$zip_url = my_get_download_url("$name/$name.zip");
-				$download_all = '<div>' . get_url_link($zip_url, 'Download all (ZIP)', $blank = false) . '</div>';
-			}
+		if (array_key_exists('zip', $downloads)) { // temporary disabled until writing permissions are clarified
+			$download_all = '<div>' . get_url_link($downloads['zip'], 'Download all (ZIP)', $blank = false) . '</div>';
 		}
 
 		return "<div class=\"container\">$table</div>$download_all";

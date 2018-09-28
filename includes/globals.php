@@ -210,6 +210,10 @@ function get_downloads($dir) {
 	$list['base_dir'] = ABSPATH . "/downloads/$dir";
 	array_walk($list['files'], 'walk_downloads_cb', "$dir/");
 
+	if (array_key_exists('zip', $list)) {
+		$list['zip'] = my_get_download_url($dir . '/' . $list['zip']);
+	}
+
 	return $list;
 }
 
