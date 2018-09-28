@@ -97,7 +97,7 @@
   @extend .style-base-class;
 
   @include links(color(black), color(stt));
-  @include buttons(color(blue), color(white), 'primary');
+  @include buttons(color(stt), color(white), 'primary');
   
   background-color: color(white);
 
