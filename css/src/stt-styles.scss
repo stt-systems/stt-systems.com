@@ -93,6 +93,45 @@
   }
 }
 
+.style-white-blue {
+  @extend .style-base-class;
+
+  @include links(color(black), color(stt));
+  @include buttons(color(blue), color(white), 'primary');
+  
+  background-color: color(white);
+
+  h2 {
+    color: color(black);
+  }
+}
+
+.style-ultra-light {
+  @extend .style-base-class;
+
+  @include links(color(black));
+  @include buttons(color(black), color(white), 'primary');
+  
+  background-color: #f2f2f3;
+
+  h2 {
+    color: color(black);
+  }
+}
+
+.style-ultra-light-blue {
+  @extend .style-base-class;
+
+  @include links(color(black));
+  @include buttons(color(stt), color(white), 'primary');
+  
+  background-color: #f2f2f3;
+
+  h2 {
+    color: color(black);
+  }
+}
+
 .style-light {
   @extend .style-base-class;
 
@@ -107,16 +146,17 @@
   }
 }
 
-.style-ultra-light {
+.style-light-blue {
   @extend .style-base-class;
 
-  @include links(color(black));
-  @include buttons(color(black), color(white), 'primary');
+  @include links(color(white));
+  @include buttons(color(stt), color(white), 'primary');
   
-  background-color: #f2f2f3;
+  background-color: color(light);
+  color: color(black);
 
   h2 {
-    color: color(black);
+    color: color(white);
   }
 }
 
