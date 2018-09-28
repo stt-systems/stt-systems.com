@@ -71,21 +71,16 @@ function replace_column_shortcode($atts, $content = null) {
     $class = "col-md-2 col-sm-2";
 	}
   
-  if ($align == "center") {
-    $class .= " center";
-  } else if ($align == "right") {
-    $class .= " right";
-  } else if ($align == "left") {
-    $class .= " left";
+  if ($align != '') {
+    $class = "$class $align";
   }
   
   $inner_html = "";
   
   if ($image != "") {  
     $image_url = get_upload_url($image);
-    $height .= "px";
   
-    $inner_html .= "<div class=\"extend-full\" style=\"background-image:url($image_url);height:$height\"></div>";
+    $inner_html .= "<div class=\"extend-full\" style=\"background-image:url($image_url);height:${height}px\"></div>";
     $stylesheet .= ";padding-top:0;padding-bottom:0";
   }
   
