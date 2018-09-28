@@ -677,13 +677,13 @@ function replace_list_button_shortcode($atts, $content = null) {
 	$content = do_shortcode($content);
 
 	$col_text = 'col-md-3';
-	$col_button = 'col-md-9';
+	$col_button = 'col-md-2';
 	if ($width == '33') {
-		$col_text = 'col-md-4';
-		$col_button = 'col-md-8';
+		$col_text = 'col-md-5';
+		$col_button = 'col-md-2';
 	} else if ($width == '50') {
 		$col_text = 'col-md-6';
-		$col_button = 'col-md-6';
+		$col_button = 'col-md-2';
 	}
 
 	if ($page != '') {
