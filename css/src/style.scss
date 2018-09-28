@@ -659,10 +659,6 @@ body .syntaxhighlighter .gutter, body .syntaxhighlighter a, body .syntaxhighligh
   }
 }
 
-.row .post-content {
-  padding-bottom: 0;
-}
-
 .blog-post .blog-post-details-item {
   position: relative;
   float: left;
@@ -1737,6 +1733,10 @@ table.hover tbody tr:nth-child(odd) {
   background-position: center center;
 }
 .row {
+  .post-content {
+    padding-bottom: 0;
+  }
+
   > [class*="col-"]:first-of-type:not(:only-of-type) {
     .extend-full {
       padding-left: 50vw;
