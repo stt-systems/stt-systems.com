@@ -7,13 +7,13 @@ if (empty($page_style_array)) {
 }
 $page_style = "style-$style_name";
 if (!is_page()) {
-	if ($post->post_type == 'post' and get_query_var('post_details', true)) { ?>
+	if ($post->post_type == 'post' && get_query_var('post_details', true)) { ?>
 		<div class="blog-post-details">
 			<div class="blog-post-details-item blog-post-details-item-left">
 				<span class="fa fa-calendar"></span><?php the_time('M j, Y'); ?>
 			</div><?php
 			
-			if (get_the_category_list() != '' and false) { ?>
+			if (get_the_category_list() != '' && false) { ?>
 				<div class="blog-post-details-item blog-post-details-item-left">
 					<span class="fa fa-folder-open"></span><?php the_category(', ', 'single', get_the_ID()); ?>
 				</div><?php
