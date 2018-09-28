@@ -382,8 +382,7 @@ function replace_downloads_shortcode($atts) {
 		$table = '';
 		$counter = 0;
 		$cols = min(count($downloads['files']), 5);
-		$col_class = $cols > 3 ? 2 : 4;
-		$col_spacer = (12 - $cols * $col_class) / 2;
+		$col_class = 2;
 		foreach ($downloads['files'] as $file) {
 			$ext = strtolower(pathinfo($file['path'], PATHINFO_EXTENSION));
 			$thumbnail_url = '';
@@ -403,9 +402,6 @@ function replace_downloads_shortcode($atts) {
 
 			if ($counter % $cols == 0) {
 				$table .= '<div class="row compact">';
-				if ($col_spacer > 0) {
-					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer\"></div>";
-				}
 			}
 
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
@@ -416,9 +412,6 @@ function replace_downloads_shortcode($atts) {
 			$table .= '</a></div>';
 
 			if ($counter % $cols == $cols - 1) {
-				if ($col_spacer > 0) {
-					$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer\"></div>";
-				}
 				$table .= '</div>';
 			}
 
@@ -430,25 +423,16 @@ function replace_downloads_shortcode($atts) {
 				$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\"></div>";
 				++$counter;
 			}
-			if ($col_spacer > 0) {
-				$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
-			}
 			$table .= '</div>';
 		}
 
 		if ($counter <= $cols) {
 			// Add fake row to avoid overflowing the prvious row
 			$table .= '<div class="row compact fake">';
-			if ($col_spacer > 0) {
-				$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
-			}
 			++$counter;
 			while ($counter % $cols != 0) {
 				$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\"></div>";
 				++$counter;
-			}
-			if ($col_spacer > 0) {
-				$table .= "<div class=\"col-md-$col_spacer col-sm-$col_spacer center\"></div>";
 			}
 			$table .= '</div>';
 		}

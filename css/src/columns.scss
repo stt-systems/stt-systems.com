@@ -25,6 +25,14 @@
       > .center {
         width: 195px;
       }
+      > [class*="col-"]:first-of-type {
+        float: none;
+        margin-left: auto;
+      }
+      > [class*="col-"]:last-of-type {
+        float: none;
+        margin-right: auto;
+      }
     }
 
     .fake {
