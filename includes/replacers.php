@@ -56,6 +56,8 @@ function replace_column_shortcode($atts, $content = null) {
   $stylesheet = "";
   if ($size == "100") {
     $class = "col-md-12 col-sm-12";
+  } else if ($size == "75") {
+    $class = "col-md-9 col-sm-9";
   } else if ($size == "66") {
     $class = "col-md-8 col-sm-8";
     $stylesheet = "padding-left:15px";
@@ -65,7 +67,9 @@ function replace_column_shortcode($atts, $content = null) {
     $class = "col-md-4 col-sm-4";
   } else if ($size == "25") {
     $class = "col-md-3 col-sm-3";
-  }
+  } else if ($size == "16") {
+    $class = "col-md-2 col-sm-2";
+	}
   
   if ($align == "center") {
     $class .= " center";
