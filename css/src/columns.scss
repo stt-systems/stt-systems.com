@@ -9,13 +9,6 @@
     display: flex;
     flex-wrap: wrap;
 
-    > [class*="col-"]:first-of-type {
-      padding-left: 10px !important;
-    }
-    > [class*="col-"]:last-of-type {
-      padding-right: 10px !important;
-    }
-
     .compact {
       > [class*="col-"] {
         display: flex;
@@ -47,7 +40,7 @@
     > [class*="col-"] {
       display: flex;
       flex-direction: column;
-      padding: 62px 45px 62px 45px;
+      padding: 62px 35px 62px 35px;
     }
   }
 }

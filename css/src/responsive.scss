@@ -4,6 +4,12 @@
   border-color: transparent;
 }
 
+@media (min-width: 1300px) {
+  .container {
+    width: 1250px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .grid li {
     width: 50%;
