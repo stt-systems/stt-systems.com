@@ -1696,27 +1696,30 @@ table.hover tbody tr:nth-child(odd) {
 
 .left {
   text-align: left;
-}
-.left img {
-  display: block;
-  margin-left: 0;
-  margin-right: auto;  
+
+  img {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;  
+  }
 }
 .center {
   text-align: center;
-}
-.center img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .right {
   text-align: right;
-}
-.right img {
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 .icon {
