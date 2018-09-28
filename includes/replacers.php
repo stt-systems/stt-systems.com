@@ -690,7 +690,7 @@ function replace_list_button_shortcode($atts, $content = null) {
 		$text = get_page_full_link($page, $text);
 	}
 
-	return "<div class=\"row\"><div class=\"col-sm-12 $col_text\">$text</div><div class=\"col-sm-12 $col_button\">$content</div></div>";
+	return "<div class=\"row button-list\"><div class=\"col-sm-12 $col_text\">$text</div><div class=\"col-sm-12 $col_button\">$content</div></div>";
 }
 
 function replace_distributor_shortcode($atts, $content = null) {

@@ -1756,6 +1756,22 @@ table.hover tbody tr:nth-child(odd) {
       background-size: cover;
       background-position: left center;
     }
+
+  .button-list {
+    padding-bottom: 20px;
+
+    &:last-of-type {
+      padding-bottom: 0px;
+    }
+
+    > [class*="col-"]:first-of-type {
+      float: none;
+      margin-left: auto;
+    }
+    > [class*="col-"]:last-of-type {
+      float: none;
+      margin-right: auto;
+    }
   }
 }
 
