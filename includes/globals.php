@@ -202,9 +202,11 @@ function walk_downloads_cb(&$value, $key, $base) {
 	$info = pathinfo($download_file);
 	$value['ext'] = strtolower($info['extension']);
 
-	$preview = "{$info['dirname']}/{$info['filename']}-preview.jpg";
-	if (file_exists(ABSPATH . $preview)) {
-		$value['preview'] = my_get_url_for_path($preview);
+	$preview = "{$info['dirname']}/{$info['filename']}-preview.";
+	if (file_exists(ABSPATH . $preview . 'png')) {
+		$value['preview'] = my_get_url_for_path($preview . 'png');
+	} else if (file_exists(ABSPATH . $preview . 'jpg')) {
+		$value['preview'] = my_get_url_for_path($preview . 'jpg');
 	} else {
 		$value['preview'] = '';
 	}
