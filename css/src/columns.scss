@@ -86,16 +86,16 @@ $vertical_space: 31;
 }
 
 .no-bottom-margin {
-  .col-extra:only-of-type:before {
+  .col-extra:before {
     margin-top: #{-$vertical_space}px;
   }  
 }
 .no-top-margin {
-  .col-extra:only-of-type:before {
+  .col-extra:before {
     margin-top: #{$vertical_space}px;
   }  
   &.no-bottom-margin {
-    .col-extra:only-of-type:before {
+    .col-extra:before {
       margin-top: 0;
     }  
   }
