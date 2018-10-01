@@ -643,13 +643,13 @@ body .syntaxhighlighter .gutter, body .syntaxhighlighter a, body .syntaxhighligh
     -moz-transition: 0.5s color;
     -o-transition: 0.5s color;
     transition: 0.5s color;
+
+    &:hover {
+      color: #3a3a3a;
+    }
   }
 
-  h2 a:hover {
-    color: #3a3a3a;
-  }
-
-  h2 {
+   h2 {
     margin-bottom: 10px;
   }
 
@@ -1448,23 +1448,24 @@ textarea {
   margin: 0 auto;
   padding-left: 50px;
   margin-bottom: 20px;
-}
 
-.pagination a {
-  color: #999;
-  margin: 0 0 0 4px;
-  padding: 10px 15px;
-  display: inline-block;
-  font-size: 14px;
-}
+  a {
+    color: #999;
+    margin: 0 0 0 4px;
+    padding: 10px 15px;
+    display: inline-block;
+    font-size: 14px;
+  }
+  
+  .next, .prev, a.current {
+    color: #3498DB;
+  }
 
-.pagination .next, .pagination .prev, .pagination a.current {
-  color: #3498DB;
-}
-.pagination a:hover {
-  border-radius: 2px;
-  background-color: #f7f7f7;
-  color: #3498DB;
+  a:hover {
+    border-radius: 2px;
+    background-color: #f7f7f7;
+    color: #3498DB;
+  }
 }
 
 .social-icons {
@@ -1513,12 +1514,12 @@ textarea {
   .instagram-icon:hover {
     background-color: #dc2743;
   }
-}
 
-.social-icons > ul {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
+  > ul {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
 }
 
 .social-media-icon {
@@ -1538,9 +1539,10 @@ textarea {
   -moz-transition: all 0.2s ease 0s;
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
-}
-.social-media-icon:hover {
-  background-position: 0 0;
+
+  &:hover {
+    background-position: 0 0;
+  }
 }
 
 .woocommerce div.product form.cart .button {
