@@ -202,8 +202,8 @@ function walk_downloads_cb(&$value, $key, $base) {
 	$value['ext'] = strtolower($info['extension']);
 }
 
-function get_downloads($dir) {
-	$path = ABSPATH . "/downloads/$dir/index.json";
+function get_downloads($dir, $index_name) {
+	$path = ABSPATH . "/downloads/$dir/$index_name";
 	if (!file_exists($path)) return array('files' => array());
 
 	$fh = fopen($path, 'r');
@@ -227,7 +227,7 @@ function get_downloads_area_list() {
 	foreach ($dirs as $dir) {
 		if ($dir == 'external') continue;
 
-		$downloads = get_downloads($dir);
+		$downloads = get_downloads($dir, 'index.json');
 		if ($downloads != null and count($downloads['files']) > 0) {
 			array_push($all, $downloads);
 		}

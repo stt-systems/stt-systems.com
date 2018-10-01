@@ -362,6 +362,7 @@ function replace_downloads_shortcode($atts) {
 		'name' => '',
 		'title' => 'Downloads',
 		'type' => 'list', // list, gallery
+		'index' => 'index',
 	), $atts, 'downloads'));
 	
 	if ($name == '') {
@@ -369,7 +370,7 @@ function replace_downloads_shortcode($atts) {
 		$name = $post->post_name;
 	}
 
-	$downloads = get_downloads($name);
+	$downloads = get_downloads($name, "$index.json");
 	if (!count($downloads['files'])) return '';
 	
 	if (!empty($title)) {
