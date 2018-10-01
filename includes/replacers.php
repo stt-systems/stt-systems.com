@@ -396,7 +396,7 @@ function replace_downloads_shortcode($atts) {
 			}
 
 			if ($counter % $cols == 0) {
-				$table .= '<div class="row compact">';
+				$table .= '<div class="row compact style-downloads">';
 			}
 
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
