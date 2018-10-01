@@ -388,10 +388,14 @@ function replace_downloads_shortcode($atts) {
 			if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg') {
 				$thumbnail_url = $file['file'];
 			} else {
-				if ($ext == 'docx') $ext = 'doc';
-				if ($ext == 'xlsx') $ext = 'xls';
-				if ($ext == 'pptx') $ext = 'ppt';
-				$thumbnail_url = my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png");
+				if (empty($file['preview'])) {
+					if ($ext == 'docx') $ext = 'doc';
+					if ($ext == 'xlsx') $ext = 'xls';
+					if ($ext == 'pptx') $ext = 'ppt';
+					$thumbnail_url = my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png");
+				} else {
+					$thumbnail_url = $file['preview'];
+				}
 			}
 
 			if ($counter % $cols == 0) {
