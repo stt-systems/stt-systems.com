@@ -14,8 +14,8 @@ wp_enqueue_script('product-hovering');
         <h3 style="height:2em">Video-based motion analysis systems</h3>
       </a>
       <div id="2dma-products" class="product-links"><?php
-        echo get_product_icon_link('bikefit', 'cycling');
-        echo get_product_icon_link('cycling-2dma', 'cycling');
+        echo get_product_icon_link('bikefit', 'bikefit');
+        echo get_product_icon_link('cycling-2dma', 'bikefit');
       ?></div>
       <div id="current-2dma-product" class="product-name"></div>
     </div>
@@ -51,8 +51,7 @@ wp_enqueue_script('product-hovering');
         <h3 style="height:2em">Flexible IMU configurations for full-body kinematic analysis</h3>
       </a>
       <div id="inertial-products" class="product-links"><?php
-        echo get_product_icon_link('isen', 'clinical');
-        echo get_product_icon_link('stt-iws', 'clinical');
+        echo get_product_icon_link('isen', 'isen');
       ?></div>
       <div id="current-inertial-product" class="product-name"></div>
     </div>
