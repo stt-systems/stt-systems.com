@@ -3,7 +3,6 @@ define('WL_TEMPLATE_DIR_URI', get_template_directory_uri());
 define('WL_TEMPLATE_DIR', get_template_directory());
 define('WL_TEMPLATE_LOCAL_DIR', '/wp-content/themes/STT');
 define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
-define('STT_USE_LARGE_NAVBAR', TRUE);
 
 // Font size for category and tag clouds
 function set_tag_cloud_sizes($args) {

@@ -394,10 +394,7 @@ function get_product_icon_link($slug, $icon) {
 }
 
 function get_page_top_spacer($tight = false) {
-	$size = "50";
-	if (STT_USE_LARGE_NAVBAR) {
-		$size = $tight ? "87" : "100";
-	}
+	$size = $tight ? "87" : "100";
 	return "<div class=\"space-sep$size\"></div>";
 }
 
