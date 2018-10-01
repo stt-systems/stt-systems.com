@@ -382,7 +382,7 @@ function replace_downloads_shortcode($atts) {
 		$cols = min(count($downloads['files']), 5);
 		$col_class = 2;
 		foreach ($downloads['files'] as $file) {
-			$ext = strtolower(pathinfo($file['path'], PATHINFO_EXTENSION));
+			$ext = $file['ext'];
 			$thumbnail_url = '';
 			if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg') {
 				$thumbnail_url = $file['file'];
