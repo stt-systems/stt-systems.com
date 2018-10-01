@@ -190,20 +190,21 @@ function get_files_in_dir($path, $exclude_preffix = '', $exclude_exts = array())
 }
 
 function my_get_download_url($path) {
-	return my_get_url_for_path("/downloads/$path");
+	return my_get_url_for_path("downloads/$path");
 }
 
 function walk_downloads_cb(&$value, $key, $base) {
-	$value['path'] = ABSPATH . "/downloads/$base" . $value['file'];
+	$download_file = "downloads/$base{$value['file']}";
+	$value['path'] = ABSPATH . $download_file;
 	$value['filename'] = $value['file'];
-	$value['file'] = my_get_download_url($base . $value['file']);
+	$value['file'] = my_get_url_for_path($download_file);
 
-	$info = pathinfo($value['path']);
+	$info = pathinfo($download_file);
 	$value['ext'] = strtolower($info['extension']);
 }
 
 function get_downloads($dir, $index_name) {
-	$path = ABSPATH . "/downloads/$dir/$index_name";
+	$path = ABSPATH . "downloads/$dir/$index_name";
 	if (!file_exists($path)) return array('files' => array());
 
 	$fh = fopen($path, 'r');
