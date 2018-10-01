@@ -32,7 +32,8 @@ function stt_replace_content($content) {
 // Callbacks for custom commands in post content
 function replace_row_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
-    'id' => '',
+		'id' => '',
+		'margin' => '', // no-top, no-bottom
 	), $atts, 'row'));
 
   if ($id != "") {
@@ -40,8 +41,17 @@ function replace_row_shortcode($atts, $content = null) {
 	}
 	
 	$content = do_shortcode($content);
+
+	$class = '';
+	if ($margin == 'no-top') {
+		$class = ' no-top-margin';
+	} else if ($margin == 'no-bottom') {
+		$class = ' no-bottom-margin';
+	} else if ($margin == 'no-top-bottom') {
+		$class = ' no-top-margin no-bottom-margin';
+	}
   
-	return "<div$id class=\"row\">$content</div>";
+	return "<div$id class=\"row$class\">$content</div>";
 }
 function replace_column_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(

@@ -16,6 +16,7 @@ Use ```[row] ... [/row]``` to enclose a region and ```[column] ... [/column]```t
 
 - __[row]__
     - __id__: id used to identify the region for linking purposes
+    - __margin__: can be used to suppress top, bottom or both content margins (no-top, no-bottom, no-top-bottom).
 
 - __[column]__ up to 4 blocks can be included per region. Optionally a style, alignment and background image can be defined.
     - __size__: 100 (default), 75, 66, 50, 33, 25, 16. Indicates the percentage of the page width that the column will take.
