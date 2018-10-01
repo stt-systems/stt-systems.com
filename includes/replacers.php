@@ -161,7 +161,7 @@ function replace_image_shortcode($atts) {
 		'name' => '',
 		'caption' => '',
 		'shadow' => 'yes',
-    'icon' => 'no',
+    'icon' => '',
 		'alt' => '',
 		'lazy' => 'no',
 		'page' => '',
@@ -186,8 +186,11 @@ function replace_image_shortcode($atts) {
 	}
 
   $size = '';
-  if (str2bool($icon)) {
-    $size = 'width="80" height="80"';
+  if ($icon != '') {
+		if (str2bool($icon)) {
+			$icon = '80';
+		}
+    $size = "width=\"$icon\" height=\"$icon\"";
     $class .= ' icon';
 		$shadow = 'false';
   }
