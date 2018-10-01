@@ -298,10 +298,14 @@ function get_page_url($slug, $type = 'page', $title = '') {
 
 // Return a link to a page from its slug
 function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
-	$page_url = get_page_url($slug, $type, $title);
+	$slug = explode('#', $slug);
+	$page_url = get_page_url($slug[0], $type, $title);
 	if ($page_url == '') return '';
 
 	$url = $page_url['url'];
+	if (count($slug) == 2) {
+		$url .= "#{$slug[1]}";
+	}
 	$title = $page_url['title'];
 
 	if ($rel != '') {
