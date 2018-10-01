@@ -641,7 +641,7 @@ function replace_list_button_shortcode($atts, $content = null) {
 		'text' => '',
 		'page' => '',
 		'width' => '25',
-	), $atts, 'list-button'));
+	), $atts, 'button-list'));
 
 	$content = do_shortcode($content);
 
@@ -813,7 +813,7 @@ function add_stt_shortcodes() {
 	add_shortcode('post-list',     'replace_post_list_shortcode');
 	add_shortcode('collapse',      'replace_collapse_shortcode');
 	add_shortcode('button',        'replace_button_shortcode');
-	add_shortcode('list-button',   'replace_list_button_shortcode');
+	add_shortcode('button-list',   'replace_list_button_shortcode');
 	add_shortcode('distributor',   'replace_distributor_shortcode');
 }
 
