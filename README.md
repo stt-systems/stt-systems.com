@@ -16,49 +16,51 @@ Use ```[row] ... [/row]``` to enclose a region and ```[column] ... [/column]```t
 
 - __[row]__
     - __id__: id used to identify the region for linking purposes
-    - 
+
 - __[column]__ up to 4 blocks can be included per region. Optionally a style, alignment and background image can be defined.
-    - __size__: 100 (default), 66, 50, 33, 25. Indicates the percentage of the page width that the column will take.
-    - __style__: white (default), ultra-light, light, dark, colored. The _colored_ style takes its settings from the _style_ custom-field of the page (accepted values: sports, clinical, human, isen).
+    - __size__: 100 (default), 75, 66, 50, 33, 25, 16. Indicates the percentage of the page width that the column will take.
+    - __style__: white (default), ultra-light, ultra-ligth-blue, light, light-blue, dark, colored. The _colored_ style takes its settings from the _style_ custom-field of the page (accepted values: sports, clinical, human, isen). The -blue variant simply changes the color of the inner-links to STT's blue.
     - __align__: center, left (defaut), right.
-    - __iamge__: name of the image located at ```<page_url>/images/```. In addition, indicate the __height__ in pixels.
+    - __image__: name of the image (uploaded to WP). In addition, indicate the __height__ in pixels or the column won't be able to show the image correctly. A column with background cannot have any other content (yet).
 
 It is possible to create an index of regions, using the ```inner-links``` class and the rows' id (see example below).
 
 ## Images
 
-Use the ```[image]``` shortcode to insert images located at ```<page_url>/images/```.
+Use the ```[image]``` shortcode to insert images uploaded to the WP site using the regular media tool.
 
 - __name__: filename (can include a subdirectory), no spaces.
 - __caption__: caption to be included with the image (no caption by default).
 - __shadow__: adds a light shadow around the image (added by default). To remove shadow: ```[image ... shadow=no]```.
-- __icon__: special image mode that fixes size to 80x80 and removes shadow.
+- __icon__: if set, indicates the size of the image in icon mode (fixes size to _<icon>_x_<icon>_, removes shadow and adds an extra bottom space).
 - __alt__: the alt text, used when images cannot be displayed, for accessibility and by search engines. If empty (default value) then uses caption (if any) or image filename at last instance.
 - __lazy__: image will be loaded only when the user scrolls up to it. During load, an animated GIF is shown. Use with big images to accelerate initial page load.
-- __page__: the image is a link to a page, indicate with this attribute the slug of the page.
+- __page__: the image is a link to a page, indicate with this attribute the slug of the page. Anchors can be added if needed (see _links_ below).
 - __url__: the image is a link, indicate here the full URL.
 
 ## Links
 
-Links to pages within this site can be done using ```[link page=<page_name> title="Optional title"]```. If title is not provided, the page title is used.
+Links to pages within this site can be done using ```[link page=<page_name> title="Optional title"]```. If title is not provided, the page title is used. An anchor within the page can be used, for example ```[link page=isen#realtime]```.
 
 Links to external URLs are similar ```[link url=<url> title="Text to use for link"]```. In this case if the title is empty, the URL will be used.
 
-Finally, a link to an e-mail can be done using ```[email to=<account> title="Optional title"]```. If title is empty, the e-mail address will be used instead. For example, ```[email to=info]``` will generate an e-mail link to info@stt-systems.com.
+Finally, a link to an e-mail can be done using ```[email to=<account> title="Optional title"]```. If title is empty, the e-mail address will be used instead. For example, ```[email to=info]``` will generate an e-mail link to info@stt-systems.com. If an _at symbol_ (@) is found in the ```to``` parameter, then the _@stt-systems.com_ domain is omitted and the e-mail address is used as provided, so ```[email to=sjobs@apple.com]``` will generate an e-mail link to sjobs@apple.com.
 
 ## Downloads
 
-It is possible to generate automatic content based on file lists. In this case, files are stored in subdirectories of ```<page_url>/downloads/``` and have a JSON file describing its content (that must be called __index.json__).
+It is possible to generate automatic content based on file lists. In this case, files are stored in subdirectories of ```<page_url>/downloads/``` and have a JSON file describing its content.
 
 The download list is included in the page using the ```[downloads]``` shortcode. Options:
 - __name__: name of the directory within the downloads folder.
 - __title__: title for the downloads list (defualt _Downloads_).
-- __type__: list (default), gallery. The list will generate a list of links with the title of each file. The gallery will generate a grid of icons (based on file extension), galleries has no title.
-- __zip__: generates a zip file, valid only for gallery type (default to yes).
+- __type__: list (default), gallery. The list will generate a list of links with the title of each file. The gallery will generate a grid of icons (based on file extension), galleries has no title. It is possible to indicate a preview image for a file, to do so just create a JPEG or PNG image (98x128, 196x256 for the @2x version) and name it the same as the file with ```-preview.jpg```/```-preview.png``` suffix: thumbnail for ```A.pdf``` should be named ```A-preview.jpg```. You can use the icons in ```<STT-theme>/images/file-types``` as a template. PNG files will be used if both PNG and JPEG files are used.
+- __index__: basename (without extension) of the JSON file with the files to be listed. If omitted, _index_ will be used (so ```index.json``` will be loaded). It allows having multiple views of the same files (subsets).
 
-Example: ```[downloads name=brochure type=gallery]```.
+If the JSON file contains a ```"zip":"filename.zip"``` entry, it will generate a _Download all (ZIP)_ link at the end of the gallery.
 
-It is also possible to generate a single download link using just ```[download name=<path_within_downloads>]```.
+Example: ```[downloads name=brochure type=gallery index=spanish]```.
+
+It is also possible to generate a single download link using just ```[download name=<path_relative_to_downloads>]```.
 
 ### Sample JSON (index.json)
 ```
@@ -74,7 +76,8 @@ It is also possible to generate a single download link using just ```[download n
 			"title":"Sample report (Spanish)"},
 		{"file":"STT_Cycling3DMA_Road_bike.pdf",
 			"title":"Road bike measurement report (English)"}
-		]
+		],
+  "zip":"all-reports.zip"
 }
 ```
 
@@ -92,17 +95,51 @@ Each entry has a __file__ (containg the full filename), and a __title__.
     - __title__
     - __author__
     - __style__: quote
+- __[v-space]__: USE WITH CAUTION!
+    - __size__ (=10, 20, ..., 100): inserts a vertical space. Should be avoided whenever is possible, since it creates layout blocks than may interfer with the responsive design.
+- __[distributor]__: keep an empty line between paragraphs to create actual new lines
+    - __name__
+    - __logo__
+    - __products__: comma-separated list of products, using page slug as ID
+    - __country__
+    - __type__: premium, exclusive
+    - __url__: if non-empty, both name and logo are converted into links, and a Website line is added
+- __[button]__: creates a link with button shape
+    - __label__
+    - __page__ / __download__ / __url__: the link to use
+    - __sytle__
+- __[button-list]__: creates a column structure to generate aligned lists of buttons
+    - __text__: text for the first column
+    - __page__: generate a link
+    - __width__ (25, 33, 50): approximate percentage of the screen used by buttons (default 25).
+- __[collapse]__: generates a collapsable block with the content
+    - __id__: mandatory, must be unique within the page
+    - __title__
+    - __class__
+    - __collapsed__: initial state (default: true)
+- __[post-list]__: generates a list of posts matching some parameters
+    - __tag__ / __category__: slug of tag and/or category to filter
+    - __count__: maximum number of posts to show (default: -1, meaning all)
+    - __detalils__: set to show details like publication date and tags
+    - __sortby__: how posts are sorted, using date (descendant), title (ascendant) or custom field (ascendant, use field name) (default: date)
+    
+## Tables and lists
+
+Tables and list should be created using traditional HTML code.
+
+It is possible to change the bullet color of an unordered list from style to gray, using the class ```light````. Example: ```<li class="light">Vertical jump/CMJ (*)</li>```.
 
 ## FTP structure
 
 - /
-    - images: single images are stored here (no sub dirs). Can include @2x version for HDPI displays.
-        - logos: logos used in menus, SEO...
-        - clients: client icons to be used in clients banners
-        - icons: small images to be used in pages
     - downloads: base path for downloads
         - [donwload_group]
             - index.json: index file for the download group, in JSON format
+    - wp-content/uploads: single images are stored here using the WP media tool (no sub dirs). Can include @2x version for HDPI displays.
+        - backgrounds: background images for main pages
+        - clients: client icons to be used in clients banners (sorted by filename)
+        - icons: small images to be used in pages
+        - logos: logos used in menus, SEO...
 
 ## Full example
 
