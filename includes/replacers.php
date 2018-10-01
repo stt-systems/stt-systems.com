@@ -718,7 +718,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 			'family' => '3dma',
 		),
 		'bikefit' => array(
-			'icon' => 'cycling',
+			'icon' => 'bikefit',
 			'family' => '2dma',
 		),
 		'cycling-2dma' => array(
@@ -726,7 +726,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 			'family' => '2dma',
 		),
 		'isen' => array(
-			'icon' => 'clinical',
+			'icon' => 'isen',
 			'family' => 'inertial',
 		),
 	);
