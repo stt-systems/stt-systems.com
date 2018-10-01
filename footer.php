@@ -28,7 +28,7 @@
 						$top_slug = get_top_level_slug();
 						if ($top_slug == 'motion-analysis') { ?>
 							<div class="col-md-4 col-sm-4"><?php
-								echo '<p><b>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</b></p>';
+								echo '<p><strong>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</strong></p>';
 								echo '<p>' . get_page_full_link('sports-3dma') . '</p>';
 								echo '<p>' . get_page_full_link('cycling-3dma') . '</p>';
 								echo '<p>' . get_page_full_link('golf-3dma') . '</p>';
@@ -38,31 +38,31 @@
 								echo '<p>' . get_page_full_link('eddo', 'EDDO') . '</p>'; ?>
 							</div>
 							<div class="col-md-3 col-sm-3"><?php
-								echo '<p><b>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</b></p>';
+								echo '<p><strong>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</strong></p>';
 								echo '<p>' . get_page_full_link('bikefit', 'BikeFit') . '</p>'; ?>
 							</div>
 							<div class="col-md-4 col-sm-4"><?php
-								echo '<p><b>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</b></p>';
+								echo '<p><strong>' . get_page_full_link('inertial-motion-capture', 'INERTIAL') . '</strong></p>';
 								echo '<p>' . get_page_full_link('isen') . '</p>';
 								echo '<p>' . get_page_full_link('stt-iws', 'STT-IWS') . '</p>'; ?>
 							</div><?php
 						} else if ($top_slug == 'industry') { ?>
 							<div class="col-md-6 col-sm-6"><?php
-								echo '<p><b>' . get_page_full_link('industry', 'Industry') . '</b></p>';
+								echo '<p><strong>' . get_page_full_link('industry', 'INDUSTRY') . '</strong></p>';
 								echo '<p>' . get_page_full_link('machine-vision', 'Machine vision') . '</p>';
 								echo '<p>' . get_page_full_link('product-configurators', 'Product configurators') . '</p>';
 								echo '<p>' . get_page_full_link('rdi', 'R+D+i') . '</p>'; ?>
 							</div><?php
 						} else { ?>
 							<div class="col-md-6 col-sm-6"><?php
-								echo '<p><b>' . get_page_full_link('motion-analysis', 'Motion Analysis') . '</b></p>';
+								echo '<p><strong>' . get_page_full_link('motion-analysis', 'MOTION ANALYSIS') . '</strong></p>';
 								echo '<p>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</p>';
 								echo '<p>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</p>';
 								echo '<p>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</p>';
 								echo '<p>' . get_page_full_link('contact-support', 'Support') . '</p>'; ?>
 							</div>
 							<div class="col-md-6 col-sm-6"><?php
-								echo '<p><b>' . get_page_full_link('industry', 'Industry') . '</b></p>';
+								echo '<p><strong>' . get_page_full_link('industry', 'INDUSTRY') . '</strong></p>';
 								echo '<p>' . get_page_full_link('machine-vision', 'Machine vision') . '</p>';
 								echo '<p>' . get_page_full_link('product-configurators', 'Product configurators') . '</p>';
 								echo '<p>' . get_page_full_link('rdi', 'R+D+i') . '</p>'; ?>
