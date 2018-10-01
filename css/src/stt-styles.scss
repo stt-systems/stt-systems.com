@@ -35,11 +35,14 @@
 }
 
 @mixin links($base-color, $inner-link-color: $base-color) {
-  a {
-    color: $base-color;
-  }
-  a:hover {
-    color: darken($base-color, 20) !important;
+  :not(h2) {
+    > a {
+      color: $base-color;
+
+      &:hover {
+        color: darken($base-color, 20) !important;
+      }
+    }
   }
 
   .inner-links {
@@ -47,22 +50,21 @@
 
     a {
       color: $inner-link-color;
-    }
-    a:hover {
-      color: darken($inner-link-color, 20) !important;
-    }
-
-    a:after {
-      content: '\21E3';
-      visibility: visible;
-      margin-left: 5px;
-    }
-    a:not(:first-child) {
-      border-left: 1px solid $inner-link-color;
-      padding-left: 15px;
-    }
-    a:not(:last-child):after {
-      margin-right: 15px;
+      &:hover {
+        color: darken($inner-link-color, 20) !important;
+      }
+      &:after {
+        content: '\21E3';
+        visibility: visible;
+        margin-left: 5px;
+      }
+      &:not(:first-child) {
+        border-left: 1px solid $inner-link-color;
+        padding-left: 15px;
+      }
+      &:not(:last-child):after {
+        margin-right: 15px;
+      }
     }
   }
 }
@@ -88,8 +90,8 @@
   
   background-color: color(white);
 
-  h2 {
-    color: color(black);
+  h2, h2 > a, h2 > a:hover {
+    color: color(black) !important;
   }
 }
 
@@ -101,8 +103,8 @@
   
   background-color: color(white);
 
-  h2 {
-    color: color(black);
+    h2, h2 > a, h2 > a:hover {
+    color: color(black) !important;
   }
 }
 
@@ -114,8 +116,8 @@
   
   background-color: #f2f2f3;
 
-  h2 {
-    color: color(black);
+    h2, h2 > a, h2 > a:hover {
+    color: color(black) !important;
   }
 }
 
@@ -127,8 +129,8 @@
   
   background-color: #f2f2f3;
 
-  h2 {
-    color: color(black);
+    h2, h2 > a, h2 > a:hover {
+    color: color(black) !important;
   }
 }
 
@@ -141,8 +143,8 @@
   background-color: color(light);
   color: color(black);
 
-  h2 {
-    color: color(white);
+    h2, h2 > a, h2 > a:hover {
+    color: color(white) !important;
   }
 }
 
@@ -155,8 +157,8 @@
   background-color: color(light);
   color: color(black);
 
-  h2 {
-    color: color(white);
+    h2, h2 > a, h2 > a:hover {
+    color: color(white) !important;
   }
 }
 
@@ -169,17 +171,17 @@
   background-color: color(black);
   color: #f0f0f0;
 
-  h2 {
-    color: color(white);
+    h2, h2 > a, h2 > a:hover {
+    color: color(white) !important;
   }
 }
 
 .style-downloads {
   a {
     color: color(black) !important;
-  }
-  a:hover {
-    color: darken(color(black), 20) !important;
+    &:hover {
+      color: darken(color(black), 20) !important;
+    }
   }
 }
 
@@ -189,8 +191,8 @@
     color: color(white);
     background-color: $base-color;
     
-    h2 {
-      color: color(black);
+      h2, h2 > a, h2 > a:hover {
+      color: color(black) !important;
     }
 
     @include buttons(color(white), $base-color, 'primary');
