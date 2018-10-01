@@ -36,10 +36,10 @@
 
 @mixin links($base-color, $inner-link-color: $base-color) {
   a {
-    color: color(black);
+    color: $base-color;
   }
   a:hover {
-    color: darken(color(black), 20) !important;
+    color: darken($base-color, 20) !important;
   }
 
   .inner-links {
@@ -83,7 +83,7 @@
 .style-white {
   @extend .style-base-class;
 
-  @include links(color(black), color(stt));
+  @include links(color(stt));
   @include buttons(color(black), color(white), 'primary');
   
   background-color: color(white);
@@ -96,7 +96,7 @@
 .style-white-blue {
   @extend .style-base-class;
 
-  @include links(color(black), color(stt));
+  @include links(color(stt));
   @include buttons(color(stt), color(white), 'primary');
   
   background-color: color(white);
@@ -109,7 +109,7 @@
 .style-ultra-light {
   @extend .style-base-class;
 
-  @include links(color(black));
+  @include links(color(stt));
   @include buttons(color(black), color(white), 'primary');
   
   background-color: #f2f2f3;
@@ -122,7 +122,7 @@
 .style-ultra-light-blue {
   @extend .style-base-class;
 
-  @include links(color(black));
+  @include links(color(stt));
   @include buttons(color(stt), color(white), 'primary');
   
   background-color: #f2f2f3;
@@ -135,7 +135,7 @@
 .style-light {
   @extend .style-base-class;
 
-  @include links(color(white));
+  @include links(color(stt));
   @include buttons(color(white), color(light), 'primary');
   
   background-color: color(light);
@@ -149,7 +149,7 @@
 .style-light-blue {
   @extend .style-base-class;
 
-  @include links(color(white));
+  @include links(color(stt));
   @include buttons(color(stt), color(white), 'primary');
   
   background-color: color(light);
