@@ -65,8 +65,6 @@
 .item-img-overlay .portfolio-zoom:hover,
 .item-img-overlay i,
 .navigation ul li:hover > a,
-.section-etabs a:hover,
-.section-tabs .tab a.active,
 .side-navigation .menu-item.current-menu-item a,
 .side-navigation .menu-item:hover a,
 .side-navigation .menu-item:hover a:after,
@@ -142,8 +140,6 @@ body .section-content.section-image {
 .button.alter:active,
 .button.alter:hover,
 .callout-box.callout-box2,
-.carousel-container .carousel-icon:hover,
-.comments-list .children .comment:before,
 .content-box.content-style4 h4 i,
 .content-box.style5 h4 i,
 .content-style3:hover .content-style3-icon,
@@ -154,14 +150,11 @@ body .section-content.section-image {
 .portfolio-filter li a:hover,
 .price-table .price-label-badge,
 .price-table .price-table-header,
-.process-step,
 .progress .progress-bar,
 .section-content.section-color-bg,
 .section-content.section-services,
 .section-subscribe .subscribe-button.icon-envelope-alt,
-.single-process:after,
 .tab.active,
-.testimonial-big,
 .top-title-wrapper,
 body .button,
 body a.button,
@@ -274,12 +267,4 @@ li.dropdown:hover .fa-angle-down {
   background-color: #fff;
   border: 1px solid #fff;
   color: color(stt);
-}
-
-.comments-list .children .comment:after {
-  border-color: transparent transparent transparent color(stt);
-}
-
-.comments-list .children .comment:before {
-  background-color: color(stt);
 }

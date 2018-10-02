@@ -1,12 +1,10 @@
+.navbar-default .navbar-collapse {
+  border-color: transparent;
+}
+
 .dropdown-menu,
 .dropdown-toggle {
   cursor: default;
-}
-
-.dropdown-menu > li > a,
-.navbar-default .navbar-nav > li > a {
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
 }
 
 .logo {
@@ -161,23 +159,20 @@ ul li.current_page_item a {
 
 .navbar-left-header {
   float: right;
-}
 
-.navbar-left-header img {
-  max-width: 153px;
+  img {
+    max-width: 153px;
+  }
 }
 
 @media (max-width: 991px) {
   .navbar-toggle {
     float: right;
   }
-}
-@media (min-width: 768px) and (max-width: 1100px) {
+
   .navbar-left-header {
     float: left;
   }
-}
-@media (max-width: 768px) {
   .navbar-default .navbar-nav > li > a {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -185,31 +180,35 @@ ul li.current_page_item a {
 
   .navbar-left-header {
     float: left !important;
-  }
+    img {
+      padding-top: 4px;
+      max-height: 40px;
+    }
 
-  .navbar-left-header img {
-    padding-top: 4px;
-    max-height: 40px;
-  }
-
-  .navbar-left-header li > a {
-    font-weight: 400;
+    li > a {
+      font-weight: 400;
+    }
   }
 
   .dropdown-menu {
     font-weight: 300;
     font-size: 18px;
-  }
-
-  .dropdown-submenu .dropdown-menuitem a {
-    padding-left: 35px !important;
+    .dropdown-menuitem a {
+      padding-left: 35px !important;
+    }
   }
 
   #stt-navbar-collapse {
     overflow-y: initial;
   }
 }
+@media (min-width: 768px) and (max-width: 1012px) {
+  .header .mobile-nav {
+    margin: 10px 0 20px;
+  }
+}
 
+// Place navbar below admin bar
 body.admin-bar .navbar {
   top: 28px !important;
 }

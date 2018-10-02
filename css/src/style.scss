@@ -60,7 +60,6 @@ table.shop_attributes tr {
   text-align: center;
 }
 
-.carousel-container .carousel-item,
 .text-input {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -910,53 +909,9 @@ body .syntaxhighlighter textarea {
   display: none;
 }
 
-.carousel-container {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
-.carousel-indicators {
-  margin-bottom: -10px;
-}
-
 .carousel-inner .row {
   padding-top: 35px;
   padding-bottom: 35px;
-}
-
-.carousel-container .carousel-icon {
-  background-color: grey;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  color: #fff;
-}
-
-.carousel-container .carousel-arrows {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-color: #fff;
-  padding-left: 20px;
-}
-
-.carousel-container .carousel-icon:hover {
-  background-color: #3498db;
-}
-
-.carousel-container .carousel-item {
-  width: auto;
-  margin: 30px 4px 0 0;
-  padding: 0 10px 0 0;
-  box-sizing: border-box;
-}
-
-.carousel-container .carousel-item .thumb-label-item-img:after {
-  bottom: -14%;
 }
 
 .sidebar-icon-item {
@@ -964,17 +919,17 @@ body .syntaxhighlighter textarea {
   clear: both;
   font-size: 12px;
   color: #666;
-}
 
-.sidebar-icon-item:last-child {
-  padding: 0;
-}
+  &:last-child {
+    padding: 0;
+  }
 
-.sidebar-icon-item i {
-  font-size: 18px;
-  padding: 0 10px 0 0;
-  float: left;
-  margin: 2px 0 0;
+  i {
+    font-size: 18px;
+    padding: 0 10px 0 0;
+    float: left;
+    margin: 2px 0 0;
+  }
 }
 
 .content-box .content-box-text {
