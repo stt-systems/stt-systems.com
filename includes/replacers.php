@@ -452,7 +452,7 @@ function replace_downloads_shortcode($atts) {
 			$download_all = '<div>' . get_url_link($downloads['zip'], 'Download all (ZIP)', $blank = false) . '</div>';
 		}
 
-		return "<div class=\"container\">$table</div>$download_all";
+		return $table . $download_all;
 	}
 
 	// $type == 'list'
