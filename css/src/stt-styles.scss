@@ -47,8 +47,10 @@
 
   .inner-links {
     padding-top: 15px;
+    overflow-x: hidden;
 
     a {
+      display: inline-block;
       color: $inner-link-color;
       &:hover {
         color: darken($inner-link-color, 20) !important;
@@ -59,11 +61,13 @@
         margin-left: 5px;
       }
       &:not(:first-child) {
-        border-left: 1px solid $inner-link-color;
         padding-left: 15px;
       }
-      &:not(:last-child):after {
-        margin-right: 15px;
+      &:not(:last-child) {
+        padding-right: 15px;
+      }
+      &.border {
+        border-left: 1px solid $inner-link-color;
       }
     }
   }

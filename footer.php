@@ -128,6 +128,7 @@
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.localScroll.min.js', false); ?>"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.scrollTo.min.js', false); ?>"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.unveil.min.js', false); ?>"></script>
+<script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/links-index.min.js', false); ?>"></script>
 
 <script src="//wurfl.io/wurfl.js"></script>
 <script>if(!WURFL.is_mobile){var s=document.createElement("script");s.src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/retina.min.js', false); ?>",document.getElementsByTagName("body")[0].appendChild(s)}</script>
