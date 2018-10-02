@@ -20,7 +20,7 @@ textarea {
   background-color: #fff;
 }
 
-// Workaround to avoid inner links to fall behind navbar
+// Workaround to avoid inner links to fall behind navbar (won't work correctly if WP own navbar is also displayed)
 // http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/#method-D
 .row[id] {
   border-top: 90px solid transparent;
