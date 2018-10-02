@@ -251,3 +251,16 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 		}
 	}
 }
+
+add_filter('wp_get_nav_menu_items','nav_items', 11, 3);
+function nav_items($items, $menu, $args) {
+	if ($menu->slug == 'front-page') return $items; // do not modify URLs in front page
+
+	foreach ($items as $item) {
+		$transversal_menu = get_post_custom_values('transversal-menu', $item->object_id);
+		if ($transversal_menu) {
+			$item->url .= '?menu=' . $menu->slug;
+		}
+	}
+	return $items;
+}
