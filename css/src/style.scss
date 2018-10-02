@@ -28,10 +28,6 @@ p:empty {
   display: none;
 }
 
-.boxshadow, .thumb64 {
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-}
-
 .boxshadow, .cases-menu a:hover, .cases-section a.seemore, .thumb64 {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
