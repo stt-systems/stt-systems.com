@@ -759,15 +759,14 @@ body .syntaxhighlighter textarea {
     -moz-transition: opacity 0.5s;
     -o-transition: opacity 0.5s;
     transition: opacity 0.5s;
-  }
+    img {
+      border-radius: 2px;
+    }
 
-  .posts-list-thumbnail img {
-    border-radius: 2px;
-  }
-
-  .posts-list-thumbnail:hover {
-    opacity: 0.8;
-    filter: alpha(opacity=80);
+    &:hover {
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
   }
 
   .posts-list-title {
