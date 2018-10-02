@@ -6,7 +6,7 @@
 				<div class="col-md-2 col-sm-2 footer-col footer-logo-col">
 					<img src="<?php echo get_upload_url('logos/logo-footer.png', false); ?>" class="footer-logo" height="171" alt="STT's logo" />
 				</div>
-				<div class="col-md-2 col-sm-2 footer-col">
+				<div class="col-md-2 col-sm-3 footer-col">
 					<div class="footer-title"><?php echo get_page_full_link('contact-us', 'Contact', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
 					<div class="textwidget tight-paragraphs">
 						<p>Phone: (+34) 943 31 77 77</p>
@@ -17,8 +17,8 @@
 						<p>20018 San Sebasti&aacute;n, Spain</p>
 					</div>
 				</div>
-				<div class="col-md-1 col-sm-1 footer-col"></div>
-				<div class="col-md-4 col-sm-4 footer-col">
+				<div class="col-md-1 col-sm-1 footer-col ghost"></div>
+				<div class="col-md-4 col-sm-6 footer-col">
 				<div class="footer-title">SITEMAP</div>
 					<div class="textwidget">
 					<div style="padding-left:15px">

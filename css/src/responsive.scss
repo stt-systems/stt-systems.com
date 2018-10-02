@@ -386,6 +386,17 @@
     margin-top: 20px;
   }
 }
+@media (max-width: 991px) {
+  .footer-col.ghost {
+    display: none;
+  }
+  .footer > .container {
+    padding-bottom: 0;
+  }
+  .footer-logo-col {
+    display: none !important;
+  }
+}
 @media (min-width: 768px) and (max-width: 1012px) {
   .boxed .portfolio-items,
   .portfolio-items {
