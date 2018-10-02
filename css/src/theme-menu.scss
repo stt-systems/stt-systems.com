@@ -1,8 +1,10 @@
-.dropdown-menu, .dropdown-toggle {
+.dropdown-menu,
+.dropdown-toggle {
   cursor: default;
 }
 
-.dropdown-menu > li > a, .navbar-default .navbar-nav > li > a {
+.dropdown-menu > li > a,
+.navbar-default .navbar-nav > li > a {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
@@ -13,15 +15,16 @@
 
 .navbar {
   margin-bottom: 0;
-  background: rgba(242, 242, 243, .97);
-  box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, .05);
+  background: rgba(242, 242, 243, 0.97);
+  box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 .navbar-default {
   border-width: 0;
 }
 
-#menu-home-menu, #stt-navbar-collapse {
+#menu-home-menu,
+#stt-navbar-collapse {
   -webkit-transition: none !important;
   transition: none !important;
 }
@@ -78,7 +81,9 @@
   padding: 10px 20px;
 }
 
-.dropdown .fa-angle-down, li.dropdown.active .fa-angle-down, li.dropdown:hover .fa-angle-down {
+.dropdown .fa-angle-down,
+li.dropdown.active .fa-angle-down,
+li.dropdown:hover .fa-angle-down {
   font-size: 12px;
   font-weight: 600;
   height: 15px;
@@ -102,7 +107,8 @@
   -webkit-border-bottom-left-radius: 3px;
 }
 
-.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
   transition: all 0.5s ease 50ms;
 }
 

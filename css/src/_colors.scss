@@ -15,7 +15,6 @@ $colors: (
   @if map-has-key($map: $colors, $key: $name) {
     @return map-get($map: $colors, $key: $name);
   }
-
   @warn "Unknown `#{$name}` in $colors.";
   @return null;
 }

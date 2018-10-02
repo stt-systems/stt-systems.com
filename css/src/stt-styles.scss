@@ -23,14 +23,14 @@
   }
   li {
     list-style: none;
-  }
-  li:before {
-    content: '\25CF ';
-    font-size: 30px;
-    margin-right: 10px;
-  }
-  li.light:before {
-    color: color(gray) !important;
+    &:before {
+      content: "\25CF ";
+      font-size: 30px;
+      margin-right: 10px;
+    }
+    &.light:before {
+      color: color(gray) !important;
+    }
   }
 }
 
@@ -54,7 +54,7 @@
         color: darken($inner-link-color, 20) !important;
       }
       &:after {
-        content: '\21E3';
+        content: "\21E3";
         visibility: visible;
         margin-left: 5px;
       }
@@ -86,11 +86,13 @@
   @extend .style-base-class;
 
   @include links(color(stt));
-  @include buttons(color(black), color(white), 'primary');
-  
+  @include buttons(color(black), color(white), "primary");
+
   background-color: color(white);
 
-  h2, h2 > a, h2 > a:hover {
+  h2,
+  h2 > a,
+  h2 > a:hover {
     color: color(black) !important;
   }
 }
@@ -99,11 +101,13 @@
   @extend .style-base-class;
 
   @include links(color(stt));
-  @include buttons(color(stt), color(white), 'primary');
-  
+  @include buttons(color(stt), color(white), "primary");
+
   background-color: color(white);
 
-    h2, h2 > a, h2 > a:hover {
+  h2,
+  h2 > a,
+  h2 > a:hover {
     color: color(black) !important;
   }
 }
@@ -112,11 +116,13 @@
   @extend .style-base-class;
 
   @include links(color(stt));
-  @include buttons(color(black), color(white), 'primary');
-  
+  @include buttons(color(black), color(white), "primary");
+
   background-color: #f2f2f3;
 
-    h2, h2 > a, h2 > a:hover {
+  h2,
+  h2 > a,
+  h2 > a:hover {
     color: color(black) !important;
   }
 }
@@ -125,11 +131,13 @@
   @extend .style-base-class;
 
   @include links(color(stt));
-  @include buttons(color(stt), color(white), 'primary');
-  
+  @include buttons(color(stt), color(white), "primary");
+
   background-color: #f2f2f3;
 
-    h2, h2 > a, h2 > a:hover {
+  h2,
+  h2 > a,
+  h2 > a:hover {
     color: color(black) !important;
   }
 }
@@ -138,12 +146,14 @@
   @extend .style-base-class;
 
   @include links(color(stt));
-  @include buttons(color(white), color(light), 'primary');
-  
+  @include buttons(color(white), color(light), "primary");
+
   background-color: color(light);
   color: color(black);
 
-    h2, h2 > a, h2 > a:hover {
+  h2,
+  h2 > a,
+  h2 > a:hover {
     color: color(white) !important;
   }
 }
@@ -152,12 +162,14 @@
   @extend .style-base-class;
 
   @include links(color(stt));
-  @include buttons(color(stt), color(white), 'primary');
-  
+  @include buttons(color(stt), color(white), "primary");
+
   background-color: color(light);
   color: color(black);
 
-    h2, h2 > a, h2 > a:hover {
+  h2,
+  h2 > a,
+  h2 > a:hover {
     color: color(white) !important;
   }
 }
@@ -166,12 +178,14 @@
   @extend .style-base-class;
 
   @include links(color(white));
-  @include buttons(color(white), color(black), 'primary');
+  @include buttons(color(white), color(black), "primary");
 
   background-color: color(black);
   color: #f0f0f0;
 
-    h2, h2 > a, h2 > a:hover {
+  h2,
+  h2 > a,
+  h2 > a:hover {
     color: color(white) !important;
   }
 }
@@ -190,12 +204,14 @@
     @extend .style-base-class;
     color: color(white);
     background-color: $base-color;
-    
-      h2, h2 > a, h2 > a:hover {
+
+    h2,
+    h2 > a,
+    h2 > a:hover {
       color: color(black) !important;
     }
 
-    @include buttons(color(white), $base-color, 'primary');
+    @include buttons(color(white), $base-color, "primary");
   }
 
   li:before {
@@ -207,7 +223,7 @@
   .style-#{$name} {
     @include links(color($name));
     @include colored(color($name));
-    @include buttons(color($name), color(white), 'secondary');
+    @include buttons(color($name), color(white), "secondary");
   }
 }
 

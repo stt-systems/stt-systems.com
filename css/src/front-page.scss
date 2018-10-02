@@ -26,14 +26,15 @@ h3 {
   padding-bottom: 40px;
   overflow: hidden;
 
-  h1, h3 {
+  h1,
+  h3 {
     .highlighted {
       background-color: #00000088;
       color: #fff;
     }
- }
+  }
 
-  [class*='col-'] {
+  [class*="col-"] {
     z-index: 10;
   }
 
@@ -62,7 +63,10 @@ h3 {
   }
 }
 
-.row::before, .row::after, .container-fluid::before, .container-fluid::after {
+.row::before,
+.row::after,
+.container-fluid::before,
+.container-fluid::after {
   content: none;
 }
 

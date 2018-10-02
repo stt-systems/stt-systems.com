@@ -69,13 +69,15 @@
   opacity: 1;
 }
 
-.carousel-fade .carousel-inner .active.left, .carousel-fade .carousel-inner .active.right {
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
   left: 0;
   opacity: 0;
   z-index: 1;
 }
 
-.carousel-fade .carousel-inner .next.left, .carousel-fade .carousel-inner .prev.right {
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
   opacity: 1;
 }
 
