@@ -64,21 +64,20 @@ ob_start("sanitize_output");
 							'walker'         => new wp_bootstrap_navwalker())
 						); ?>
 					</div>
-				</div>
-				<div class="col-sm-12 col-md-3">
-					<div class="image-text"><?php
-					$area = get_top_level_slug();
-					$areas = array(
-						'motion-analysis',
-						'industry',
-					);
-					if (in_array($area, $areas)) {
-						$area_url = home_url("/$area/");
-						$area_logo = get_upload_url("logos/$area.png", false);
-						echo "<a href=\"$area_url\"><img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
-					} ?>
-					</div>
-				</div>
+				</div><?php
+				$area = get_top_level_slug();
+				$areas = array(
+					'motion-analysis',
+					'industry',
+				);
+				if (in_array($area, $areas)) {
+					$area_url = home_url("/$area/");
+					$area_logo = get_upload_url("logos/$area.png", false);
+					echo '<div class="col-sm-12 col-md-3" id="area-logo">';
+					echo '<div class="image-text">';
+					echo "<a href=\"$area_url\"><img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
+					echo '</div></div>';
+				} ?>
 			</div>
 		</div>
 		</nav>
