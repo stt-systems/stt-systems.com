@@ -63,14 +63,14 @@ function replace_column_shortcode($atts, $content = null) {
 	), $atts, 'column'));
 
   $class = "";
-  $stylesheet = "";
+  $stylesheet = array();
   if ($size == "100") {
     $class = "col-md-12 col-sm-12";
   } else if ($size == "75") {
     $class = "col-md-9 col-sm-9";
   } else if ($size == "66") {
     $class = "col-md-8 col-sm-8";
-    $stylesheet = "padding-left:15px";
+    $stylesheet[] = "padding-left:15px";
   } else if ($size == "50") {
     $class = "col-md-6 col-sm-6";
   } else if ($size == "33") {
@@ -91,12 +91,14 @@ function replace_column_shortcode($atts, $content = null) {
     $image_url = get_upload_url($image);
   
     $inner_html .= "<div class=\"extend-full\" style=\"background-image:url($image_url);height:${height}px\"></div>";
-    $stylesheet .= ";padding-top:0;padding-bottom:0";
+    $stylesheet[] = "padding-top:0;padding-bottom:0";
   }
   
-  if ($stylesheet != '') {
-    $stylesheet = " style=\"$stylesheet\"";
-  }
+  if (count($stylesheet) > 0) {
+    $stylesheet = ' style="' . join(';', $stylesheet) . '"';
+  } else {
+		$stylesheet = '';
+	}
   
 	$content = do_shortcode($content);
 
