@@ -91,7 +91,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				global $wp;
 				$url = home_url(add_query_arg(array(), $wp->request));
 				$post_url = get_site_url() . '/' . $post->post_name;
-				if ($post->post_name != 'motion-analysis' and
+				if ($post->post_name != 'motion-analysis' and // avoid highlighting the "Products" menu when navigating other parts of MA
 						strpos($url, $post_url) !== false and
             strpos($class_names, 'current_page_ancestor') === false) { // highlight parent menu
 					$class_names .= ' current_page_ancestor';
