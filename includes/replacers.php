@@ -394,10 +394,10 @@ function replace_downloads_shortcode($atts) {
 		$counter = 0;
 		$cols = min(count($downloads['files']), 5);
 		$col_class = 2;
-		$extra_class = '';
 		foreach ($downloads['files'] as $file) {
 			$ext = $file['ext'];
 			$thumbnail_url = '';
+			$extra_class = '';
 			if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg') {
 				$thumbnail_url = $file['file'];
 				$extra_class = ' boxshadow';
