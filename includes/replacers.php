@@ -394,11 +394,13 @@ function replace_downloads_shortcode($atts) {
 		$counter = 0;
 		$cols = min(count($downloads['files']), 5);
 		$col_class = 2;
+		$extra_class = '';
 		foreach ($downloads['files'] as $file) {
 			$ext = $file['ext'];
 			$thumbnail_url = '';
 			if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg') {
 				$thumbnail_url = $file['file'];
+				$extra_class = ' boxshadow';
 			} else {
 				if (empty($file['preview'])) {
 					if ($ext == 'docx') $ext = 'doc';
@@ -407,6 +409,7 @@ function replace_downloads_shortcode($atts) {
 					$thumbnail_url = my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png");
 				} else {
 					$thumbnail_url = $file['preview'];
+					$extra_class = ' boxshadow';
 				}
 			}
 
@@ -417,7 +420,7 @@ function replace_downloads_shortcode($atts) {
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
 			$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\">";
 			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';
-			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded\" src=\"$thumbnail_url\" height=\"128\"/></div>";
+			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded$extra_class\" src=\"$thumbnail_url\" height=\"128\"/></div>";
 			$table .= $file['title'];
 			$table .= '</a></div>';
 
