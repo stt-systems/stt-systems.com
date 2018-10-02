@@ -29,7 +29,6 @@ It is possible to create an index of regions, using the ```inner-links``` class 
 ## Images
 
 Use the ```[image]``` shortcode to insert images uploaded to the WP site using the regular media tool.
-
 - __name__: filename (can include a subdirectory), no spaces.
 - __caption__: caption to be included with the image (no caption by default).
 - __shadow__: adds a light shadow around the image (added by default). To remove shadow: ```[image ... shadow=no]```.
@@ -38,7 +37,6 @@ Use the ```[image]``` shortcode to insert images uploaded to the WP site using t
 - __lazy__: image will be loaded only when the user scrolls up to it. During load, an animated GIF is shown. Use with big images to accelerate initial page load.
 - __page__: the image is a link to a page, indicate with this attribute the slug of the page. Anchors can be added if needed (see _links_ below).
 - __url__: the image is a link, indicate here the full URL.
-
 
 ## Links
 
