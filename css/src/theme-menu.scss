@@ -165,8 +165,19 @@ ul li.current_page_item a {
   }
 }
 
+@media (min-width: 768px) {
+  .navbar {
+    [class*="col-md"],
+    [class*="col-sm"],
+    [class*="col-lg"] {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
 @media (max-width: 991px) {
   .navbar-toggle {
+    display: block;
     float: right;
   }
 
@@ -205,6 +216,16 @@ ul li.current_page_item a {
 
   #stt-navbar-collapse {
     overflow-y: initial;
+  }
+
+  .navbar {
+    [class*="col-md"],
+    [class*="col-sm"],
+    [class*="col-lg"] {
+      &:not(:first-child) {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
