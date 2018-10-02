@@ -86,12 +86,12 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="row">
-				<div class="col-md-2 col-sm-2" style="margin-bottom:0">
+				<div class="col-md-2 col-sm-4" style="margin-bottom:0">
 						<div class="copyright-text">
 							&copy; <?php echo date('Y'); ?> STT Systems
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4" style="margin-bottom:0">
+					<div class="col-md-4 col-sm-2" style="margin-bottom:0">
 						<div class="copyright-text">
 							<a href="<?php echo get_page_permalink("credits"); ?>">Credits</a>
 						</div>
