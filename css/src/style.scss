@@ -1578,47 +1578,21 @@ textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 
-  .googleplus-icon {
-    background-image: url(../images/social-media/social-media-googlePlus.png);
-  }
-  .googleplus-icon:hover {
-    background-color: #d94a39;
-  }
-
-  .linkedin-icon {
-    background-image: url(../images/social-media/social-media-linkedIn.png);
-  }
-  .linkedin-icon:hover {
-    background-color: #71b2d0;
+  @mixin social_icon($name, $color) {
+    .#{$name}-icon {
+      background-image: url(../images/social-media/social-media-#{$name}.png);
+      &:hover {
+        background-color: $color;
+      }
+    }
   }
 
-  .twitter-icon {
-    background-image: url(../images/social-media/social-media-twitter.png);
-  }
-  .twitter-icon:hover {
-    background-color: #00a0d1;
-  }
-
-  .facebook-icon {
-    background-image: url(../images/social-media/social-media-facebook.png);
-  }
-  .facebook-icon:hover {
-    background-color: #3b5998;
-  }
-
-  .youtube-icon {
-    background-image: url(../images/social-media/social-media-youtube.png);
-  }
-  .youtube-icon:hover {
-    background-color: #c4302b;
-  }
-
-  .instagram-icon {
-    background-image: url(../images/social-media/social-media-instagram.png);
-  }
-  .instagram-icon:hover {
-    background-color: #dc2743;
-  }
+  @include social_icon(googleplus, #d94a39);
+  @include social_icon(linkedin, #71b2d0);
+  @include social_icon(twitter, #00a0d1);
+  @include social_icon(facebook, #3b5998);
+  @include social_icon(youtube, #c4302b);
+  @include social_icon(instagram, #dc2743);
 
   > ul {
     padding: 0;
