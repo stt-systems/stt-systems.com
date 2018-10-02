@@ -96,7 +96,9 @@
 
   h2,
   h2 > a,
-  h2 > a:hover {
+  h2 > a:hover,
+  .collapse-header > a,
+  .collapse-header > a:hover {
     color: color(black) !important;
   }
 }
