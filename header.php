@@ -51,7 +51,7 @@ ob_start("sanitize_output");
         <span class="icon-bar"></span>
       </button>
 			<a class="navbar-brand" href="<?php echo home_url('/'); ?>">
-				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" height="78" alt="STT's logo" rel="nofollow" style="margin-top:5px"/>
+				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="stt-navbar-collapse"><?php
@@ -71,7 +71,7 @@ ob_start("sanitize_output");
 		if (in_array($area, $areas)) {
 			$area_url = home_url("/$area/");
 			$area_logo = get_upload_url("logos/$area.png", false);
-			echo "<a class=\"navbar-brand pull-right\" href=\"$area_url\"><img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
+			echo "<a class=\"navbar-brand pull-right\" id=\"area-logo\" href=\"$area_url\"><img src=\"$area_logo\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
 		} ?>
 	</div>
 </nav>
