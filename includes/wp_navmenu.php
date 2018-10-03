@@ -85,12 +85,12 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				$class_names .= ' dropdown-menuitem';
 			}
 			
-			if ($depth === 0 and $do_not_highlight_current == false) {
+			if ($depth === 0 && $do_not_highlight_current == false) {
 				global $wp;
 				$url = home_url(add_query_arg(array(), $wp->request));
 				$post_url = get_site_url() . '/' . $post->post_name;
-				if ($post->post_name != 'motion-analysis' and // avoid highlighting the "Products" menu when navigating other parts of MA
-						strpos($url, $post_url) !== false and
+				if ($post->post_name != 'motion-analysis' && // avoid highlighting the "Products" menu when navigating other parts of MA
+						strpos($url, $post_url) !== false &&
             strpos($class_names, 'current_page_ancestor') === false) { // highlight parent menu
 					$class_names .= ' current_page_ancestor';
 				}				
@@ -144,12 +144,10 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			foreach ($atts as $attr => $value) {
 				if (!empty($value)) {
 					$value = ('href' === $attr) ? esc_url($value) : esc_attr($value);
-					$attributes .= ' ' . $attr . '="' . $value . '"';
+					$attributes .= " $attr=\"$value\"";
 				}
 			}
 			
-			$item_output  = $args->before;
-			$item_output .= "<a$attributes>";
 			// Title
 			$title = apply_filters('the_title', $item->title, $item->ID);
 
@@ -171,7 +169,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 					$title .= " <i class=\"fa fa-shopping-cart\"></i> $cart_contents - $cart_total";
 				}
 			}
-			$item_output .= "{$args->link_before}$title{$args->link_after}</a>{$args->after}";
+			$item_output = "{$args->before}<a$attributes>{$args->link_before}$title{$args->link_after}</a>{$args->after}";
 
 			$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 		}
