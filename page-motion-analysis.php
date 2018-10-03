@@ -5,8 +5,9 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
 wp_enqueue_script('product-hovering');
 ?>
 
-<div class="row" style="display:table;height:100vh;width:100%;margin:0">
-  <div class="col-md-4 col-sm-4 panel">
+<div class="container-fluid" style="height:100vh">
+<div class="row" style="display:table;height:100%;width:100%;margin:0">
+  <div class="col-md-4 col-sm-12 col-xs-12 panel">
     <div class="col-md-2 col-sm-2"></div>
     <div class="col-md-8 col-sm-8">
       <a href="<?php echo get_page_permalink("2d-optical-motion-capture"); ?>">
@@ -22,7 +23,7 @@ wp_enqueue_script('product-hovering');
     <div class="col-md-2 col-sm-2"></div>
     <div class="panel-bg" style="background-image:<?php echo css_darken_image("backgrounds/2dma.jpg", 0);?>"></div>
   </div>
-  <div class="col-md-4 col-sm-4 panel">
+  <div class="col-md-4 col-sm-12 col-xs-12 panel">
     <div class="col-md-2 col-sm-2"></div>
     <div class="col-md-8 col-sm-8">
       <a href="<?php echo get_page_permalink("3d-optical-motion-capture"); ?>">
@@ -43,7 +44,7 @@ wp_enqueue_script('product-hovering');
     <div class="col-md-2 col-sm-2"></div>
     <div class="panel-bg" style="background-image:<?php echo css_darken_image("backgrounds/3dma.jpg", 0);?>"></div>
   </div>
-  <div class="col-md-4 col-sm-4 panel">
+  <div class="col-md-4 col-sm-12 col-xs-12 panel">
     <div class="col-md-2 col-sm-2"></div>
     <div class="col-md-8 col-sm-8">
       <a href="<?php echo get_page_permalink("inertial-motion-capture"); ?>">
@@ -58,6 +59,7 @@ wp_enqueue_script('product-hovering');
     <div class="col-md-2 col-sm-2"></div>
     <div class="panel-bg" style="background-image:<?php echo css_darken_image("backgrounds/inertial.jpg", 0);?>"></div>
   </div>
+</div>
 </div>
 
 <?php

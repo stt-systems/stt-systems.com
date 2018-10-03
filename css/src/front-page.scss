@@ -1,3 +1,5 @@
+@import "_responsive.scss";
+
 h1 {
   font-size: 64px;
   font-weight: 300;
@@ -16,7 +18,10 @@ h3 {
 }
 
 .panel {
-  float: none;
+  @media #{$desktop} {
+    float: none;
+  }
+
   display: table-cell;
   vertical-align: bottom;
   text-align: center;

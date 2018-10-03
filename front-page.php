@@ -4,9 +4,9 @@ get_header();
 wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 ?>
 
-<div style="height:100vh">
+<div class="container-fluid" style="height:100vh">
 	<div class="row" style="display:table;height:100%">
-    <div class="col-md-6 col-sm-6 panel">
+    <div class="col-md-6 col-sm-12 col-xs-12 panel">
       <a style="display:block" href="<?php echo get_page_permalink("motion-analysis"); ?>">
       <div class="col-md-2 col-sm-2"></div>
       <div class="col-md-8 col-sm-8">
@@ -20,7 +20,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
       </a>
       <div class="panel-bg bottom left" style="background-image:<?php echo css_darken_image("backgrounds/motion-analysis.jpg", 0);?>"></div>
     </div>
-    <div class="col-md-6 col-sm-6 panel">
+    <div class="col-md-6 col-sm-12 col-xs-12 panel">
       <a style="display:block" href="<?php echo get_page_permalink("industry"); ?>">
       <div class="col-md-2 col-sm-2"></div>
       <div class="col-md-8 col-sm-8">
