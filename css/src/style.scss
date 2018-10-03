@@ -1001,6 +1001,10 @@ body .syntaxhighlighter textarea {
       color: #428bca;
       font-weight: 400;
       font-size: 14pt;
+
+      @media #{$mobile} {
+        margin-bottom: 0;
+      }
     }
 
     .footer-getintouch-row {

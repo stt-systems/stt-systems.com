@@ -2,8 +2,49 @@
 @import "_responsive.scss";
 
 .front-page {
-  height: 100vh;
-  @media #{$tablet} {
+  @media #{$desktop} {
+    height: 100vh;
+  }
+
+  &.main {
+    @media #{$desktop} {
+      h1 {
+        height: 3em;
+      }
+    }
+
+    @media #{$tablet} {
+      .content-box {
+        margin: 5% 20px;
+      }
+    }
+
+    @media #{$mobile} {
+      img {
+        display: none;
+      }
+      .content-box {
+        margin: 0;
+      }
+    }
+  }
+
+  &[class*="area-"] {
+    @media #{$desktop} {
+      h3 {
+        height: 2em;
+      }
+    }
+  }
+  &.area-industry {
+    h1 {
+      margin-bottom: 40%;
+
+      @media #{$tablet} {
+        margin-bottom: 20%;
+        margin-top: 20%;
+      }
+    }
   }
 
   h1 {
@@ -21,6 +62,9 @@
     @media #{$mobile} {
       font-size: 48px;
     }
+    @media #{$mobile-xs} {
+      font-size: 38px;
+    }
   }
 
   h3 {
@@ -31,6 +75,9 @@
 
     @media #{$tablet} {
       text-shadow: 0px 0px 6px #000000ff;
+    }
+    @media #{$mobile} {
+      font-size: 20px;
     }
   }
 
@@ -44,8 +91,7 @@
     text-align: center;
     border: 0;
     border-radius: 0;
-    padding: 0;
-    padding-bottom: 40px;
+    padding: 40px 0;
     overflow: hidden;
 
     [class*="col-"] {
@@ -83,6 +129,10 @@
     width: 100%;
     margin: 0;
     padding: 0;
+
+    @media #{$tablet} {
+      padding-top: 50px;
+    }
   }
 
   .row::before,
@@ -90,5 +140,11 @@
   .container-fluid::before,
   .container-fluid::after {
     content: none;
+  }
+
+  @media #{$tablet} {
+    [class*="col-"] {
+      margin-bottom: 0px;
+    }
   }
 }
