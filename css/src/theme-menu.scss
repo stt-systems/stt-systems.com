@@ -227,6 +227,41 @@ ul li.current_page_item a {
       }
     }
   }
+
+  .navbar-header {
+    float: none;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    &.collapse {
+      display: none !important;
+    }
+  }
+
+  .navbar-nav {
+    float: none !important;
+    margin: 7.5px -15px;
+    & > li {
+      float: none;
+    }
+    & > li > a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .navbar-text {
+    float: none;
+    margin: 15px 0;
+  }
+  .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+  .collapsing {
+    overflow: hidden !important;
+  }
 }
 
 @media only screen and (min-width: 768px) {

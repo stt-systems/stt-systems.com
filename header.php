@@ -44,7 +44,7 @@ ob_start("sanitize_output");
 		<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="row">
 			<div class="container-fluid">
-				<div class="col-sm-12 col-md-3">
+				<div class="col-sm-3 col-md-3">
 					<div class="navbar-left-header" id="navbar-left-header">
 						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_upload_url('logos/logo.png', false); ?>" height="78" alt="STT's logo" rel="nofollow" style="margin-top:5px"/></a>
 					</div>
@@ -55,7 +55,7 @@ ob_start("sanitize_output");
 						<span class="icon-bar"></span>
 					</button>
 				</div>
-				<div class="col-sm-12 col-md-6">
+				<div class="col-sm-6 col-md-6">
 					<div class="collapse navbar-collapse" id="stt-navbar-collapse"><?php
 						wp_nav_menu(array(
 							'theme_location' => 'primary',
