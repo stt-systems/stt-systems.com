@@ -3,6 +3,7 @@ define('WL_TEMPLATE_DIR_URI', get_template_directory_uri());
 define('WL_TEMPLATE_DIR', get_template_directory());
 define('WL_TEMPLATE_LOCAL_DIR', '/wp-content/themes/STT');
 define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
+define('BOOTSTRAP_VERSION', '3.3.7');
 
 // Font size for category and tag clouds
 function set_tag_cloud_sizes($args) {
@@ -99,7 +100,7 @@ add_filter('the_excerpt', 'shortcode_unautop');
 add_filter('the_excerpt', 'do_shortcode');
 
 function enqueue_theme_css() {
-	wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+	wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/'. BOOTSTRAP_VERSION .'/css/bootstrap.min.css');
   wp_enqueue_style('default', get_template_directory_uri() . '/css/style.min.css');
 	wp_enqueue_style('stt-styles', get_template_directory_uri() . '/css/stt-styles.min.css');
 }
