@@ -1932,27 +1932,30 @@ h3.collapse-header {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
-  }
 
-  @mixin product($name) {
-    .#{$name} {
-      background-image: url("../images/products/#{$name}.png");
-      background-size: cover;
-    }
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 32px;
 
-    .#{$name}:hover {
+    &:hover {
       transform: scale(1.08);
     }
+
+    @mixin product($name) {
+      &.#{$name} {
+        background-image: url("../images/products/#{$name}.png");
+      }
+    }
+    @include product(sports);
+    @include product(cycling);
+    @include product(golf);
+    @include product(running);
+    @include product(clinical);
+    @include product(human);
+    @include product(eddo);
+    @include product(isen);
+    @include product(bikefit);
   }
-  @include product(sports);
-  @include product(cycling);
-  @include product(golf);
-  @include product(running);
-  @include product(clinical);
-  @include product(human);
-  @include product(eddo);
-  @include product(isen);
-  @include product(bikefit);
 }
 
 .product-name {
