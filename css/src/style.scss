@@ -5,7 +5,6 @@ body,
 html {
   min-height: 100%;
   overflow-x: hidden;
-  font-size: 14px;
 }
 
 body,
@@ -19,6 +18,11 @@ textarea {
   margin: 0;
   font-size: 13px;
   background-color: #fff;
+}
+
+li,
+p {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
 // Workaround to avoid inner links to fall behind navbar (won't work correctly if WP own navbar is also displayed)
@@ -1120,21 +1124,10 @@ sup {
   padding-bottom: 20px;
 }
 
-body,
-li,
-p {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-}
-
 a:focus,
 a:hover {
   text-decoration: none !important;
   color: color(stt);
-}
-
-body {
-  overflow-x: hidden;
-  background-color: #fff;
 }
 
 blockquote {
