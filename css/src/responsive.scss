@@ -1,14 +1,9 @@
 @import "_colors.scss";
+@import "_responsive.scss";
 
-@media (min-width: 1300px) {
+@media (min-width: 1280px) {
   .container {
     width: 1250px;
-  }
-}
-
-@media (max-width: 1200px) {
-  body h1.page-title {
-    font-size: 20px;
   }
 }
 
@@ -24,7 +19,11 @@
   }
 }
 
-@media (max-width: 768px) {
+@media #{$tablet} {
+  body h1.page-title {
+    font-size: 20px;
+  }
+
   header .row {
     margin-right: -15px;
   }
@@ -120,18 +119,7 @@
   .header {
     height: 80px;
   }
-}
 
-@media (max-width: 480px) {
-  .blog-post .blog-span {
-    margin-left: 10px;
-  }
-
-  .carousel-caption .btn {
-    display: none;
-  }
-}
-@media (max-width: 959px) {
   .boxed,
   .boxed .container {
     width: auto !important;
@@ -155,28 +143,10 @@
     top: 1px;
     width: 100%;
   }
-}
 
-@media only screen and (orientation: portrait) and (device-width: 320px),
-  (device-width: 768px) {
-  .section-content,
-  .section-content.section-image::after {
-    background-attachment: scroll !important;
-  }
-}
-@media only screen and (orientation: landscape) and (device-width: 320px),
-  (device-width: 768px) {
-  .section-content,
-  .section-content.section-image::after {
-    background-attachment: scroll !important;
-  }
-}
-@media (max-width: 1199px) {
   .section-content.cta-section .cta-details a {
     margin-top: 20px;
   }
-}
-@media (max-width: 990px) {
   .footer-col.ghost {
     display: none;
   }
@@ -186,9 +156,7 @@
   .footer-logo-col {
     display: none !important;
   }
-}
 
-@media (max-width: 1012px) {
   .header:after {
     background-image: none;
   }
@@ -205,9 +173,7 @@
   .responsive-searchbox {
     position: relative;
   }
-}
 
-@media (max-width: 1024px) {
   .price-table .price-label .price-label-name {
     font-size: 18px;
   }
@@ -215,6 +181,31 @@
   .price-table .price-number {
     font-size: 50px;
     padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-post .blog-span {
+    margin-left: 10px;
+  }
+
+  .carousel-caption .btn {
+    display: none;
+  }
+}
+
+@media only screen and (orientation: portrait) and (device-width: 320px),
+  (device-width: 768px) {
+  .section-content,
+  .section-content.section-image::after {
+    background-attachment: scroll !important;
+  }
+}
+@media only screen and (orientation: landscape) and (device-width: 320px),
+  (device-width: 768px) {
+  .section-content,
+  .section-content.section-image::after {
+    background-attachment: scroll !important;
   }
 }
 
