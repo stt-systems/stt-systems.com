@@ -1,10 +1,10 @@
 @import "_colors.scss";
+@import "_responsive.scss";
 
 body,
 html {
   min-height: 100%;
   overflow-x: hidden;
-  font-size: 14px;
 }
 
 body,
@@ -18,6 +18,11 @@ textarea {
   margin: 0;
   font-size: 13px;
   background-color: #fff;
+}
+
+li,
+p {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
 // Workaround to avoid inner links to fall behind navbar (won't work correctly if WP own navbar is also displayed)
@@ -139,35 +144,20 @@ p.gallery-caption {
 }
 
 /* Titles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
-  margin: 0 0 20px;
-  color: #3a3a3a;
+@mixin header($name, $size) {
+  #{$name} {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
+    font-size: #{$size}px;
+    margin: 0 0 20px;
+    color: #3a3a3a;
+  }
 }
-
-h1 {
-  font-size: 28px;
-}
-h2 {
-  font-size: 22px;
-}
-h3 {
-  font-size: 18px;
-}
-h4 {
-  font-size: 16px;
-}
-h5 {
-  font-size: 15px;
-}
-h6 {
-  font-size: 14px;
-}
+@include header(h1, 28);
+@include header(h2, 22);
+@include header(h3, 18);
+@include header(h4, 16);
+@include header(h5, 15);
+@include header(h6, 14);
 
 h1.page-title {
   margin: 0 10px 10px 0;
@@ -1011,6 +1001,10 @@ body .syntaxhighlighter textarea {
       color: #428bca;
       font-weight: 400;
       font-size: 14pt;
+
+      @media #{$mobile} {
+        margin-bottom: 0;
+      }
     }
 
     .footer-getintouch-row {
@@ -1091,16 +1085,16 @@ p {
 .footer .social-icons {
   overflow: hidden;
   height: 40px;
-}
 
-.footer .social-icons .social-media-icon {
-  float: right;
-  background-color: transparent;
-  border: none;
-}
+  .social-media-icon {
+    float: right;
+    background-color: transparent;
+    border: none;
 
-.footer .social-icons .social-media-icon:hover {
-  border: none;
+    &:hover {
+      border: none;
+    }
+  }
 }
 
 #header,
@@ -1115,25 +1109,14 @@ sup {
 }
 
 .footer-wrapper {
-  padding-top: 25px;
-  padding-bottom: 35px;
-}
-
-body,
-li,
-p {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 a:focus,
 a:hover {
   text-decoration: none !important;
   color: color(stt);
-}
-
-body {
-  overflow-x: hidden;
-  background-color: #fff;
 }
 
 blockquote {
@@ -1584,9 +1567,13 @@ textarea {
       &:hover {
         background-color: $color;
       }
+
+      @media (-webkit-min-device-pixel-ratio: 1.5) {
+        background-image: url(../images/social-media/social-media-#{$name}%402x.png);
+        background-size: 40px 80px;
+      }
     }
   }
-
   @include social_icon(googleplus, #d94a39);
   @include social_icon(linkedin, #71b2d0);
   @include social_icon(twitter, #00a0d1);
@@ -1945,33 +1932,36 @@ h3.collapse-header {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
-  }
 
-  @mixin product($name) {
-    .#{$name} {
-      background-image: url("../images/products/#{$name}.png");
-      background-size: cover;
-    }
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 32px;
 
-    .#{$name}:hover {
+    &:hover {
       transform: scale(1.08);
     }
+
+    @mixin product($name) {
+      &.#{$name} {
+        background-image: url("../images/products/#{$name}.png");
+      }
+    }
+    @include product(sports);
+    @include product(cycling);
+    @include product(golf);
+    @include product(running);
+    @include product(clinical);
+    @include product(human);
+    @include product(eddo);
+    @include product(isen);
+    @include product(bikefit);
   }
-  @include product(sports);
-  @include product(cycling);
-  @include product(golf);
-  @include product(running);
-  @include product(clinical);
-  @include product(human);
-  @include product(eddo);
-  @include product(isen);
-  @include product(bikefit);
 }
 
 .product-name {
   font-size: 18px;
   font-weight: 300;
-  color: #cfcfcf;
+  color: color(white);
   margin-top: 10px;
   height: 50px;
 }

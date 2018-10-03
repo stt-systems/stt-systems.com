@@ -1,75 +1,198 @@
-h1 {
-  font-size: 64px;
-  font-weight: 300;
-  color: #ffffff;
-  text-shadow: 0px 0px 6px #00000066;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import "_colors.scss";
+@import "_responsive.scss";
 
-h3 {
-  font-size: 30px;
-  font-weight: 300;
-  color: #f4f4f4;
-  text-shadow: 0px 0px 6px #00000066;
-}
+.front-page {
+  @media #{$desktop} {
+    height: 100vh;
+  }
 
-.panel {
-  float: none;
-  display: table-cell;
-  vertical-align: bottom;
-  text-align: center;
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-  padding-bottom: 40px;
-  overflow: hidden;
+  &.main {
+    @media #{$desktop} {
+      h1 {
+        height: 3em;
+      }
+    }
 
-  h1,
-  h3 {
-    .highlighted {
-      background-color: #00000088;
-      color: #fff;
+    @media #{$tablet} {
+      .content-box {
+        margin: 5% 20px;
+      }
+    }
+
+    @media #{$mobile} {
+      img {
+        display: none;
+      }
+      .content-box {
+        margin: 0;
+      }
     }
   }
 
-  [class*="col-"] {
-    z-index: 10;
+  &[class*="area-"] {
+    @media #{$desktop} {
+      h3 {
+        height: 2em;
+      }
+    }
+  }
+  &.area-industry {
+    h1 {
+      margin-bottom: 40%;
+
+      @media #{$tablet} {
+        margin-bottom: 20%;
+        margin-top: 20%;
+      }
+    }
   }
 
-  .panel-bg {
-    position: absolute;
-    width: 100%;
+  h1 {
+    font-size: 64px;
+    font-weight: 300;
+    color: color(white);
+    text-shadow: 0px 0px 6px #00000066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media #{$tablet} {
+      text-shadow: 0px 0px 6px #000000ff;
+    }
+    @media #{$mobile} {
+      font-size: 48px;
+    }
+    @media #{$mobile-xs} {
+      font-size: 38px;
+    }
+  }
+
+  h3 {
+    font-size: 30px;
+    font-weight: 300;
+    color: #f4f4f4;
+    text-shadow: 0px 0px 6px #00000066;
+
+    @media #{$tablet} {
+      text-shadow: 0px 0px 6px #000000ff;
+    }
+    @media #{$mobile} {
+      font-size: 22px;
+    }
+  }
+
+  .panel {
+    @media #{$desktop} {
+      float: none;
+    }
+
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: center;
+    border: 0;
+    border-radius: 0;
+    padding: 40px 0;
+    @media #{$tablet} {
+      padding: 10px 0;
+    }
+    overflow: hidden;
+    background-color: #000;
+
+    [class*="col-"] {
+      z-index: 10;
+    }
+
+    .panel-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: #000;
+      background-position: center center;
+      left: 0;
+      top: 0;
+
+      @media #{$tablet} {
+        opacity: 0.6;
+      }
+    }
+
+    .right {
+      right: 0;
+      background-position-x: right;
+    }
+    .left {
+      background-position-x: left;
+    }
+    .bottom {
+      bottom: 0;
+      background-position-y: bottom;
+    }
+  }
+
+  > .row {
+    display: table;
     height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #0069aa;
-    background-position: center center;
-    left: 0;
-    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @media #{$tablet} {
+      padding-top: 50px;
+    }
   }
 
-  .right {
-    right: 0;
-    background-position-x: right;
-  }
-  .left {
-    background-position-x: left;
-  }
-  .bottom {
-    bottom: 0;
-    background-position-y: bottom;
-  }
-}
+  // Product links are display as a list on mobile devices
+  @media #{$tablet} {
+    .product-links {
+      a {
+        display: block;
+        width: initial;
+        margin-bottom: 13px;
+      }
 
-.row::before,
-.row::after,
-.container-fluid::before,
-.container-fluid::after {
-  content: none;
-}
+      span {
+        position: absolute;
+        left: 20%;
+        text-indent: 45px;
+        margin: 0;
+        width: initial;
+        height: 44px;
+        background-size: 36px;
+        background-position-y: 2px;
 
-.footer > .container {
-  padding-bottom: 20px;
+        font-size: 28px;
+        font-weight: 300;
+        color: color(white);
+        text-shadow: 0px 0px 5px #000000ff;
+
+        white-space: normal;
+        overflow: visible;
+
+        @media #{$mobile} {
+          font-size: 20px;
+          padding-top: 3px;
+          background-position-y: 0;
+        }
+      }
+    }
+
+    .product-name {
+      display: none;
+    }
+  }
+
+  .row::before,
+  .row::after,
+  .container-fluid::before,
+  .container-fluid::after {
+    content: none;
+  }
+
+  @media #{$tablet} {
+    [class*="col-"] {
+      margin-bottom: 0px;
+    }
+  }
 }
