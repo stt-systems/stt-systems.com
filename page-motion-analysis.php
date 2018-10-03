@@ -5,7 +5,7 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
 wp_enqueue_script('product-hovering');
 ?>
 
-<div class="container-fluid front-page area">
+<div class="container-fluid front-page area-motion-analysis">
 <div class="row">
   <div class="col-md-4 col-xs-12 panel">
     <div class="col-md-2"></div>
