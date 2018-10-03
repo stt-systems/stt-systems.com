@@ -157,11 +157,12 @@ ul li.current_page_item a {
   color: #fff !important;
 }
 
-.navbar-left-header {
-  float: right;
+.navbar-brand {
+  padding: 0;
 
   img {
-    max-width: 153px;
+    padding: 15px;
+    height: 100%;
   }
 }
 
@@ -181,10 +182,6 @@ ul li.current_page_item a {
     float: right;
   }
 
-  .navbar-left-header {
-    float: left;
-  }
-
   #area-logo {
     display: none;
   }
@@ -192,18 +189,6 @@ ul li.current_page_item a {
   .navbar-default .navbar-nav > li > a {
     padding-top: 5px;
     padding-bottom: 5px;
-  }
-
-  .navbar-left-header {
-    float: left !important;
-    img {
-      padding-top: 4px;
-      max-height: 40px;
-    }
-
-    li > a {
-      font-weight: 400;
-    }
   }
 
   .dropdown-menu {

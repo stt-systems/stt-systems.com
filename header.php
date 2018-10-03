@@ -42,29 +42,27 @@ ob_start("sanitize_output");
 </head>
 <body <?php body_class(); ?> >
 <nav class="navbar navbar-default navbar-fixed-top">
-<div class="row">
 	<div class="container-fluid">
-		<div class="col-sm-3 col-md-3">
-			<div class="navbar-left-header" id="navbar-left-header">
-				<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_upload_url('logos/logo.png', false); ?>" height="78" alt="STT's logo" rel="nofollow" style="margin-top:5px"/></a>
-			</div>
-			<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#stt-navbar-collapse">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#stt-navbar-collapse" aria-expanded="false">
 				<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+			<a class="navbar-brand" href="<?php echo home_url('/'); ?>">
+				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" height="78" alt="STT's logo" rel="nofollow" style="margin-top:5px"/>
+			</a>
 		</div>
-		<div class="col-sm-6 col-md-6">
-			<div class="collapse navbar-collapse" id="stt-navbar-collapse"><?php
-				wp_nav_menu(array(
-					'theme_location' => 'primary',
-					'container'      => 'nav-collapse',
-					'menu_class'     => 'nav navbar-nav navbar-left',
-					'walker'         => new wp_bootstrap_navwalker())
-				); ?>
-			</div>
-		</div><?php
+		<div class="collapse navbar-collapse" id="stt-navbar-collapse"><?php
+			wp_nav_menu(array(
+				'theme_location' => 'primary',
+				'container'      => 'nav-collapse',
+				'menu_class'     => 'nav navbar-nav navbar-left',
+				'walker'         => new wp_bootstrap_navwalker())
+			); ?>
+		</div>
+		<?php
 		$area = get_top_level_slug();
 		$areas = array(
 			'motion-analysis',
@@ -73,11 +71,7 @@ ob_start("sanitize_output");
 		if (in_array($area, $areas)) {
 			$area_url = home_url("/$area/");
 			$area_logo = get_upload_url("logos/$area.png", false);
-			echo '<div class="col-sm-12 col-md-3" id="area-logo">';
-			echo '<div class="image-text">';
-			echo "<a href=\"$area_url\"><img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
-			echo '</div></div>';
+			echo "<a class=\"navbar-brand pull-right\" href=\"$area_url\"><img src=\"$area_logo\" height=\"60\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
 		} ?>
 	</div>
-</div>
 </nav>
