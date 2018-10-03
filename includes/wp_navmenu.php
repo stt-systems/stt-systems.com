@@ -75,8 +75,6 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 		} else if (strcasecmp($item->attr_title, 'disabled') == 0) {
 			$output .= '<li role="presentation" class="disabled"><a href="#">' . esc_attr($item->title) . '</a>';
 		} else {
-			$value = '';
-
 			$classes = empty($item->classes) ? array() : (array) $item->classes;
 			$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
 			if ($depth === 0) {
@@ -98,34 +96,37 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				}				
 			}
 			
+			// Special states
 			if ($do_not_highlight_current === true) {
 				$class_names = str_replace('current_page_ancestor', '', $class_names);
 				$class_names = str_replace('current_page_item', '', $class_names);
 				$class_names = str_replace('current-menu-item', '', $class_names);        
-			} else if (in_array('current-menu-item', $classes)) {
+			} else if (in_array('current-menu-item', $classes)) { // highlight current
 				$class_names .= ' active';
 			}
 
 			$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
-			$id = apply_filters('nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args);
+			$id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
 			$id = $id ? ' id="' . esc_attr($id) . '"' : '';
 
-			$output .= "<li$id$value$class_names>";
+			$output .= "<li$id$class_names>";
 
+			// Convert item properties into element attributes
 			$atts = array();
 			$atts['target'] = !empty($item->target) ? $item->target : '';
 			$atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
-
-			// If item has_children add atts to <a>
 			$atts['href']   = $item->url;
+
+ 			// Do not link to empty parent pages
 			if ($args->has_children) {
 				$template = get_page_template_slug(get_post_meta($item->ID, '_menu_item_object_id', true));
-				if ($template == 'template-empty.php') { // do not link to empty parent pages
+				if ($template == 'template-empty.php') {
 					$atts['href'] = '';
 				}
 			}
 
+			// Top level pages
 			if ($depth === 0) {
 				if ($args->has_children) {
 					$atts['class']					= 'dropdown-toggle';
@@ -138,6 +139,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args);
 
+			// Attributes to HTML
 			$attributes = '';
 			foreach ($atts as $attr => $value) {
 				if (!empty($value)) {
@@ -148,10 +150,13 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			
 			$item_output  = $args->before;
 			$item_output .= "<a$attributes>";
+			// Title
 			$title = apply_filters('the_title', $item->title, $item->ID);
+
+			// WooCommerce specifics
 			if (strcasecmp($item->title, 'cart') == 0) {
 				$title .= get_cart_title();
-			} else if(strcasecmp($item->title, 'checkout') == 0) {
+			} else if (strcasecmp($item->title, 'checkout') == 0) {
 				global $woocommerce;
 				$cart_contents_count = $woocommerce->cart->cart_contents_count;
 				if ($cart_contents_count == 0) return;

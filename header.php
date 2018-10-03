@@ -22,6 +22,20 @@ function sanitize_output($buffer) {
   return preg_replace(array_keys($search), array_values($search), $buffer);
 }
 ob_start("sanitize_output");
+
+function print_area_logo() {
+	$areas = array(
+		'motion-analysis',
+		'industry',
+	);
+
+	$area = get_top_level_slug();
+	if (in_array($area, $areas)) {
+		$area_url = home_url("/$area/");
+		$area_logo = get_upload_url("logos/$area.png", false); ?>
+		<a class="navbar-brand" id="area-logo" href="<?php echo $area_url; ?>"><img src="<?php echo $area_logo; ?>" alt="Area logo" rel="nofollow"/></a><?php
+	}
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -44,34 +58,26 @@ ob_start("sanitize_output");
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
+			<a href="<?php echo home_url('/'); ?>">
+				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#stt-navbar-collapse" aria-expanded="false">
 				<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-			<a class="navbar-brand" href="<?php echo home_url('/'); ?>">
-				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
-			</a>
+		</div>
+		<div class="navbar-header pull-right">
+			<?php print_area_logo(); ?>
 		</div>
 		<div class="collapse navbar-collapse" id="stt-navbar-collapse"><?php
 			wp_nav_menu(array(
 				'theme_location' => 'primary',
 				'container'      => 'nav-collapse',
-				'menu_class'     => 'nav navbar-nav navbar-left',
+				'menu_class'     => 'nav navbar-nav',
 				'walker'         => new wp_bootstrap_navwalker())
 			); ?>
 		</div>
-		<?php
-		$area = get_top_level_slug();
-		$areas = array(
-			'motion-analysis',
-			'industry',
-		);
-		if (in_array($area, $areas)) {
-			$area_url = home_url("/$area/");
-			$area_logo = get_upload_url("logos/$area.png", false);
-			echo "<a class=\"navbar-brand pull-right\" id=\"area-logo\" href=\"$area_url\"><img src=\"$area_logo\" alt=\"Area logo\" rel=\"nofollow\"/></a>";
-		} ?>
 	</div>
 </nav>
