@@ -1760,9 +1760,14 @@ table.hover tbody tr:nth-child(odd) {
 
   a {
     color: color(path-link) !important;
+
+    &:hover {
+      color: darken(color(path-link), 20) !important;
+    }
   }
-  a:hover {
-    color: darken(color(path-link), 20) !important;
+
+  @media #{$tablet} {
+    display: none;
   }
 }
 
