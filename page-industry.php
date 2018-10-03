@@ -31,24 +31,4 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
 echo get_clients_carousel('industry', 8);
 ?>
 
-<script>
-$(document).ready(function() {
-  $('#2dma-products .product').hover(function() {
-    $('#current-2dma-product').text($(this).text())
-  }, function() {
-    $('#current-2dma-product').text('');    
-  });
-  $('#3dma-products .product').hover(function() {
-    $('#current-3dma-product').text($(this).text())
-  }, function() {
-    $('#current-3dma-product').text('');    
-  });
-  $('#inertial-products .product').hover(function() {
-    $('#current-inertial-product').text($(this).text())
-  }, function() {
-    $('#current-inertial-product').text('');    
-  });
-});
-</script>
-
 <?php get_footer(); ?>
