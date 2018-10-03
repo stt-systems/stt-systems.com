@@ -1091,16 +1091,16 @@ p {
 .footer .social-icons {
   overflow: hidden;
   height: 40px;
-}
 
-.footer .social-icons .social-media-icon {
-  float: right;
-  background-color: transparent;
-  border: none;
-}
+  .social-media-icon {
+    float: right;
+    background-color: transparent;
+    border: none;
 
-.footer .social-icons .social-media-icon:hover {
-  border: none;
+    &:hover {
+      border: none;
+    }
+  }
 }
 
 #header,
@@ -1584,9 +1584,13 @@ textarea {
       &:hover {
         background-color: $color;
       }
+
+      @media (-webkit-min-device-pixel-ratio: 1.5) {
+        background-image: url(../images/social-media/social-media-#{$name}%402x.png);
+        background-size: 40px 80px;
+      }
     }
   }
-
   @include social_icon(googleplus, #d94a39);
   @include social_icon(linkedin, #71b2d0);
   @include social_icon(twitter, #00a0d1);

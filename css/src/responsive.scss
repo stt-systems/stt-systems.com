@@ -1,21 +1,5 @@
 @import "_colors.scss";
 
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  @mixin social_icon($name) {
-    .social-icons .#{$name}-icon {
-      background-image: url(../images/social-media/social-media-#{$name}%402x.png);
-      background-size: 40px 80px;
-    }
-  }
-
-  @include social_icon(googleplus);
-  @include social_icon(linkedin);
-  @include social_icon(twitter);
-  @include social_icon(facebook);
-  @include social_icon(youtube);
-  @include social_icon(instagram);
-}
-
 @media (min-width: 1300px) {
   .container {
     width: 1250px;
