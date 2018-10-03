@@ -144,35 +144,20 @@ p.gallery-caption {
 }
 
 /* Titles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
-  margin: 0 0 20px;
-  color: #3a3a3a;
+@mixin header($name, $size) {
+  #{$name} {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
+    font-size: #{$size}px;
+    margin: 0 0 20px;
+    color: #3a3a3a;  
+  }
 }
-
-h1 {
-  font-size: 28px;
-}
-h2 {
-  font-size: 22px;
-}
-h3 {
-  font-size: 18px;
-}
-h4 {
-  font-size: 16px;
-}
-h5 {
-  font-size: 15px;
-}
-h6 {
-  font-size: 14px;
-}
+@include header(h1, 28);
+@include header(h2, 22);
+@include header(h3, 18);
+@include header(h4, 16);
+@include header(h5, 15);
+@include header(h6, 14);
 
 h1.page-title {
   margin: 0 10px 10px 0;
