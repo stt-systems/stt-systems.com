@@ -1,8 +1,9 @@
 @import "_colors.scss";
 @import "_responsive.scss";
 
-.navbar-default .navbar-collapse {
+.navbar-collapse {
   border-color: transparent;
+  max-height: 100%;
 }
 
 .navbar-header {
@@ -136,10 +137,6 @@ li.dropdown:hover .fa-angle-down {
   margin-left: 5px;
 }
 
-.navbar-collapse {
-  max-height: 100%;
-}
-
 .dropdown-submenu {
   position: relative;
   border-radius: 0 3px 3px;
@@ -254,6 +251,10 @@ ul li.current_page_item a {
 
     &.collapse {
       display: none !important;
+
+      &.in {
+        display: block !important;
+      }
     }
   }
 
@@ -273,15 +274,13 @@ ul li.current_page_item a {
     float: none;
     margin: 15px 0;
   }
-  .navbar-collapse.collapse.in {
-    display: block !important;
-  }
+
   .collapsing {
     overflow: hidden !important;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media #{$desktop} {
   .dropdown-submenu > a:after {
     border-color: 0 !important;
     border-radius: 50% !important;
