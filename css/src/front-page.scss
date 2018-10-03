@@ -20,9 +20,6 @@
     }
 
     @media #{$mobile} {
-      img {
-        display: none;
-      }
       .content-box {
         margin: 0;
       }
