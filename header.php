@@ -57,19 +57,19 @@ function print_area_logo() {
 <body <?php body_class(); ?> >
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
-		<div class="navbar-header">
-			<a href="<?php echo home_url('/'); ?>">
+		<div class="navbar-header pull-left">
+			<a class="navbar-brand" href="<?php echo home_url('/'); ?>">
 				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
 			</a>
+		</div>
+		<div class="navbar-header pull-right">
+			<?php print_area_logo(); ?>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#stt-navbar-collapse" aria-expanded="false">
 				<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-		</div>
-		<div class="navbar-header pull-right">
-			<?php print_area_logo(); ?>
 		</div>
 		<div class="collapse navbar-collapse" id="stt-navbar-collapse"><?php
 			wp_nav_menu(array(
