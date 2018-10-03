@@ -5,8 +5,8 @@ wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.m
 wp_enqueue_script('product-hovering');
 ?>
 
-<div class="container-fluid" style="height:100vh">
-<div class="row" style="display:table;height:100%;width:100%;margin:0">
+<div class="container-fluid front-page">
+<div class="row">
   <div class="col-md-4 col-sm-12 col-xs-12 panel">
     <div class="col-md-2 col-sm-2"></div>
     <div class="col-md-8 col-sm-8">

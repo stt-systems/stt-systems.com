@@ -4,8 +4,8 @@ get_header();
 wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 ?>
 
-<div class="container-fluid" style="height:100vh">
-	<div class="row" style="display:table;height:100%">
+<div class="container-fluid front-page">
+	<div class="row">
     <div class="col-md-6 col-sm-12 col-xs-12 panel">
       <a style="display:block" href="<?php echo get_page_permalink("motion-analysis"); ?>">
       <div class="col-md-2 col-sm-2"></div>
