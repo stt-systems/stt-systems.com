@@ -13,7 +13,7 @@ function get_top_level_slug() {
 
 	if (!empty($_GET) && $_GET['menu']) return $_GET['menu'];
 
-	if (is_page_valid() === false) return 'motion-analysis';
+	if (is_page_valid() === false) return '';
 
 	$url_base = site_url();
 	$url_base = substr($url_base, strpos($url_base, '://') + 3);
