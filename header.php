@@ -25,6 +25,7 @@ ob_start("sanitize_output");
 
 function get_areas() {
 	return array(
+		'' => 'STT Systems',
 		'motion-analysis' => __('Motion Analysis', 'stt'),
 		'industry' => __('Industry', 'stt'),
 	);
