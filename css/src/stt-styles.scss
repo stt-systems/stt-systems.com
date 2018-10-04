@@ -121,11 +121,10 @@
 .style-white {
   @extend .style-base-class;
 
-  @include links(color(stt));
-  @include buttons(color(black), color(white), "primary");
-
   background-color: color(white);
 
+  @include links(color(stt));
+  @include buttons(color(black), color(white), "primary");
   @include headers(black);
 
   .collapse-header > a,
@@ -137,21 +136,20 @@
 .style-white-blue {
   @extend .style-base-class;
 
-  @include links(color(stt));
-  @include buttons(color(stt), color(white), "primary");
-
   background-color: color(white);
 
+  @include links(color(stt));
+  @include buttons(color(stt), color(white), "primary");
   @include headers(black);
 }
 
 .style-ultra-light {
   @extend .style-base-class;
 
+  background-color: #f2f2f3;
+
   @include links(color(stt));
   @include buttons(color(black), color(white), "primary");
-
-  background-color: #f2f2f3;
 
   @include headers(black);
 }
@@ -159,47 +157,43 @@
 .style-ultra-light-blue {
   @extend .style-base-class;
 
-  @include links(color(stt));
-  @include buttons(color(stt), color(white), "primary");
-
   background-color: #f2f2f3;
 
+  @include links(color(stt));
+  @include buttons(color(stt), color(white), "primary");
   @include headers(black);
 }
 
 .style-light {
   @extend .style-base-class;
 
-  @include links(color(stt));
-  @include buttons(color(white), color(light), "primary");
-
   background-color: color(light);
   color: color(black);
 
+  @include links(color(stt));
+  @include buttons(color(white), color(light), "primary");
   @include headers(white);
 }
 
 .style-light-blue {
   @extend .style-base-class;
 
-  @include links(color(stt));
-  @include buttons(color(stt), color(white), "primary");
-
   background-color: color(light);
   color: color(black);
 
+  @include links(color(stt));
+  @include buttons(color(stt), color(white), "primary");
   @include headers(white);
 }
 
 .style-dark {
   @extend .style-base-class;
 
-  @include links(color(white));
-  @include buttons(color(white), color(black), "primary");
-
   background-color: color(black);
   color: #f0f0f0;
 
+  @include links(color(white));
+  @include buttons(color(white), color(black), "primary");
   @include headers(white);
 }
 
@@ -215,6 +209,7 @@
 @mixin colored($base-color) {
   .style-colored {
     @extend .style-base-class;
+
     color: color(white);
     background-color: $base-color;
 
