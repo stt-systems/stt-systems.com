@@ -746,13 +746,13 @@ function replace_distributor_shortcode($atts, $content = null) {
 	$products_list = '';
 	foreach ($products_by_family as $key => $family) {
 		if (!empty($family['list'])) {
-			$products_list .= '<div class="row"><div class="col-sm-12 col-md-2"><b>' . $family['name'] . '</b></div>' .
-												'<div class="col-sm-12 col-md-10">' . join('', $family['list']) . '</div></div>';
+			$products_list .= '<div class="row"><div class="col-xs-2"><b>' . $family['name'] . '</b></div>' .
+												'<div class="col-xs-10">' . join('', $family['list']) . '</div></div>';
 		}
 	}
 	if (!empty($products_list)) {
-		$products_list .= '<div class="row"><div class="col-sm-12 col-md-2"></div>' .
-											'<div class="col-sm-12 col-md-10" id="current"></div></div>';
+		$products_list .= '<div class="row"><div class="col-2"></div>' .
+											'<div class="col-10" id="current"></div></div>';
 	}
 
 	$types_metadata = array(
@@ -779,13 +779,12 @@ function replace_distributor_shortcode($atts, $content = null) {
 	wp_enqueue_script('product-hovering');
 
 	return "<div class=\"row distributor\" style=\"text-align:left\">" .
-				 "<div class=\"col-sm-3 country\">$country</div>" .
-				 "<div class=\"col-sm-5\"><h3>$name$type_str</h3></div>" .
-				 "<div class=\"col-sm-4 product-links\"></div></div>" .
+				 "<div class=\"col-sm-3 col-xs-12 country\">$country</div>" .
+				 "<div class=\"col-sm-5 col-xs-12 \"><h3>$name$type_str</h3></div></div>" .
 				 "<div class=\"row distributor\" style=\"text-align:left\">" .
-				 "<div class=\"col-sm-3 logo\">$logo_img</div>" .
-				 "<div class=\"col-sm-5 contact\">$content</div>" .
-				 "<div class=\"col-sm-4 product-links\">$products_list</div></div>";
+				 "<div class=\"col-sm-3 col-xs-12 logo\">$logo_img</div>" .
+				 "<div class=\"col-sm-5 col-xs-12 contact\">$content</div>" .
+				 "<div class=\"col-sm-4 col-xs-12 product-links\">$products_list</div></div>";
 }
 
 function add_stt_shortcodes() {

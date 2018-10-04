@@ -1962,6 +1962,16 @@ h3.collapse-header {
 .product-links {
   margin-top: 40px;
 
+  .row {
+    @media #{$tablet} {
+      &:first-child {
+        padding-top: 15px;
+      }
+    }
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   a {
     display: inline-block;
     width: 32px;
