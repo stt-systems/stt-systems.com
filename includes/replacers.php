@@ -34,6 +34,7 @@ function replace_row_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'id' => '',
 		'margin' => '', // no-top, no-bottom, no-top-bottom
+		'hide' => '', // CSV: tablet, mobile
 	), $atts, 'row'));
 
   if ($id != "") {
@@ -51,8 +52,15 @@ function replace_row_shortcode($atts, $content = null) {
 		$class[] = 'no-top-margin';
 		$class[] = 'no-bottom-margin';
 	}
-  
-	$class = join(' ', $class);
+
+	$hide = preg_filter('/^/', 'hide-', split_csv($hide));
+	$class = array_merge($class, $hide);
+
+	if (!empty($class)) {
+		$class = ' ' . join(' ', $class);
+	} else {
+		$class = '';
+	}
 
 	return "<div$id class=\"row$class\">$content</div>";
 }
