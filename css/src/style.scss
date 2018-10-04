@@ -93,8 +93,7 @@ nav ul {
 }
 
 .navigation,
-.posts-list,
-.social-icons > ul {
+.posts-list {
   list-style-type: none;
 }
 
@@ -1091,6 +1090,9 @@ p {
 .footer .social-icons {
   overflow: hidden;
   height: 40px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 
   .social-media-icon {
     float: right;
@@ -1100,6 +1102,33 @@ p {
     &:hover {
       border: none;
     }
+  }
+
+  @mixin social_icon($name, $color) {
+    .#{$name}-icon {
+      background-image: url(../images/social-media/social-media-#{$name}.png);
+      background-size: 40px 80px;
+      &:hover {
+        background-color: $color;
+      }
+
+      @media (-webkit-min-device-pixel-ratio: 1.5) {
+        background-image: url(../images/social-media/social-media-#{$name}%402x.png);
+      }
+    }
+  }
+  @include social_icon(googleplus, #d94a39);
+  @include social_icon(linkedin, #71b2d0);
+  @include social_icon(twitter, #00a0d1);
+  @include social_icon(facebook, #3b5998);
+  @include social_icon(youtube, #c4302b);
+  @include social_icon(instagram, #dc2743);
+
+  > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
   }
 }
 
@@ -1575,38 +1604,6 @@ textarea {
     border-radius: 2px;
     background-color: #f7f7f7;
     color: #3498db;
-  }
-}
-
-.social-icons {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-
-  @mixin social_icon($name, $color) {
-    .#{$name}-icon {
-      background-image: url(../images/social-media/social-media-#{$name}.png);
-      &:hover {
-        background-color: $color;
-      }
-
-      @media (-webkit-min-device-pixel-ratio: 1.5) {
-        background-image: url(../images/social-media/social-media-#{$name}%402x.png);
-        background-size: 40px 80px;
-      }
-    }
-  }
-  @include social_icon(googleplus, #d94a39);
-  @include social_icon(linkedin, #71b2d0);
-  @include social_icon(twitter, #00a0d1);
-  @include social_icon(facebook, #3b5998);
-  @include social_icon(youtube, #c4302b);
-  @include social_icon(instagram, #dc2743);
-
-  > ul {
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
   }
 }
 
