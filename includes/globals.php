@@ -72,13 +72,6 @@ function add_page_path() {
 	}
 }
 
-function get_banner_code($slug) {
-	global $post;
-	$path = "/images/banners/$slug.jpg";
-	if (!file_exists(ABSPATH . $path)) return ''; // no banner for the page
-	return '<img class="banner" src="' . site_url($path) . '" alt="' . $post->post_title . '" />';
-}
-
 // Prints the banner of the page (or the title, if no banner)
 function print_page_title($slug = '', $title = '') {
 	global $post;
@@ -95,19 +88,12 @@ function print_page_title($slug = '', $title = '') {
 	}
 	if ($title == '' && $post) {
 		$title = $post->post_title;
-	}
-	
-	$banner_code = get_banner_code($slug);
-	$h1_hidden = '';
-	if ($banner_code != '') {
-		$h1_hidden = 'hidden';
 	} ?>
 
 	<div class="top-title-wrapper">
-		<?php echo $banner_code; ?>
-		<?php if ($banner_code == '') { ?><div class="container"><div class="row col-md-12 col-sm-12"><?php } ?>
-		<h1 class="page-title" <?php echo $h1_hidden; ?>><?php echo wptexturize($title); ?></h1>
-		<?php if ($banner_code == '') { ?></div></div><?php } ?>
+		<div class="container"><div class="row col-xs-12">
+		<h1 class="page-title"><?php echo wptexturize($title); ?></h1>
+		</div></div>
 	</div><?php
 }
 
