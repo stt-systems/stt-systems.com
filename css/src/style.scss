@@ -65,6 +65,13 @@ table.shop_attributes tr {
   text-align: center;
 }
 
+@media #{$tablet} {
+  table.clean td {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
 .text-input {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
