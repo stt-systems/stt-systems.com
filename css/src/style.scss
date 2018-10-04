@@ -32,6 +32,11 @@ p {
     padding-bottom: 0px;
   }
 }
+.footer {
+  p {
+    padding-bottom: 0;
+  }
+}
 
 // Workaround to avoid inner links to fall behind navbar (won't work correctly if WP own navbar is also displayed)
 // http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/#method-D
