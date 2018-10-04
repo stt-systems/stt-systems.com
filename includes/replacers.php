@@ -90,7 +90,7 @@ function replace_column_shortcode($atts, $content = null) {
   if ($size == "100") {
     $class = "col-xs-12";
   } else if ($size == "75") {
-    $class = "col-md-9 col-sm-9";
+    $class = "col-sm-9";
   } else if ($size == "66") {
     $class = "col-md-8 col-xs-12";
   } else if ($size == "50") {
@@ -98,7 +98,7 @@ function replace_column_shortcode($atts, $content = null) {
   } else if ($size == "33") {
     $class = "col-md-4 col-xs-12";
   } else if ($size == "25") {
-    $class = "col-md-3 col-sm-3";
+    $class = "col-sm-3 col-xs-12";
   } else if ($size == "16") {
     $class = "col-md-2 col-sm-4 col-xs-6";
 	}
