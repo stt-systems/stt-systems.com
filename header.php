@@ -5,8 +5,9 @@ function sanitize_output($buffer) {
 	'/\>[^\S ]+/s' => '>',  // strip white spaces after tags, except space
 	'/[^\S ]+\</s' => '<',  // strip white spaces before tags, except space
 	'/\>[ ]+/s'    => '> ', // strip multiple spaces after tags
-	'/[ ]+\</s'    => ' <',   // strip multiple spaces before tags
+	'/[ ]+\</s'    => ' <', // strip multiple spaces before tags
 	'/ [ ]+/'      => ' ',
+	'#\s*<p>\s*(<a .*>)?\s*(<img .*/>)\s*(</a>)?\s*</p>\s*#iU' => '$1$2$3', // remove <p> around images
   // Remove unnecesary breaks
 	'#(</div>)<br[ /]*>#' => '$1',
 	'#<br[ /]*>(<div)#'   => '$1',
