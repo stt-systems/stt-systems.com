@@ -30,6 +30,12 @@ p {
 .row[id] {
   border-top: 90px solid transparent;
   margin-top: -90px;
+
+  @media #{$tablet} {
+    border-top: 50px solid transparent;
+    margin-top: -50px;
+  }
+
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
