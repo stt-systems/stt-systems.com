@@ -32,6 +32,11 @@
   @include header(h1, 80, 64);
   @include header(h2, 48, 40);
   @include header(h3, 28, 24);
+  @include header(h4, 22, 20);
+  h4 {
+    font-weight: 600;
+    padding-top: 20px;
+  }
 
   ul {
     padding-left: 0;
