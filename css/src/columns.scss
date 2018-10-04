@@ -69,6 +69,9 @@
   &:before {
     background-color: inherit;
     content: "";
+    @media #{$tablet} {
+      content: none;
+    }
     position: absolute;
     height: 100%;
     z-index: -1;
