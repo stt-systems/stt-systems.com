@@ -11,7 +11,7 @@ function get_current_url() {
 function get_top_level_slug() {
 	if (is_front_page()) return '';
 
-	if (!empty($_GET) && $_GET['menu']) return $_GET['menu'];
+	if (!empty($_GET) && array_key_exists('menu', $_GET)) return $_GET['menu'];
 
 	if (is_page_valid() === false) return '';
 
