@@ -105,6 +105,19 @@
   }
 }
 
+@mixin header($name, $color) {
+  #{$name}, 
+  #{$name} > a,
+  #{$name} > a:hover {
+    color: color($color) !important;
+  } 
+}
+@mixin headers($color) {
+  @include header(h2, $color);
+  @include header(h3, $color);
+  @include header(h4, $color);
+}
+
 .style-white {
   @extend .style-base-class;
 
@@ -113,9 +126,8 @@
 
   background-color: color(white);
 
-  h2,
-  h2 > a,
-  h2 > a:hover,
+  @include headers(black);
+
   .collapse-header > a,
   .collapse-header > a:hover {
     color: color(black) !important;
@@ -130,11 +142,7 @@
 
   background-color: color(white);
 
-  h2,
-  h2 > a,
-  h2 > a:hover {
-    color: color(black) !important;
-  }
+  @include headers(black);
 }
 
 .style-ultra-light {
@@ -145,11 +153,7 @@
 
   background-color: #f2f2f3;
 
-  h2,
-  h2 > a,
-  h2 > a:hover {
-    color: color(black) !important;
-  }
+  @include headers(black);
 }
 
 .style-ultra-light-blue {
@@ -160,11 +164,7 @@
 
   background-color: #f2f2f3;
 
-  h2,
-  h2 > a,
-  h2 > a:hover {
-    color: color(black) !important;
-  }
+  @include headers(black);
 }
 
 .style-light {
@@ -176,11 +176,7 @@
   background-color: color(light);
   color: color(black);
 
-  h2,
-  h2 > a,
-  h2 > a:hover {
-    color: color(white) !important;
-  }
+  @include headers(white);
 }
 
 .style-light-blue {
@@ -192,11 +188,7 @@
   background-color: color(light);
   color: color(black);
 
-  h2,
-  h2 > a,
-  h2 > a:hover {
-    color: color(white) !important;
-  }
+  @include headers(white);
 }
 
 .style-dark {
@@ -208,11 +200,7 @@
   background-color: color(black);
   color: #f0f0f0;
 
-  h2,
-  h2 > a,
-  h2 > a:hover {
-    color: color(white) !important;
-  }
+  @include headers(white);
 }
 
 .style-downloads {
@@ -230,13 +218,8 @@
     color: color(white);
     background-color: $base-color;
 
-    h2,
-    h2 > a,
-    h2 > a:hover {
-      color: color(black) !important;
-    }
-
     @include buttons(color(white), $base-color, "primary");
+    @include headers(black);
   }
 
   li:before {
