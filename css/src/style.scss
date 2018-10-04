@@ -1204,8 +1204,23 @@ time {
 @include spacer(80);
 @include spacer(90);
 @include spacer(100);
-@include spacer(43);
-@include spacer(87);
+
+.space-sep-top {
+  clear: both;
+  display: block;
+  height: 100px;
+  @media #{$tablet} {
+    height: 50px; // no extra space in mobile
+  }
+}
+.space-sep-top-tight { // basically the same menu height
+  clear: both;
+  display: block;
+  height: 90px;
+  @media #{$tablet} {
+    height: 50px;
+  }
+}
 
 .page-info {
   padding-top: 30px;

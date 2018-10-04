@@ -396,8 +396,8 @@ function get_product_icon_link($slug, $icon) {
 }
 
 function get_page_top_spacer($tight = false) {
-	$size = $tight ? "87" : "100";
-	return "<div class=\"space-sep$size\"></div>";
+	$size = $tight ? "-tight" : "";
+	return "<div class=\"space-sep-top$size\"></div>";
 }
 
 function get_clients_carousel($name, $cols) {
