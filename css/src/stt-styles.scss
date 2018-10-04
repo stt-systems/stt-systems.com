@@ -24,6 +24,9 @@
       @media #{$mobile} {
         font-size: #{$size_mobile}px;
       }
+      @media #{$mobile-xs} {
+        font-size: #{$size_mobile * 0.75}px;
+      }
     }
   }
   @include header(h1, 80, 64);
@@ -60,6 +63,10 @@
   .inner-links {
     padding-top: 15px;
     overflow-x: hidden;
+
+    @media #{$mobile} {
+      font-size: smaller;
+    }
 
     a {
       display: inline-block;
