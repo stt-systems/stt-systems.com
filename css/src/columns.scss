@@ -1,4 +1,4 @@
-$vertical_space: 31;
+@import "_responsive.scss";
 
 .extra > .blog-post-body {
   p {
@@ -42,7 +42,11 @@ $vertical_space: 31;
     > [class*="col-"] {
       display: flex;
       flex-direction: column;
-      padding: #{2 * $vertical_space}px 35px #{2 * $vertical_space}px 35px;
+      padding: 62px 35px;
+
+      @media #{$tablet} {
+        padding: 16px 10px;
+      }
     }
 
     &.no-top-margin {
@@ -87,12 +91,20 @@ $vertical_space: 31;
 
 .no-bottom-margin {
   .col-extra:before {
-    margin-top: #{-$vertical_space}px;
+    margin-top: -31px;
+
+    @media #{$tablet} {
+      margin-top: -8px;
+    }
   }
 }
 .no-top-margin {
   .col-extra:before {
-    margin-top: #{$vertical_space}px;
+    margin-top: 31px;
+
+    @media #{$tablet} {
+      margin-top: 8px;
+    }
   }
   &.no-bottom-margin {
     .col-extra:before {
