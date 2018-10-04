@@ -742,7 +742,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 		),
 	);
 
-	$products = preg_split('/[,;: ]+/', $products);
+	$products = split_csv($products);
 	$products_by_family = array(
 		'2dma' => array(
 			'name' => __('2DMA'),
@@ -788,7 +788,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 			$type = 'premium,' . $type;
 		}
 	}
-	$types = preg_split('/[,;: ]+/', $type);
+	$types = split_csv($type);
 	$type_str = '';
 	foreach ($types as $type) {
 		$label = $types_metadata[$type];
