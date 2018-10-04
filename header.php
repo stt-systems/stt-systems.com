@@ -41,7 +41,7 @@ function print_area_name() {
 
 function print_area_logo() {
 	$area = get_top_level_slug();
-	if (array_key_exists($area, get_areas())) {
+	if ($area != '' && array_key_exists($area, get_areas())) {
 		$area_url = home_url("/$area/");
 		$area_logo = get_upload_url("logos/$area.png", false); ?>
 		<a class="navbar-brand" id="area-logo" href="<?php echo $area_url; ?>"><img src="<?php echo $area_logo; ?>" alt="Area logo" rel="nofollow"/></a><?php
