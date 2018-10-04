@@ -23,14 +23,24 @@ function sanitize_output($buffer) {
 }
 ob_start("sanitize_output");
 
-function print_area_logo() {
-	$areas = array(
-		'motion-analysis',
-		'industry',
+function get_areas() {
+	return array(
+		'motion-analysis' => __('Motion Analysis', 'stt'),
+		'industry' => __('Industry', 'stt'),
 	);
+}
 
+function print_area_name() {
+	$areas = get_areas();
 	$area = get_top_level_slug();
-	if (in_array($area, $areas)) {
+	if (array_key_exists($area, $areas)) {
+		echo "<h3 class=\"navbar-text hide-desktop\">{$areas[$area]}</h3>";
+	}
+}
+
+function print_area_logo() {
+	$area = get_top_level_slug();
+	if (array_key_exists($area, get_areas())) {
 		$area_url = home_url("/$area/");
 		$area_logo = get_upload_url("logos/$area.png", false); ?>
 		<a class="navbar-brand" id="area-logo" href="<?php echo $area_url; ?>"><img src="<?php echo $area_logo; ?>" alt="Area logo" rel="nofollow"/></a><?php
@@ -62,6 +72,7 @@ function print_area_logo() {
 				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
 			</a>
 		</div>
+		<?php print_area_name(); ?>
 		<div class="navbar-header pull-right">
 			<?php print_area_logo(); ?>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#stt-navbar-collapse" aria-expanded="false">

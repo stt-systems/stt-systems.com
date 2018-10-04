@@ -275,8 +275,11 @@ ul li.current_page_item a {
   }
 
   .navbar-text {
-    float: none;
-    margin: 15px 0;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: calc(100% - 130px);
+    text-align: center;
   }
 
   .collapsing {
