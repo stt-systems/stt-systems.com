@@ -1824,7 +1824,8 @@ table.hover tbody tr:nth-child(odd) {
   margin-bottom: 20px;
 }
 
-.extend-full {
+.extend-full,
+.banner {
   padding-left: 100vw;
   margin-left: -100vw;
   padding-right: 100vw;
@@ -1833,6 +1834,20 @@ table.hover tbody tr:nth-child(odd) {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.banner {
+  height: 600px;
+  @media #{$tablet} {
+    height: 300px;
+  }
+  @media #{$mobile} {
+    height: 150px;
+  }
+  @media #{$mobile-xs} {
+    height: 130px;
+  }
+}
+
 .row {
   .post-content {
     padding-bottom: 0;

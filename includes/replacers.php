@@ -30,6 +30,19 @@ function stt_replace_content($content) {
 }
 
 // Callbacks for custom commands in post content
+function replace_banner_shortcode($atts, $content = null) {
+	extract(shortcode_atts(array(
+		'image' => '',
+	), $atts, 'banner'));
+
+  if ($image == '') return '';
+	
+	$image_url = get_upload_url($image);
+	$banner = "<div class=\"banner\" style=\"background-image:url($image_url)\"></div>";
+  
+  return "<div class=\"row\"><div class=\"col-xs-12 col-extra\" style=\"padding:0\">$banner</div></div>";
+}
+
 function replace_row_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'id' => '',
@@ -74,7 +87,6 @@ function replace_column_shortcode($atts, $content = null) {
 	), $atts, 'column'));
 
   $class = "";
-  $stylesheet = array();
   if ($size == "100") {
     $class = "col-xs-12";
   } else if ($size == "75") {
@@ -95,24 +107,9 @@ function replace_column_shortcode($atts, $content = null) {
     $class = "$class $align";
   }
   
-  $inner_html = "";
-  
-  if ($image != "") {  
-    $image_url = get_upload_url($image);
-  
-    $inner_html .= "<div class=\"extend-full\" style=\"background-image:url($image_url);height:${height}px\"></div>";
-    $stylesheet[] = "padding-top:0;padding-bottom:0";
-  }
-  
-  if (count($stylesheet) > 0) {
-    $stylesheet = ' style="' . join(';', $stylesheet) . '"';
-  } else {
-		$stylesheet = '';
-	}
-  
 	$content = do_shortcode($content);
 
-  return "<div class=\"$class col-extra style-$style\"$stylesheet>$inner_html<div>$content</div></div>";
+  return "<div class=\"$class col-extra style-$style\"><div>$content</div></div>";
 }
 
 function replace_vspace_shortcode($atts) {
@@ -821,6 +818,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 }
 
 function add_stt_shortcodes() {
+  add_shortcode('banner',        'replace_banner_shortcode');
   add_shortcode('row',           'replace_row_shortcode');
   add_shortcode('column',        'replace_column_shortcode');
 	add_shortcode('v-space',       'replace_vspace_shortcode');
