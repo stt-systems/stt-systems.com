@@ -397,10 +397,8 @@ function replace_downloads_shortcode($atts) {
 	}
 
 	if ($type == 'gallery') {
-		$table = '';
-		$counter = 0;
-		$cols = min(count($downloads['files']), 5);
-		$col_class = 2;
+		$table = '<div class="row compact style-downloads">';
+
 		foreach ($downloads['files'] as $file) {
 			$ext = $file['ext'];
 			$thumbnail_url = '';
@@ -420,42 +418,15 @@ function replace_downloads_shortcode($atts) {
 				}
 			}
 
-			if ($counter % $cols == 0) {
-				$table .= '<div class="row compact style-downloads">';
-			}
-
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
-			$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\">";
+			$table .= "<div class=\"col-md-5ths col-sm-4 col-xs-12 center\">";
 			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';
 			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded$extra_class\" src=\"$thumbnail_url\" height=\"128\"/></div>";
 			$table .= $file['title'];
 			$table .= '</a></div>';
-
-			if ($counter % $cols == $cols - 1) {
-				$table .= '</div>';
-			}
-
-			++$counter;
 		}
 
-		if ($counter % $cols != 0) {
-			while ($counter % $cols != 0) {
-				$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\"></div>";
-				++$counter;
-			}
-			$table .= '</div>';
-		}
-
-		if ($counter <= $cols) {
-			// Add fake row to avoid overflowing the prvious row
-			$table .= '<div class="row compact fake">';
-			++$counter;
-			while ($counter % $cols != 0) {
-				$table .= "<div class=\"col-md-$col_class col-sm-$col_class center\"></div>";
-				++$counter;
-			}
-			$table .= '</div>';
-		}
+		$table .= '</div>';
 
 		$download_all = '';
 		if (array_key_exists('zip', $downloads)) { // temporary disabled until writing permissions are clarified
