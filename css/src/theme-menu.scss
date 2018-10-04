@@ -13,6 +13,18 @@
 .navbar-header {
   position: relative;
   z-index: 10;
+  width: 100%;
+
+  .navbar-brand {
+    position: absolute;
+  }
+
+  &.pull-left > .navbar-brand {
+    right: 80%;
+  }
+  &.pull-right > .navbar-brand {
+    left: 80%;
+  }
 }
 
 .dropdown-menu,
