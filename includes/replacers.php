@@ -33,7 +33,7 @@ function stt_replace_content($content) {
 function replace_row_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'id' => '',
-		'margin' => '', // no-top, no-bottom
+		'margin' => '', // no-top, no-bottom, no-top-bottom
 	), $atts, 'row'));
 
   if ($id != "") {
@@ -42,15 +42,18 @@ function replace_row_shortcode($atts, $content = null) {
 	
 	$content = do_shortcode($content);
 
-	$class = '';
+	$class = array();
 	if ($margin == 'no-top') {
-		$class = ' no-top-margin';
+		$class[] = 'no-top-margin';
 	} else if ($margin == 'no-bottom') {
-		$class = ' no-bottom-margin';
+		$class[] = 'no-bottom-margin';
 	} else if ($margin == 'no-top-bottom') {
-		$class = ' no-top-margin no-bottom-margin';
+		$class[] = 'no-top-margin';
+		$class[] = 'no-bottom-margin';
 	}
   
+	$class = join(' ', $class);
+
 	return "<div$id class=\"row$class\">$content</div>";
 }
 function replace_column_shortcode($atts, $content = null) {
