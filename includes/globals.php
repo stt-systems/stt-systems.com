@@ -427,12 +427,13 @@ function get_clients_carousel($name, $cols) {
 	return $html;
 }
 
-function split_csv($str) {
+function split_csv(string $str) {
+	if ($str == '') return array();
 	return preg_split('/[,;: ]+/', $str);
 }
 
 if (!function_exists('post_is_in_descendant_category')) {
-	function post_is_in_descendant_category($cats, $_post=null) {
+	function post_is_in_descendant_category($cats, $_post = null) {
 		foreach ((array)$cats as $cat) {
 			$descendants = get_term_children((int) $cat, 'category');
 			if ($descendants && in_category($descendants, $_post)) return true;
