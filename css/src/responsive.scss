@@ -222,21 +222,3 @@
     background-attachment: scroll !important;
   }
 }
-
-@media (min-width: 992px) and (max-width: 1100px) {
-  #header .col-md-8 {
-    padding-left: 0;
-    width: auto;
-    float: none;
-  }
-
-  #header .col-md-4 {
-    width: auto;
-    float: none;
-  }
-
-  .navbar-default .navbar-nav > li > a {
-    padding-bottom: 15px;
-    padding-top: 56px;
-  }
-}
