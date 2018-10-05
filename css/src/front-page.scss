@@ -11,15 +11,15 @@
       h1 {
         height: 3em;
       }
-
-      .content-box > img {
-        width: 120px;
-      }
     }
 
     @media #{$tablet} {
       .content-box {
         margin: 5% 20px;
+        
+        > img {
+          width: 120px;
+        }
       }
     }
 
