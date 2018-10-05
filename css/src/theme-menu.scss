@@ -19,6 +19,10 @@
 
     .navbar-brand {
       position: absolute;
+
+      img {
+        margin-top: 2px;
+      }
     }
 
     &.pull-left > .navbar-brand {
