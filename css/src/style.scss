@@ -512,6 +512,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+@media #{$mobile} {
+  .table-container {
+    overflow-x: auto;
+  }
+}
 
 table.clean,
 table.shop_attributes {

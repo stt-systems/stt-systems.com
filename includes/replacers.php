@@ -787,6 +787,22 @@ function replace_distributor_shortcode($atts, $content = null) {
 				 "<div class=\"col-sm-4 col-xs-12 product-links\">$products_list</div></div>";
 }
 
+function replace_table_shortcode($atts, $content = null) {
+	extract(shortcode_atts(array(
+		'clean' => 'no',
+		'width' => '100%',
+	), $atts, 'table'));
+
+	$content = do_shortcode($content);
+
+	$class = '';
+	if (str2bool($clean)) {
+		$class = ' class="clean"';
+	}
+
+	return "<div class=\"table-container\"><table$class style=\"table-layout:fixed;width:$width !important\"><tbody>$content</tbody></table></div>";
+}
+
 function add_stt_shortcodes() {
   add_shortcode('banner',        'replace_banner_shortcode');
   add_shortcode('row',           'replace_row_shortcode');
@@ -808,6 +824,7 @@ function add_stt_shortcodes() {
 	add_shortcode('button',        'replace_button_shortcode');
 	add_shortcode('button-list',   'replace_list_button_shortcode');
 	add_shortcode('distributor',   'replace_distributor_shortcode');
+	add_shortcode('table',         'replace_table_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
