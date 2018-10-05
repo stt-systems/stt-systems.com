@@ -200,4 +200,18 @@
       margin-bottom: 0px;
     }
   }
+
+  @media #{$mobile} {
+    #panel-2dma {
+      .panel-bg {
+        background-position: center 30%;
+      }
+    }
+
+    #panel-inertial {
+      .panel-bg {
+        background-position: center 30%;
+      }
+    }
+  }
 }
