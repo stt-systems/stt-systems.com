@@ -25,16 +25,29 @@
         font-size: #{$size_mobile}px;
       }
       @media #{$mobile-xs} {
-        font-size: #{$size_mobile * 0.75}px;
+        font-size: #{$size_mobile * 0.9}px;
       }
     }
   }
   @include header(h1, 80, 64);
   @include header(h2, 48, 40);
   @include header(h3, 28, 24);
+  h3 {
+    @media #{$desktop} {
+      font-weight: 500;
+    }
+    @media #{$tablet} {
+      font-weight: 400;
+    }
+  }
   @include header(h4, 22, 20);
   h4 {
-    font-weight: 600;
+    @media #{$desktop} {
+      font-weight: 600;
+    }
+    @media #{$tablet} {
+      font-weight: 400;
+    }
     padding-top: 20px;
   }
 
@@ -111,11 +124,11 @@
 }
 
 @mixin header($name, $color) {
-  #{$name}, 
+  #{$name},
   #{$name} > a,
   #{$name} > a:hover {
     color: color($color) !important;
-  } 
+  }
 }
 @mixin headers($color) {
   @include header(h2, $color);
