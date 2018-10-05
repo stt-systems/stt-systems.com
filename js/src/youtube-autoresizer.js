@@ -15,8 +15,8 @@ $(document).ready(function() {
             $(item).css("height", "100%");
             $(item).css("max-width", w + "px");
             $(item).css("max-height", h + "px");
-            $(item).wrap('<div style="max-width:' + w + "px;margin:0 auto; padding:" + YOUTUBE_VIDEO_MARGIN + 'px;" />');
-            $(item).wrap('<div style="position: relative;padding-bottom: ' + ar + '%; height: 0; overflow: hidden;" />');
+            $(item).wrap('<div style="max-width:' + w + 'px" />');
+            $(item).wrap('<div style="padding-bottom:' + ar + '%" />');
         }
     });
 });
