@@ -1,4 +1,5 @@
 $desktop: "(min-width: 1024px)";
-$tablet: "(max-width: 1023px)";
-$mobile: "(max-width: 767px)";
+$tablet: "(max-width: 1023.98px)";
+$tablet-only: "(min-width: 768px) and (max-width: 1023.98px)";
+$mobile: "(max-width: 767.98px)";
 $mobile-xs: "(max-width: 320px)";
