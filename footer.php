@@ -43,8 +43,7 @@
 							</div>
 							<div class="col-md-4 col-sm-4"><?php
 								echo '<p><strong>' . get_page_full_link('inertial-motion-capture', 'INERTIAL') . '</strong></p>';
-								echo '<p>' . get_page_full_link('isen') . '</p>';
-								echo '<p>' . get_page_full_link('stt-iws', 'STT-IWS') . '</p>'; ?>
+								echo '<p>' . get_page_full_link('isen') . '</p>'; ?>
 							</div><?php
 						} else if ($top_slug == 'industry') { ?>
 							<div class="col-md-6 col-sm-6"><?php
