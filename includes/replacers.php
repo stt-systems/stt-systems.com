@@ -790,17 +790,24 @@ function replace_distributor_shortcode($atts, $content = null) {
 function replace_table_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'clean' => 'no',
+		'responsive' => '',
 		'width' => '100%',
 	), $atts, 'table'));
 
 	$content = do_shortcode($content);
 
-	$class = '';
+	$class = split_csv($responsive);
 	if (str2bool($clean)) {
-		$class = ' class="clean"';
+		$class[] = 'clean';
 	}
 
-	return "<div class=\"table-container\"><table$class style=\"table-layout:fixed;width:$width !important\"><tbody>$content</tbody></table></div>";
+	if (!empty($class)) {
+		$class = ' class="' . join(' ', $class) . '"';
+	} else {
+		$class = '';
+	}
+
+	return "<div class=\"table-container\"><table$class style=\"width:$width !important\"><tbody>$content</tbody></table></div>";
 }
 
 function add_stt_shortcodes() {

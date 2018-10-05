@@ -32,7 +32,8 @@ p {
     padding-bottom: 0px;
   }
 }
-.footer, .compact-paragraph {
+.footer,
+.compact-paragraph {
   p {
     padding-bottom: 0;
   }
@@ -511,6 +512,26 @@ table {
   font-size: 16px;
   border-collapse: collapse;
   border-spacing: 0;
+  table-layout: fixed;
+
+  @media #{$mobile} {
+    // Responsive tables (https://css-tricks.com/responsive-data-tables/)
+    &.mobile {
+      display: block;
+
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+    }
+
+    td {
+      position: relative;
+    }
+  }
 }
 .table-container {
   margin: 20px 0;
