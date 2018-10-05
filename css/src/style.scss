@@ -32,7 +32,7 @@ p {
     padding-bottom: 0px;
   }
 }
-.footer {
+.footer, .compact-paragraph {
   p {
     padding-bottom: 0;
   }
@@ -514,7 +514,7 @@ table {
 }
 .table-container {
   margin: 20px 0;
-  
+
   @media #{$mobile} {
     overflow-x: auto;
   }
