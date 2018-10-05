@@ -11,6 +11,10 @@
       h1 {
         height: 3em;
       }
+
+      .content-box > img {
+        width: 120px;
+      }
     }
 
     @media #{$tablet} {
@@ -22,6 +26,10 @@
     @media #{$mobile} {
       .content-box {
         margin: 0;
+
+        > img {
+          width: 80px;
+        }
       }
     }
   }
