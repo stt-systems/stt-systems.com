@@ -746,13 +746,13 @@ function replace_distributor_shortcode($atts, $content = null) {
 	$products_list = '';
 	foreach ($products_by_family as $key => $family) {
 		if (!empty($family['list'])) {
-			$products_list .= '<div class="row"><div class="col-xs-2"><b>' . $family['name'] . '</b></div>' .
-												'<div class="col-xs-10">' . join('', $family['list']) . '</div></div>';
+			$products_list .= '<div class="row"><div class="col-md-2 col-xs-3"><b>' . $family['name'] . '</b></div>' .
+												'<div class="col-md-10 col-xs-9">' . join('', $family['list']) . '</div></div>';
 		}
 	}
 	if (!empty($products_list)) {
-		$products_list .= '<div class="row"><div class="col-2"></div>' .
-											'<div class="col-10" id="current"></div></div>';
+		$products_list .= '<div class="row"><div class="col-xs-2"></div>' .
+											'<div class="col-xs-10" id="current"></div></div>';
 	}
 
 	$types_metadata = array(
@@ -780,11 +780,11 @@ function replace_distributor_shortcode($atts, $content = null) {
 
 	return "<div class=\"row distributor\" style=\"text-align:left\">" .
 				 "<div class=\"col-sm-3 col-xs-12 country\">$country</div>" .
-				 "<div class=\"col-sm-5 col-xs-12 \"><h3>$name$type_str</h3></div></div>" .
+				 "<div class=\"col-md-5 col-sm-4 col-xs-12 \"><h3>$name$type_str</h3></div></div>" .
 				 "<div class=\"row distributor\" style=\"text-align:left\">" .
 				 "<div class=\"col-sm-3 col-xs-12 logo\">$logo_img</div>" .
-				 "<div class=\"col-sm-5 col-xs-12 contact\">$content</div>" .
-				 "<div class=\"col-sm-4 col-xs-12 product-links\">$products_list</div></div>";
+				 "<div class=\"col-md-5 col-sm-4 col-xs-12 contact\">$content</div>" .
+				 "<div class=\"col-md-4 col-sm-5 col-xs-12 product-links\">$products_list</div></div>";
 }
 
 function replace_table_shortcode($atts, $content = null) {
