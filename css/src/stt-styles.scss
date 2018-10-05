@@ -91,21 +91,20 @@
 
     a {
       display: inline-block;
+      padding-left: 15px;
+      padding-right: 15px;
       color: $inner-link-color;
+
       &:hover {
         color: darken($inner-link-color, 20) !important;
       }
+
       &:after {
         content: "\21E3";
         visibility: visible;
         margin-left: 5px;
       }
-      &:not(:first-child) {
-        padding-left: 15px;
-      }
-      &:not(:last-child) {
-        padding-right: 15px;
-      }
+      
       &.border {
         border-left: 1px solid $inner-link-color;
       }
