@@ -512,8 +512,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-@media #{$mobile} {
-  .table-container {
+.table-container {
+  margin: 20px 0;
+  
+  @media #{$mobile} {
     overflow-x: auto;
   }
 }
