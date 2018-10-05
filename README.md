@@ -38,6 +38,9 @@ Use the ```[image]``` shortcode to insert images uploaded to the WP site using t
 - __page__: the image is a link to a page, indicate with this attribute the slug of the page. Anchors can be added if needed (see _links_ below).
 - __url__: the image is a link, indicate here the full URL.
 
+There is a special way to insert a side-to-side image, using the ```[banner]``` shortcode. It will adjust correctly to different devices. Banners will be rendered using 600px height in desktop.
+- __image__: name of the image to use as banner.
+
 ## Links
 
 Links to pages within this site can be done using ```[link page=<page_name> title="Optional title"]```. If title is not provided, the page title is used. An anchor within the page can be used, for example ```[link page=isen#realtime]```.
@@ -52,7 +55,7 @@ It is possible to generate automatic content based on file lists. In this case, 
 
 The download list is included in the page using the ```[downloads]``` shortcode. Options:
 - __name__: name of the directory within the downloads folder.
-- __title__: title for the downloads list (defualt _Downloads_).
+- __title__: title for the downloads list (default _Downloads_).
 - __type__: list (default), gallery. The list will generate a list of links with the title of each file. The gallery will generate a grid of icons (based on file extension), galleries has no title. It is possible to indicate a preview image for a file, to do so just create a JPEG or PNG image (98x128, 196x256 for the @2x version) and with the same name but .png or .jpg extension: thumbnail for ```A.pdf``` should be named ```A.jpg```. You can use the icons in ```<STT-theme>/images/file-types``` as a template. PNG files will be used if both PNG and JPEG files are used.
 - __index__: basename (without extension) of the JSON file with the files to be listed. If omitted, _index_ will be used (so ```index.json``` will be loaded). It allows having multiple views of the same files (subsets).
 
@@ -83,7 +86,18 @@ It is also possible to generate a single download link using just ```[download n
 
 Each entry has a __file__ (containg the full filename), and a __title__.
 
-## Other shortcodes:
+## Tables and lists
+
+Tables and list should be created using traditional HTML code.
+
+Tables should be wrapped using the ```[table] ... [/table]``` shortcode, this will allow the table to bahave correctly in mobile devices. The shortcode admits:
+- __clean__: special table with less decoration (yes, _no_)
+- __responsive__: mobile, _empty_ (default). Toggles table to single column in mobile devices
+- __width__: width of the table (usually not required). Default: 100%
+
+It is possible to change the bullet color of an unordered list from style to gray, using the class ```light```. Example: ```<li class="light">Vertical jump/CMJ (*)</li>```.
+
+## Other shortcodes and HTML classes
 
 - __[video]__
     - __name__: video code
@@ -95,7 +109,7 @@ Each entry has a __file__ (containg the full filename), and a __title__.
     - __title__
     - __author__
     - __style__: quote
-- __[v-space]__: USE WITH CAUTION!
+- __[v-space]__: USE WITH CAUTION! Most of the time it is not necessary to use a v-space, since paragraphs and headers have their own vertical spaces. One good use is, for example, padding around images.
     - __size__ (=10, 20, ..., 100): inserts a vertical space. Should be avoided whenever is possible, since it creates layout blocks than may interfer with the responsive design.
 - __[distributor]__: keep an empty line between paragraphs to create actual new lines
     - __name__
@@ -122,13 +136,19 @@ Each entry has a __file__ (containg the full filename), and a __title__.
     - __count__: maximum number of posts to show (default: -1, meaning all)
     - __detalils__: set to show details like publication date and tags
     - __sortby__: how posts are sorted, using date (descendant), title (ascendant) or custom field (ascendant, use field name) (default: date)
+
+By default, paragraphs add a bottom padding to separate from following paragraph. Sometimes this is not the desired behaviour, so all lines must be kept closer (as with lists, but without the bullet). One way to achieve it is by using a bullet-less list, but it is easier to use the ```compact-paragraph``` class:
+
+```
+<div class="compact-paragraph">
+Line 1
+
+Line 2
+
+Line 3
+</div>
+```
     
-## Tables and lists
-
-Tables and list should be created using traditional HTML code.
-
-It is possible to change the bullet color of an unordered list from style to gray, using the class ```light````. Example: ```<li class="light">Vertical jump/CMJ (*)</li>```.
-
 ## FTP structure
 
 - /
