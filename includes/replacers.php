@@ -271,13 +271,12 @@ function replace_gallery_cb($match) {
 
 function walk_images_table_cb(&$value, $key, $base) {
 	$path = get_upload_url("$base/$value");
-	$value = "<td><img src=\"$path\" style=\"max-height:90px;max-width:80%\"/></td>";
+	$value = "<div><img src=\"$path\" style=\"max-height:90px;max-width:80%\"/></div>";
 }
 
 function replace_image_table_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
-		'columns' => '5',
 	), $atts, 'images-table'));
 
 	if ($name == '') return '';
@@ -285,28 +284,11 @@ function replace_image_table_shortcode($atts) {
 	$images = get_files_in_dir($name, '', array('txt'));
 	if (!count($images)) return '';
 	
-	if ($columns <= 2) {
-		echo 'Error: wrong number of columns for image-table\n';
-		return '';
-	}
-	array_walk($images, 'walk_images_table_cb', $name);
-
 	// Create table
-	$table = '';
-	$i = 0;
-	foreach ($images as $image) {
-		if ($i % $columns == 0) {
-			$table .= '<tr>';
-		}
-		$table .= $image;
-		if ($i % $columns == $columns - 1) {
-			$table .= '</tr>';
-		}
-		++$i;
-	}
+	array_walk($images, 'walk_images_table_cb', $name);
+	$grid = join('', $images);
 
-	if ($table == '') return '';
-	return "<table class=\"clean images\">$table</table>";
+	return "<div class=\"images\">$grid</div>";
 }
 
 // Videos

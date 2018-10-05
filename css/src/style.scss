@@ -566,9 +566,20 @@ table.shop_attributes {
   table-layout: fixed;
 }
 
-table.clean.images {
-  border-spacing: 20px;
-  border-collapse: separate;
+.images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+
+  @media #{$mobile} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  > div {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: center;
+  }
 }
 
 table:not(.clean) {
