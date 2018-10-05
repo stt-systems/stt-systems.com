@@ -379,8 +379,20 @@ function replace_downloads_shortcode($atts) {
 	}
 
 	if ($type == 'gallery') {
-		$table = '<div class="row compact style-downloads">';
+		$count = count($downloads['files']);
 
+		$col_class = 'col-md-5ths col-sm-4';
+		if ($count == 1) {
+			$col_class = 'col-md-12 col-sm-12';
+		} else if ($count == 2) {
+			$col_class = 'col-md-6 col-sm-6';
+		} else if ($count == 3) {
+			$col_class = 'col-md-4 col-sm-4';
+		} else if ($count == 4) {
+			$col_class = 'col-md-3 col-sm-4';
+		}
+
+		$table = '<div class="row compact style-downloads">';
 		foreach ($downloads['files'] as $file) {
 			$ext = $file['ext'];
 			$thumbnail_url = '';
@@ -401,13 +413,12 @@ function replace_downloads_shortcode($atts) {
 			}
 
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
-			$table .= "<div class=\"col-md-5ths col-sm-4 col-xs-12 center\">";
+			$table .= "<div class=\"$col_class col-xs-6 center\">";
 			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';
 			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded$extra_class\" src=\"$thumbnail_url\" height=\"128\"/></div>";
 			$table .= $file['title'];
 			$table .= '</a></div>';
 		}
-
 		$table .= '</div>';
 
 		$download_all = '';
