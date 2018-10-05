@@ -2056,8 +2056,10 @@ h3.collapse-header {
     background-repeat: no-repeat;
     background-size: 32px;
 
-    &:hover {
-      transform: scale(1.08);
+    @media #{$desktop} {
+      &:hover {
+        transform: scale(1.08);
+      }
     }
 
     @mixin product($name) {
