@@ -16,7 +16,6 @@ wp_enqueue_script('product-hovering');
       </a>
       <div id="2dma-products" class="product-links"><?php
         echo get_product_icon_link('bikefit', 'bikefit');
-        echo get_product_icon_link('cycling-2dma', 'bikefit');
       ?></div>
       <div id="current-2dma-product" class="product-name"></div>
     </div>
