@@ -313,7 +313,7 @@ body .syntaxhighlighter {
   background: #fff;
 
   @media #{$mobile} {
-    margin-bottom: 0;
+    margin-bottom: 5px;
     border-radius: 5px;
   }
 

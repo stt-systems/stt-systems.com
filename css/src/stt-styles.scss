@@ -42,11 +42,14 @@
   }
   @include header(h4, 22, 20);
   h4 {
+    margin-bottom: 0;
+
     @media #{$desktop} {
       font-weight: 600;
     }
     @media #{$tablet} {
       font-weight: 400;
+      padding-top: 15px;
     }
     padding-top: 20px;
   }
