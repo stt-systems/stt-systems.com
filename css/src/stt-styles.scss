@@ -130,10 +130,10 @@
     color: color($color) !important;
   }
 }
-@mixin headers($color) {
-  @include header(h2, $color);
-  @include header(h3, $color);
-  @include header(h4, $color);
+@mixin headers($color-h2, $color-h3: $color-h2, $color-h4: $color-h3) {
+  @include header(h2, $color-h2);
+  @include header(h3, $color-h3);
+  @include header(h4, $color-h4);
 }
 
 .style-white {
@@ -190,7 +190,7 @@
 
   @include links(color(stt));
   @include buttons(color(white), color(light), "primary");
-  @include headers(white);
+  @include headers(white, black);
 }
 
 .style-light-blue {
@@ -232,7 +232,7 @@
     background-color: $base-color;
 
     @include buttons(color(white), $base-color, "primary");
-    @include headers(black);
+    @include headers(black, white);
   }
 
   li:before {
