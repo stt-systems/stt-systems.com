@@ -85,7 +85,7 @@ function print_area_logo() {
         <span class="icon-bar"></span>
       </button>
 		</div>
-		<div class="collapse navbar-collapse" id="stt-navbar-collapse"><?php
+		<div class="navbar-collapse collapse in" id="stt-navbar-collapse"><?php
 			wp_nav_menu(array(
 				'theme_location' => 'primary',
 				'container'      => 'nav-collapse',
