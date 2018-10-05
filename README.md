@@ -137,16 +137,16 @@ It is possible to change the bullet color of an unordered list from style to gra
     - __detalils__: set to show details like publication date and tags
     - __sortby__: how posts are sorted, using date (descendant), title (ascendant) or custom field (ascendant, use field name) (default: date)
 
-By default, paragraphs add a bottom padding to separate from following paragraph. Sometimes this is not the desired behaviour, so all lines must be kept closer (as with lists, but without the bullet). One way to achieve it is by using a bullet-less list, but it is easier to use the ```compact-paragraph``` class:
+By default, paragraphs add a bottom padding to separate from following paragraph. Sometimes this is not the desired behaviour, so all lines must be kept closer (as with lists, but without the bullet). To do so just use the ```[compact-paragraph] ... [/compact-paragraph]``` shortcode:
 
 ```
-<div class="compact-paragraph">
+[compact-paragraph]
 Line 1
 
 Line 2
 
 Line 3
-</div>
+[/compact-paragraph]
 ```
     
 ## FTP structure

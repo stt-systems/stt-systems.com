@@ -810,6 +810,12 @@ function replace_table_shortcode($atts, $content = null) {
 	return "<div class=\"table-container\"><table$class style=\"width:$width !important\"><tbody>$content</tbody></table></div>";
 }
 
+function replace_compact_paragrah_shortcode($atts, $content = null) {
+	$content = do_shortcode($content);
+
+	return "<div class=\"compact-paragraph\">$content</div>";
+}
+
 function add_stt_shortcodes() {
   add_shortcode('banner',        'replace_banner_shortcode');
   add_shortcode('row',           'replace_row_shortcode');
@@ -832,6 +838,7 @@ function add_stt_shortcodes() {
 	add_shortcode('button-list',   'replace_list_button_shortcode');
 	add_shortcode('distributor',   'replace_distributor_shortcode');
 	add_shortcode('table',         'replace_table_shortcode');
+	add_shortcode('compact-paragraph', 'replace_compact_paragrah_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
