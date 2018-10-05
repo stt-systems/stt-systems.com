@@ -946,29 +946,31 @@ body .syntaxhighlighter textarea {
 
 .content-box h4 {
   margin: 0 0 20px;
-}
+  font-weight: 400;
+  font-size: 20px;
 
-.content-box h4 i {
-  width: 40px;
-  height: auto;
-  font-size: 32px;
-  float: left;
-  margin: 0 10px 0 0;
-  color: #3498db;
-  position: relative;
-}
+  i {
+    width: 40px;
+    height: auto;
+    font-size: 32px;
+    float: left;
+    margin: 0 10px 0 0;
+    color: #3498db;
+    position: relative;
 
-.content-box h4 i.icon-flat {
-  background-image: url(../images/icons/flat-icons.png);
-  background-repeat: no-repeat;
-  height: 38px;
-}
+    &.icon-flat {
+      background-image: url(../images/icons/flat-icons.png);
+      background-repeat: no-repeat;
+      height: 38px;
+    }
+  }
 
-.content-box .read-more {
-  text-align: right;
-  color: #4b4b4b;
-  overflow: hidden;
-  display: block;
+  .read-more {
+    text-align: right;
+    color: #4b4b4b;
+    overflow: hidden;
+    display: block;
+  }
 }
 
 .center-title,
@@ -1752,11 +1754,6 @@ table.hover tbody tr:nth-child(odd) {
   display: block;
   height: auto;
   max-width: 100%;
-}
-
-.content-box h4 {
-  font-weight: 400;
-  font-size: 20px;
 }
 
 .content-box-text {
