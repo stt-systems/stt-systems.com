@@ -4,10 +4,6 @@
 .navbar-collapse {
   border-color: transparent;
   max-height: 100%;
-
-  @media #{$tablet} {
-    padding-top: 50px;
-  }
 }
 
 .navbar-header {
@@ -272,7 +268,7 @@ ul li.current_page_item a {
   }
 
   #stt-navbar-collapse {
-    overflow-y: initial;
+    overflow-y: scroll;
   }
 
   .navbar {
@@ -285,23 +281,33 @@ ul li.current_page_item a {
     }
   }
 
-  .container-fluid > .navbar-header {
-    float: none;
-    margin-left: 0;
-    margin-right: 0;
-  }
+  .container-fluid {
+    > .navbar-header {
+      float: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
 
-  .navbar-collapse {
-    border-top: 1px solid transparent;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    .navbar-collapse {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
 
-    &.collapse {
-      display: none !important;
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
-      &.in {
-        display: block !important;
+      &.collapse {
+        display: none !important;
+
+        &.in {
+          display: block !important;
+        }
       }
     }
+  }
+
+  .navbar-fixed-top .navbar-collapse {
+    max-height: 90vh;
   }
 
   .navbar-nav {
