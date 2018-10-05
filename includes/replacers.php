@@ -464,7 +464,7 @@ function replace_all_downloads_shortcode() {
 
 function get_social_img($name) {
 	$url = WL_TEMPLATE_DIR_URI . '/images/social-media/' . $name . '.png';	
-	return '<img src="' . $url . '" width="32" height="32" alt="' . $name . '" />';
+	return '<img src="' . $url . '" width="32" height="32" alt="' . $name . '"/>';
 }
 function replace_social_links_shortcode() {
 	$code = "<div class=\"contact-social\">
