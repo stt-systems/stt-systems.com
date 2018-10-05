@@ -11,13 +11,14 @@ function sanitize_output($buffer) {
   // Remove unnecesary breaks
 	'#(</div>)<br[ /]*>#' => '$1',
 	'#<br[ /]*>(<div)#'   => '$1',
-  '#<p>(<div)#'         => '$1',
-  '#(</div>)</p>#'      => '$1',
+  '#<p>\s*(<div)#'      => '$1',
+  '#(</div>)\s*</p>#'   => '$1',
   // everything below this point will be just deleted
   '#<p>\s*+(<br\s*/*>)?\s*</p>#i' => '',
 	'~\s?<p>(\s|&nbsp;)+</p>\s?~'   => '',
 	'/[\t]+/s'                      => '',
 	'#\<br[ /]*\>#'                 => '',
+  '#<p>\s*</p>#'                  => '',
   );
 
   return preg_replace(array_keys($search), array_values($search), $buffer);
