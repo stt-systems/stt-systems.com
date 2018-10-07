@@ -117,7 +117,9 @@
 
 .dropdown-menu > li > a {
   font-size: 18px;
-  padding: 10px 20px;
+  @media #{$desktop} {
+    padding: 10px 20px;
+  }
 }
 
 .dropdown .fa-angle-down,
@@ -190,7 +192,11 @@ li.dropdown:hover .fa-angle-down {
   -webkit-border-radius: 0 3px 3px;
 }
 
-ul li.current_page_item a {
+ul li.current_page_item > a,
+ul li.current_page_ancestor > a,
+ul li.current_page_ancestor a.dropdown-top-selected {
+  background-color: color(stt) !important;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15);
   color: #fff !important;
 }
 
@@ -236,10 +242,7 @@ ul li.current_page_item a {
     display: none;
   }
 
-  ul li.current_page_ancestor a.dropdown-toggle,
-  ul li.current_page_ancestor a.dropdown-top-selected {
-    background-color: color(stt);
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15);
+  .open {
     color: #fff !important;
   }
 }
@@ -254,21 +257,26 @@ ul li.current_page_item a {
     display: none;
   }
 
-  .navbar-default .navbar-nav > li > a {
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .navbar-default .navbar-nav {
+    li > a {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
   }
 
   .dropdown-menu {
-    font-weight: 300;
     font-size: 18px;
     .dropdown-menuitem a {
       padding-left: 35px !important;
     }
+
+    > li > a {
+      color: #898989 !important;
+    }
   }
 
   #stt-navbar-collapse {
-    overflow-y: scroll;
+    overflow-y: scroll !important;
   }
 
   .navbar {
@@ -316,10 +324,6 @@ ul li.current_page_item a {
     > li {
       float: none;
     }
-    > li > a {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
   }
 
   .navbar-text {
@@ -348,7 +352,7 @@ body.admin-bar .navbar {
 
 // Make navbar to collapse for tablets too
 // https://stackoverflow.com/a/36289507/1485885
-@media #{$tablet} {
+@media #{$tablet-only} {
   .navbar-header {
     float: none;
   }
@@ -369,6 +373,8 @@ body.admin-bar .navbar {
   }
   .navbar-collapse.collapse {
     display: none !important;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .navbar-nav {
     float: none !important;
@@ -376,10 +382,6 @@ body.admin-bar .navbar {
   }
   .navbar-nav > li {
     float: none;
-  }
-  .navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
   .collapse.in {
     display: block !important;
