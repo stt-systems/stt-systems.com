@@ -78,9 +78,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$classes = empty($item->classes) ? array() : (array) $item->classes;
 			$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
 			if ($depth === 0) {
-				$class_names .= ' dropdown open';
+				$class_names .= ' dropdown';
 			} else if ($args->has_children) {
-				$class_names .= ' dropdown-submenu open';
+				$class_names .= ' dropdown-submenu';
 			} else {
 				$class_names .= ' dropdown-menuitem';
 			}
