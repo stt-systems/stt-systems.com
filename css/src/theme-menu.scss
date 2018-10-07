@@ -313,10 +313,10 @@ ul li.current_page_item a {
   .navbar-nav {
     float: none !important;
     margin: 7.5px -15px;
-    & > li {
+    > li {
       float: none;
     }
-    & > li > a {
+    > li > a {
       padding-top: 10px;
       padding-bottom: 10px;
     }
