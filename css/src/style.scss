@@ -2192,3 +2192,21 @@ h3.collapse-header {
     }
   }
 }
+
+// Cookies (GDPR)
+#cookie-notice {
+  &.cn-top.bootstrap {
+    display: table;
+  }
+
+  .cn-button {
+    font-size: 14px;
+  }
+
+  .cookie-notice-container {
+    height: 91px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 16px;
+  }
+}

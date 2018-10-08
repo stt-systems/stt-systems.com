@@ -60,18 +60,22 @@ function print_area_logo() {
 <!DOCTYPE HTML>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo('charset'); ?>" />
+	<meta charset="<?php bloginfo('charset'); ?>"/>
 	<!--[if lt IE 10]><script>document.location="<?php echo get_site_url() . '/ie.html'; ?>";</script><![endif]--><?php
 	wp_head();
 	print_meta(); ?>
 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-	<?php if (!is_404() and !isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):?>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40441442-1"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','UA-40441442-1');</script>
-	<script>(function(a,e,c,f,g,h,b,d){var k={ak:"1013095491",cl:"BuU3CIrCv3cQw7iK4wM",autoreplace:"(+34) 943 31 77 77"};a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[g]||(a[g]=k.ak);b=e.createElement(h);b.async=1;b.src="//www.gstatic.com/wcm/loader.js";d=e.getElementsByTagName(h)[0];d.parentNode.insertBefore(b,d);a[f]=function(b,d,e){a[c](2,b,k,d,null,new Date,e)};a[f]()})(window,document,"_googWcmImpl","_googWcmGet","_googWcmAk","script");</script>
-	<?php endif; ?>
+	<?php if (!is_404() and !isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false) { ?>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><?php
+		if (!function_exists('cn_cookies_accepted') || cn_cookies_accepted()) { ?>
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40441442-1"></script>
+			<script>
+			window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','UA-40441442-1');
+			(function(a,e,c,f,g,h,b,d){var k={ak:"1013095491",cl:"BuU3CIrCv3cQw7iK4wM",autoreplace:"(+34) 943 31 77 77"};a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[g]||(a[g]=k.ak);b=e.createElement(h);b.async=1;b.src="//www.gstatic.com/wcm/loader.js";d=e.getElementsByTagName(h)[0];d.parentNode.insertBefore(b,d);a[f]=function(b,d,e){a[c](2,b,k,d,null,new Date,e)};a[f]()})(window,document,"_googWcmImpl","_googWcmGet","_googWcmAk","script");
+			</script><?php
+		}
+	} ?>
 </head>
 <body <?php body_class(); ?> >
 <nav class="navbar navbar-default navbar-fixed-top">
