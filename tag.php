@@ -1,3 +1,4 @@
+<?php require('404.php'); ?>
 <?php get_header(); ?>
 <header>
 <div class="page-template top-title-wrapper boxshadow">
