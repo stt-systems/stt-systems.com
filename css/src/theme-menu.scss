@@ -44,10 +44,6 @@
   background: rgba(242, 242, 243, 0.97);
 }
 
-.navbar-default {
-  border-bottom-width: 1px;
-}
-
 #stt-navbar-collapse {
   -webkit-transition: none !important;
   transition: none !important;
@@ -181,6 +177,12 @@ ul li.current_page_ancestor a.dropdown-top-selected {
       margin-bottom: 0 !important;
     }
   }
+
+  .navbar-default {
+    border: 0;
+  }
+
+  .navbar-default,
   ul li.current_page_item > a,
   ul li.current_page_ancestor > a,
   ul li.current_page_ancestor a.dropdown-top-selected {
@@ -266,6 +268,10 @@ ul li.current_page_ancestor a.dropdown-top-selected {
   .navbar-toggle {
     display: block;
     float: right;
+  }
+
+  .navbar-default {
+    border-bottom-width: 1px;
   }
 
   #area-logo {
