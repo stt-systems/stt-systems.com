@@ -378,16 +378,26 @@ function get_posts_for_category($cat_id, $number_of_posts) {
 	return $cases;
 }
 
-function get_product_icon_link($slug, $icon) {
-	$page_url = get_page_url($slug);
+function get_product_icon_link(string $icon, string $shape = 'round', string $size = '', bool $link = true, bool $name = true) {
+	$page_url = get_page_url($icon);
 	if ($page_url == '') return '';
 
 	$url = $page_url['url'];
-	$title = $page_url['title'];
+	$title = '';
+	if ($name) {
+		$title = $page_url['title'];
+	}
 
-	$link = "<a href=\"$url\"><span class=\"product $icon\">$title</span></a>";
+	if ($size != '') {
+		$size = "-$size";
+	}
 
-	return $link;
+	$span = "<span class=\"product $shape $icon$size\">$title</span>";
+	if (!$link) {
+		$url = '#';
+	}
+	
+	return "<a href=\"$url\">$span</a>";
 }
 
 function get_products() {

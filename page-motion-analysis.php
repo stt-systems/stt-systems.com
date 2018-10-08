@@ -15,7 +15,7 @@ wp_enqueue_script('product-hovering');
         <h3>Video-based motion analysis systems</h3>
       </a>
       <div id="2dma-products" class="product-links"><?php
-        echo get_product_icon_link('bikefit', 'bikefit');
+        echo get_product_icon_link('bikefit');
       ?></div>
       <div id="current-2dma-product" class="product-name"></div>
     </div>
@@ -30,13 +30,13 @@ wp_enqueue_script('product-hovering');
         <h3>Comprehensive solutions for full-body 3D motion analysis</h3>
       </a>
       <div id="3dma-products" class="product-links"><?php
-        echo get_product_icon_link('sports-3dma', 'sports');
-        echo get_product_icon_link('cycling-3dma', 'cycling');
-        echo get_product_icon_link('golf-3dma', 'golf');
-        echo get_product_icon_link('running-3dma', 'running');
-        echo get_product_icon_link('clinical-3dma', 'clinical');
-        echo get_product_icon_link('human-3dma', 'human');
-        echo get_product_icon_link('eddo', 'eddo');
+        echo get_product_icon_link('sports-3dma');
+        echo get_product_icon_link('cycling-3dma');
+        echo get_product_icon_link('golf-3dma');
+        echo get_product_icon_link('running-3dma');
+        echo get_product_icon_link('clinical-3dma');
+        echo get_product_icon_link('human-3dma');
+        echo get_product_icon_link('eddo');
       ?></div>
       <div id="current-3dma-product" class="product-name"></div>
     </div>
@@ -51,7 +51,7 @@ wp_enqueue_script('product-hovering');
         <h3>Flexible IMU configurations for full-body kinematic analysis</h3>
       </a>
       <div id="inertial-products" class="product-links"><?php
-        echo get_product_icon_link('isen', 'isen');
+        echo get_product_icon_link('isen');
       ?></div>
       <div id="current-inertial-product" class="product-name"></div>
     </div>
