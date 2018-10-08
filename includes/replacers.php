@@ -756,6 +756,42 @@ function do_distributor_shortcode($atts, $content = null) {
 				 "<div class=\"col-md-4 col-sm-5 col-xs-12 product-links\">$products_list</div></div>";
 }
 
+function do_product_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'name' => '',
+		'link' => 'yes',
+		'size' => 'md',
+	), $atts, 'product'));
+
+	$products = get_products();
+	if (!key_exists($name, $products)) return '';
+
+	return '<div class="product-links">' . get_product_icon_link($name, 'square', $size, str2bool($link), false) . '</div>';
+}
+
+function do_product_tabs_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'name' => '',
+		'current' => '',
+	), $atts, 'product-tabs'));
+
+	$products = get_products();
+
+	if ($current == '') {
+		global $post;
+		$current = $post->post_name;
+	}
+	if (!key_exists($current, $products)) return '';
+
+	$tabs = '<div class="product-tabs"><div class="product-links">';
+	foreach ($products as $key => $product) {
+		$tabs .= get_product_icon_link($key, 'square', 'md', $key != $current, false);
+	}
+	$tabs .= '</div></div>';
+
+	return $tabs;
+}
+
 function do_table_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'clean' => 'no',
@@ -806,6 +842,8 @@ function add_stt_shortcodes() {
 	add_shortcode('button',            'do_button_shortcode');
 	add_shortcode('button-list',       'do_list_button_shortcode');
 	add_shortcode('distributor',       'do_distributor_shortcode');
+	add_shortcode('product',           'do_product_shortcode');
+	add_shortcode('product-tabs',      'do_product_tabs_shortcode');
 	add_shortcode('table',             'do_table_shortcode');
 	add_shortcode('compact-paragraph', 'do_compact_paragrah_shortcode');
 }
