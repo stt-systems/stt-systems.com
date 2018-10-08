@@ -2111,12 +2111,12 @@ h3.collapse-header {
     @mixin product_private($name) {
       @include product($name, round, 64);
     }
-    @include product_private(sports);
-    @include product_private(cycling);
-    @include product_private(golf);
-    @include product_private(running);
-    @include product_private(clinical);
-    @include product_private(human);
+    @include product_private(sports-3dma);
+    @include product_private(cycling-3dma);
+    @include product_private(golf-3dma);
+    @include product_private(running-3dma);
+    @include product_private(clinical-3dma);
+    @include product_private(human-3dma);
     @include product_private(eddo);
     @include product_private(isen);
     @include product_private(bikefit);
