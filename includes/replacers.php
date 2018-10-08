@@ -687,48 +687,7 @@ function do_distributor_shortcode($atts, $content = null) {
 		$content = '<p>Website: ' . get_url_link($url) . '</p>' . $content;
 	}
 
-	$products_metadata = array(
-		'sports-3dma' => array(
-			'icon' => 'sports',
-			'family' => '3dma',
-		),
-		'cycling-3dma' => array(
-			'icon' => 'cycling',
-			'family' => '3dma',
-		),
-		'golf-3dma' => array(
-			'icon' => 'golf',
-			'family' => '3dma',
-		),
-		'running-3dma' => array(
-			'icon' => 'running',
-			'family' => '3dma',
-		),
-		'clinical-3dma' => array(
-			'icon' => 'clinical',
-			'family' => '3dma',
-		),
-		'human-3dma' => array(
-			'icon' => 'human',
-			'family' => '3dma',
-		),
-		'eddo' => array(
-			'icon' => 'eddo',
-			'family' => '3dma',
-		),
-		'bikefit' => array(
-			'icon' => 'bikefit',
-			'family' => '2dma',
-		),
-		'cycling-2dma' => array(
-			'icon' => 'cycling',
-			'family' => '2dma',
-		),
-		'isen' => array(
-			'icon' => 'isen',
-			'family' => 'inertial',
-		),
-	);
+	$products_metadata = get_products();
 
 	$products = split_csv($products);
 	$products_by_family = array(
@@ -747,7 +706,7 @@ function do_distributor_shortcode($atts, $content = null) {
 	);
 	foreach ($products as $key => $product) {
 		$product_meta = $products_metadata[$product];
-		$icon = get_product_icon_link($product, $product_meta['icon']);
+		$icon = get_product_icon_link($product);
 		if (!in_array($icon, $products_by_family[$product_meta['family']]['list'])) {
 			$products_by_family[$product_meta['family']]['list'][] = $icon;
 		}
