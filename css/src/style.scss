@@ -2082,7 +2082,7 @@ h3.collapse-header {
 
   a {
     display: inline-block;
-    width: 32px;
+    width: auto;
     height: 32px;
     margin: 5px;
 
@@ -2163,7 +2163,6 @@ h3.collapse-header {
     transform: translate(-50%, 0%);
 
     a {
-      width: auto;
       height: auto;
       &:not([href="#"]) {
         -webkit-filter: grayscale(98%);
