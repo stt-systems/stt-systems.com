@@ -112,14 +112,12 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$atts = array();
 			$atts['target'] = !empty($item->target) ? $item->target : '';
 			$atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
-			$atts['href']   = $item->url;
 
  			// Do not link to empty parent pages
 			if ($args->has_children) {
-				$template = get_page_template_slug(get_post_meta($item->ID, '_menu_item_object_id', true));
-				if ($template == 'template-empty.php') {
-					$atts['href'] = '';
-				}
+				$atts['href'] = '';
+			} else {
+				$atts['href'] = $item->url;
 			}
 
 			// Top level pages
