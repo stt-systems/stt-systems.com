@@ -183,7 +183,8 @@
         margin-bottom: 13px;
       }
 
-      span {
+      span.product.round,
+      span.product.square {
         position: absolute;
         left: 20%;
         text-indent: 45px;
@@ -221,7 +222,7 @@
   @media #{$tablet-only} {
     &.area-motion-analysis {
       .product-links {
-        span {
+        span.product {
           position: initial;
         }
       }

@@ -2063,12 +2063,6 @@ h3.collapse-header {
   display: none;
 }
 
-@mixin product($name, $shape, $size) {
-  &.#{$name} {
-    background-image: url("../images/products/#{$name}-#{$shape}-#{$size}.png");
-  }
-}
-
 .product-links {
   margin-top: 40px;
 
@@ -2087,39 +2081,97 @@ h3.collapse-header {
     width: 32px;
     height: 32px;
     margin: 5px;
-  }
-  span {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-
-    /* Hide text */
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-size: 32px;
 
     @media #{$desktop} {
       &:hover {
         transform: scale(1.08);
       }
+      &[href="#"]:hover {
+        transform: none;
+      }
     }
+  }
+  span {
+    /* Hide text */
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 
-    @mixin product_private($name) {
-      @include product($name, round, 64);
+    &.product {
+      display: inline-block;
+      background-repeat: no-repeat;
+      margin-left: auto;
+      margin-right: auto;
+
+      @mixin product($name, $shape, $size, $ext, $suffix: "") {
+        &.#{$name}#{$suffix} {
+          width: #{$size}px;
+          height: #{$size}px;
+          background-image: url("../images/products/#{$name}-#{$shape}-#{$size}.#{$ext}");
+          background-size: #{$size}px;
+        }
+      }
+
+      &.round {
+        @mixin product_private($name) {
+          @include product($name, round, 32, png);
+        }
+        @include product_private(sports-3dma);
+        @include product_private(cycling-3dma);
+        @include product_private(golf-3dma);
+        @include product_private(running-3dma);
+        @include product_private(clinical-3dma);
+        @include product_private(human-3dma);
+        @include product_private(eddo);
+        @include product_private(isen);
+        @include product_private(bikefit);
+      }
+
+      &.square {
+        @mixin product_private($name) {
+          @include product($name, square, 48, jpg, -sm);
+          @include product($name, square, 72, png, -md);
+        }
+
+        @include product_private(sports-3dma);
+        @include product_private(cycling-3dma);
+        @include product_private(golf-3dma);
+        @include product_private(running-3dma);
+        @include product_private(clinical-3dma);
+        @include product_private(human-3dma);
+        @include product_private(eddo);
+        @include product_private(isen);
+        @include product_private(bikefit);
+      }
     }
-    @include product_private(sports-3dma);
-    @include product_private(cycling-3dma);
-    @include product_private(golf-3dma);
-    @include product_private(running-3dma);
-    @include product_private(clinical-3dma);
-    @include product_private(human-3dma);
-    @include product_private(eddo);
-    @include product_private(isen);
-    @include product_private(bikefit);
+  }
+}
+.product-tabs {
+  position: relative;
+  height: 72px;
+  margin-bottom: 20px;
+
+  .product-links {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+
+    a {
+      width: auto;
+      height: auto;
+      &:not([href="#"]) {
+        -webkit-filter: grayscale(98%);
+        filter: grayscale(98%);
+        opacity: 0.4;
+      }
+    }
+  }
+}
+@media #{$tablet} {
+  .product-tabs {
+    display: none;
   }
 }
 
@@ -2160,9 +2212,9 @@ h3.collapse-header {
       margin-left: 5px;
     }
     .product {
-      width: 24px;
-      height: 24px;
-      background-size: 24px;
+      width: 24px !important;
+      height: 24px !important;
+      background-size: 24px !important;
     }
 
     #current {
