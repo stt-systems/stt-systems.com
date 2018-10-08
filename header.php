@@ -37,7 +37,13 @@ function print_area_name() {
 	$areas = get_areas();
 	$area = get_top_level_slug();
 	if (array_key_exists($area, $areas)) {
-		echo "<h3 class=\"navbar-text hide-desktop\">{$areas[$area]}</h3>";
+		$title = "<h3 class=\"navbar-text hide-desktop\">{$areas[$area]}</h3>";
+		$current_slug = get_top_level_slug();
+		if ($area != '' && $area != $current_slug) {
+			echo get_page_full_link($area, $title);
+		} else {
+			echo $title;
+		}
 	}
 }
 
