@@ -104,14 +104,14 @@ function my_get_url_for_path($path, $add_timestamp = true) {
 }
 
 function get_upload_url($name) {
-		$upload_dir = wp_upload_dir();
-		$url = $upload_dir['baseurl'] . "/$name";
+	$upload_dir = wp_upload_dir();
+	$url = $upload_dir['baseurl'] . "/$name";
 
-		if (is_ssl()) {
-			$url = str_replace('http://', 'https://', $url);
-		}
+	if (is_ssl()) {
+		$url = str_replace('http://', 'https://', $url);
+	}
 
-		return $url;
+	return $url;
 }
 
 function get_post_thumbnail() {
