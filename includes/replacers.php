@@ -785,7 +785,9 @@ function do_product_tabs_shortcode($atts) {
 
 	$tabs = '<div class="product-tabs"><div class="product-links">';
 	foreach ($products as $key => $product) {
-		$tabs .= get_product_icon_link($key, 'square', 'md', $key != $current, false);
+		if ($product['family'] == $name) {
+			$tabs .= get_product_icon_link($key, 'square', 'md', $key != $current, false);
+		}
 	}
 	$tabs .= '</div></div>';
 

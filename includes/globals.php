@@ -403,7 +403,6 @@ function get_product_icon_link(string $icon, string $shape = 'round', string $si
 function get_products() {
 	return array(
 		'sports-3dma' => array(
-			'icon' => 'sports',
 			'family' => '3dma',
 		),
 		'cycling-3dma' => array(
