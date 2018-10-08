@@ -79,8 +79,8 @@ print_page_title('', sprintf(__('Search results for: %s', 'stt'), '<span>' . get
 	$search_term_search = '/(' . implode('|', $search_terms) . ')/iu';
 	
 	$results = array(
-		'pages' => array(),
-		'blog' => array(),
+		'page' => array(),
+		'post' => array(),
 	);
 
 	$excerpt_length = apply_filters('excerpt_length', 55);
@@ -90,35 +90,25 @@ print_page_title('', sprintf(__('Search results for: %s', 'stt'), '<span>' . get
 	if (have_posts()) {
 		while (have_posts()) {
 			the_post();
-			$type = '';
-			if ($post->post_name != 'home') {
-				if (in_category('blog')) {
-					$type = 'blog';
-				} else {
-					$type = 'pages';
-				}
-			}
-
-			if ($type != '' and $post->post_password == '') {
+			if ($post->post_password == '') {
 				$content = apply_filters('the_content', get_the_content());
 				$excerpt = trim_to_search_result($content, $excerpt_length, $excerpt_more);
 				$excerpt = preg_replace($search_term_search, '<mark>\0</mark>', $excerpt);
 				$title = preg_replace($search_term_search, '<mark>\0</mark>', $post->post_title);
-				array_push($results[$type], array(
+				array_push($results[$post->post_type], array(
 					'title' => $title,
-					'date' => ($type == 'pages') ? null : $post->post_date,
+					'date' => $post->post_type == 'page' ? null : $post->post_date,
 					'slug' => $post->post_name,
 					'id' => $post->ID,
 					'excerpt' => $excerpt
 				));
 				$any_result = true;
 			}
-			unset($type);
 		}
 
 		if ($any_result) {
-			display_search_results($results['pages'], __('Pages'));
-			display_search_results($results['blog'], __('Blog'));
+			display_search_results($results['page']);
+			display_search_results($results['post']);
 		}
 	}
 

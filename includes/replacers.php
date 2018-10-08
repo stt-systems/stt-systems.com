@@ -477,16 +477,15 @@ function search_cmp($a, $b) {
 	return ($a[$field] < $b[$field]) ? -1 : 1;
 }
 
-function display_search_results($results, $title) {
+function display_search_results($results) {
 	if (count($results) == 0) return;
 	?>
 	
-	<div class="alternating-bg"><div class="container">
-	<h3 style="text-align:center;"><?php echo $title; ?></h3><?php
+	<div class="container"><?php
 		uasort($results, 'search_cmp');
 		foreach ($results as $res) { ?>
 			<div class="row" style="padding-bottom:35px"><div class="col-md-12 col-sm-12">
-				<h4 style="margin-bottom:0"><?php echo get_url_link(get_permalink($res['id']), $res['title']); ?></h4><?php
+				<h4 style="margin-bottom:2px"><?php echo get_url_link(get_permalink($res['id']), $res['title']); ?></h4><?php
 				if ($res['date']) {
 					$date = new DateTime($res['date']);
 					echo '<div style="padding-left:20px;color:#848484;">' . $date->format('Y-M-d') . '</div>';
@@ -496,7 +495,7 @@ function display_search_results($results, $title) {
 			</div></div>
 			<?php
 		} ?>
-	</div></div><?php
+	</div><?php
 }
 
 function add_share_buttons() {
