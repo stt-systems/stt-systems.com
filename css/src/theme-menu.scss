@@ -60,6 +60,10 @@
 
 .nav {
   position: relative;
+
+  .open > a {
+    background: #00000000;
+  }
 }
 
 .navbar-nav {
