@@ -1935,20 +1935,11 @@ table.hover tbody tr:nth-child(odd) {
   margin-right: -100vw;
   background-size: 100vw;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center bottom;
 }
 
 .banner {
-  height: 600px;
-  @media #{$tablet} {
-    height: 300px;
-  }
-  @media #{$mobile} {
-    height: 150px;
-  }
-  @media #{$mobile-xs} {
-    height: 130px;
-  }
+  height: calc(100vw * 0.32);
 }
 
 .row {

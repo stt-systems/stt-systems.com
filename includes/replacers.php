@@ -35,10 +35,27 @@ function replace_banner_shortcode($atts, $content = null) {
 		'image' => '',
 	), $atts, 'banner'));
 
-  if ($image == '') return '';
-	
+	if ($image == '') return '';
+
+	$upload_dir = wp_upload_dir();
+	$file = $upload_dir['basedir'] . "/$image";
+
+	$height = '';
+	if (file_exists($file)) {
+		try {
+			$size = getimagesize($file);
+
+			if (count($size) >= 2 && $size[0] > 0) {
+				$height = ';height:calc(100vw * ' . ($size[1] / $size[0]) .')';
+			}
+		} catch (Exception $e) {
+			$height = '';
+		}
+	}
+
 	$image_url = get_upload_url($image);
-	$banner = "<div class=\"banner\" style=\"background-image:url($image_url)\"></div>";
+
+	$banner = "<div class=\"banner\" style=\"background-image:url($image_url)$height\"></div>";
   
   return "<div class=\"row\"><div class=\"col-xs-12 col-extra\" style=\"padding:0\">$banner</div></div>";
 }
