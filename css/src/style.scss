@@ -2063,6 +2063,12 @@ h3.collapse-header {
   display: none;
 }
 
+@mixin product($name, $shape, $size) {
+  &.#{$name} {
+    background-image: url("../images/products/#{$name}-#{$shape}-#{$size}.png");
+  }
+}
+
 .product-links {
   margin-top: 40px;
 
@@ -2102,20 +2108,18 @@ h3.collapse-header {
       }
     }
 
-    @mixin product($name) {
-      &.#{$name} {
-        background-image: url("../images/products/#{$name}.png");
-      }
+    @mixin product_private($name) {
+      @include product($name, round, 64);
     }
-    @include product(sports);
-    @include product(cycling);
-    @include product(golf);
-    @include product(running);
-    @include product(clinical);
-    @include product(human);
-    @include product(eddo);
-    @include product(isen);
-    @include product(bikefit);
+    @include product_private(sports);
+    @include product_private(cycling);
+    @include product_private(golf);
+    @include product_private(running);
+    @include product_private(clinical);
+    @include product_private(human);
+    @include product_private(eddo);
+    @include product_private(isen);
+    @include product_private(bikefit);
   }
 }
 
