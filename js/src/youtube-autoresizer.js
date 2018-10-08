@@ -8,15 +8,10 @@ $(document).ready(function() {
             var h = $(item).attr("height");
             var ar = h / w * 100;
             ar = ar.toFixed(2);
-            $(item).css("position", "absolute");
-            $(item).css("top", "0");
-            $(item).css("left", "0");
-            $(item).css("width", "100%");
-            $(item).css("height", "100%");
             $(item).css("max-width", w + "px");
             $(item).css("max-height", h + "px");
-            $(item).wrap('<div style="max-width:' + w + 'px" />');
-            $(item).wrap('<div style="padding-bottom:' + ar + '%" />');
+            $(item).wrap('<div style="max-width:' + w + 'px;height:100%"/>');
+            $(item).wrap('<div style="padding-bottom:' + ar + '%"/>');
         }
     });
 });

@@ -123,7 +123,7 @@ function get_post_thumbnail() {
 	} else if (has_post_thumbnail()) {
 		$post_thumbnail_id = get_post_thumbnail_id();
 		$post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
-		$thumbnail .= '<img src="' . $post_thumbnail_url . '" class="rounded blog-thumbnail boxshadow" />';
+		$thumbnail .= '<img src="' . $post_thumbnail_url . '" class="rounded blog-thumbnail boxshadow"/>';
 	}
 	$thumbnail .= '</div>';
 	

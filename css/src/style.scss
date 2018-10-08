@@ -331,8 +331,28 @@ body .syntaxhighlighter {
 
     > div {
       position: relative;
-      height: 0;
       overflow: hidden;
+    }
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media #{$mobile} {
+  .blog-list {
+    .youtube {
+      > div > div {
+        padding-bottom: 0 !important;
+        margin-bottom: -5px;
+      }
+      iframe {
+        position: initial;
+      }
     }
   }
 }
