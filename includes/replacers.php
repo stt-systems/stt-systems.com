@@ -356,7 +356,7 @@ function replace_download_shortcode($atts) {
 	$download = my_get_download_url($name);
 	if ($download == '') return '';
 	// NOFOLLOW: do not pass link juice for PDFs on sidebars
-	return get_url_link($download, $title, $nofollow = true);
+	return get_url_link($download, $title, true, true);
 }
 function replace_downloads_shortcode($atts) {
 	extract(shortcode_atts(array(
@@ -423,7 +423,7 @@ function replace_downloads_shortcode($atts) {
 
 		$download_all = '';
 		if (array_key_exists('zip', $downloads)) { // temporary disabled until writing permissions are clarified
-			$download_all = '<div>' . get_url_link($downloads['zip'], 'Download all (ZIP)', $blank = false) . '</div>';
+			$download_all = '<div>' . get_url_link($downloads['zip'], 'Download all (ZIP)', false) . '</div>';
 		}
 
 		return $table . $download_all;
@@ -433,7 +433,7 @@ function replace_downloads_shortcode($atts) {
 	$list = array();
 	foreach ($downloads['files'] as $file) {
 		// NOFOLLOW: do not pass link juice for PDFs on sidebars
-		array_push($list, get_url_link($file['file'], $file['title'], $nofollow = true));
+		array_push($list, get_url_link($file['file'], $file['title'], true, true));
 	}
 
 	return "$title<p>" . implode($list, '</p><p>') . '</p>';
