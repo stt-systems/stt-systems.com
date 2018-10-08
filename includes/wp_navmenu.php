@@ -106,11 +106,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			}
 
 			$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-
-			$id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
-			$id = $id ? ' id="' . esc_attr($id) . '"' : '';
-
-			$output .= "<li$id$class_names>";
+			$output .= "<li$class_names>";
 
 			// Convert item properties into element attributes
 			$atts = array();
