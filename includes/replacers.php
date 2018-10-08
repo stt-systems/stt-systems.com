@@ -766,7 +766,7 @@ function do_product_shortcode($atts) {
 	$products = get_products();
 	if (!key_exists($name, $products)) return '';
 
-	return '<div class="product-links">' . get_product_icon_link($name, 'square', $size, str2bool($link), false) . '</div>';
+	return '<div class="product-links single">' . get_product_icon_link($name, 'square', $size, str2bool($link), false) . '</div>';
 }
 
 function do_product_tabs_shortcode($atts) {

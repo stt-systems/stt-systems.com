@@ -2066,6 +2066,10 @@ h3.collapse-header {
 .product-links {
   margin-top: 40px;
 
+  &.single {
+    margin-top: 0;
+  }
+
   .row {
     @media #{$tablet} {
       &:first-child {
