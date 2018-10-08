@@ -76,7 +76,7 @@
       color: $base-color;
 
       &:hover {
-        color: darken($base-color, 20) !important;
+        color: hover_color($base-color) !important;
       }
     }
   }
@@ -96,7 +96,7 @@
       color: $inner-link-color;
 
       &:hover {
-        color: darken($inner-link-color, 20) !important;
+        color: hover_color($inner-link-color) !important;
       }
 
       &:after {
@@ -104,7 +104,7 @@
         visibility: visible;
         margin-left: 5px;
       }
-      
+
       &.border {
         border-left: 1px solid $inner-link-color;
       }
@@ -221,7 +221,7 @@
   a {
     color: color(black) !important;
     &:hover {
-      color: darken(color(black), 20) !important;
+      color: hover_color(color(black)) !important;
     }
   }
 }

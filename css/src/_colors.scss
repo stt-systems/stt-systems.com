@@ -18,3 +18,7 @@ $colors: (
   @warn "Unknown `#{$name}` in $colors.";
   @return null;
 }
+
+@function hover_color($color) {
+  @return darken($color, 10);
+}
