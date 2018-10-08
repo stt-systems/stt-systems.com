@@ -390,6 +390,42 @@ function get_product_icon_link($slug, $icon) {
 	return $link;
 }
 
+function get_products() {
+	return array(
+		'sports-3dma' => array(
+			'icon' => 'sports',
+			'family' => '3dma',
+		),
+		'cycling-3dma' => array(
+			'family' => '3dma',
+		),
+		'golf-3dma' => array(
+			'family' => '3dma',
+		),
+		'clinical-3dma' => array(
+			'family' => '3dma',
+		),
+		'running-3dma' => array(
+			'family' => '3dma',
+		),
+		'human-3dma' => array(
+			'family' => '3dma',
+		),
+		'eddo' => array(
+			'family' => '3dma',
+		),
+		'bikefit' => array(
+			'family' => '2dma',
+		),
+		'cycling-2dma' => array(
+			'family' => '2dma',
+		),
+		'isen' => array(
+			'family' => 'inertial',
+		),
+	);
+}
+
 function get_page_top_spacer($tight = false) {
 	$size = $tight ? "-tight" : "";
 	return "<div class=\"space-sep-top$size\"></div>";
