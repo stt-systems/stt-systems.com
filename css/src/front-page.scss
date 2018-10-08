@@ -161,6 +161,19 @@
     }
   }
 
+  @media #{$small-desktop} {
+    &[class*="area-"] {
+      h3 {
+        font-size: 24px;
+      }
+    }
+
+    .product-links {
+      height: 3em;
+      padding-bottom: 120px;
+    }
+  }
+
   @media #{$tablet} {
     // Product links are display as a list on mobile devices
     .product-links {
