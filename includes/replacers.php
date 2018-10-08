@@ -643,7 +643,7 @@ function replace_list_button_shortcode($atts, $content = null) {
 	}
 
 	if ($page != '') {
-		$text = get_page_full_link($page, $text);
+		$text = get_page_full_link($page, $text, 'page', '', true);
 	}
 
 	return "<div class=\"row button-list\"><div class=\"col-sm-12 $col_text\">$text</div><div class=\"col-sm-12 $col_button\">$content</div></div>";
