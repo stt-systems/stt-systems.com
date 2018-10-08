@@ -810,27 +810,27 @@ function replace_compact_paragrah_shortcode($atts, $content = null) {
 }
 
 function add_stt_shortcodes() {
-  add_shortcode('banner',        'replace_banner_shortcode');
-  add_shortcode('row',           'replace_row_shortcode');
-  add_shortcode('column',        'replace_column_shortcode');
-	add_shortcode('v-space',       'replace_vspace_shortcode');
-	add_shortcode('include',       'replace_include_shortcode');
-	add_shortcode('link',          'replace_link_shortcode');
-	add_shortcode('email',         'replace_email_shortcode');
-	add_shortcode('image',         'replace_image_shortcode');
-	add_shortcode('video',         'replace_video_shortcode');
-	add_shortcode('quote',         'replace_quote_shortcode');
-	add_shortcode('download',      'replace_download_shortcode');
-	add_shortcode('downloads',     'replace_downloads_shortcode');
-	add_shortcode('all-downloads', 'replace_all_downloads_shortcode');
-	add_shortcode('social-links',  'replace_social_links_shortcode');
-	add_shortcode('image-table',   'replace_image_table_shortcode');
-	add_shortcode('post-list',     'replace_post_list_shortcode');
-	add_shortcode('collapse',      'replace_collapse_shortcode');
-	add_shortcode('button',        'replace_button_shortcode');
-	add_shortcode('button-list',   'replace_list_button_shortcode');
-	add_shortcode('distributor',   'replace_distributor_shortcode');
-	add_shortcode('table',         'replace_table_shortcode');
+  add_shortcode('banner',            'replace_banner_shortcode');
+  add_shortcode('row',               'replace_row_shortcode');
+  add_shortcode('column',            'replace_column_shortcode');
+	add_shortcode('v-space',           'replace_vspace_shortcode');
+	add_shortcode('include',           'replace_include_shortcode');
+	add_shortcode('link',              'replace_link_shortcode');
+	add_shortcode('email',             'replace_email_shortcode');
+	add_shortcode('image',             'replace_image_shortcode');
+	add_shortcode('video',             'replace_video_shortcode');
+	add_shortcode('quote',             'replace_quote_shortcode');
+	add_shortcode('download',          'replace_download_shortcode');
+	add_shortcode('downloads',         'replace_downloads_shortcode');
+	add_shortcode('all-downloads',     'replace_all_downloads_shortcode');
+	add_shortcode('social-links',      'replace_social_links_shortcode');
+	add_shortcode('image-table',       'replace_image_table_shortcode');
+	add_shortcode('post-list',         'replace_post_list_shortcode');
+	add_shortcode('collapse',          'replace_collapse_shortcode');
+	add_shortcode('button',            'replace_button_shortcode');
+	add_shortcode('button-list',       'replace_list_button_shortcode');
+	add_shortcode('distributor',       'replace_distributor_shortcode');
+	add_shortcode('table',             'replace_table_shortcode');
 	add_shortcode('compact-paragraph', 'replace_compact_paragrah_shortcode');
 }
 
