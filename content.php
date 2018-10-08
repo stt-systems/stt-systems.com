@@ -13,6 +13,7 @@ if (!is_page()) {
 				<span class="fa fa-calendar"></span><?php the_time('M j, Y'); ?>
 			</div><?php
 			
+			/*
 			if (get_the_category_list() != '' && false) { ?>
 				<div class="blog-post-details-item blog-post-details-item-left">
 					<span class="fa fa-folder-open"></span><?php the_category(', ', 'single', get_the_ID()); ?>
@@ -23,7 +24,7 @@ if (!is_page()) {
 				<div class="blog-post-details-item blog-post-details-item-left">
 					<span class="fa fa-tags"></span><?php the_tags('', ', ', '<br />'); ?>
 				</div><?php
-			} ?>
+			} */?>
 			<div class="space-sep<?php echo is_single() ? 20 : 10 ?>"></div>
 		</div><?php
 	}
