@@ -30,7 +30,7 @@ function stt_replace_content($content) {
 }
 
 // Callbacks for custom commands in post content
-function replace_banner_shortcode($atts, $content = null) {
+function do_banner_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'image' => '',
 	), $atts, 'banner'));
@@ -60,7 +60,7 @@ function replace_banner_shortcode($atts, $content = null) {
   return "<div class=\"row\"><div class=\"col-xs-12 col-extra\" style=\"padding:0\">$banner</div></div>";
 }
 
-function replace_row_shortcode($atts, $content = null) {
+function do_row_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'id' => '',
 		'margin' => '', // no-top, no-bottom, no-top-bottom
@@ -94,7 +94,7 @@ function replace_row_shortcode($atts, $content = null) {
 
 	return "<div$id class=\"row$class\">$content</div>";
 }
-function replace_column_shortcode($atts, $content = null) {
+function do_column_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'size' => '100',
     'align' => 'left',
@@ -129,7 +129,7 @@ function replace_column_shortcode($atts, $content = null) {
   return "<div class=\"$class col-extra style-$style\"><div>$content</div></div>";
 }
 
-function replace_vspace_shortcode($atts) {
+function do_vspace_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'size' => '10',
 	), $atts, 'vspace'));
@@ -138,7 +138,7 @@ function replace_vspace_shortcode($atts) {
 }
 
 // Include: insert another page into this
-function replace_include_shortcode($atts) {
+function do_include_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'page' => '',
 		'params' => '',
@@ -161,7 +161,7 @@ function replace_include_shortcode($atts) {
 }
 
 // Links
-function replace_link_shortcode($atts) {
+function do_link_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'page' => '',
 		'url' => '',
@@ -176,7 +176,7 @@ function replace_link_shortcode($atts) {
 }
 
 // E-mail
-function replace_email_shortcode($atts) {
+function do_email_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'to' => '',
 		'title' => '',
@@ -193,7 +193,7 @@ function replace_email_shortcode($atts) {
 	return "<a href=\"mailto:$to\">$title</a>";
 }
 
-function replace_image_shortcode($atts) {
+function do_image_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'caption' => '',
@@ -292,7 +292,7 @@ function walk_images_table_cb(&$value, $key, $base) {
 	$value = "<div><img src=\"$path\" style=\"max-height:90px;max-width:80%\"/></div>";
 }
 
-function replace_image_table_shortcode($atts) {
+function do_image_table_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 	), $atts, 'images-table'));
@@ -310,7 +310,7 @@ function replace_image_table_shortcode($atts) {
 }
 
 // Videos
-function replace_video_shortcode($atts) {
+function do_video_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'caption' => '',
@@ -323,7 +323,7 @@ function replace_video_shortcode($atts) {
 	return '';
 }
 
-function replace_quote_shortcode($atts) {
+function do_quote_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'text' => '',
 		'title' => '',
@@ -365,7 +365,7 @@ function replace_quote_shortcode($atts) {
 }
 
 // Downloads
-function replace_download_shortcode($atts) {
+function do_download_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'title' => 'Download'
@@ -376,7 +376,7 @@ function replace_download_shortcode($atts) {
 	// NOFOLLOW: do not pass link juice for PDFs on sidebars
 	return get_url_link($download, $title, true, true);
 }
-function replace_downloads_shortcode($atts) {
+function do_downloads_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'title' => 'Downloads',
@@ -456,7 +456,7 @@ function replace_downloads_shortcode($atts) {
 
 	return "$title<p>" . implode($list, '</p><p>') . '</p>';
 }
-function replace_all_downloads_shortcode() {
+function do_all_downloads_shortcode() {
 	$downloads = get_downloads_area_list();
 	$table = '';
 	foreach ($downloads as $dir) {
@@ -477,7 +477,7 @@ function get_social_img($name) {
 	$url = WL_TEMPLATE_DIR_URI . '/images/social-media/' . $name . '.png';	
 	return '<img src="' . $url . '" width="32" height="32" alt="' . $name . '"/>';
 }
-function replace_social_links_shortcode() {
+function do_social_links_shortcode() {
 	$code = "<div class=\"contact-social\">
 		<a href=\"https://www.facebook.com/STTSystems\" title=\"Facebook\" target=\"_blank\">". get_social_img('facebook') . "</a>
 		<a href=\"https://twitter.com/sttsystems\" title=\"Twitter\" target=\"_blank\">" . get_social_img('twitter') . "</a>
@@ -526,7 +526,7 @@ function add_share_buttons() {
 	</ul><?php
 }
 
-function replace_post_list_shortcode($atts) {
+function do_post_list_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'tag' => '',
 		'category' => '',
@@ -580,7 +580,7 @@ function replace_post_list_shortcode($atts) {
 	return $post_list;
 }
 
-function replace_collapse_shortcode($atts, $content = null) {
+function do_collapse_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'id' => '',
 		'title' => '',
@@ -605,7 +605,7 @@ function replace_collapse_shortcode($atts, $content = null) {
 	return $code;
 }
 
-function replace_button_shortcode($atts) {
+function do_button_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'label' => '',
 		'page' => '',
@@ -639,7 +639,7 @@ function replace_button_shortcode($atts) {
 	return $code;
 }
 
-function replace_list_button_shortcode($atts, $content = null) {
+function do_list_button_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'text' => '',
 		'page' => '',
@@ -665,7 +665,7 @@ function replace_list_button_shortcode($atts, $content = null) {
 	return "<div class=\"row button-list\"><div class=\"col-sm-12 $col_text\">$text</div><div class=\"col-sm-12 $col_button\">$content</div></div>";
 }
 
-function replace_distributor_shortcode($atts, $content = null) {
+function do_distributor_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'logo' => '',
@@ -797,7 +797,7 @@ function replace_distributor_shortcode($atts, $content = null) {
 				 "<div class=\"col-md-4 col-sm-5 col-xs-12 product-links\">$products_list</div></div>";
 }
 
-function replace_table_shortcode($atts, $content = null) {
+function do_table_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'clean' => 'no',
 		'responsive' => '',
@@ -820,35 +820,35 @@ function replace_table_shortcode($atts, $content = null) {
 	return "<div class=\"table-container\"><table$class style=\"width:$width !important\"><tbody>$content</tbody></table></div>";
 }
 
-function replace_compact_paragrah_shortcode($atts, $content = null) {
+function do_compact_paragrah_shortcode($atts, $content = null) {
 	$content = do_shortcode($content);
 
 	return "<div class=\"compact-paragraph\">$content</div>";
 }
 
 function add_stt_shortcodes() {
-  add_shortcode('banner',            'replace_banner_shortcode');
-  add_shortcode('row',               'replace_row_shortcode');
-  add_shortcode('column',            'replace_column_shortcode');
-	add_shortcode('v-space',           'replace_vspace_shortcode');
-	add_shortcode('include',           'replace_include_shortcode');
-	add_shortcode('link',              'replace_link_shortcode');
-	add_shortcode('email',             'replace_email_shortcode');
-	add_shortcode('image',             'replace_image_shortcode');
-	add_shortcode('video',             'replace_video_shortcode');
-	add_shortcode('quote',             'replace_quote_shortcode');
-	add_shortcode('download',          'replace_download_shortcode');
-	add_shortcode('downloads',         'replace_downloads_shortcode');
-	add_shortcode('all-downloads',     'replace_all_downloads_shortcode');
-	add_shortcode('social-links',      'replace_social_links_shortcode');
-	add_shortcode('image-table',       'replace_image_table_shortcode');
-	add_shortcode('post-list',         'replace_post_list_shortcode');
-	add_shortcode('collapse',          'replace_collapse_shortcode');
-	add_shortcode('button',            'replace_button_shortcode');
-	add_shortcode('button-list',       'replace_list_button_shortcode');
-	add_shortcode('distributor',       'replace_distributor_shortcode');
-	add_shortcode('table',             'replace_table_shortcode');
-	add_shortcode('compact-paragraph', 'replace_compact_paragrah_shortcode');
+  add_shortcode('banner',            'do_banner_shortcode');
+  add_shortcode('row',               'do_row_shortcode');
+  add_shortcode('column',            'do_column_shortcode');
+	add_shortcode('v-space',           'do_vspace_shortcode');
+	add_shortcode('include',           'do_include_shortcode');
+	add_shortcode('link',              'do_link_shortcode');
+	add_shortcode('email',             'do_email_shortcode');
+	add_shortcode('image',             'do_image_shortcode');
+	add_shortcode('video',             'do_video_shortcode');
+	add_shortcode('quote',             'do_quote_shortcode');
+	add_shortcode('download',          'do_download_shortcode');
+	add_shortcode('downloads',         'do_downloads_shortcode');
+	add_shortcode('all-downloads',     'do_all_downloads_shortcode');
+	add_shortcode('social-links',      'do_social_links_shortcode');
+	add_shortcode('image-table',       'do_image_table_shortcode');
+	add_shortcode('post-list',         'do_post_list_shortcode');
+	add_shortcode('collapse',          'do_collapse_shortcode');
+	add_shortcode('button',            'do_button_shortcode');
+	add_shortcode('button-list',       'do_list_button_shortcode');
+	add_shortcode('distributor',       'do_distributor_shortcode');
+	add_shortcode('table',             'do_table_shortcode');
+	add_shortcode('compact-paragraph', 'do_compact_paragrah_shortcode');
 }
 
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);

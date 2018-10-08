@@ -23,7 +23,7 @@ echo get_page_top_spacer(); ?>
   </div>
   </div><?php
   $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-  echo replace_post_list_shortcode(array(
+  echo do_post_list_shortcode(array(
     'category' => $category_name,
     'count' => 10,
     'paged' => $paged,
