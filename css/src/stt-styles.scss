@@ -70,15 +70,34 @@
   }
 }
 
+@mixin links_decoration_private($color, $hover_color: $color) {
+  border-bottom: 1px solid rgba($color, 0.15);
+  &:hover {
+    border-bottom-color: $hover_color;
+  }
+}
+@mixin links_decoration($color, $create_class, $color_hover: $color) {
+  @if $create_class == "yes" {
+    a.decorated {
+      @include links_decoration_private($color, $color_hover);
+    }
+  } @else {
+    a {
+      @include links_decoration_private($color, $color_hover);
+    }
+  }
+}
 @mixin links($base-color, $inner-link-color: $base-color) {
   :not(h2) {
-    > a {
+    a {
       color: $base-color;
 
       &:hover {
         color: hover_color($base-color) !important;
       }
     }
+
+    @include links_decoration($base-color, "yes", hover_color($base-color));
   }
 
   .inner-links {
@@ -254,3 +273,7 @@
 @include colored_style(clinical);
 @include colored_style(human);
 @include colored_style(isen);
+
+.single .blog-post-body .blog-post-body {
+  @include links_decoration(color(stt), "no", hover_color(color(stt)));
+}

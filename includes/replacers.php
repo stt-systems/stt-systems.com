@@ -149,11 +149,12 @@ function replace_link_shortcode($atts) {
 		'page' => '',
 		'url' => '',
 		'title' => '',
+		'decorated' => 'no',
 	), $atts, 'link'));
 
-	if ($page != '') return get_page_full_link($page, $title);
+	if ($page != '') return get_page_full_link($page, $title, 'page', 'rel', str2bool($decorated));
 	if ($title == '') $title = $url;
-	if ($url != '') return get_url_link($url, $title);
+	if ($url != '') return get_url_link($url, $title, true, str2bool($decorated));
 	return $title;
 }
 

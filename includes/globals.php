@@ -298,7 +298,7 @@ function get_page_url($slug, $type = 'page', $title = '') {
 }
 
 // Return a link to a page from its slug
-function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
+function get_page_full_link($slug, $title = '', $type = 'page', $rel = '', bool $decorated = false) {
 	$slug = explode('#', $slug);
 	$page_url = get_page_url($slug[0], $type, $title);
 	if ($page_url == '') return '';
@@ -313,10 +313,15 @@ function get_page_full_link($slug, $title = '', $type = 'page', $rel = '') {
 		$rel = " rel=\"$rel\"";
 	}
 
-	return "<a href=\"$url\"$rel>$title</a>";
+	$class = '';
+	if ($decorated) {
+		$class = ' class="decorated"';
+	}
+
+	return "<a$class href=\"$url\"$rel>$title</a>";
 }
 
-function get_url_link($url, $title = '', $blank = true, $nofollow = false) {
+function get_url_link($url, $title = '', $blank = true, $nofollow = false, bool $decorated = false) {
 	$target = '';
 	if ($blank) {
 		$target = ' target="_blank"';
@@ -331,7 +336,11 @@ function get_url_link($url, $title = '', $blank = true, $nofollow = false) {
 		$title = $url;
 	}
 
-	return "<a href=\"$url\"$target$rel>$title</a>";
+	$class = '';
+	if ($decorated) {
+		$class = ' class="decorated"';
+	}
+	return "<a$class href=\"$url\"$target$rel>$title</a>";
 }
 
 function get_widget_recent_posts($cat) {
