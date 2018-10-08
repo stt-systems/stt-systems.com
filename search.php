@@ -1,4 +1,19 @@
 <?php
+// Disable some specific shortcodes
+function dummy_shortcode($atts, $content = null) {
+	return '';
+}
+function disable_shortcodes() {
+	$disabled_shortcodes = array(
+		'collapse',
+		'post-list'
+	);
+	foreach ($disabled_shortcodes as $shortcode) {
+		remove_shortcode($shortcode);
+		add_shortcode($shortcode, 'dummy_shortcode');
+	}
+}
+
 function trim_to_search_result($text, $num_words = 55, $more = null) {
 	global $search_term_search;
 	if (!isset($search_term_search)) return $text;
@@ -32,6 +47,7 @@ function trim_to_search_result($text, $num_words = 55, $more = null) {
 	return $text;
 }
 
+disable_shortcodes();
 get_header();
 echo get_page_top_spacer(true);
 print_page_title('', sprintf(__('Search results for: %s', 'stt'), '<span>' . get_search_query() . '</span>'));
