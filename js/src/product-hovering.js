@@ -21,4 +21,10 @@ $(document).ready(function() {
   }, function() {
     $(this).closest('.product-links').siblings('.product-name').text('');
   });
+
+  $('.product-tabs .product-links a:not([href="#"]) .product').hover(function() {
+    $(this).closest('.product-links').siblings('.product-name').text($(this).text())
+  }, function() {
+    $(this).closest('.product-links').siblings('.product-name').text('');
+  });
 });

@@ -783,13 +783,15 @@ function do_product_tabs_shortcode($atts) {
 	}
 	if (!key_exists($current, $products)) return '';
 
-	$tabs = '<div class="product-tabs"><div class="product-links">';
+	$tabs = '<div class="product-tabs"><div class="product-name"></div><div class="product-links">';
 	foreach ($products as $key => $product) {
 		if ($product['family'] == $name) {
-			$tabs .= get_product_icon_link($key, 'square', 'md', $key != $current, false);
+			$tabs .= get_product_icon_link($key, 'square', 'md', $key != $current, true);
 		}
 	}
 	$tabs .= '</div></div>';
+
+	wp_enqueue_script('product-hovering');
 
 	return $tabs;
 }

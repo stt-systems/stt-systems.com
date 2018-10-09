@@ -2063,6 +2063,7 @@ h3.collapse-header {
   display: none;
 }
 
+// Products
 .product-links {
   margin-top: 40px;
 
@@ -2150,12 +2151,20 @@ h3.collapse-header {
     }
   }
 }
+.product-name {
+  font-size: 18px;
+  font-weight: 300;
+  color: color(white);
+  margin-top: 10px;
+  height: 50px;
+}
+
 .product-tabs {
   position: relative;
   height: 72px;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 
-  .product-links {
+  > .product-links {
     margin: 0;
     position: absolute;
     left: 50%;
@@ -2171,6 +2180,13 @@ h3.collapse-header {
       }
     }
   }
+
+  > .product-name {
+    font-size: 18px;
+    color: color(black);
+    margin-top: 0;
+    height: 30px;
+  }
 }
 @media #{$tablet} {
   .product-tabs {
@@ -2178,14 +2194,7 @@ h3.collapse-header {
   }
 }
 
-.product-name {
-  font-size: 18px;
-  font-weight: 300;
-  color: color(white);
-  margin-top: 10px;
-  height: 50px;
-}
-
+// Distributors
 .row .distributor {
   font-size: 18px;
 
