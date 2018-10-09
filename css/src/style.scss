@@ -83,7 +83,7 @@ h2.widgettitle {
 #clients-carousel .row,
 .cases-section,
 .share-buttons,
-.youtube p,
+.video p,
 p.gallery-caption,
 table.clean tr,
 table.shop_attributes tr {
@@ -302,14 +302,14 @@ h2.widgettitle {
   -ms-filter: grayscale(0);
 }
 
-.youtube,
+.video,
 body .syntaxhighlighter {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
 }
 
-.youtube {
+.video {
   max-width: 560px;
   margin: 0 auto 15px;
   display: block;
@@ -346,10 +346,34 @@ body .syntaxhighlighter {
     width: 100%;
     height: 100%;
   }
+
+  &.facebook {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    padding-bottom: 56.25%;
+    overflow:hidden;
+    position: relative;
+    height: 0;
+
+    iframe {
+      margin: 5px;
+      width: calc(100% - 10px);
+    }
+
+    &.large {
+      max-width: none;
+
+      iframe {
+        margin: 5px;
+        width: calc(100% - 10px);
+      }
+    }
+  }
 }
 @media #{$mobile} {
   .blog-list {
-    .youtube {
+    .video {
       > div > div {
         padding-bottom: 0 !important;
         margin-bottom: -5px;

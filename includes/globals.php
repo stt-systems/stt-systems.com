@@ -130,7 +130,7 @@ function get_post_thumbnail() {
 	return $thumbnail;
 }
 
-function get_youtube_video($name, $caption = '', $time = '') {
+function get_youtube_video($name, $caption = '', $time = '', $size = '') {
 	if ($caption != '') {
 		$caption = "<p>$caption</p>";
 	}
@@ -139,10 +139,10 @@ function get_youtube_video($name, $caption = '', $time = '') {
 		$time = "&start=$time";
 	}
 
-	return "<div class=\"youtube\" style=\"width:100%\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$name?rel=0;3&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;player=html5$time\" frameborder=0 allowfullscreen></iframe>$caption</div>";
+	return "<div class=\"video youtube\" style=\"width:100%\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$name?rel=0;3&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;player=html5$time\" frameborder=0 allowfullscreen></iframe>$caption</div>";
 }
 
-function get_facebook_video($name, $caption = '') {
+function get_facebook_video($name, $caption = '', $size = '') {
 	if ($caption != '') {
 		$caption = "<p>$caption</p>";
 	}
@@ -151,7 +151,11 @@ function get_facebook_video($name, $caption = '') {
 	$to   = array('%2F', '%3A');
 	$name = str_replace($from, $to, $name);
 
-	return "<div class=\"youtube\" style=\"text-align:center\"><iframe width=\"560\" height=\"315\" style=\"margin-top:5px\" src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" frameborder=0 allowfullscreen></iframe>$caption</div>";
+	if ($size != '') {
+		$size = " $size";
+	}
+
+	return "<div class=\"video facebook$size\" style=\"width:100%\"><iframe src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" frameborder=0 allowfullscreen></iframe>$caption</div>";
 }
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {

@@ -316,10 +316,11 @@ function do_video_shortcode($atts) {
 		'caption' => '',
 		'type' => 'youtube',
 		'time' => '',
+		'size' => '',
 	), $atts, 'video'));
 	
-	if ($type == 'youtube') return get_youtube_video($name, $caption, $time);
-	if ($type == 'facebook') return get_facebook_video($name, $caption);
+	if ($type == 'youtube') return get_youtube_video($name, $caption, $time, $size);
+	if ($type == 'facebook') return get_facebook_video($name, $caption, $size);
 	return '';
 }
 
