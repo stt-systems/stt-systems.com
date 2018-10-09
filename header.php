@@ -80,8 +80,12 @@ function print_area_logo() {
 <body <?php body_class(); ?> >
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
-		<div class="navbar-header pull-left">
-			<a class="navbar-brand" href="<?php echo home_url('/'); ?>">
+		<div class="navbar-header pull-left"><?php
+			if (is_front_page()) { ?>
+				<a class="navbar-brand"><?php
+			} else { ?>
+				<a class="navbar-brand" href="<?php echo home_url('/'); ?>"><?php
+			} ?>
 				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
 			</a>
 		</div>
