@@ -2125,6 +2125,7 @@ h3.collapse-header {
       }
       &[href="#"]:hover {
         transform: none;
+        cursor: initial;
       }
     }
   }
@@ -2166,7 +2167,7 @@ h3.collapse-header {
 
       &.square {
         @mixin product_private($name) {
-          @include product($name, square, 48, jpg, -sm);
+          @include product($name, square, 48, png, -sm);
           @include product($name, square, 72, png, -md);
         }
 
