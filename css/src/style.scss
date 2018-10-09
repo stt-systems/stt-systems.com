@@ -2162,6 +2162,7 @@ h3.collapse-header {
 .product-tabs {
   position: relative;
   height: 72px;
+  margin-top: -30px; // avoid empty space due to product-name
   margin-bottom: 36px;
 
   > .product-links {
