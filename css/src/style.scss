@@ -1,6 +1,10 @@
 @import "_colors.scss";
 @import "_responsive.scss";
 
+html {
+  height: 100%;
+}
+
 body,
 html {
   min-height: 100%;
@@ -1668,10 +1672,6 @@ html input[disabled] {
   cursor: default;
 }
 
-html {
-  height: 100%;
-}
-
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -1685,11 +1685,11 @@ input[type="search"] {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-}
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
 }
 
 button::-moz-focus-inner,
@@ -1716,17 +1716,17 @@ textarea {
     padding: 10px 15px;
     display: inline-block;
     font-size: 14px;
+
+    &:hover {
+      border-radius: 2px;
+      background-color: #f7f7f7;
+      color: #3498db;
+    }
   }
 
   .next,
   .prev,
   a.current {
-    color: #3498db;
-  }
-
-  a:hover {
-    border-radius: 2px;
-    background-color: #f7f7f7;
     color: #3498db;
   }
 }
@@ -1786,24 +1786,28 @@ table.table thead tr {
   background: #fafafa;
 }
 
-table.hover thead th,
-table.hover thead tr {
-  background-color: #fff;
-}
+table.hover {
+  thead {
+    th,
+    tr {
+      background-color: #fff;
+    }
 
-table.hover thead th {
-  color: #666;
-  border: none;
-}
+    th {
+      color: #666;
+      border: none;
+    }
+  }
 
-table.hover td,
-table.hover th {
-  border: none;
-  border-bottom: 1px solid #e8e8e8;
-}
+  td,
+  th {
+    border: none;
+    border-bottom: 1px solid #e8e8e8;
+  }
 
-table.hover tbody tr:nth-child(odd) {
-  background-color: #fafafa;
+  tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+  }
 }
 
 .gallery-caption {
