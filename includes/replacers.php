@@ -425,7 +425,7 @@ function do_downloads_shortcode($atts) {
 					if ($ext == 'xlsx') $ext = 'xls';
 					if ($ext == 'pptx') $ext = 'ppt';
 					$local_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png";
-					if (!file_exists($local_file)) {
+					if (!file_exists(ABSPATH . $local_file)) {
 						$local_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/file.png";
 					}
 					$thumbnail_url = my_get_url_for_path($local_file);
