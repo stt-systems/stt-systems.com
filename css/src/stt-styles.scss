@@ -254,6 +254,10 @@
 
     @include buttons(color(white), $base-color, "primary");
     @include headers(black, white);
+
+    li:before {
+      color: color(white);
+    }
   }
 
   li:before {
