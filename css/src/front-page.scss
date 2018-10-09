@@ -253,13 +253,12 @@
         margin-top: 20px;
       }
 
-      #panel-2dma {
-        .panel-bg {
-          background-position: center 30%;
-        }
-      }
-
+      #panel-2dma,
       #panel-inertial {
+        span.product {
+          position: initial;
+        }
+
         .panel-bg {
           background-position: center 30%;
         }
