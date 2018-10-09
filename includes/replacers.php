@@ -781,9 +781,13 @@ function do_product_tabs_shortcode($atts) {
 		global $post;
 		$current = $post->post_name;
 	}
-	if (!key_exists($current, $products)) return '';
 
-	$tabs = '<div class="product-tabs"><div class="product-name"></div><div class="product-links">';
+	$colored_class = '';
+	if (key_exists($current, $products)) { // if doesn't exist, all icons will be colored
+		$colored_class = ' color-current';
+	}
+
+	$tabs = '<div class="product-tabs"><div class="product-name"></div><div class="product-links' . $colored_class . '">';
 	foreach ($products as $key => $product) {
 		if ($product['family'] == $name) {
 			$tabs .= get_product_icon_link($key, 'square', 'md', $key != $current, true);

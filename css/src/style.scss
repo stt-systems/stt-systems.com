@@ -2173,6 +2173,9 @@ h3.collapse-header {
 
     a {
       height: auto;
+    }
+
+    &.color-current a {
       &:not([href="#"]) {
         -webkit-filter: grayscale(98%);
         filter: grayscale(98%);
