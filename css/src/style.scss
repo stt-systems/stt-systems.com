@@ -434,80 +434,11 @@ img.rounded {
   margin: 0.8075em 0;
 }
 
-.cases-menu a:hover,
-.cases-section a.seemore,
-table:not(.clean) {
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-}
-
-.cases-menu {
-  background-color: color(stt);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 18px;
-  font-weight: 100;
-
-  a {
-    color: #fff;
-  }
-
-  a:hover {
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-}
-
-@media (max-width: 768px) {
-  .cases-menu a:hover {
-    padding: 3px;
-  }
-}
-.cases-section {
-  padding-top: 15px;
-  background-color: #fff;
-  color: #848484;
-  font-size: 14px;
-}
-
-.cases-section h3 {
-  font-weight: 100;
-}
-
-.cases-section h3:hover {
-  color: color(stt);
-  font-weight: 100;
-}
-
-.cases-section h4 {
-  margin-bottom: 0;
-}
-
-.cases-section .row {
-  padding-top: 20px;
-}
-
-.cases-section a.seemore {
-  padding: 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: color(stt);
-  color: #fff;
-  font-weight: 100;
-}
-
 table:not(.clean):not(.shop_attributes) td,
 table:not(.clean):not(.shop_attributes) th {
   background-clip: padding-box;
   padding: 8px;
   vertical-align: center;
-}
-
-.cases-section a.seemore:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #848484;
 }
 
 .alternating-bg:nth-of-type(even) {
