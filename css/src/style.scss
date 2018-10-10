@@ -1690,41 +1690,6 @@ table.hover {
   font-size: 16px;
 }
 
-.content-box .glyph-icon {
-  margin-top: 0;
-  margin-bottom: 0;
-  opacity: 0.45;
-  line-height: 1.2;
-  transition: margin-top 0.3s, margin-bottom 0.3s, opacity 0.5s;
-  -moz-transition: margin-top 0.3s, margin-bottom 0.3s, opacity 0.5s;
-  -webkit-transition: margin-top 0.3s, margin-bottom 0.3s, opacity 0.5s;
-  -o-transition: margin-top 0.3s, margin-bottom 0.3s, opacity 0.5s;
-}
-
-.content-box:hover .glyph-icon {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  opacity: 1;
-}
-
-.content-box [class*=" flaticon-"]:before {
-  color: #aaa;
-  font-size: 80px !important;
-  font-style: normal;
-  margin-left: 0 !important;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-  -moz-text-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-  -webkit-text-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-}
-
-.content-box:hover [class*=" flaticon-"]:before {
-  color: color(stt);
-  transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
-}
-
 .page-path {
   color: #cbcbcb !important;
   font-weight: 300;
