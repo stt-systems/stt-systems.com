@@ -321,8 +321,14 @@ function do_video_shortcode($atts) {
 		'size' => '',
 	), $atts, 'video'));
 	
-	if ($type == 'youtube') return get_youtube_video($name, $caption, $time, $size);
-	if ($type == 'facebook') return get_facebook_video($name, $caption, $size);
+	if ($type == 'youtube') {
+		wp_enqueue_script('youtube-autoresizer');
+		return get_youtube_video($name, $caption, $time, $size);
+	}
+	if ($type == 'facebook') {
+		wp_enqueue_script('youtube-autoresizer');
+		return get_facebook_video($name, $caption, $size);
+	}
 	return '';
 }
 
@@ -362,9 +368,7 @@ function do_quote_shortcode($atts) {
 		$text = get_url_link($source, $text);
 	}
 
-	$code = "<blockquote>$title$text$author</blockquote>";
-
-	return $code;
+	return "<blockquote>$title$text$author</blockquote>";
 }
 
 // Downloads
@@ -869,4 +873,9 @@ function product_hovering_shortcode_wp_enqueue_scripts() {
 	wp_register_script('product-hovering', get_template_directory_uri() . '/js/product-hovering.min.js');
 }
 add_action('wp_enqueue_scripts', 'product_hovering_shortcode_wp_enqueue_scripts');
+
+function video_shortcode_wp_enqueue_scripts() {
+	wp_register_script('youtube-autoresizer', get_template_directory_uri() . '/js/youtube-autoresizer.min.js');
+}
+add_action('wp_enqueue_scripts', 'video_shortcode_wp_enqueue_scripts');
 ?>
