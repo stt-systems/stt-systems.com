@@ -120,10 +120,9 @@ add_filter('stylesheet_uri', 'stt_stylesheet_uri');
 /**
 * Dequeue jQuery Migrate script in WordPress.
 */
-function remove_jquery_migrate( &$scripts) {
+function remove_jquery_migrate(&$scripts) {
 	if (!is_admin()) {
 		$scripts->remove('jquery');
-		$scripts->add('jquery', false, array( 'jquery-core' ), '1.4.1');
 	}
 }
 add_filter('wp_default_scripts', 'remove_jquery_migrate');
