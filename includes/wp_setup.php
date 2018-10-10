@@ -100,8 +100,8 @@ add_filter('the_excerpt', 'shortcode_unautop');
 add_filter('the_excerpt', 'do_shortcode');
 
 function enqueue_theme_css() {
-	wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/'. BOOTSTRAP_VERSION .'/css/bootstrap.min.css');
   wp_enqueue_style('default', get_template_directory_uri() . '/css/style.min.css');
+	wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/'. BOOTSTRAP_VERSION .'/css/bootstrap.min.css', array(), null);
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_css');
 
