@@ -681,16 +681,16 @@ body .syntaxhighlighter textarea {
     line-height: 1.45;
     margin: 0;
   }
-}
 
-.blog-post .blog-post-details-item {
-  position: relative;
-  float: left;
-  margin: 0 0 0 20px;
-}
+  .blog-post-details-item {
+    position: relative;
+    float: left;
+    margin: 0 0 0 20px;
 
-.blog-post .blog-post-details-item:first-child {
-  margin-left: 0;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }
 
 .posts-list {
