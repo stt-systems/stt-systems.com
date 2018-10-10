@@ -1,3 +1,72 @@
+.woocommerce
+div.product
+div.images
+.woocommerce-product-gallery__image:nth-child(n + 2) {
+margin-top: 8px;
+width: 24% !important;
+}
+
+.woocommerce
+div.product
+div.images
+.woocommerce-product-gallery__image:nth-child(2) {
+margin-left: 8px;
+}
+
+.woocommerce div.product div.images img,
+.woocommerce ul.products li.product a img {
+  max-width: 95%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0 solid transparent;
+  border-radius: 7px;
+}
+
+.woocommerce table.shop_attributes td {
+  font-style: normal !important;
+}
+
+.woocommerce table.shop_table tbody th,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th {
+  border-top: 0 !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  margin: 0 !important;
+}
+
+.woocommerce .quantity .qty {
+  height: 31px;
+}
+
+.woocommerce div.product form.cart .button {
+  background-color: color(stt) !important;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  border-radius: 7px !important;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: color(stt) !important;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+  background-color: #005992 !important;
+}
+
 #add_payment_method .cart-collaterals .cart_totals table small,
 .woocommerce-cart .cart-collaterals .cart_totals table small,
 .woocommerce-checkout .cart-collaterals .cart_totals table small {
