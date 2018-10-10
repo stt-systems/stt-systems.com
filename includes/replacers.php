@@ -201,7 +201,7 @@ function do_image_shortcode($atts) {
 		'shadow' => 'yes',
     'icon' => '',
 		'alt' => '',
-		'lazy' => 'yes',
+		'lazy' => 'no',
 		'page' => '',
 		'url' => '',
 	), $atts, 'image'));
