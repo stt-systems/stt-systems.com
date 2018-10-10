@@ -37,7 +37,7 @@ function print_meta() {
 	}
 	?>
 	
-	<meta name="description" content="Motion capture, 3D scanning and machine vision" />
+	<meta name="description" content="Motion analysis and machine vision solutions" />
 
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="<?php echo $type; ?>" />
