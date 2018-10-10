@@ -1,6 +1,7 @@
 <?php
 add_action('wp_head', 'schema_head');
 get_header();
+wp_enqueue_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 wp_enqueue_script('product-hovering');
 ?>
 
