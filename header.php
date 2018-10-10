@@ -38,8 +38,8 @@ function print_area_name() {
 	$area = get_top_level_slug();
 	if (array_key_exists($area, $areas)) {
 		$title = "<h3 class=\"navbar-text hide-desktop\">{$areas[$area]}</h3>";
-		$current_slug = get_top_level_slug();
-		if ($area != '' && $area != $current_slug) {
+		global $post;
+		if ($area != '' && $area != $post->post_name) {
 			echo get_page_full_link($area, $title);
 		} else {
 			echo $title;
