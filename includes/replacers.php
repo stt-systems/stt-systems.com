@@ -866,16 +866,6 @@ function add_stt_shortcodes() {
 	add_shortcode('table',             'do_table_shortcode');
 	add_shortcode('compact-paragraph', 'do_compact_paragrah_shortcode');
 }
-
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
 
-function product_hovering_shortcode_wp_enqueue_scripts() {
-	wp_register_script('product-hovering', get_template_directory_uri() . '/js/product-hovering.min.js');
-}
-add_action('wp_enqueue_scripts', 'product_hovering_shortcode_wp_enqueue_scripts');
-
-function video_shortcode_wp_enqueue_scripts() {
-	wp_register_script('youtube-autoresizer', get_template_directory_uri() . '/js/youtube-autoresizer.min.js');
-}
-add_action('wp_enqueue_scripts', 'video_shortcode_wp_enqueue_scripts');
 ?>

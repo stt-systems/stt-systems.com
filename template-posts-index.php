@@ -7,8 +7,8 @@ if ($cat === False) {
 }
 
 get_header();
-wp_enqueue_style('stt-styles', get_template_directory_uri() . '/css/stt-styles.min.css');
-wp_enqueue_style('columns', get_template_directory_uri() . '/css/columns.min.css');
+wp_enqueue_style('stt-styles');
+wp_enqueue_style('columns');
 print_page_title();
 echo get_page_top_spacer(); ?>
 <div class="content-wrapper body-wrapper blog-post blog-span container extra"> <?php
