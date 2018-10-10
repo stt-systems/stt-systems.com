@@ -24,18 +24,24 @@ textarea {
   background-color: #fff;
 }
 
-li,
-p {
+li {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
 p {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   padding-bottom: 20px;
 
   &:last-of-type {
-    padding-bottom: 0px;
+    padding-bottom: 0;
   }
 }
+
+a,
+a:hover {
+  color: color(stt);
+}
+
 .footer,
 .compact-paragraph,
 .distributor {
@@ -65,8 +71,6 @@ p:empty {
 }
 
 .boxshadow,
-.cases-menu a:hover,
-.cases-section a.seemore,
 .thumb64 {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
@@ -81,7 +85,6 @@ h2.widgettitle {
 }
 
 #clients-carousel .row,
-.cases-section,
 .share-buttons,
 .video p,
 p.gallery-caption,
@@ -204,9 +207,31 @@ h1.page-title {
   margin-bottom: 25px;
 }
 
-.top-title-wrapper > h1 {
-  line-height: 20px;
+.top-title-wrapper {
+  border-color: color(stt);
+  background-color: color(stt);
+  width: 100%;
+  overflow: hidden;
+
+  > h1 {
+    line-height: 20px;
+  }
+
+  .container {
+    width: 100%;
+
+    @media (max-width: 768px) {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
 }
+
+#header,
+#header:after {
+  border-bottom: color(stt);
+}
+
 h1 a,
 h1 a:focus,
 h1 a:hover,
@@ -246,9 +271,6 @@ h2.widgettitle {
     color: #d4d4d4;
   }
   a[href^="mailto"] {
-    color: #428bca;
-  }
-  a:hover {
     color: color(stt);
   }
   [class*="col-"] {
@@ -616,6 +638,7 @@ table:not(.clean):not(.shop_attributes) .narrow {
     font-size: 18px;
     font-weight: 100;
     color: #000000;
+    margin-bottom: 10px;
   }
 
   .blog-post-details {
@@ -630,14 +653,14 @@ table:not(.clean):not(.shop_attributes) .narrow {
 
   a h2,
   h2 a {
-    color: #279fbb;
+    color: color(stt);
     -webkit-transition: 0.5s color;
     -moz-transition: 0.5s color;
     -o-transition: 0.5s color;
     transition: 0.5s color;
 
     &:hover {
-      color: #3a3a3a;
+      color: darken(color(stt), 10);
     }
   }
 
@@ -933,7 +956,7 @@ table:not(.clean):not(.shop_attributes) .narrow {
     .footer-title {
       padding: 0 0 8px;
       margin: 0 0 15px;
-      color: #428bca;
+      color: color(stt);
       font-weight: 400;
       font-size: 14pt;
 
@@ -1141,16 +1164,6 @@ blockquote {
   z-index: 0;
 }
 
-.top-title-wrapper {
-  background-color: #3498db;
-  width: 100%;
-  overflow: hidden;
-}
-
-.top-title-wrapper .container {
-  width: 100%;
-}
-
 b {
   font-weight: 500;
 }
@@ -1201,12 +1214,6 @@ time {
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .top-title-wrapper .container {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-}
 .not-found-40x {
   overflow: hidden;
   margin-bottom: 60px;
