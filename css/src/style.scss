@@ -389,47 +389,6 @@ iframe {
   border: 0;
 }
 
-/* Galleries */
-.gallery {
-  width: 100%;
-  margin: 15px auto 35px;
-  display: inline-block;
-}
-
-.blueimp-gallery > .indicator > li {
-  width: 64px !important;
-  height: 64px !important;
-  border-radius: 5px !important;
-  background-size: cover !important;
-}
-
-.blueimp-gallery > .indicator > :not(.active) {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-}
-
-.blueimp-gallery > .indicator > li:hover:not(.active) {
-  filter: grayscale(30%);
-  -webkit-filter: grayscale(30%);
-  -moz-filter: grayscale(30%);
-  -o-filter: grayscale(30%);
-  -ms-filter: grayscale(30%);
-  opacity: 0.85 !important;
-}
-
-@media (max-width: 768px) {
-  .blueimp-gallery > .indicator > li {
-    display: none !important;
-  }
-}
-.carousel-caption h1,
-.carousel-caption h2 {
-  color: #fff !important;
-}
-
 /* Syntax highlighting */
 body .syntaxhighlighter {
   border-radius: 4px;
