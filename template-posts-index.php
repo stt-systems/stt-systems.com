@@ -18,7 +18,7 @@ echo get_page_top_spacer(); ?>
     echo '<h1>' . $cat->name . '</h1>';
 		$cat_description = category_description($cat->term_id);
 		if (!empty($cat_description)) {
-			echo "<i>$cat_description</i>";
+			echo $cat_description;
 		} ?>
   </div>
   </div><?php
