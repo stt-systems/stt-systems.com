@@ -200,7 +200,7 @@ function do_image_shortcode($atts) {
 		'shadow' => 'yes',
     'icon' => '',
 		'alt' => '',
-		'lazy' => 'no',
+		'lazy' => 'yes',
 		'page' => '',
 		'url' => '',
 	), $atts, 'image'));
@@ -230,6 +230,7 @@ function do_image_shortcode($atts) {
     $size = "width=\"$icon\" height=\"$icon\"";
     $class .= ' icon';
 		$shadow = 'false';
+		$lazy = 'no';
   }
 	
 	if (str2bool($shadow)) {
