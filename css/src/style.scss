@@ -352,7 +352,7 @@ body .syntaxhighlighter {
     padding-right: 5px;
 
     padding-bottom: 56.25%;
-    overflow:hidden;
+    overflow: hidden;
     position: relative;
     height: 0;
 
@@ -1988,7 +1988,15 @@ ul.left {
 }
 
 .banner {
+  display: flex;
   height: calc(100vw * 0.32);
+
+  .spinner {
+    display: block;
+    margin: auto;
+    widows: 64px;
+    height: 64px;
+  }
 }
 
 .row {

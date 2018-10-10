@@ -46,7 +46,7 @@ function do_banner_shortcode($atts, $content = null) {
 			$size = getimagesize($file);
 
 			if (count($size) >= 2 && $size[0] > 0) {
-				$height = ';height:calc(100vw * ' . ($size[1] / $size[0]) .')';
+				$height = 'height:calc(100vw * ' . ($size[1] / $size[0]) .')';
 			}
 		} catch (Exception $e) {
 			$height = '';
@@ -55,7 +55,8 @@ function do_banner_shortcode($atts, $content = null) {
 
 	$image_url = get_upload_url($image);
 
-	$banner = "<div class=\"banner\" style=\"background-image:url($image_url)$height\"></div>";
+	$loading_img = get_template_directory_uri() . "/images/loading.gif";
+	$banner = "<div class=\"banner\" data-src=\"$image_url\" style=\"$height\"><img class=\"spinner\" src=\"$loading_img\" /></div>";
   
   return "<div class=\"row\"><div class=\"col-xs-12 col-extra\" style=\"padding:0\">$banner</div></div>";
 }

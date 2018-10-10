@@ -136,6 +136,9 @@ if (WP_DEBUG) { ?>
 
 <script src="//wurfl.io/wurfl.js"></script>
 <script>if(!WURFL.is_mobile){var s=document.createElement("script");s.src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/retina.min.js', false); ?>",document.getElementsByTagName("body")[0].appendChild(s)}</script>
+
+<script>$(document).ready(function(){$('.banner').each(function(){var l=$(this);l.css('background-image','url("'+l.attr('data-src')+'")');l.find('img.spinner').remove();});
+});</script>
 </body>
 </html><?php
 ob_end_flush(); ?>
