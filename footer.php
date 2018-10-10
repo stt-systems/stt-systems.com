@@ -128,6 +128,7 @@ if (WP_DEBUG) { ?>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.blueimp-gallery.min.js', false); ?>"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.localScroll.min.js', false); ?>"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.scrollTo.min.js', false); ?>"></script>
+<script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.matchHeight.min.js', false); ?>"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/jquery.unveil.min.js', false); ?>"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/links-index.min.js', false); ?>"></script>
 <script async src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
