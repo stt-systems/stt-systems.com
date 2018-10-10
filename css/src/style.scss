@@ -638,7 +638,6 @@ table:not(.clean):not(.shop_attributes) .narrow {
     font-size: 18px;
     font-weight: 100;
     color: #000000;
-    margin-bottom: 10px;
   }
 
   .blog-post-details {
@@ -681,6 +680,12 @@ table:not(.clean):not(.shop_attributes) .narrow {
     &:first-child {
       margin-left: 0;
     }
+  }
+}
+
+.single-post {
+  .blog-post-body {
+    margin-bottom: 10px;
   }
 }
 
