@@ -39,21 +39,21 @@ function print_meta() {
 	
 	<meta name="description" content="<?php echo get_bloginfo('description'); ?>"/>
 
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="<?php echo $type; ?>" />
-	<meta property="og:title" content="<?php echo $title; ?>" />
-	<meta property="og:url" content="<?php echo $url; ?>" />
-	<meta property="og:image" content="<?php echo get_upload_url($image); ?>" />
+	<meta property="og:locale" content="en_US"/>
+	<meta property="og:type" content="<?php echo $type; ?>"/>
+	<meta property="og:title" content="<?php echo $title; ?>"/>
+	<meta property="og:url" content="<?php echo $url; ?>"/>
+	<meta property="og:image" content="<?php echo get_upload_url($image); ?>"/>
 	<?php
 	if (is_front_page()) {?>
-		<meta property="og:site_name" content="STT Systems" /><?php
+		<meta property="og:site_name" content="STT Systems"/><?php
 	}?>
 
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="<?php echo $title; ?>" />
-	<meta name="twitter:image" content="<?php echo get_upload_url($image); ?>" />
-	<meta name="twitter:site" content="@STTSystems" />
-	<meta name="twitter:creator" content="@STTSystems" />
+	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:title" content="<?php echo $title; ?>"/>
+	<meta name="twitter:image" content="<?php echo get_upload_url($image); ?>"/>
+	<meta name="twitter:site" content="@STTSystems"/>
+	<meta name="twitter:creator" content="@STTSystems"/>
 	<?php
 }
 

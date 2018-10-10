@@ -4,7 +4,7 @@ if (!is_user_logged_in()) { // do not show Store during development
 } else {
   get_header();
   print_page_title('store', 'Store'); ?>
-<link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/woocommerce.min.css'); ?>" />
+<link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/woocommerce.min.css'); ?>"/>
 <?php require_once('includes/woocommerce_subbanner.php');
 echo get_page_top_spacer(); ?>
 <div class="content-wrapper body-wrapper blog-post blog-span container">

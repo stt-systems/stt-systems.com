@@ -4,7 +4,7 @@
 			<div class="footer-wrapper">
 				<div class="row">
 				<div class="col-md-2 col-sm-2 footer-col footer-logo-col">
-					<img src="<?php echo get_upload_url('logos/logo-footer.png', false); ?>" class="footer-logo" height="171" alt="STT's logo" />
+					<img src="<?php echo get_upload_url('logos/logo-footer.png', false); ?>" class="footer-logo" height="171" alt="STT's logo"/>
 				</div>
 				<div class="col-md-2 col-sm-3 footer-col">
 					<div class="footer-title"><?php echo get_page_full_link('contact-us', 'Contact', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
@@ -111,10 +111,10 @@
 </footer>
 <?php wp_footer(); ?>
 
-<link rel="stylesheet" property="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,400i" crossorigin="anonymous" />
-<link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/theme-menu.min.css', false); ?>" />
-<link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/responsive.min.css', false); ?>" />
-<link rel="stylesheet" property="stylesheet" href="//use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+<link rel="stylesheet" property="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,400i" crossorigin="anonymous"/>
+<link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/theme-menu.min.css', false); ?>"/>
+<link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/responsive.min.css', false); ?>"/>
+<link rel="stylesheet" property="stylesheet" href="//use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
 
 <script async src="//stackpath.bootstrapcdn.com/bootstrap/<?php echo BOOTSTRAP_VERSION; ?>/js/bootstrap.min.js"></script>
 <script async src="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/js/menu.min.js', false); ?>"></script>
