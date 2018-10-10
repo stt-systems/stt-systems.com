@@ -44,9 +44,6 @@ function stt_setup() {
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails'); //supports featured image
 
-	// This theme uses wp_nav_menu() in one location.
-	//register_nav_menu('primary', __('Primary Menu', 'stt'));
-
 	// Theme support
 	$args = array('default-color' => '000000');
 	add_theme_support('custom-background', $args);
@@ -110,9 +107,7 @@ function stt_stylesheet_uri($uri) {
 }
 add_filter('stylesheet_uri', 'stt_stylesheet_uri');
 
-/**
-* Dequeue jQuery Migrate script in WordPress.
-*/
+// Dequeue jQuery Migrate script in WordPress
 function remove_jquery_migrate(&$scripts) {
 	if (!is_admin()) {
 		$scripts->remove('jquery');
