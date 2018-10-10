@@ -1,5 +1,7 @@
 <?php
 get_header();
+wp_enqueue_style('stt-styles');
+wp_enqueue_style('columns');
 echo get_page_top_spacer(true);
 print_page_title(); ?>
 <div class="space-sep20"></div>
