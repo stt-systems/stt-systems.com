@@ -7,7 +7,7 @@ set STYLE=--beautify
 if "%1"=="production" (
   echo Production mode...
   set PRODUCTION=yes
-  set STYLE=--compress
+  set STYLE=--compress -m
   shift /1
 ) else (
   echo Development mode...
