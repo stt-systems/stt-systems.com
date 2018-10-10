@@ -12,7 +12,7 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('admin_print_styles', 'print_emoji_styles');
 
-ini_set('display_errors', false);
+ini_set('display_errors', WP_DEBUG);
 
 require('includes/wp_setup.php');
 require('includes/globals.php');
