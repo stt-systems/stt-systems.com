@@ -133,7 +133,7 @@ function do_column_shortcode($atts, $content = null) {
 function do_vspace_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'size' => '10',
-	), $atts, 'vspace'));
+	), $atts, 'v-space'));
 
 	return "<div class=\"space-sep$size\"></div>";
 }
