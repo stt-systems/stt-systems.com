@@ -19,9 +19,8 @@
 				</div>
 				<div class="col-md-1 col-sm-1 footer-col ghost"></div>
 				<div class="col-md-4 col-sm-6 footer-col">
-				<div class="footer-title">SITEMAP</div>
-					<div class="textwidget">
-					<div style="padding-left:15px">
+					<div class="footer-title">SITEMAP</div>
+					<div class="textwidget" style="padding-left:15px">
 						<div class="row">
 						<?php
 						wp_reset_query();
@@ -68,7 +67,6 @@
 							</div><?php
 						} ?>
 						</div>
-					</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-3 footer-col">
