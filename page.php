@@ -3,6 +3,7 @@ if ($post->post_type == 'page') {
 	add_action('wp_head', 'add_page_breadcrumblist');
 }
 get_header();
+wp_enqueue_style('stt-styles', get_template_directory_uri() . '/css/stt-styles.min.css');
 wp_enqueue_style('columns', get_template_directory_uri() . '/css/columns.min.css');
 print_page_title();
 echo get_page_top_spacer(); ?>
