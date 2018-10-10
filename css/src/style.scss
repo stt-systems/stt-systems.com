@@ -38,7 +38,9 @@ p {
 }
 
 a,
+a:focus,
 a:hover {
+  text-decoration: none !important;
   color: color(stt);
 }
 
@@ -1104,12 +1106,6 @@ sup {
 .footer-wrapper {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-a:focus,
-a:hover {
-  text-decoration: none !important;
-  color: color(stt);
 }
 
 blockquote {
