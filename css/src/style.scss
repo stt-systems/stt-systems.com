@@ -302,8 +302,7 @@ h2.widgettitle {
   -ms-filter: grayscale(0);
 }
 
-.video,
-body .syntaxhighlighter {
+.video {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
@@ -387,22 +386,6 @@ body .syntaxhighlighter {
 
 iframe {
   border: 0;
-}
-
-/* Syntax highlighting */
-body .syntaxhighlighter {
-  border-radius: 4px;
-  padding: 7px;
-  width: 80% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-@media screen and (max-width: 992px) {
-  body .syntaxhighlighter {
-    padding: 5px;
-    width: 100% !important;
-  }
 }
 
 img.rounded {
@@ -616,21 +599,6 @@ tfoot:not(.clean):not(.shop_attributes) tr:last-child th:last-child {
 
 table:not(.clean):not(.shop_attributes) .narrow {
   width: 100% !important;
-}
-
-body .syntaxhighlighter .gutter,
-body .syntaxhighlighter a,
-body .syntaxhighlighter code,
-body .syntaxhighlighter div,
-body .syntaxhighlighter table,
-body .syntaxhighlighter table caption,
-body .syntaxhighlighter table tbody,
-body .syntaxhighlighter table td,
-body .syntaxhighlighter table thead,
-body .syntaxhighlighter table tr,
-body .syntaxhighlighter textarea {
-  font-size: 11pt !important;
-  line-height: 13pt !important;
 }
 
 .container .blog-span {

@@ -1,0 +1,31 @@
+body .syntaxhighlighter {
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+
+  border-radius: 4px;
+  padding: 7px;
+  width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  @media screen and (max-width: 992px) {
+    padding: 5px;
+    width: 100% !important;
+  }
+  
+  .gutter,
+  a,
+  code,
+  div,
+  table,
+  table caption,
+  table tbody,
+  table td,
+  table thead,
+  table tr,
+  textarea {
+    font-size: 11pt !important;
+    line-height: 13pt !important;
+  }
+}
