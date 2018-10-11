@@ -322,11 +322,10 @@ function do_video_shortcode($atts) {
 	), $atts, 'video'));
 	
 	if ($type == 'youtube') {
-		wp_enqueue_script('youtube-autoresizer');
+		wp_enqueue_script('youtube');
 		return get_youtube_video($name, $caption, $time, $size);
 	}
 	if ($type == 'facebook') {
-		wp_enqueue_script('youtube-autoresizer');
 		return get_facebook_video($name, $caption, $size);
 	}
 	return '';
