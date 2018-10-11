@@ -104,7 +104,6 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			} else if (in_array('current-menu-item', $classes)) { // highlight current
 				$class_names .= ' active';
 			}
-			$class_names = preg_replace('/page-item-[0-9]+/', '', $class_names);
 
 			$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 			$output .= "<li$class_names>";
@@ -214,4 +213,12 @@ function nav_items($items, $menu, $args) {
 		}
 	}
 	return $items;
+}
+
+// Remove unnecessary navbar classses
+add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
+add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
+add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
+function my_css_attributes_filter($var) {
+	return is_array($var) ? array_intersect($var, array('current_page_item', 'current_page_ancestor')) : '';
 }
