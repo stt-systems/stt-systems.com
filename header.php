@@ -92,14 +92,14 @@ function print_area_logo() {
 		<?php print_area_name(); ?>
 		<div class="navbar-header pull-right">
 			<?php print_area_logo(); ?>
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#stt-navbar-collapse" aria-expanded="false">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 				<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
 		</div>
-		<div class="navbar-collapse collapse" id="stt-navbar-collapse"><?php
+		<div class="navbar-collapse collapse" id="navbar-collapse"><?php
 			wp_nav_menu(array(
 				'theme_location' => 'primary',
 				'container'      => 'nav-collapse',

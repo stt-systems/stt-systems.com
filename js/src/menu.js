@@ -2,7 +2,7 @@ $(document).ready(function() {
     var bMobile;
     function init() {
         bMobile = $(".navbar-toggle").is(":visible");
-        var nTimer, oMenus = $("#stt-navbar-collapse .dropdown"), oMenusA = $("#stt-navbar-collapse .dropdown > a"), oSubMenusA = $("#stt-navbar-collapse .dropdown-submenu > a");
+        var nTimer, oMenus = $("#navbar-collapse .dropdown"), oMenusA = $("#navbar-collapse .dropdown > a"), oSubMenusA = $("#navbar-collapse .dropdown-submenu > a");
         oMenus.off();
         oMenusA.off();
         oSubMenusA.off();
