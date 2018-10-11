@@ -330,9 +330,7 @@ h2.widgettitle {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-}
 
-.video {
   max-width: 560px;
   margin: 0 auto 15px;
   display: block;
@@ -352,11 +350,14 @@ h2.widgettitle {
   > div {
     margin: 0 auto;
     padding: 5px;
+    max-width: 560px;
+    height: 100%;
     @media #{$mobile} {
       padding: 3px;
     }
 
     > div {
+      padding-bottom: 56.25%;
       position: relative;
       overflow: hidden;
     }
