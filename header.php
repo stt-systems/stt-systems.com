@@ -67,7 +67,7 @@ function print_area_logo() {
 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 	<?php if (!is_404() and !isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false) { ?>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><?php
+		<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><?php
 		if (!function_exists('cn_cookies_accepted') || cn_cookies_accepted()) { ?>
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40441442-1"></script>
 			<script>
