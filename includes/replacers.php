@@ -422,23 +422,20 @@ function do_downloads_shortcode($atts) {
 			$ext = $file['ext'];
 			$thumbnail_url = '';
 			$extra_class = '';
-			if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg') {
-				$thumbnail_url = $file['file'];
-				$extra_class = ' boxshadow';
-			} else {
-				if (empty($file['preview'])) {
-					if ($ext == 'docx') $ext = 'doc';
-					if ($ext == 'xlsx') $ext = 'xls';
-					if ($ext == 'pptx') $ext = 'ppt';
-					$local_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png";
-					if (!file_exists(ABSPATH . $local_file)) {
-						$local_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/file.png";
-					}
-					$thumbnail_url = my_get_url_for_path($local_file);
-				} else {
-					$thumbnail_url = $file['preview'];
-					$extra_class = ' boxshadow';
+			if (empty($file['thumbnail'])) { // if no thumbnail, choose an icon file
+				// Extension normalization
+				if ($ext == 'docx') $ext = 'doc';
+				if ($ext == 'xlsx') $ext = 'xls';
+				if ($ext == 'pptx') $ext = 'ppt';
+
+				$icon_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png";
+				if (!file_exists(ABSPATH . $icon_file)) { // use a generic icon if no extension-specific exists
+					$icon_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/file.png";
 				}
+				$thumbnail_url = my_get_url_for_path($icon_file);
+			} else {
+				$thumbnail_url = $file['thumbnail'];
+				$extra_class = ' boxshadow';
 			}
 
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars

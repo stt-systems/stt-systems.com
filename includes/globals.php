@@ -192,15 +192,19 @@ function walk_downloads_cb(&$value, $key, $base) {
 	$value['file'] = my_get_url_for_path($download_file);
 
 	$info = pathinfo($download_file);
-	$value['ext'] = strtolower($info['extension']);
+	$ext = $value['ext'] = strtolower($info['extension']);
 
-	$preview = "{$info['dirname']}/{$info['filename']}.";
-	if (file_exists(ABSPATH . $preview . 'png')) {
-		$value['preview'] = my_get_url_for_path($preview . 'png');
-	} else if (file_exists(ABSPATH . $preview . 'jpg')) {
-		$value['preview'] = my_get_url_for_path($preview . 'jpg');
+	$basename = "{$info['dirname']}/{$info['filename']}";
+	if (file_exists(ABSPATH . "$basename-thumb.png")) {
+		$value['thumbnail'] = my_get_url_for_path("$basename-thumb.png");
+	} else if (file_exists(ABSPATH . "$basename-thumb.jpg")) {
+		$value['thumbnail'] = my_get_url_for_path("$basename-thumb.jpg");
+	} else if (file_exists(ABSPATH . "$basename-thumb.jpeg")) {
+		$value['thumbnail'] = my_get_url_for_path("$basename-thumb.jpeg");
+	} else if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg') {
+		$value['thumbnail'] = my_get_url_for_path("$basename.$ext");
 	} else {
-		$value['preview'] = '';
+		$value['thumbnail'] = '';
 	}
 }
 
