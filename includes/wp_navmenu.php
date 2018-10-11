@@ -105,8 +105,11 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				$class_names .= ' active';
 			}
 
-			$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-			$output .= "<li$class_names>";
+			if ($class_names) {
+				$output .= '<li class="' . esc_attr(trim($class_names)) . '">';
+			} else {
+				$output .= '<li>';
+			}
 
 			// Convert item properties into element attributes
 			$atts = array();
