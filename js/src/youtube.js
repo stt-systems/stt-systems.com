@@ -1,9 +1,14 @@
-$(document).ready(function() {
-    if (typeof YOUTUBE_VIDEO_MARGIN == "undefined") {
-        YOUTUBE_VIDEO_MARGIN = 5;
-    }
+window.onload = function() {
     $("iframe").each(function(index, item) {
-        if ($(item).attr("src").match(/(https?:)?\/\/www\.youtube\.com/)) {
+        if ($(item).attr("data-src").match(/(https?:)?\/\/www\.youtube(-nocookie)?\.com/)) {
+            $(item).attr('src', $(item).attr('data-src'));
+        }
+    });
+};
+
+$(document).ready(function() {
+    $("iframe").each(function(index, item) {
+        if ($(item).attr("data-src").match(/(https?:)?\/\/www\.youtube(-nocookie)?\.com/)) {
             var w = $(item).attr("width");
             var h = $(item).attr("height");
             var ar = h / w * 100;
