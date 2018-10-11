@@ -322,7 +322,7 @@ function do_video_shortcode($atts) {
 	), $atts, 'video'));
 	
 	if ($type == 'youtube') {
-		wp_enqueue_script('youtube');
+		wp_enqueue_script('defer-iframe');
 		return get_youtube_video($name, $caption, $time, $size);
 	}
 	if ($type == 'facebook') {
