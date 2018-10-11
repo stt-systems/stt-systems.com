@@ -155,7 +155,7 @@ function get_facebook_video($name, $caption = '', $size = '') {
 		$size = " $size";
 	}
 
-	return "<div class=\"video facebook$size\" style=\"width:100%\"><iframe src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" frameborder=0 allowfullscreen></iframe>$caption</div>";
+	return "<div class=\"video facebook$size\" style=\"width:100%\"><iframe src=\"\" data-src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" frameborder=0 allowfullscreen></iframe>$caption</div>";
 }
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
