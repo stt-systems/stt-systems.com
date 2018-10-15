@@ -19,11 +19,13 @@ if not "%1"=="" (
   if "%PRODUCTION%"=="" set FILES=%*
 )
 
-if "%FILES%"=="*.js" del ..\*.js 2> nul
-
+mkdir tmp
 for %%F in (%FILES%) do (
   echo uglify-js %%F...
-  call uglifyjs %%F --output ..\%%~nF.min.js %STYLE%
+  call uglifyjs %%F --output tmp\%%~nF.min.js %STYLE%
 )
+if "%FILES%"=="*.js" del ..\*.js 2> nul
+robocopy tmp .. *.js /w:1 /e /fft
+rd /q /s tmp
 
 exit /b 0

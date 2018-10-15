@@ -19,9 +19,12 @@ if not "%1"=="" (
   if "%PRODUCTION%"=="" set FILES=%*
 )
 
-if "%FILES%"=="*.scss" del ..\*.css 2> nul
-
+mkdir tmp
 for %%F in (%FILES%) do call :sass %%F
+
+if "%FILES%"=="*.scss" del ..\*.css 2> nul
+robocopy tmp .. *.css /w:1 /e /fft
+rd /q /s tmp
 
 exit /b 0
 
@@ -29,7 +32,7 @@ exit /b 0
 set FILENAME=%1
 if not "%FILENAME:~0,1%"=="_" (
   echo sass %1...
-  call sass %1 ..\%~n1.min.css --no-source-map --style=%STYLE%
+  call sass %1 tmp\%~n1.min.css --no-source-map --style=%STYLE%
 )
 
 exit /b
