@@ -44,6 +44,10 @@
     display: -ms-flexbox;
     display: flex;
 
+    &.style-downloads {
+      flex-flow: wrap;
+    }
+
     @media #{$tablet} {
       flex-flow: wrap;
     }
