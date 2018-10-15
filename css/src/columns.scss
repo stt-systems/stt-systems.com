@@ -44,6 +44,10 @@
     display: -ms-flexbox;
     display: flex;
 
+    @media #{$tablet} {
+      flex-flow: wrap;
+    }
+
     .compact {
       width: 80%;
       margin-left: auto;
