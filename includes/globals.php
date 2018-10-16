@@ -139,7 +139,7 @@ function get_youtube_video($name, $caption = '', $time = '', $size = '') {
 		$time = "&start=$time";
 	}
 
-	return "<div class=\"video youtube\" style=\"width:100%\"><div><div><iframe src=\"\" width=\"560\" height=\"315\" data-src=\"https://www.youtube-nocookie.com/embed/$name?rel=0;3&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;player=html5$time\" frameborder=0 allowfullscreen></iframe></div></div>$caption</div>";
+	return "<div class=\"video youtube\" style=\"width:100%\"><div><div><iframe src=\"\" width=\"560\" height=\"315\" data-src=\"https://www.youtube-nocookie.com/embed/$name?rel=0;3&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;player=html5$time\" allowfullscreen></iframe></div></div>$caption</div>";
 }
 
 function get_facebook_video($name, $caption = '', $size = '') {
@@ -155,7 +155,7 @@ function get_facebook_video($name, $caption = '', $size = '') {
 		$size = " $size";
 	}
 
-	return "<div class=\"video facebook$size\" style=\"width:100%\"><iframe src=\"\" data-src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" frameborder=0 allowfullscreen></iframe>$caption</div>";
+	return "<div class=\"video facebook$size\" style=\"width:100%\"><iframe src=\"\" data-src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F$name&amp;show_text=0&amp\" allowfullscreen></iframe>$caption</div>";
 }
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
