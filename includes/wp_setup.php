@@ -131,4 +131,11 @@ function remove_jquery_migrate(&$scripts) {
 }
 add_filter('wp_default_scripts', 'remove_jquery_migrate');
 
+// Remove type attributes from enqueued styles and scripts
+add_filter('style_loader_tag', 'remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'remove_type_attr', 10, 2);
+function remove_type_attr($tag, $handle) {
+	return preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
+}
+
 ?>
