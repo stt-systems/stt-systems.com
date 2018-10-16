@@ -1,6 +1,10 @@
 <?php
 function sanitize_output($buffer) {
-  $search = array(
+	$doc = new DOMDocument();
+	$doc->loadHTML($buffer);
+	$buffer = $doc->saveHTML();
+
+	$search = array(
   // Uglify HTML
 	'/\>[^\S ]+/s' => '>',  // strip white spaces after tags, except space
 	'/[^\S ]+\</s' => '<',  // strip white spaces before tags, except space
@@ -21,7 +25,7 @@ function sanitize_output($buffer) {
   '#<p>\s*</p>#'                  => '',
   );
 
-  return preg_replace(array_keys($search), array_values($search), $buffer);
+	return preg_replace(array_keys($search), array_values($search), $buffer);
 }
 ob_start("sanitize_output");
 
