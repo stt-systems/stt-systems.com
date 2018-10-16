@@ -1,9 +1,5 @@
 <?php
 function sanitize_output($buffer) {
-	$doc = new DOMDocument();
-	$doc->loadHTML($buffer);
-	$buffer = $doc->saveHTML();
-
 	$search = array(
   // Uglify HTML
 	'/\>[^\S ]+/s' => '>',  // strip white spaces after tags, except space
@@ -16,8 +12,11 @@ function sanitize_output($buffer) {
 	'#(</div>)<br[ /]*>#' => '$1',
 	'#<br[ /]*>(<div)#'   => '$1',
   '#<p>\s*(<div)#'      => '$1',
-  '#(</div>)\s*</p>#'   => '$1',
-  // everything below this point will be just deleted
+	'#(</div>)\s*</p>#'   => '$1',
+	// Remove malformed HTML
+	'#(<[a-zA-Z0-9]+>)\s*</p>#' => '$1',
+  '#<p>\s*(</[a-zA-Z0-9]+>)#' => '$1',
+  // Everything below this point will be just deleted
   '#<p>\s*+(<br\s*/*>)?\s*</p>#i' => '',
 	'~\s?<p>(\s|&nbsp;)+</p>\s?~'   => '',
 	'/[\t]+/s'                      => '',
