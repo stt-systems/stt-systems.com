@@ -170,7 +170,7 @@ function do_link_shortcode($atts) {
 		'decorated' => 'no',
 	), $atts, 'link'));
 
-	if ($page != '') return get_page_full_link($page, $title, 'page', 'rel', str2bool($decorated));
+	if ($page != '') return get_page_full_link($page, $title, 'page', '', str2bool($decorated));
 	if ($title == '') $title = $url;
 	if ($url != '') return get_url_link($url, $title, true, str2bool($decorated));
 	return $title;
