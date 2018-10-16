@@ -106,7 +106,11 @@
     a {
       display: inline-block;
       padding-left: 15px;
-      padding-right: 15px;
+      margin-right: 15px;
+      @media #{$tablet} {
+        margin-bottom: 5px;
+      }
+
       color: $inner-link-color;
 
       &:hover {
