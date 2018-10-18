@@ -680,6 +680,7 @@ function do_distributor_shortcode($atts, $content = null) {
 		'country' => '',
 		'type' => 'premium',
 		'url' => '',
+		'urltitle' => '',
 	), $atts, 'distributor'));
 
 	$products = strtolower($products);
@@ -691,7 +692,7 @@ function do_distributor_shortcode($atts, $content = null) {
 	if (!empty($url)) {
 		$name = get_url_link($url, $name);
 		$logo_img = get_url_link($url, $logo_img);
-		$content = '<p>Website: ' . get_url_link($url) . '</p>' . $content;
+		$content = '<p>Website: ' . get_url_link($url, $urltitle) . '</p>' . $content;
 	}
 
 	$products_metadata = get_products();
