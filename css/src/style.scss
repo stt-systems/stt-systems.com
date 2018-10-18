@@ -2013,13 +2013,13 @@ h3.collapse-header {
 }
 
 // Distributors
-.row .distributor {
+div.row .distributor {
   font-size: 18px;
 
-  &:nth-child(odd):not(:last-child) {
+  &:nth-of-type(odd):not(:last-child) {
     padding-top: 25px;
   }
-  &:nth-child(even) {
+  &:nth-of-type(even) {
     padding-bottom: 25px;
   }
 
