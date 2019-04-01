@@ -4,7 +4,7 @@ define('WL_TEMPLATE_DIR', get_template_directory());
 define('WL_TEMPLATE_LOCAL_DIR', '/wp-content/themes/STT');
 define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
 define('BOOTSTRAP_VERSION', '3.3.7');
-define('USE_STT_SHARE_BUTTONS', false);
+define('USE_STT_SHARE_BUTTONS', true);
 
 // Font size for category and tag clouds
 function set_tag_cloud_sizes($args) {
