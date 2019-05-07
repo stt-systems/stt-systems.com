@@ -15,7 +15,6 @@
 						<p>Zuatzu Business Park</p>
 						<p>Easo Building, 2nd Floor</p>
 						<p>20018 San Sebasti&aacute;n, Spain</p>
-						<p><?php echo get_page_full_link('privacy-policy', 'Privacy Policy', 'page', !is_front_page() ? 'nofollow' : ''); ?></p>
 					</div>
 				</div>
 				<div class="col-md-1 col-sm-1 footer-col ghost"></div>
@@ -85,17 +84,22 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="row">
-				<div class="col-md-2 col-sm-4" style="margin-bottom:0">
+					<div class="col-md-2 col-sm-4" style="margin-bottom:0">
 						<div class="copyright-text">
 							&copy; <?php echo date('Y'); ?> STT Systems
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-2" style="margin-bottom:0">
+					<div class="col-md-2 col-sm-2" style="margin-bottom:0">
 						<div class="copyright-text">
-							<a href="<?php echo get_page_permalink("credits"); ?>">Credits</a>
+							<?php echo get_page_full_link('privacy-policy', 'Privacy Policy', 'page', !is_front_page() ? 'nofollow' : ''); ?>
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6"> 
+					<div class="col-md-2 col-sm-2" style="margin-bottom:0">
+						<div class="copyright-text">
+							<?php echo get_page_full_link('credits', 'Credits', 'page', !is_front_page() ? 'nofollow' : ''); ?>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-4"> 
 						<div class="social-icons">
 							<ul>
 								<li><a href="https://www.youtube.com/user/SttSystems" title="Youtube" target="_blank" class="social-media-icon youtube-icon"></a></li>
