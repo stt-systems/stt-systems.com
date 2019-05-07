@@ -837,6 +837,16 @@ function do_compact_paragrah_shortcode($atts, $content = null) {
 	return "<div class=\"compact-paragraph\">$content</div>";
 }
 
+function do_map_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'url' => '',
+	), $atts, 'map'));
+
+	wp_enqueue_script('defer-iframe');
+	
+	return '</div></div><div class="map-overlay" onClick="style.pointerEvents=\'none\'"></div><iframe class="boxshadow" src="" data-src="' . $url . '" height="450" style="display:block;width:100%"></iframe><div class="content-wrapper body-wrapper blog-post blog-span container extra"><div class="blog-post-body">';
+}
+
 function add_stt_shortcodes() {
   add_shortcode('banner',            'do_banner_shortcode');
   add_shortcode('row',               'do_row_shortcode');
@@ -862,6 +872,7 @@ function add_stt_shortcodes() {
 	add_shortcode('product-tabs',      'do_product_tabs_shortcode');
 	add_shortcode('table',             'do_table_shortcode');
 	add_shortcode('compact-paragraph', 'do_compact_paragrah_shortcode');
+	add_shortcode('map',               'do_map_shortcode');
 }
 add_action('wp_loaded', 'add_stt_shortcodes', 99999);
 
