@@ -15,6 +15,7 @@
 						<p>Zuatzu Business Park</p>
 						<p>Easo Building, 2nd Floor</p>
 						<p>20018 San Sebasti&aacute;n, Spain</p>
+						<p><?php echo get_page_full_link('privacy-policy', 'Privacy Policy', 'page', !is_front_page() ? 'nofollow' : ''); ?></p>
 					</div>
 				</div>
 				<div class="col-md-1 col-sm-1 footer-col ghost"></div>
