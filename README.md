@@ -1,6 +1,6 @@
 # README
 
-This theme is an adaptation of the [Weblizar](https://wordpress.org/themes/weblizar/) theme, and is designed to be used in the webpage of STT Systems. Its use in any other WP installation will probably require changes in the source code (such as the domain name for emails, logos, etc).
+This theme is an adaptation of the [Weblizar](https://wordpress.org/themes/weblizar/) theme, and is designed to be used in the webpage of [STT Systems](https://www.stt-systems.com). Its use in any other WP installation will probably require changes in the source code (such as the domain name for emails, logos, etc).
 
 ## Basic ayout
 
