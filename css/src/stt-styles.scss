@@ -181,6 +181,31 @@
   @include headers(black);
 }
 
+.style-white-privacy {
+  @extend .style-base-class;
+
+  font-size: 14px;
+  @media #{$mobile} {
+    font-size: 12px;
+  }
+	h2 {
+		font-size: 25px;
+
+		@media #{$tablet} {
+			font-size: 20px;
+		}
+		@media #{$mobile} {
+			font-size: 20px;
+		}
+		@media #{$mobile-xs} {
+			font-size: 18px;
+		}
+	}
+
+  background-color: color(white);	
+  @include headers(black);
+}
+
 .style-ultra-light {
   @extend .style-base-class;
 
