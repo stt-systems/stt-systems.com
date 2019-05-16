@@ -106,7 +106,7 @@ It is possible to change the bullet color of an unordered list from style to gra
     - __caption__: optional caption to add
     - __type__: youtube, facebook
     - __time__: time within video where to start playing (YouTube only)
-		- __size__: use 100% to remove size constraints and fully adapt to container
+    - __size__: use 100% to remove size constraints and fully adapt to container
   - __[quote]__:
     - __text__
     - __title__
