@@ -138,8 +138,13 @@ function get_youtube_video($name, $caption = '', $time = '', $size = '') {
 	if ($time != '') {
 		$time = "&start=$time";
 	}
+	
+	$video_size = '';
+	if ($size == '100%') {
+		$video_size = ' full-width';
+	}
 
-	return "<div class=\"video youtube\" style=\"width:100%\"><div><div><iframe src=\"\" width=\"560\" height=\"315\" data-src=\"https://www.youtube-nocookie.com/embed/$name?rel=0;3&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;player=html5$time\" allowfullscreen></iframe></div></div>$caption</div>";
+	return "<div class=\"video$video_size youtube\" style=\"width:100%\"><div><div><iframe src=\"\" width=\"560\" height=\"315\" data-src=\"https://www.youtube-nocookie.com/embed/$name?rel=0;3&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;player=html5$time\" allowfullscreen></iframe></div></div>$caption</div>";
 }
 
 function get_facebook_video($name, $caption = '', $size = '') {

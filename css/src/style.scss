@@ -363,6 +363,14 @@ h2.widgettitle {
     }
   }
 
+	&.full-width {
+		max-width: 100%;
+		
+		> div {
+			max-width: 100%;
+		}
+	}
+
   iframe {
     position: absolute;
     top: 0;
