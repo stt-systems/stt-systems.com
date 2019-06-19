@@ -58,6 +58,8 @@ function print_area_logo() {
 		<a class="navbar-brand" id="area-logo" href="<?php echo $area_url; ?>"><img src="<?php echo $area_logo; ?>" alt="Area logo" rel="nofollow"/></a><?php
 	}
 }
+
+wp_enqueue_script('jquery');
 ?>
 
 <!DOCTYPE HTML>

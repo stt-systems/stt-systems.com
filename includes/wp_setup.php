@@ -119,6 +119,7 @@ add_action('wp_enqueue_scripts', 'stt_wp_enqueue_style');
 
 // Scripts required only when certain shortcodes are inkoved
 function stt_wp_enqueue_scripts() {
+	wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), null);
 	wp_register_script('product-hovering', get_template_directory_uri() . '/js/product-hovering.min.js', array(), null);
 	wp_register_script('defer-iframe', get_template_directory_uri() . '/js/defer-iframe.min.js', array(), null);
 }
