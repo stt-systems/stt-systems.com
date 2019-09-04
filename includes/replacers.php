@@ -187,11 +187,16 @@ function do_email_shortcode($atts) {
 		$to .= '@stt-systems.com';
 	}
 	
+	$onclick = '';
+	if ($to == 'info@stt-systems.com') {
+		$onclick = " onclick=\"return gtag_report_conversion('mailto:$to');\"";
+	}
+	
 	if ($title == '') {
 		$title = $to;
 	}
 		
-	return "<a href=\"mailto:$to\">$title</a>";
+	return "<a$onclick href=\"mailto:$to\">$title</a>";
 }
 
 function do_image_shortcode($atts) {
