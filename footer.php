@@ -11,7 +11,7 @@
 					<div class="textwidget tight-paragraphs">
 						<p>Phone: (+34) 943 31 77 77</p>
 						<p>Fax: (+34) 943 31 64 31</p>
-						<p><a href="mailto:info@stt-systems.com">info@stt-systems.com</a></p>
+						<p><a onclick="return gtag_report_conversion('mailto:info@stt-systems.com');" href="mailto:info@stt-systems.com">info@stt-systems.com</a></p>
 						<p>Zuatzu Business Park</p>
 						<p>Easo Building, 2nd Floor</p>
 						<p>20018 San Sebasti&aacute;n, Spain</p>
