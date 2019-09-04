@@ -189,9 +189,9 @@ function do_email_shortcode($atts) {
 	
 	$onclick = '';
 	if ($to == 'info@stt-systems.com') {
-		$onclick = " onclick=\"return gtag_report_conversion('mailto:$to');\"";
+		$onclick = " onclick=\"return gtag_report_email_conversion('$to');\"";
 	}
-	
+
 	if ($title == '') {
 		$title = $to;
 	}
