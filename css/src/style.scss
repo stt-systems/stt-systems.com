@@ -1943,6 +1943,7 @@ h3.collapse-header {
         @include product_private(eddo);
         @include product_private(isen);
         @include product_private(bikefit);
+        @include product_private(cycling-2dma);
       }
 
       &.square {
@@ -1960,6 +1961,7 @@ h3.collapse-header {
         @include product_private(eddo);
         @include product_private(isen);
         @include product_private(bikefit);
+        @include product_private(cycling-2dma);
       }
     }
   }
