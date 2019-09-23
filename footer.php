@@ -38,7 +38,7 @@
 							</div>
 							<div class="col-md-3 col-sm-3"><?php
 								echo '<p><strong>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</strong></p>';
-								echo '<p>' . get_page_full_link('bikefit', 'BikeFit') . '</p>'; ?>
+								echo '<p>' . get_page_full_link('cycling-2dma') . '</p>'; ?>
 							</div>
 							<div class="col-md-4 col-sm-4"><?php
 								echo '<p><strong>' . get_page_full_link('inertial-motion-capture', 'INERTIAL') . '</strong></p>';
