@@ -436,9 +436,6 @@ function get_products() {
 		'eddo' => array(
 			'family' => '3dma',
 		),
-		'bikefit' => array(
-			'family' => '2dma',
-		),
 		'cycling-2dma' => array(
 			'family' => '2dma',
 		),
