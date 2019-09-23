@@ -15,7 +15,7 @@ wp_enqueue_script('product-hovering');
         <h3>Video-based motion analysis systems</h3>
       </a>
       <div id="2dma-products" class="product-links"><?php
-        echo get_product_icon_link('bikefit');
+        echo get_product_icon_link('cycling-2dma');
       ?></div>
       <div id="current-2dma-product" class="product-name"></div>
     </div>
