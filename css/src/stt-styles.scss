@@ -9,7 +9,7 @@
 
   font-weight: 200;
 
-  color: color(gray);
+  color: color(black);
 
   @mixin header($name, $size, $size_tablet: $size, $size_mobile: $size_tablet) {
     #{$name} {
