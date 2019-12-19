@@ -435,7 +435,7 @@ function do_downloads_shortcode($atts) {
 
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
 			$table .= "<div class=\"$col_class col-xs-6 center\">";
-			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';
+			$table .= '<a href="' . $file['url'] . '" rel="nofollow">';
 			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded$extra_class\" src=\"$thumbnail_url\" height=\"128\"/></div>";
 			$table .= $file['title'];
 			$table .= '</a></div>';
@@ -466,11 +466,11 @@ function do_downloads_shortcode($atts) {
 
 			// NOFOLLOW: do not pass link juice for PDFs on sidebars
 			$table .= "<div class=\"col-md-3 center\">";
-			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';
+			$table .= '<a href="' . $file['url'] . '" rel="nofollow">';
 			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded$extra_class\" src=\"$thumbnail_url\" height=\"128\"/></div>";
 			$table .= '</a></div>';
 			$table .= "<div class=\"col-md-9 left\">";
-			$table .= '<a href="' . $file['file'] . '" style="font-weight:400" rel="nofollow">';
+			$table .= '<a href="' . $file['url'] . '" style="font-weight:400" rel="nofollow">';
 			$table .= $file['title'];
 			$table .= '</a>';
 			$table .= $file['abstract'];
@@ -490,7 +490,7 @@ function do_downloads_shortcode($atts) {
 	$list = array();
 	foreach ($downloads['files'] as $file) {
 		// NOFOLLOW: do not pass link juice for PDFs on sidebars
-		array_push($list, get_url_link($file['file'], $file['title'], true, true));
+		array_push($list, get_url_link($file['url'], $file['title'], true, true));
 	}
 
 	return "$title<p>" . implode($list, '</p><p>') . '</p>';
@@ -504,7 +504,7 @@ function do_all_downloads_shortcode() {
 			$path = $file['path'];
 			$fdate = date('M j, Y', filemtime($path));
 			$fsize = get_filesize_str($path);
-			$table .= "<tr><td><a href=\"{$file['file']}\">{$file['title']}</a></td><td>$fdate</td><td align=\"right\">$fsize</td></tr>";
+			$table .= "<tr><td><a href=\"{$file['url']}\">{$file['title']}</a></td><td>$fdate</td><td align=\"right\">$fsize</td></tr>";
 		}
 	}
 

@@ -194,7 +194,9 @@ function walk_downloads_cb(&$value, $key, $base) {
 	$download_file = "downloads/$base{$value['file']}";
 	$value['path'] = ABSPATH . $download_file;
 	$value['filename'] = $value['file'];
-	$value['file'] = my_get_url_for_path($download_file);
+	if (!array_key_exists('url', $value) || empty($value['url'])) {
+		$value['url'] = my_get_url_for_path($download_file);
+	}
 
 	$info = pathinfo($download_file);
 	$ext = $value['ext'] = strtolower($info['extension']);
