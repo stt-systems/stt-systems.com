@@ -391,7 +391,7 @@ function do_downloads_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
 		'title' => 'Downloads',
-		'type' => 'list', // list, gallery
+		'type' => 'list', // list, gallery, gallery-list
 		'index' => 'index',
 	), $atts, 'downloads'));
 	
@@ -441,6 +441,42 @@ function do_downloads_shortcode($atts) {
 			$table .= '</a></div>';
 		}
 		$table .= '</div>';
+
+		$download_all = '';
+		if (array_key_exists('zip', $downloads)) { // temporary disabled until writing permissions are clarified
+			$download_all = '<div>' . get_url_link($downloads['zip'], 'Download all (ZIP)', false) . '</div>';
+		}
+
+		return $table . $download_all;
+	}
+	
+	if ($type == 'gallery-list') {
+		$table = '';
+		foreach ($downloads['files'] as $file) {
+			$table .= '<div class="row compact style-downloads">';
+			$ext = $file['ext'];
+			$thumbnail_url = '';
+			$extra_class = '';
+			if (empty($file['thumbnail'])) { // if no thumbnail, choose an icon file
+				$thumbnail_url = get_file_icon_url($ext);
+			} else {
+				$thumbnail_url = $file['thumbnail'];
+				$extra_class = ' boxshadow';
+			}
+
+			// NOFOLLOW: do not pass link juice for PDFs on sidebars
+			$table .= "<div class=\"col-md-3 center\">";
+			$table .= '<a href="' . $file['file'] . '" rel="nofollow">';
+			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded$extra_class\" src=\"$thumbnail_url\" height=\"128\"/></div>";
+			$table .= '</a></div>';
+			$table .= "<div class=\"col-md-9 left\">";
+			$table .= '<a href="' . $file['file'] . '" style="font-weight:400" rel="nofollow">';
+			$table .= $file['title'];
+			$table .= '</a>';
+			$table .= $file['abstract'];
+			$table .= '</div>';
+			$table .= '</div>';
+		}
 
 		$download_all = '';
 		if (array_key_exists('zip', $downloads)) { // temporary disabled until writing permissions are clarified
