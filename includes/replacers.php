@@ -427,16 +427,7 @@ function do_downloads_shortcode($atts) {
 			$thumbnail_url = '';
 			$extra_class = '';
 			if (empty($file['thumbnail'])) { // if no thumbnail, choose an icon file
-				// Extension normalization
-				if ($ext == 'docx') $ext = 'doc';
-				if ($ext == 'xlsx') $ext = 'xls';
-				if ($ext == 'pptx') $ext = 'ppt';
-
-				$icon_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png";
-				if (!file_exists(ABSPATH . $icon_file)) { // use a generic icon if no extension-specific exists
-					$icon_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/file.png";
-				}
-				$thumbnail_url = my_get_url_for_path($icon_file);
+				$thumbnail_url = get_file_icon_url($ext);
 			} else {
 				$thumbnail_url = $file['thumbnail'];
 				$extra_class = ' boxshadow';

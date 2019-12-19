@@ -491,4 +491,18 @@ if (!function_exists('post_is_in_descendant_category')) {
 		return false;
 	}
 }
+
+function get_file_icon_url($ext) {
+	// Extension normalization
+	if ($ext == 'docx') $ext = 'doc';
+	if ($ext == 'xlsx') $ext = 'xls';
+	if ($ext == 'pptx') $ext = 'ppt';
+
+	$icon_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/$ext.png";
+	if (!file_exists(ABSPATH . $icon_file)) { // use a generic icon if no extension-specific exists
+		$icon_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/file.png";
+	}
+	
+	return my_get_url_for_path($icon_file);
+}
 ?>
