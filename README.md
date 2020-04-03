@@ -70,19 +70,24 @@ It is also possible to generate a single download link using just ```[download n
 ### Sample JSON (index.json)
 ```
 {
-	"files": [
-		{"file":"STT_Cycling3DMA_2016-E.pdf",
-			"title":"Brochure (English)"},
-		{"file":"STT_Cycling3DMA_2016-S.pdf",
-			"title":"Brochure (Spanish)"},
-		{"file":"STT_Cycling3DMA_report_es.pdf",
-			"title":"Sample report (Spanish)"},
-		{"file":"STT_Cycling3DMA_report_es.pdf",
-			"title":"Sample report (Spanish)"},
-		{"file":"STT_Cycling3DMA_Road_bike.pdf",
-			"title":"Road bike measurement report (English)"}
-		],
-  "zip":"all-reports.zip"
+  "files": [{
+      "file": "STT_Cycling3DMA_2016-E.pdf",
+      "title": "Brochure (English)"
+    }, {
+      "file": "STT_Cycling3DMA_2016-S.pdf",
+      "title": "Brochure (Spanish)"
+    }, {
+      "file": "STT_Cycling3DMA_report_es.pdf",
+      "title": "Sample report (Spanish)"
+    }, {
+      "file": "STT_Cycling3DMA_report_es.pdf",
+      "title": "Sample report (Spanish)"
+    }, {
+      "file": "STT_Cycling3DMA_Road_bike.pdf",
+      "title": "Road bike measurement report (English)"
+    }
+  ],
+  "zip": "all-reports.zip"
 }
 ```
 
