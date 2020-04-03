@@ -110,12 +110,12 @@ function enqueue_theme_css() {
 add_action('wp_enqueue_scripts', 'enqueue_theme_css');
 
 // Stylesheets used only by a subset of pages
-function stt_wp_enqueue_style() {
+function stt_wp_enqueue_styles() {
 	wp_register_style('stt-styles', get_template_directory_uri() . '/css/stt-styles.min.css', array(), null);
 	wp_register_style('columns', get_template_directory_uri() . '/css/columns.min.css', array(), null);
 	wp_register_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
 }
-add_action('wp_enqueue_scripts', 'stt_wp_enqueue_style');
+add_action('wp_enqueue_scripts', 'stt_wp_enqueue_styles');
 
 // Scripts required only when certain shortcodes are inkoved
 function stt_wp_enqueue_scripts() {
