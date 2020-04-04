@@ -93,6 +93,28 @@ It is also possible to generate a single download link using just ```[download n
 
 Each entry has a __file__ (containg the full filename), and a __title__.
 
+## Galleries
+
+Image galleries are shown as a row of thumbnails that are expanded on user clic. You can add a gallery using the `[gallery]` shortcode. Parameters are:
+  - __name__: name of the gallery.
+  
+The gallery must be located under `<uploads>/galleries/<name>`. Inside must be a JSON file `index.json` with the following structure:
+```
+{
+  "title": "Sample gallery",
+  "files": [{
+      "file": "wallpaper_1.jpg",
+      "title": "Wallpaper (1)"
+    }, {
+      "file": "wallpaper_2.jpg",
+      "title": "Wallpaper (2)"
+    }
+  ]
+}
+```
+
+Images must be located along the index file, and thumbnails are loaded from `-thumb` versions similar to the ones used in the downloads. The size of the thumbnail should be 128px for its shortest edge.
+
 ## Tables and lists
 
 Tables and list should be created using traditional HTML code.
