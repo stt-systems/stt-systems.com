@@ -190,8 +190,8 @@ function my_get_download_url($path) {
 	return my_get_url_for_path("downloads/$path");
 }
 
-function walk_downloads_cb(&$value, $key, $base) {
-	$download_file = "downloads/$base{$value['file']}";
+function walk_files_cb(&$value, $key, $base) {
+	$download_file = "$base{$value['file']}";
 	$value['path'] = ABSPATH . $download_file;
 	$value['filename'] = $value['file'];
 	if (!array_key_exists('url', $value) || empty($value['url'])) {
@@ -215,22 +215,31 @@ function walk_downloads_cb(&$value, $key, $base) {
 	}
 }
 
-function get_downloads($dir, $index_name) {
-	$path = ABSPATH . "downloads/$dir/$index_name";
+function get_files($base_dir, $dirname, $index_name) {
+	$dir = "$base_dir/$dirname";
+	$path = ABSPATH . "$dir/$index_name";
 	if (!file_exists($path)) return array('files' => array());
 
 	$fh = fopen($path, 'r');
 	$list_str = fread($fh, filesize($path));
 	fclose($fh);
 	$list = json_decode($list_str, true);
-	$list['base_dir'] = ABSPATH . "/downloads/$dir";
-	array_walk($list['files'], 'walk_downloads_cb', "$dir/");
+	$list['base_dir'] = ABSPATH . "/$dir";
+	array_walk($list['files'], 'walk_files_cb', "$dir/");
 
 	if (array_key_exists('zip', $list)) {
-		$list['zip'] = my_get_download_url($dir . '/' . $list['zip']);
+		$list['zip'] = my_get_download_url("$dir/" . $list['zip']);
 	}
 
 	return $list;
+}
+
+function get_gallery($name) {
+	return get_files('wp-content/uploads/galleries', $name, "index.json");
+}
+
+function get_downloads($dir, $index_name) {
+	return get_files('downloads', $dir, $index_name);
 }
 
 function get_downloads_area_list() {

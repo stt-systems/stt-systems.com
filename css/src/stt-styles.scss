@@ -63,6 +63,10 @@
       color: color(gray) !important;
     }
   }
+	
+	.indicator li:before {
+		visibility: hidden;
+	}
 }
 
 @mixin links_decoration_private($color, $hover_color: $color) {

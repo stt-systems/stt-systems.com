@@ -16,7 +16,7 @@ function stt_replace_excerpt($text, $raw_excerpt = '') {
 
 function stt_replace_content($content) {
 	$content = str_replace(']]>', ']]&gt;', $content);
-	$content = preg_replace_callback("#\[gallery:([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
+	$content = preg_replace_callback("#\[gallery name=([_a-zA-Z0-9/-]+)\]#", 'replace_gallery_cb', $content);
 
 	// Move the fullscreen galleries div outside the blog to avoid footer and header overlap it
 	// Additionally, each gallery div is associated to a set of images by the gallery's ID
@@ -266,32 +266,33 @@ function replace_gallery_snippet_cb($match) {
 	return '<div id="blueimp-gallery-' . $match[1] . '" class="blueimp-gallery blueimp-gallery-controls"><div class="slides"></div><a class="prev">&lsaquo;</a><a class="next">&rsaquo;</a><a class="close">&times;</a><ol class="indicator"></ol></div>';
 }
 
-function walk_gallery_cb(&$value, $key, $data) {
-	$path = get_upload_url($data['base'] . $value);
-	$thumb = get_upload_url($data['base'] . "thumb-$value");
-	$value = '<a href="' . $path . '" data-gallery="#blueimp-gallery-' . $data['gallery'] . '" class="thumb64" style="background-image:url(\'' . $thumb . '\');" data-thumbnail="' . $thumb . '"></a>';
-}
 function replace_gallery_cb($match) {
-	$gallery = $match[1];
-	$clean_name = str_replace('/', '-', $gallery);
-	$config_file = "galleries/$gallery/gallery.txt";
-	$title = '';
-	$walk_data = array('base' => "galleries/$gallery/", 'subtitles' => array(), 'gallery' => $clean_name);
-	$path = ABSPATH . "/images/$config_file";
-	if (file_exists($path)) {
-		$fh = fopen($path, 'r');
-		$config = json_decode(fread($fh, filesize($path)), true);
-		fclose($fh);
-		$title = '<p class="gallery-caption">' . $config['title'] . '</p>';
-		if (array_key_exists('images', $config)) {
-			$walk_data['subtitles'] = $config['images'];
-		}
-	}
-	$images = get_files_in_dir("galleries/$gallery", 'thumb-', array('txt'));
-	array_walk($images, 'walk_gallery_cb', $walk_data);
-	$gal_images = '<div id="links-' . $clean_name . '" style="text-align:center;" class="gallery">' . implode($images) . '</div>' . $title;
+	$gallery_name = $match[1];
+	
+	$gallery = get_gallery($gallery_name);
+	if (!count($gallery['files'])) return '';
 
-	return $gal_images . '[gallery_snippet-' . $clean_name . ']';
+	$title = '';
+	if (key_exists('title', $gallery) && !empty($gallery['title'])) {
+		$title = '<p class="gallery-caption">' . $gallery['title'] . '</p>';
+	}
+
+	$gal_images = '<div id="links-' . $gallery_name . '" style="text-align:center;" class="gallery">';
+	foreach ($gallery['files'] as $image) {
+		$thumbnail_url = '';
+		if (empty($image['thumbnail'])) { // if no thumbnail, choose an icon file
+			$thumbnail_url = $image['file'];
+		} else {
+			$thumbnail_url = $image['thumbnail'];
+		}
+
+		$gal_images .= '<a href="' . $image['url'] . '" data-gallery="#blueimp-gallery-' . $gallery_name . '" class="thumb64" style="background-image:url(\'' . $thumbnail_url . '\');" data-thumbnail="' . $thumbnail_url . '"></a>';
+	}
+	$gal_images .= '</div>' . $title;
+
+	wp_enqueue_script('gallery');
+
+	return $gal_images . '[gallery_snippet-' . $gallery_name . ']';
 }
 
 function walk_images_table_cb(&$value, $key, $base) {
