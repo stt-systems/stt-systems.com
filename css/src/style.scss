@@ -639,7 +639,7 @@ table:not(.clean):not(.shop_attributes) .narrow {
 
   .blog-post-body {
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 200;
     color: #000000;
   }
 
@@ -1163,7 +1163,7 @@ blockquote {
 .body-wrapper {
   padding-top: 0;
   padding-bottom: 0;
-  z-index: 0;
+  z-index: auto;
 }
 
 b {
@@ -1334,7 +1334,7 @@ time {
   float: right;
   padding: 0;
   height: 80px;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .navigation > li {

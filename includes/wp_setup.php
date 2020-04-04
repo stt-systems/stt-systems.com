@@ -114,13 +114,15 @@ function stt_wp_enqueue_styles() {
 	wp_register_style('stt-styles', get_template_directory_uri() . '/css/stt-styles.min.css', array(), null);
 	wp_register_style('columns', get_template_directory_uri() . '/css/columns.min.css', array(), null);
 	wp_register_style('front-page', get_template_directory_uri() . '/css/front-page.min.css');
+	wp_register_style('gallery', get_template_directory_uri() . '/css/blueimp-gallery.min.css');
 }
 add_action('wp_enqueue_scripts', 'stt_wp_enqueue_styles');
 
 // Scripts required only when certain shortcodes are inkoved
 function stt_wp_enqueue_scripts() {
 	wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), null);
-	wp_register_script('product-hovering', get_template_directory_uri() . '/js/product-hovering.min.js', array(), null);
+	wp_register_script('gallery', get_template_directory_uri() . '/js/jquery.blueimp-gallery.min.js', array('jquery'), null);
+	wp_register_script('product-hovering', get_template_directory_uri() . '/js/product-hovering.min.js', array('jquery'), null);
 	wp_register_script('defer-iframe', get_template_directory_uri() . '/js/defer-iframe.min.js', array(), null);
 }
 add_action('wp_enqueue_scripts', 'stt_wp_enqueue_scripts');
