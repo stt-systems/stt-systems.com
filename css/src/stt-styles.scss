@@ -7,14 +7,14 @@
     font-size: 18px;
   }
 
-  font-weight: 200;
+  font-weight: 400;
 
   color: color(black);
 
   @mixin header($name, $size, $size_tablet: $size, $size_mobile: $size_tablet) {
     #{$name} {
       font-size: #{$size}px;
-      font-weight: 300;
+      font-weight: 400;
       text-transform: none;
       padding-bottom: 10px;
 
