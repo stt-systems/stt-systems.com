@@ -291,6 +291,7 @@ function replace_gallery_cb($match) {
 	$gal_images .= '</div>' . $title;
 
 	wp_enqueue_script('gallery');
+	wp_enqueue_style('gallery');
 
 	return $gal_images . '[gallery_snippet-' . $gallery_name . ']';
 }
