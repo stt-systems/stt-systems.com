@@ -124,13 +124,14 @@ function stt_wp_enqueue_scripts() {
 	wp_register_script('gallery', get_template_directory_uri() . '/js/jquery.blueimp-gallery.min.js', array('jquery'), null);
 	wp_register_script('product-hovering', get_template_directory_uri() . '/js/product-hovering.min.js', array('jquery'), null);
 	wp_register_script('defer-iframe', get_template_directory_uri() . '/js/defer-iframe.min.js', array('jquery'), null);
-	wp_register_script('bootstrap', "//stackpath.bootstrapcdn.com/bootstrap/" . BOOTSTRAP_VERSION . "/js/bootstrap.min.js", array('jquery'), null);
-	wp_register_script('menu', get_template_directory_uri() . '/js/menu.min.js', array('jquery'), null);
-	wp_register_script('local-scroll', get_template_directory_uri() . '/js/jquery.localScroll.min.js', array('jquery'), null);
-	wp_register_script('scroll-to', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array('jquery'), null);
-	wp_register_script('unveil', get_template_directory_uri() . '/js/jquery.unveil.min.js', array('jquery'), null);
-	wp_register_script('links-index', get_template_directory_uri() . '/js/links-index.min.js', array('jquery'), null);
-	wp_register_script('match-height', "//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js", array('jquery'), null);
+  
+	wp_enqueue_script('bootstrap', "//stackpath.bootstrapcdn.com/bootstrap/" . BOOTSTRAP_VERSION . "/js/bootstrap.min.js", array('jquery'), null);
+	wp_enqueue_script('stt-menu', get_template_directory_uri() . '/js/menu.min.js', array('jquery'), null);
+	wp_enqueue_script('local-scroll', get_template_directory_uri() . '/js/jquery.localScroll.min.js', array('jquery'), null);
+	wp_enqueue_script('scroll-to', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array('jquery'), null);
+	wp_enqueue_script('unveil', get_template_directory_uri() . '/js/jquery.unveil.min.js', array('jquery'), null);
+	wp_enqueue_script('links-index', get_template_directory_uri() . '/js/links-index.min.js', array('jquery'), null);
+	wp_enqueue_script('match-height', "//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js", array('jquery'), null);
 }
 add_action('wp_enqueue_scripts', 'stt_wp_enqueue_scripts');
 

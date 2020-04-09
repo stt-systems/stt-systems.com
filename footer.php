@@ -125,16 +125,6 @@
 <script>window.addEventListener('load',function(){$('.banner').each(function(){var l=$(this);l.css('background-image','url("'+l.attr('data-src')+'")');l.find('img.spinner').remove();});});</script>
 <script>window.addEventListener('load',function(){if($('.col-extra').length)$('.col-extra').matchHeight();});</script>
 
-<?php
-wp_enqueue_script('bootstrap');
-wp_enqueue_script('menu');
-wp_enqueue_script('local-scroll');
-wp_enqueue_script('scroll-to');
-wp_enqueue_script('unveil');
-wp_enqueue_script('links-index');
-wp_enqueue_script('match-height');
-?>
-
 <link rel="stylesheet" property="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,400i" crossorigin="anonymous"/>
 <link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/theme-menu.min.css', false); ?>"/>
 <link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/responsive.min.css', false); ?>"/>
