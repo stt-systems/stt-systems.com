@@ -181,12 +181,15 @@ function do_email_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'to' => '',
 		'title' => '',
+    'link' => 'true',
 	), $atts, 'email'));
 
 	if (strpos($to, '@') === false) {
 		$to .= '@stt-systems.com';
 	}
-	
+
+	if ($link == 'false') return $to;
+
 	$onclick = '';
 	if ($to == 'info@stt-systems.com') {
 		$onclick = " onclick=\"return gtag_report_email_conversion('$to');\"";
@@ -195,7 +198,7 @@ function do_email_shortcode($atts) {
 	if ($title == '') {
 		$title = $to;
 	}
-		
+  
 	return "<a$onclick href=\"mailto:$to\">$title</a>";
 }
 
