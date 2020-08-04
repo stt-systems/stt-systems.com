@@ -475,7 +475,7 @@ function do_downloads_shortcode($atts) {
 			$table .= "<div class=\"image\"><img class=\"img img-responsive rounded$extra_class\" src=\"$thumbnail_url\" height=\"128\"/></div>";
 			$table .= '</a></div>';
 			$table .= "<div class=\"col-md-9 left\">";
-			$table .= '<a href="' . $file['url'] . '" style="font-weight:400" rel="nofollow">';
+			$table .= '<a href="' . $file['url'] . '" style="font-weight:600" rel="nofollow">';
 			$table .= $file['title'];
 			$table .= '</a>';
 			$table .= $file['abstract'];
