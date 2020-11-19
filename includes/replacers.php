@@ -732,7 +732,7 @@ function do_distributor_shortcode($atts, $content = null) {
 	$content = do_shortcode($content);
 
 	$logo_url = get_upload_url("$logo");
-	$logo_img = "<img src=\"$logo_url\" alt=\"$name\" width=\"90%\"/>";
+	$logo_img = "<img src=\"$logo_url\" alt=\"$name\"/>";
 
 	if (!empty($url)) {
 		$name = get_url_link($url, $name);
