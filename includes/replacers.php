@@ -202,6 +202,16 @@ function do_email_shortcode($atts) {
 	return "<a$onclick href=\"mailto:$to\">$title</a>";
 }
 
+function do_phone_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'to' => '',
+	), $atts, 'phone'));
+
+	$href_to = preg_replace("#[\+ \-\(\)]+#", "", $to);
+
+	return "<a href=\"tel:$href_to\">$to</a>";
+}
+
 function do_image_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
@@ -892,6 +902,7 @@ function add_stt_shortcodes() {
 	add_shortcode('include',           'do_include_shortcode');
 	add_shortcode('link',              'do_link_shortcode');
 	add_shortcode('email',             'do_email_shortcode');
+	add_shortcode('phone',             'do_phone_shortcode');
 	add_shortcode('image',             'do_image_shortcode');
 	add_shortcode('video',             'do_video_shortcode');
 	add_shortcode('quote',             'do_quote_shortcode');
