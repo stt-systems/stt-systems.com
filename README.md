@@ -51,7 +51,7 @@ Links to external URLs are similar `[link url=<url> title="Text to use for link"
 
 A link to an e-mail can be done using `[email to=<account> title="Optional title"]`. If title is empty, the e-mail address will be used instead. For example, `[email to=info]` will generate an e-mail link to info@stt-systems.com. If an _at symbol_ (@) is found in the `to` parameter, then the _@stt-systems.com_ domain is omitted and the e-mail address is used as provided, so `[email to=stt@domain.com]` will generate an e-mail link to stt@domain.com.
 
-Similarly, you can use `[phone to=<number>]` to generate a link to place a call.
+Similarly, you can use `[phone to=<number>]` to generate a link to place a call (omit the `to` parameter to use main STT's phone number: `[phone]`).
 
 ## Downloads
 

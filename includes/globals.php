@@ -513,7 +513,17 @@ function get_file_icon_url($ext) {
 	if (!file_exists(ABSPATH . $icon_file)) { // use a generic icon if no extension-specific exists
 		$icon_file = WL_TEMPLATE_LOCAL_DIR . "/images/file-types/file.png";
 	}
-	
+
 	return my_get_url_for_path($icon_file);
+}
+
+function get_phone_link($phone) {
+	if ($phone == '') {
+		$phone = "(+34) 943 31 77 77";
+	}
+
+	$to = preg_replace("#[\+ \-\(\)]+#", "", $phone);
+
+	return "<a href=\"tel:$to\">$phone</a>";
 }
 ?>

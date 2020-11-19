@@ -206,10 +206,8 @@ function do_phone_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'to' => '',
 	), $atts, 'phone'));
-
-	$href_to = preg_replace("#[\+ \-\(\)]+#", "", $to);
-
-	return "<a href=\"tel:$href_to\">$to</a>";
+  
+  return get_phone_link($to);
 }
 
 function do_image_shortcode($atts) {
