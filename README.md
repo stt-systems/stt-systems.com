@@ -14,7 +14,7 @@ Basic row
 [/row]
 ```
 
-Use ```[row] ... [/row]``` to enclose a region and ```[column] ... [/column]```to create a block.
+Use `[row] ... [/row]` to enclose a region and `[column] ... [/column]`to create a block.
 
   - __[row]__
     - __id__: id used to identify the region for linking purposes
@@ -26,48 +26,48 @@ Use ```[row] ... [/row]``` to enclose a region and ```[column] ... [/column]```t
     - __align__: center, left (defaut), right.
     - __image__: name of the image (uploaded to WP). In addition, indicate the __height__ in pixels or the column won't be able to show the image correctly. A column with background cannot have any other content (yet).
 
-It is possible to create an index of regions, using the ```inner-links``` class and the rows' id (see example below).
+It is possible to create an index of regions, using the `inner-links` class and the rows' id (see example below).
 
 ## Images
 
-Use the ```[image]``` shortcode to insert images uploaded to the WP site using the regular media tool.
+Use the `[image]` shortcode to insert images uploaded to the WP site using the regular media tool.
   - __name__: filename (can include a subdirectory), no spaces.
   - __caption__: caption to be included with the image (no caption by default).
-  - __shadow__: adds a light shadow around the image (added by default). To remove shadow: ```[image ... shadow=no]```.
+  - __shadow__: adds a light shadow around the image (added by default). To remove shadow: `[image ... shadow=no]`.
   - __icon__: if set, indicates the size of the image in icon mode (fixes size to _icon_ x _icon_, removes shadow and adds an extra bottom space).
   - __alt__: the alt text, used when images cannot be displayed, for accessibility and by search engines. If empty (default value) then uses caption (if any) or image filename at last instance.
   - __lazy__: image will be loaded only when the user scrolls up to it. During load, an animated GIF is shown. Use with big images to accelerate initial page load.
   - __page__: the image is a link to a page, indicate with this attribute the slug of the page. Anchors can be added if needed (see _links_ below).
   - __url__: the image is a link, indicate here the full URL.
 
-There is a special way to insert a side-to-side image, using the ```[banner]``` shortcode. It will adjust correctly to different devices. Banners will be rendered using 600px height in desktop.
+There is a special way to insert a side-to-side image, using the `[banner]` shortcode. It will adjust correctly to different devices. Banners will be rendered using 600px height in desktop.
   - __image__: name of the image to use as banner.
 
 ## Links
 
-Links to pages within this site can be done using ```[link page=<page_name> title="Optional title"]```. If title is not provided, the page title is used. An anchor within the page can be used, for example ```[link page=isen#realtime]```.
+Links to pages within this site can be done using `[link page=<page_name> title="Optional title"]`. If title is not provided, the page title is used. An anchor within the page can be used, for example `[link page=isen#realtime]`.
 
-Links to external URLs are similar ```[link url=<url> title="Text to use for link"]```. In this case if the title is empty, the URL will be used.
+Links to external URLs are similar `[link url=<url> title="Text to use for link"]`. In this case if the title is empty, the URL will be used.
 
-A link to an e-mail can be done using ```[email to=<account> title="Optional title"]```. If title is empty, the e-mail address will be used instead. For example, ```[email to=info]``` will generate an e-mail link to info@stt-systems.com. If an _at symbol_ (@) is found in the ```to``` parameter, then the _@stt-systems.com_ domain is omitted and the e-mail address is used as provided, so ```[email to=stt@domain.com]``` will generate an e-mail link to stt@domain.com.
+A link to an e-mail can be done using `[email to=<account> title="Optional title"]`. If title is empty, the e-mail address will be used instead. For example, `[email to=info]` will generate an e-mail link to info@stt-systems.com. If an _at symbol_ (@) is found in the `to` parameter, then the _@stt-systems.com_ domain is omitted and the e-mail address is used as provided, so `[email to=stt@domain.com]` will generate an e-mail link to stt@domain.com.
 
 Similarly, you can use `[phone to=<number>]` to generate a link to place a call.
 
 ## Downloads
 
-It is possible to generate automatic content based on file lists. In this case, files are stored in subdirectories of ```<page_url>/downloads/``` and have a JSON file describing its content.
+It is possible to generate automatic content based on file lists. In this case, files are stored in subdirectories of `<page_url>/downloads/` and have a JSON file describing its content.
 
-The download list is included in the page using the ```[downloads]``` shortcode. Options:
+The download list is included in the page using the `[downloads]` shortcode. Options:
   - __name__: name of the directory within the downloads folder.
   - __title__: title for the downloads list (default _Downloads_).
-  - __type__: list (default), gallery. The list will generate a list of links with the title of each file. The gallery will generate a grid of icons (based on file extension), galleries has no title. It is possible to indicate a preview image for a file, to do so just create a JPEG or PNG image (245px as largest edge) and with the same name but ```-thumb.png``` or ```-thumb.jpg``` as suffix: thumbnail for ```A.pdf``` should be named ```A-thumb.jpg``` (images can also have a thumbnail, avoiding the load of the full-size image on the page). You can use the icons in ```<STT-theme>/images/file-types``` as a template. PNG files will be used if both PNG and JPEG files are used.
-  - __index__: basename (without extension) of the JSON file with the files to be listed. If omitted, _index_ will be used (so ```index.json``` will be loaded). It allows having multiple views of the same files (subsets).
+  - __type__: list (default), gallery. The list will generate a list of links with the title of each file. The gallery will generate a grid of icons (based on file extension), galleries has no title. It is possible to indicate a preview image for a file, to do so just create a JPEG or PNG image (245px as largest edge) and with the same name but `-thumb.png` or `-thumb.jpg` as suffix: thumbnail for `A.pdf` should be named `A-thumb.jpg` (images can also have a thumbnail, avoiding the load of the full-size image on the page). You can use the icons in `<STT-theme>/images/file-types` as a template. PNG files will be used if both PNG and JPEG files are used.
+  - __index__: basename (without extension) of the JSON file with the files to be listed. If omitted, _index_ will be used (so `index.json` will be loaded). It allows having multiple views of the same files (subsets).
 
-If the JSON file contains a ```"zip":"filename.zip"``` entry, it will generate a _Download all (ZIP)_ link at the end of the gallery.
+If the JSON file contains a `"zip":"filename.zip"` entry, it will generate a _Download all (ZIP)_ link at the end of the gallery.
 
-Example: ```[downloads name=brochure type=gallery index=spanish]```.
+Example: `[downloads name=brochure type=gallery index=spanish]`.
 
-It is also possible to generate a single download link using just ```[download name=<path_relative_to_downloads>]```.
+It is also possible to generate a single download link using just `[download name=<path_relative_to_downloads>]`.
 
 ### Sample JSON (index.json)
 ```
@@ -121,12 +121,12 @@ Images must be located along the index file, and thumbnails are loaded from `-th
 
 Tables and list should be created using traditional HTML code.
 
-Tables should be wrapped using the ```[table] ... [/table]``` shortcode, this will allow the table to bahave correctly in mobile devices. The shortcode admits:
+Tables should be wrapped using the `[table] ... [/table]` shortcode, this will allow the table to bahave correctly in mobile devices. The shortcode admits:
   - __clean__: special table with less decoration (yes, _no_)
   - __responsive__: mobile, _empty_ (default). Toggles table to single column in mobile devices
   - __width__: width of the table (usually not required). Default: 100%
 
-It is possible to change the bullet color of an unordered list from style to gray, using the class ```light```. Example: ```<li class="light">Vertical jump/CMJ (*)</li>```.
+It is possible to change the bullet color of an unordered list from style to gray, using the class `light`. Example: `<li class="light">Vertical jump/CMJ (*)</li>`.
 
 ## Other shortcodes and HTML classes
 
@@ -169,7 +169,7 @@ It is possible to change the bullet color of an unordered list from style to gra
     - __detalils__: set to show details like publication date and tags
     - __sortby__: how posts are sorted, using date (descendant), title (ascendant) or custom field (ascendant, use field name) (default: date)
 
-By default, paragraphs add a bottom padding to separate from following paragraph. Sometimes this is not the desired behaviour, so all lines must be kept closer (as with lists, but without the bullet). To do so just use the ```[compact-paragraph] ... [/compact-paragraph]``` shortcode:
+By default, paragraphs add a bottom padding to separate from following paragraph. Sometimes this is not the desired behaviour, so all lines must be kept closer (as with lists, but without the bullet). To do so just use the `[compact-paragraph] ... [/compact-paragraph]` shortcode:
 
 ```
 [compact-paragraph]
