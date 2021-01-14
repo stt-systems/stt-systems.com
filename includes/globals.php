@@ -521,9 +521,11 @@ function get_phone_link($phone) {
 	if ($phone == '') {
 		$phone = "(+34) 943 31 77 77";
 	}
+  
+  return $phone;
 
-	$to = preg_replace("#[ \-\(\)]+#", "", $phone);
+	//$to = preg_replace("#[ \-\(\)]+#", "", $phone);
 
-	return "<a href=\"tel:$to\">$phone</a>";
+	//return "<a href=\"tel:$to\">$phone</a>";
 }
 ?>
