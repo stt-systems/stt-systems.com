@@ -519,7 +519,7 @@ function get_file_icon_url($ext) {
 
 function get_phone_link($phone) {
 	if ($phone == '') {
-		$phone = "0034 943 31 77 77";
+		$phone = "+34 943 31 77 77";
 	}
   
   return $phone;
