@@ -106,23 +106,7 @@ function schema_head() {
 		"@context": "https://schema.org",
 		"@type": "Organization",
 		"url": "${URL}",
-		"logo": "${URL}/images/logos/logo@2x.png",
-		"contactPoint": [{
-			"@type": "ContactPoint",
-			"telephone": "(+34) 943 31 77 77",
-			"contactType": "customer service",
-			"availableLanguage": ["English", "Spanish"]
-		},{
-			"@type": "ContactPoint",
-			"telephone": "(+34) 943 31 77 77",
-			"contactType": "sales",
-			"availableLanguage": ["English", "Spanish"]
-		},{
-			"@type": "ContactPoint",
-			"telephone": "(+34) 943 31 77 77",
-			"contactType": "technical support",
-			"availableLanguage": ["English", "Spanish"]
-		}]
+		"logo": "${URL}/images/logos/logo@2x.png"
 	}
 	]'));
 
