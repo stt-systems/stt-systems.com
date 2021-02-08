@@ -164,7 +164,11 @@ function get_facebook_video($name, $caption = '', $size = '') {
 }
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
-	$url = get_upload_url($name);
+	if (str_starts_with($name, "http")) {
+		$url = $name;
+	} else {
+		$name = get_upload_url($name);
+	}
 	$code = "url($url)";
 
 	if ($alpha > 0) {

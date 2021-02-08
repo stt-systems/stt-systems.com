@@ -20,7 +20,7 @@ wp_enqueue_script('product-hovering');
       <div id="current-2dma-product" class="product-name"></div>
     </div>
     <div class="col-md-2"></div>
-    <div class="panel-bg" style="background-image:<?php echo css_darken_image("backgrounds/2dma.jpg", 0);?>"></div>
+    <div class="panel-bg" style="background-image:<?php echo css_darken_image("https://github.com/stt-systems/assets/raw/main/web-backgrounds/2dma.jpg", 0);?>"></div>
   </div>
   <div id="panel-3dma" class="col-md-4 col-xs-12 panel">
     <div class="col-md-2"></div>
@@ -41,7 +41,7 @@ wp_enqueue_script('product-hovering');
       <div id="current-3dma-product" class="product-name"></div>
     </div>
     <div class="col-md-2"></div>
-    <div class="panel-bg" style="background-image:<?php echo css_darken_image("backgrounds/3dma.jpg", 0);?>"></div>
+    <div class="panel-bg" style="background-image:<?php echo css_darken_image("https://github.com/stt-systems/assets/raw/main/web-backgrounds/3dma.jpg", 0);?>"></div>
   </div>
   <div id="panel-inertial" class="col-md-4 col-xs-12 panel">
     <div class="col-md-2"></div>
@@ -56,7 +56,7 @@ wp_enqueue_script('product-hovering');
       <div id="current-inertial-product" class="product-name"></div>
     </div>
     <div class="col-md-2"></div>
-    <div class="panel-bg" style="background-image:<?php echo css_darken_image("backgrounds/inertial.jpg", 0);?>"></div>
+    <div class="panel-bg" style="background-image:<?php echo css_darken_image("https://github.com/stt-systems/assets/raw/main/web-backgrounds/inertial.jpg", 0);?>"></div>
   </div>
 </div>
 </div>
