@@ -103,9 +103,18 @@ function my_get_url_for_path($path, $add_timestamp = true) {
 	return site_url($path);
 }
 
+function starts_with($haystack, $needle) {
+	$length = strlen($needle);
+	return substr($haystack, 0, $length) === $needle;
+}
+
 function get_upload_url($name) {
-	$upload_dir = wp_upload_dir();
-	$url = $upload_dir['baseurl'] . "/$name";
+	if (starts_with($name, "http")) {
+		$url = $name;
+	} else {
+		$upload_dir = wp_upload_dir();
+		$url = $upload_dir['baseurl'] . "/$name";
+	}
 
 	if (is_ssl()) {
 		$url = str_replace('http://', 'https://', $url);
@@ -164,11 +173,7 @@ function get_facebook_video($name, $caption = '', $size = '') {
 }
 
 function css_darken_image($name, $alpha=0.55, $color='0, 0, 0') {
-	if (str_starts_with($name, "http")) {
-		$url = $name;
-	} else {
-		$name = get_upload_url($name);
-	}
+	$url = get_upload_url($name);
 	$code = "url($url)";
 
 	if ($alpha > 0) {
