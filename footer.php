@@ -4,7 +4,7 @@
 			<div class="footer-wrapper">
 				<div class="row">
 				<div class="col-md-2 col-sm-2 footer-col footer-logo-col">
-					<img src="<?php echo get_upload_url('logos/logo-footer.png', false); ?>" class="footer-logo" height="171" alt="STT's logo"/>
+					<img src="<?php echo get_upload_url('https://github.com/stt-systems/assets/raw/main/logos/logo-footer.png', false); ?>" class="footer-logo" height="171" alt="STT's logo"/>
 				</div>
 				<div class="col-md-2 col-sm-3 footer-col">
 					<div class="footer-title"><?php echo get_page_full_link('contact-us', 'Contact', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
