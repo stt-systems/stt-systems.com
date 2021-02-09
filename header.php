@@ -80,7 +80,7 @@ wp_enqueue_script('jquery');
 			} else { ?>
 				<a class="navbar-brand" href="<?php echo home_url('/'); ?>"><?php
 			} ?>
-				<img src="<?php echo get_upload_url('logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
+				<img src="<?php echo get_upload_url('https://raw.githubusercontent.com/stt-systems/assets/main/logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
 			</a>
 		</div>
 		<?php print_area_name(); ?>
