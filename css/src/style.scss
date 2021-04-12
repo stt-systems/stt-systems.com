@@ -2055,8 +2055,14 @@ div.row .distributor {
   }
 
   .logo {
-    display: flex;
-    align-items: center;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a {
+      text-align: center;
+    }
   }
 
   img {
