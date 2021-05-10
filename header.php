@@ -72,7 +72,6 @@ wp_enqueue_script('jquery');
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 </head>
 <body <?php body_class(); ?> >
-<!--
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header pull-left"><?php
@@ -104,8 +103,7 @@ wp_enqueue_script('jquery');
 		</div>
 	</div>
 </nav>
--->
-
+<!--
 <nav>
 	<div class="wrapper">
 	    <div class="logo">
@@ -204,4 +202,5 @@ wp_enqueue_script('jquery');
 
 	</div>
 </nav>
+-->
 
