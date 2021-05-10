@@ -2126,3 +2126,346 @@ div.row .distributor {
     font-size: 16px;
   }
 }
+
+//Nuevo MENU
+nav {
+    background: #F7F7F7;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    height: 85px;
+    line-height: 85px;
+}
+
+nav .wrapper {
+    position: relative;
+    max-width: 1500px;
+    padding: 0 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper .nav-links {
+    display: inline-flex;
+}
+
+.wrapper .logo a {
+    color: black;
+    /*font-size: 27px;*/
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-links li a {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    background: #F2F2F3;
+}
+
+.nav-links .drop-menu {
+    background: #F7F7F7;
+    width: 185px;
+    top: 85px;
+    line-height: 45px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box {
+    top: 85px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+}
+
+.drop-menu li a {
+    width: 100%;
+    display: block;
+    padding: 0 0 15px 15px;
+    font-weight: 400;
+    border-radius: 0px;
+}
+
+.mega-box {
+    position: absolute;
+    top: 85px;
+    background: #F7F7F7;
+    width: 100%;
+    left: 0;
+    padding: 0 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mega-box .content {
+    background: #F7F7F7;
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.content .row {
+    width: calc(25% - 30px);
+    padding: 2rem;
+    line-height: 45px;
+}
+
+.content .row header {
+    line-height: 25px;
+}
+
+
+
+.content .row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content .row header {
+    color: black;
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+.content .row .mega-links {
+    margin-left: -40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.09)
+}
+
+.content .row:nth-child(1),
+.content .row:nth-child(2) {
+    border-left: 0px;
+}
+
+.content .row .mega-links li {
+    padding: 0 20px;
+}
+
+.content .row .mega-links li a {
+    padding: 0 20px;
+    color: black;
+    font-size: 13px;
+    display: block;
+}
+
+.content .row .mega-links li a:hover {
+    color: black;
+}
+
+.nav-links .mobile-item {
+    display: none;
+}
+
+.wrapper input,
+.mobile-item {
+    display: none;
+}
+
+.wrapper .btn {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.wrapper .btn.cancel-btn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+label img {
+    width: 20px;
+}
+
+@media screen and (max-width:985px) {
+    .wrapper .btn {
+        display: block;
+    }
+    nav .wrapper {
+        position: relative;
+        max-width: 1250px;
+        padding: 0 30px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .wrapper .nav-links {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 350px;
+        background: #F7F7F7;
+        display: block;
+        top: 0;
+        left: -100%;
+        line-height: 50px;
+        padding: 50px 10px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        overflow-y: auto;
+    }
+
+    #menu-btn:checked ~ .nav-links {
+        left: 0%;
+    }
+
+    #menu-btn:checked ~ .btn.menu-btn {
+        display: none;
+    }
+
+    .nav-links::-webkit-scrollbar{
+        width: 0px;
+    }
+
+    .wrapper .nav-links li {
+        margin: 15px 10px;
+    }
+
+    .wrapper .nav-links li a {
+        padding: 0 20px;
+        display: block;
+        font-size: 20px;
+    }
+
+    .wrapper .logo a {
+        color: black;
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .nav-links li a {
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 9px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .nav-links li a:hover {
+        background: #F2F2F3;
+    }
+
+    .nav-links .drop-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        top: 85px;
+        padding-left: 20px;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    #showDrop1:checked~.drop-menu,
+    #showDrop2:checked~.drop-menu,
+    #showDrop3:checked~.drop-menu,
+    #showMega:checked~.mega-box {
+        max-height: 100%;
+    }
+
+    .nav-links .drop-menu li {
+        margin: 0;
+    }
+
+    .nav-links li:hover .drop-menu,
+    .nav-links li:hover .mega-box {
+        top: 85px;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links .drop-menu li a {
+        font-size: 14px;
+        border-radius: 0px;
+    }
+
+
+    .desktop-item {
+        display: none !important;
+    }
+
+
+    .nav-links .mobile-item {
+        display: block;
+        font-size: 20px;
+        color: black;
+        font-weight: 500;
+        padding-left: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links .mobile-item:hover {
+        background: #F2F2F3;
+    }
+
+    .mega-box {
+        position: static;
+        top: 85px;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        padding: 0 20px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .mega-box .content {
+        background: #F7F7F7;
+        flex-direction: column;
+        padding: 20px 20px 0 20px;
+    }
+
+    .mega-box .content .row {
+        width: 100%;
+        margin-bottom: 15px;
+        border-top: 1px solid rgba (255, 255, 255, 0.08);
+    }
+
+    .mega-box .content .row:nth-child(1),
+    .mega-box .content .row:nth-child(2) {
+        border-top: 0px;
+    }
+
+    .mega-box .content .row .mega-links {
+        border-left: 0px;
+        padding-left: 15px;
+    }
+
+    .mega-box .content .row .mega-links li {
+        margin: 0;
+    }
+
+    .mega-box .content .row header {
+        font-size: 16px;
+    }
+
+    .content .row {
+        padding: 0;
+    }
+}
