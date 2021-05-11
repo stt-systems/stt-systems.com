@@ -1,0 +1,134 @@
+﻿#izqTel {
+    margin-right: 5px;
+}
+
+#derechaCont {
+    margin-left: 5px;
+}
+
+#contacto-permanente {
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+#contacto-permanente svg {
+    width: 1.8rem;
+    margin-right: 0;
+}
+
+#contacto-permanente a {
+    display: block;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.d-none {
+    display: none!important;
+}
+
+#contacto-permanente div {
+    width: inherit;
+    background-color: #0069aa;
+    color: white;
+    padding: 1rem;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    right: unset;
+    border-top: white;
+    justify-content: center;
+}
+
+#contacto-permanente div:hover {
+    right: 0;
+    background-color: white;
+    color: #0069aa;
+    border-color: #0069aa;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+*,
+ ::after,
+ ::before {
+    box-sizing: border-box;
+}
+
+#contacto-permanente div:hover {
+    right: 0;
+    background-color: white;
+    border: #0069aa 1px solid;
+}
+
+@media (min-width: 576px) {
+    #contacto-permanente {
+        position: fixed;
+        z-index: 999;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    #contacto-permanente div:first-child {
+        border-right: none;
+    }
+    #contacto-permanente div svg {
+        margin-right: 0.6rem;
+        width: 1.5rem;
+        transition: 0.2s ease-in-out;
+    }
+    #contacto-permanente {
+        position: fixed;
+        right: 0;
+        bottom: 50%;
+        transform: translateY(50%);
+        overflow: hidden;
+        left: unset;
+        width: unset;
+        flex-direction: column;
+    }
+    #contacto-permanente div {
+        padding: 0px;
+        background-color: #0069aa;
+        color: white;
+        border-radius: 0;
+        margin: 0.2rem 0;
+        border: none;
+        border-right: 0;
+        transition: 0.2s ease-in-out;
+        right: -7rem;
+        border-radius: 10px;
+    }
+    #contacto-permanente a {
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.5rem;
+    }
+    #contacto-permanente a:hover {
+        color: #0069aa;
+    }
+    .d-sm-block {
+        display: block!important;
+    }
+}
