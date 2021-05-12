@@ -528,13 +528,19 @@ function get_file_icon_url($ext) {
 
 function get_phone_link($phone) {
 	if ($phone == '') {
-		$phone = "+34 943 31 77 77";
+		/* 
+			Modificado por Caronte Studio - ggp
+			$phone = "+34 943 31 77 77";
+		*/
+		$phone = "<a href='tel:+34943317777'>+34 943 31 77 77</a>";
 	}
-  
   return $phone;
-
-	//$to = preg_replace("#[ \-\(\)]+#", "", $phone);
-
-	//return "<a href=\"tel:$to\">$phone</a>";
+}
+/* Función get_email_link creada por Caronte Studio - ggp */
+function get_email_link($email) {
+	if ($email == '') {
+		$email = "<a href='mailto:info@stt-systems.com'>info@stt-systems.com</a>";
+	}
+  return $email;
 }
 ?>
