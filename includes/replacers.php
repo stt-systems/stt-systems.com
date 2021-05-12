@@ -190,16 +190,22 @@ function do_email_shortcode($atts) {
 
 	if ($link == 'false') return $to;
 
-	$onclick = '';
-	if ($to == 'info@stt-systems.com') {
-		$onclick = " onclick=\"return gtag_report_email_conversion('$to');\"";
-	}
+	/* 
+		Modificado por Caronte Studio - ggp
+		$onclick = '';
+		if ($to == 'info@stt-systems.com') {
+			$onclick = " onclick=\"return gtag_report_email_conversion('$to');\"";
+		}
+	*/
 
 	if ($title == '') {
 		$title = $to;
 	}
-  
-	return "<a$onclick href=\"mailto:$to\">$title</a>";
+  	/* 
+		Modificado por Caronte Studio - ggp
+		return "<a$onclick href=\"mailto:$to\">$title</a$onclick>";
+	*/
+	return "<a href=\"mailto:$to\">$title</a>";
 }
 
 function do_phone_shortcode($atts) {
