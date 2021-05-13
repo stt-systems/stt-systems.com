@@ -72,6 +72,143 @@ wp_enqueue_script('jquery');
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 </head>
 <body <?php body_class(); ?> >
+<nav id="new-navbar">
+        <div class="wrapper">
+            <div class="logo">
+                <a href="https://www.stt-systems.com/"><img src="/wp-content/themes/STT/images/logo-stt.png" alt="STT Systems"></a>
+            </div>
+            <input type="radio" name="slide" id="menu-btn">
+            <input type="radio" name="slide" id="cancel-btn">
+            <ul class="nav-links">
+                <label for="cancel-btn" class="btn cancel-btn"><img src="/wp-content/themes/STT/images/times-solid.svg" alt="STT Systems"></label>
+                <li>
+                    <a href="#" class="desktop-item">Motion Analysis</a>
+                    <input type="checkbox" id="showMega">
+                    <label for="showMega" class="mobile-item">Motion Analysis</label>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <header>3D Optical Motion Capture</header>
+                                <ul class="mega-links">
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/">3DMA
+                                            Suite</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/sports-3dma/">Sports
+                                            3DMA</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/cycling-3dma/">Cycling
+                                            3DMA</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/golf-3dma/">Golf
+                                            3DMA</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/clinical-3dma/">Clinical
+                                            3DMA</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/running-3dma/">Running
+                                            3DMA</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/human-3dma/">Human
+                                            3DMA</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/eddo/">EDDO
+                                            Biomechanics</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>2D Optical Motion Capture</header>
+                                <ul class="mega-links">
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/">2DMA
+                                            Suite</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/cycling-2dma/">Cycling
+                                            2DMA</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Inertial Motion Capture</header>
+                                <ul class="mega-links">
+                                    <li><a href="https://www.stt-systems.com/motion-analysis/inertial-motion-capture/">Inertial
+                                            Suite</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/inertial-motion-capture/isen/">Isen</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Support</header>
+                                <ul class="mega-links">
+                                    <li><a href="https://www.stt-systems.com/motion-analysis/support/contact-support/">Contact
+                                            Support</a></li>
+                                    <li><a href="https://www.stt-systems.com/motion-analysis/faq/">FAQ</a></li>
+                                    <li><a href="https://www.stt-systems.com/motion-analysis/support/support-plans/">Support
+                                            Plans</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Downloads</header>
+                                <ul class="mega-links">
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/">Software
+                                            Downloads</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/downloads/products/product-info/">Brochures</a>
+                                    </li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/">Marketing
+                                            Resources</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/downloads/technical-documents/reference-publications/">Reference
+                                            Publications</a></li>
+                                    <li><a
+                                            href="https://www.stt-systems.com/motion-analysis/downloads/technical-documents/whitepapers/">Whitepapers</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="desktop-item">Industry 4.0</a>
+                    <input type="checkbox" id="showDrop1">
+                    <label for="showDrop1" class="mobile-item">Industry 4.0</label>
+                    <ul class="drop-menu">
+                        <li><a href="https://www.stt-systems.com/industry/machine-vision/">Machine Vision</a></li>
+                        <li><a href="https://www.stt-systems.com/industry/product-configurators/">Product
+                                Configurators</a></li>
+                        <li><a href="https://www.stt-systems.com/industry/rdi/">R+D+I</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="desktop-item">About</a>
+                    <input type="checkbox" id="showDrop2">
+                    <label for="showDrop2" class="mobile-item">About</label>
+                    <ul class="drop-menu">
+                        <li><a href="https://www.stt-systems.com/contact/about-stt/?menu=motion-analysis">The
+                                company</a></li>
+                        <li><a href="https://www.stt-systems.com/motion-analysis/distributors/">Distributors</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.stt-systems.com/motion-analysis/blog/">Blog</a></li>
+                <li>
+                    <a href="#" class="desktop-item">Contact</a>
+                    <input type="checkbox" id="showDrop3">
+                    <label for="showDrop3" class="mobile-item">Contact</label>
+                    <ul class="drop-menu">
+                        <li><a href="https://www.stt-systems.com/contact/contact-us/">Contact us</a></li>
+                        <li><a href="https://www.stt-systems.com/contact/careers/">Careers</a></li>
+                    </ul>
+                </li>
+                <li id="enlace-tienda"><a href="https://store.stt-systems.com" target="_blank">Store</a></li>
+            </ul>
+            <label for="menu-btn" class="btn menu-btn"><img src="/wp-content/themes/STT/images/bars-solid.svg" alt="STT Systems"></label>
+
+        </div>
+
+    </nav>
+<!--
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header pull-left"><?php
@@ -103,104 +240,6 @@ wp_enqueue_script('jquery');
 		</div>
 	</div>
 </nav>
-<!--
-<nav>
-	<div class="wrapper">
-	    <div class="logo">
-		<a href="https://www.stt-systems.com/"><img src="logo-stt.png" alt="STT Systems"></a>
-	    </div>
-	    <input type="radio" name="slide" id="menu-btn">
-	    <input type="radio" name="slide" id="cancel-btn">
-	    <ul class="nav-links">
-		<label for="cancel-btn" class="btn cancel-btn"><img src="times-solid.svg" alt="STT Systems"></label>
-		<li>
-		    <a href="#" class="desktop-item">Motion Analysis</a>
-		    <input type="checkbox" id="showMega">
-		    <label for="showMega" class="mobile-item">Motion Analysis</label>
-		    <div class="mega-box">
-			<div class="content">
-			    <div class="row">
-				<header>3D Optical Motion Capture</header>
-				<ul class="mega-links">
-				    <li><a href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/">3DMA Suite</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/sports-3dma/">Sports 3DMA</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/cycling-3dma/">Cycling 3DMA</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/golf-3dma/">Golf 3DMA</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/clinical-3dma/">Clinical 3DMA</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/running-3dma/">Running 3DMA</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/human-3dma/">Human 3DMA</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/eddo/">EDDO Biomechanics</a></li>
-				</ul>
-			    </div>
-			    <div class="row">
-				<header>2D Optical Motion Capture</header>
-				<ul class="mega-links">
-				    <li><a href="https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/">2DMA Suite</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/cycling-2dma/">Cycling 2DMA</a></li>
-				</ul>
-			    </div>
-			    <div class="row">
-				<header>Inertial Motion Capture</header>
-				<ul class="mega-links">
-				    <li><a href="https://www.stt-systems.com/motion-analysis/inertial-motion-capture/">Inertial Suite</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/inertial-motion-capture/isen/">Isen</a></li>
-				</ul>
-			    </div>
-			    <div class="row">
-				<header>Support</header>
-				<ul class="mega-links">
-				    <li><a href="https://www.stt-systems.com/motion-analysis/support/contact-support/">Contact Support</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/faq/">FAQ</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/support/support-plans/">Support Plans</a></li>
-				</ul>
-			    </div>
-			    <div class="row">
-				<header>Downloads</header>
-				<ul class="mega-links">
-				    <li><a href="https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/">Software Downloads</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/downloads/products/product-info/">Brochures and Product</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/">Marketing Resources</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/downloads/technical-documents/reference-publications/">Reference Publications</a></li>
-				    <li><a href="https://www.stt-systems.com/motion-analysis/downloads/technical-documents/whitepapers/">Whitepapers</a></li>
-				</ul>
-			    </div>
-			</div>
-		    </div>
-		</li>
-		<li>
-		    <a href="#" class="desktop-item">Industry 4.0</a>
-		    <input type="checkbox" id="showDrop1">
-		    <label for="showDrop1" class="mobile-item">Industry 4.0</label>
-		    <ul class="drop-menu">
-			<li><a href="https://www.stt-systems.com/industry/machine-vision/">Machine Vision</a></li>
-			<li><a href="https://www.stt-systems.com/industry/product-configurators/">Product Configurators</a></li>
-			<li><a href="https://www.stt-systems.com/industry/rdi/">R+D+I</a></li>
-		    </ul>
-		</li>
-		<li>
-		    <a href="#" class="desktop-item">About</a>
-		    <input type="checkbox" id="showDrop2">
-		    <label for="showDrop2" class="mobile-item">About</label>
-		    <ul class="drop-menu">
-			<li><a href="https://www.stt-systems.com/contact/about-stt/?menu=motion-analysis">The company</a></li>
-			<li><a href="https://www.stt-systems.com/motion-analysis/distributors/">Motion Analysis Distributors</a></li>
-		    </ul>
-		</li>
-		<li><a href="https://www.stt-systems.com/motion-analysis/blog/">Blog</a></li>
-		<li>
-		    <a href="#" class="desktop-item">Contact</a>
-		    <input type="checkbox" id="showDrop3">
-		    <label for="showDrop3" class="mobile-item">Contact</label>
-		    <ul class="drop-menu">
-			<li><a href="https://www.stt-systems.com/contact/contact-us/">Contact us</a></li>
-			<li><a href="https://www.stt-systems.com/contact/careers/">Careers</a></li>
-		    </ul>
-		</li>
-		<li><a href="#">Store</a></li>
-	    </ul>
-	    <label for="menu-btn" class="btn menu-btn"><img src="bars-solid.svg" alt="STT Systems"></label>
-
-	</div>
-</nav>
 -->
+
 
