@@ -30,6 +30,8 @@
     color: white;
     text-decoration: none;
     font-weight: 600;
+    width: 100%;
+    text-align: center;
 }
 
 svg:not(:root) {
@@ -41,10 +43,11 @@ svg:not(:root) {
 }
 
 #contacto-permanente div {
+    border-radius: 6px;
     width: inherit;
     background-color: #0069aa;
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
     transition: 0.2s ease-in-out;
     display: flex;
     right: unset;
@@ -54,9 +57,13 @@ svg:not(:root) {
 
 #contacto-permanente div:hover {
     right: 0;
-    background-color: white;
     color: #0069aa;
-    border-color: #0069aa;
+    background-color: white;
+    border: #0069aa 1px solid;
+}
+
+#contacto-permanente a:hover {
+    color: #0069aa;
 }
 
 .position-relative {
@@ -67,12 +74,6 @@ svg:not(:root) {
  ::after,
  ::before {
     box-sizing: border-box;
-}
-
-#contacto-permanente div:hover {
-    right: 0;
-    background-color: white;
-    border: #0069aa 1px solid;
 }
 
 @media (min-width: 576px) {
