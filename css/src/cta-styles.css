@@ -43,7 +43,6 @@ svg:not(:root) {
 }
 
 #contacto-permanente div {
-    border-radius: 6px;
     width: inherit;
     background-color: #0069aa;
     color: white;
