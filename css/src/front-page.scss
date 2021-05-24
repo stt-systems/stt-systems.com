@@ -273,3 +273,8 @@
     content: none;
   }
 }
+@media(min-width: 992px){
+  .front-page>.row{
+    display: flex;
+  }
+}
