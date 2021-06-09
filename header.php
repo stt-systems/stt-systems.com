@@ -70,9 +70,13 @@ wp_enqueue_script('jquery');
 	wp_head();
 	print_meta(); ?>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet" id="admin-bar-css" href="https://www.stt-systems.com/wp-content/themes/STT/css/cta-styles.css" media="all">
 </head>
 <body <?php body_class(); ?> >
+
+
 <nav id="new-navbar">
+        
         <div class="wrapper">
             <div class="logo">
                 <a href="https://www.stt-systems.com/"><img src="/wp-content/themes/STT/images/logo-stt.png" alt="STT Systems"></a>
@@ -202,11 +206,19 @@ wp_enqueue_script('jquery');
                     </ul>
                 </li>
                 <li id="enlace-tienda"><a href="https://store.stt-systems.com" target="_blank">Store</a></li>
+                <li id="idiomas">
+                    <div>
+                        <?php
+                            $lang = do_shortcode("[wpml_language_selector_widget]"); 
+                            $lang = str_replace('Español', 'Es', $lang);
+                            $lang = str_replace('English', 'En', $lang);
+                            echo $lang;
+                        ?>
+                    </div>
+                <li>
             </ul>
             <label for="menu-btn" class="btn menu-btn"><img src="/wp-content/themes/STT/images/bars-solid.svg" alt="STT Systems"></label>
-
         </div>
-
     </nav>
 <!--
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -239,7 +251,4 @@ wp_enqueue_script('jquery');
 			); ?>
 		</div>
 	</div>
-</nav>
--->
-
-
+</nav>-->

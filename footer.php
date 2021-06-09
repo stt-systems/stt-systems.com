@@ -9,18 +9,18 @@
 				<div class="col-md-2 col-sm-3 footer-col">
 					<div class="footer-title"><?php echo get_page_full_link('contact-us', 'Contact', 'page', !is_front_page() ? 'nofollow' : ''); ?></div>
 					<div class="textwidget tight-paragraphs">
-						<p>Phone: <?php echo get_phone_link(''); ?></p>
-						<p>Fax: +34 943 31 64 31</p>
-						<p><a onclick="return gtag_report_email_conversion('info@stt-systems.com');" href="mailto:info@stt-systems.com">info@stt-systems.com</a></p>
-						<p>Zuatzu Business Park</p>
-						<p>Easo Building, 2nd Floor</p>
-						<p>20018 San Sebasti&aacute;n, Spain</p>
+						<p><?php _e("Phone:", "default") ?><?php echo get_phone_link(''); ?></p>
+						<p><?php _e("Fax: +34 943 31 64 31", "default")?></p>
+						<p><?php echo get_email_link(''); ?></p>
+						<p><?php _e("Zuatzu Business Park", "default")?></p>
+						<p><?php _e("Easo Building, 2nd Floor", "default")?></p>
+						<p><?php _e("20018 San Sebasti&aacute;n, Spain", "default")?></p>
 					</div>
 				</div>
 				<div class="col-md-1 col-sm-1 footer-col ghost"></div>
 				<div class="col-md-4 col-sm-6 footer-col">
 					<div class="footer-title">SITEMAP</div>
-					<div class="textwidget" style="padding-left:15px">
+					<div id='textwidgetPaddinLeft' class="textwidget">
 						<div class="row">
 						<?php
 						wp_reset_query();
@@ -84,22 +84,22 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-2 col-sm-4" style="margin-bottom:0">
+					<div class="col-md-2 col-sm-4 footerMarginBottom">
 						<div class="copyright-text">
 							&copy; <?php echo date('Y'); ?> STT Systems
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-1" style="margin-bottom:0">
+					<div class="col-md-2 col-sm-1 footerMarginBottom">
 						<div class="copyright-text">
 							<?php echo get_page_full_link('privacy-policy', 'Privacy Policy', 'page', !is_front_page() ? 'nofollow' : ''); ?>
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-1" style="margin-bottom:0">
+					<div class="col-md-2 col-sm-1 footerMarginBottom">
 						<div class="copyright-text">
 							<?php echo get_page_full_link('cookies-policy', 'Cookies Policy', 'page', !is_front_page() ? 'nofollow' : ''); ?>
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-2" style="margin-bottom:0">
+					<div class="col-md-2 col-sm-2 footerMarginBottom">
 						<div class="copyright-text">
 							<?php echo get_page_full_link('credits', 'Credits', 'page', !is_front_page() ? 'nofollow' : ''); ?>
 						</div>
@@ -121,23 +121,23 @@
 	</div>
 </footer>
 <nav id="contacto-permanente">
-			<div class="position-relative" id="izqTel">
-				<a href="tel:+34943317777" class="stretched-link">
-					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone-alt" class="svg-inline--fa fa-phone-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-						<path fill="currentColor" d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
-					</svg>
-					<span class="d-none d-sm-block">Llámanos</span>
-				</a>
-			</div>
-			<div class="position-relative" id="derechaCont">
-				<a href="#" class="stretched-link" data-toggle="modal" data-target="#exampleModal">
-					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comment-dots" class="svg-inline--fa fa-comment-dots fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-						<path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128 272c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"></path>
-					</svg>
-					<span class="d-none d-sm-block">Contactar</span>
-				</a>
-			</div>
-		</nav>
+	<div class="position-relative" id="izqTel">
+		<a href="tel:+34943317777" class="stretched-link">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone-alt" class="svg-inline--fa fa-phone-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+				<path fill="currentColor" d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
+			</svg>
+				<span class="d-none d-sm-block"><?php _e("Llámanos", "default")?></span>
+		</a>
+	</div>
+	<div class="position-relative" id="derechaCont">
+		<a href="#" class="stretched-link" data-toggle="modal" data-target="#exampleModal">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comment-dots" class="svg-inline--fa fa-comment-dots fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+				<path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128 272c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"></path>
+			</svg>
+			<span class="d-none d-sm-block"><?php _e("Contactar", "default")?></span>
+		</a>
+	</div>
+</nav>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
