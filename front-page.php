@@ -13,7 +13,7 @@ wp_enqueue_style('front-page');
         <div class="content-box">
           <img src="<?php echo get_upload_url("https://raw.githubusercontent.com/stt-systems/assets/main/logos/motion-analysis-single.png"); ?>" alt="Motion analysis solution"/>
           <h1>Motion Analysis Solutions</h1>
-          <h3>Premium technologies for human motion studies. Ready to use by sports scientists, clinicians and researchers</h3>
+          <h3><?php _e("Premium technologies for human motion studies. Ready to use by sports scientists, clinicians and researchers", "default");?></h3>
         </div>
       </div>
       <div class="col-md-2"></div>
@@ -27,7 +27,7 @@ wp_enqueue_style('front-page');
         <div class="content-box">
           <img src="<?php echo get_upload_url("https://raw.githubusercontent.com/stt-systems/assets/main/logos/industry-single.png"); ?>" alt="Industry 4.0"/>
           <h1>Industry 4.0</h1>
-          <h3>Turn-key solutions for companies seeking smart and automated manufacturing &amp; monitoring processes</h3>
+          <h3><?php _e("Turn-key solutions for companies seeking smart and automated manufacturing &amp; monitoring processes", "default");?></h3>
         </div>
       </div>
       <div class="col-md-2"></div>
