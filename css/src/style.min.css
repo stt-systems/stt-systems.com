@@ -790,9 +790,9 @@ table:not(.clean):not(.shop_attributes) .narrow {
 }
 
 .blog-post .blog-post-body {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 400;
-    color: #000;
+    color: #12121b;
 }
 
 .blog-post .blog-post-details {
