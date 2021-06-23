@@ -2786,8 +2786,15 @@ label img {
     margin-top: 25px;
 }
 
-.front-page .panel .col-md-8 {
-    margin-top: 30rem;
+.front-page .row .panel a.linkBlock {
+    height:100%; 
+}
+    
+.front-page .row .panel a.linkBlock .col-md-8 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 @media (max-width:1023px) {
