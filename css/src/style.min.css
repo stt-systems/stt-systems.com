@@ -2951,6 +2951,13 @@ label img {
     }
 }
 
+@media (min-width: 992px) {
+
+    .page-id-21 .table-container {
+        column-count: 2;
+    }
+}
+
 @media (min-width: 1077px) {
     .nav-links .drop-menu {
         min-width: 205px;
