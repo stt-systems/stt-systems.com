@@ -36,5 +36,16 @@ wp_enqueue_style('front-page');
     </div>
   </div>
 </div>
-
+<div class="container" id="seccion2-home">
+    <div class="row">
+      <h2 class="text-center">20 years creating motion capture systems</h2>
+      <div class="col-md-6 col-sm-12 text-center">
+        <img src="/wp-content/uploads/golf-motion-analysis.jpg" alt="Golf motion analysis">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <p>STT systems was created by a group of engineers in 1998 in San Sebastian, with the aim of devising high quality <strong>motion capture technology</strong>. We work on the creation of multiple <strong>motion analysis</strong> products with different objectives, such as clinical studies, sport researchers or biomechanics. These products include both <strong>motion capture software</strong> and hardware, creating ready to be used and complete motion analysis systems.</p>
+        <p>More specifically, most of our activity is focused on the development of <strong>3d motion capture</strong> systems for sport and human studies. For example, we create advanced systems to facilitate <strong>running, cycling or golf motion analysis</strong>. In addition to all this, we also create image processing software and hardware for industrial purposes. We invite you to browse our website and discover all these products and services in more depth.</p>
+      </div>
+    </div>
+  </div>
 <?php get_footer(); ?>
