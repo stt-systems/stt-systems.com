@@ -2992,5 +2992,6 @@ label img {
         width: 90%;
         height: auto;
         margin-top: 1rem;
+        display:block;
     }
 }
