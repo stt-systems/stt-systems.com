@@ -2669,9 +2669,7 @@ div.row .distributor .type #current {
 }
 
 #img-mega-menu {
-    width: 90%;
-    height: auto;
-    margin-top: 1rem;
+    display:none;
 }
 
 .nav-links .drop-menu {
@@ -2991,6 +2989,8 @@ label img {
         background-color: #0069aa;
     }
     #img-mega-menu {
-        display:none;
+        width: 90%;
+        height: auto;
+        margin-top: 1rem;
     }
 }
