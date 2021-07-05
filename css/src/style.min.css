@@ -2673,7 +2673,7 @@ div.row .distributor .type #current {
 }
 
 #links-inertial {
-    margin-bottom:15px
+    margin-bottom:15px!important;
 }
 
 .nav-links .drop-menu {
