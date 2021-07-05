@@ -2990,4 +2990,7 @@ label img {
     .nav-links li:hover .drop-menu {
         background-color: #0069aa;
     }
+    #img-mega-menu {
+        display:none;
+    }
 }
