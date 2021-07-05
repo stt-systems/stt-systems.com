@@ -2672,6 +2672,10 @@ div.row .distributor .type #current {
     display:none;
 }
 
+#links-inertial {
+    margin-bottom:15px
+}
+
 .nav-links .drop-menu {
     top: 100px;
     line-height: 45px;
