@@ -2668,6 +2668,12 @@ div.row .distributor .type #current {
     margin: 0;
 }
 
+#img-mega-menu {
+    width: 90%;
+    height: auto;
+    margin-top: 1.5rem;
+}
+
 .nav-links .drop-menu {
     top: 100px;
     line-height: 45px;
