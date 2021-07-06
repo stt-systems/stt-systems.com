@@ -130,7 +130,7 @@ wp_enqueue_script('jquery');
                                             href="https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/cycling-2dma/">Cycling
                                             2DMA</a></li>
                                 </ul>
-				<img id="img-mega-menu" src="https://www.stt-systems.com/wp-content/uploads/galleries/2dmacustomers/motion-capture-systems-cycling.jpg" alt="Motion Capture software systems">
+				<!--<img id="img-mega-menu" src="https://www.stt-systems.com/wp-content/uploads/galleries/2dmacustomers/motion-capture-systems-cycling.jpg" alt="Motion Capture software systems">-->
                             </div>
                             <div class="row">
                                 <header>Inertial Motion Capture</header>
