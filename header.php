@@ -79,7 +79,7 @@ wp_enqueue_script('jquery');
         
         <div class="wrapper">
             <div class="logo">
-                <a href="https://www.stt-systems.com/"><img src="/wp-content/themes/STT/images/logo-stt.png" alt="STT Systems"></a>
+                <a href=<?php _e("https://www.stt-systems.com/", "default")?>><img src="/wp-content/themes/STT/images/logo-stt.png" alt="STT Systems"></a>
             </div>
             <input type="radio" name="slide" id="menu-btn">
             <input type="radio" name="slide" id="cancel-btn">
@@ -95,28 +95,28 @@ wp_enqueue_script('jquery');
                                 <header>3D Optical Motion Capture</header>
                                 <ul class="mega-links">
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/">3DMA
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/", "default")?>>3DMA
                                             Suite</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/sports-3dma/">Sports
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/sports-3dma/", "default")?>>Sports
                                             3DMA</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/cycling-3dma/">Cycling
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/cycling-3dma/", "default")?>>Cycling
                                             3DMA</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/golf-3dma/">Golf
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/golf-3dma/", "default")?>>Golf
                                             3DMA</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/clinical-3dma/">Clinical
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/clinical-3dma/", "default")?>>Clinical
                                             3DMA</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/running-3dma/">Running
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/running-3dma/", "default")?>>Running
                                             3DMA</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/human-3dma/">Human
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/human-3dma/", "default")?>>Human
                                             3DMA</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/eddo/">EDDO
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/eddo/", "default")?>>EDDO
                                             Biomechanics</a></li>
                                 </ul>
                             </div>
@@ -124,51 +124,50 @@ wp_enqueue_script('jquery');
                                 <header>2D Optical Motion Capture</header>
                                 <ul class="mega-links">
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/">2DMA
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/", "default")?>>2DMA
                                             Suite</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/cycling-2dma/">Cycling
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/cycling-2dma/", "default")?>>Cycling
                                             2DMA</a></li>
                                 </ul>
-				<!--<img id="img-mega-menu" src="https://www.stt-systems.com/wp-content/uploads/galleries/2dmacustomers/motion-capture-systems-cycling.jpg" alt="Motion Capture software systems">-->
+                                <!--<img id="img-mega-menu" src="https://www.stt-systems.com/wp-content/uploads/galleries/2dmacustomers/motion-capture-systems-cycling.jpg" alt="Motion capture software systems">-->
                             </div>
                             <div class="row">
                                 <header>Inertial Motion Capture</header>
-                                <ul class="mega-links">
-                                    <li><a href="https://www.stt-systems.com/motion-analysis/inertial-motion-capture/">Inertial
+                                <ul class="mega-links" id="links-inertial">
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/inertial-motion-capture/", "default")?>>Inertial
                                             Suite</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/inertial-motion-capture/isen/">Isen</a>
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/inertial-motion-capture/isen/", "default")?>>Isen</a>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="row">
                                 <header>Support</header>
                                 <ul class="mega-links">
-                                    <li><a href="https://www.stt-systems.com/motion-analysis/support/contact-support/">Contact
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/support/contact-support/", "default")?>>Contact
                                             Support</a></li>
-                                    <li><a href="https://www.stt-systems.com/motion-analysis/faq/">FAQ</a></li>
-                                    <li><a href="https://www.stt-systems.com/motion-analysis/support/support-plans/">Support
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/faq/", "default")?>>FAQ</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/support/support-plans/", "default")?>>Support
                                             Plans</a></li>
                                 </ul>
                             </div>
+                            
                             <div class="row">
                                 <header>Downloads</header>
                                 <ul class="mega-links">
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/">Software
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/", "default")?>>Software
                                             Downloads</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/downloads/products/product-info/">Brochures</a>
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/product-info/", "default")?>>Brochures</a>
                                     </li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/">Marketing
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/", "default")?>>Marketing
                                             Resources</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/downloads/technical-documents/reference-publications/">Reference
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/reference-publications/", "default")?>>Reference
                                             Publications</a></li>
                                     <li><a
-                                            href="https://www.stt-systems.com/motion-analysis/downloads/technical-documents/whitepapers/">Whitepapers</a>
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/whitepapers/", "default")?>>Whitepapers</a>
                                     </li>
                                 </ul>
                             </div>
@@ -180,10 +179,10 @@ wp_enqueue_script('jquery');
                     <input type="checkbox" id="showDrop1">
                     <label for="showDrop1" class="mobile-item">Industry 4.0</label>
                     <ul class="drop-menu">
-                        <li><a href="https://www.stt-systems.com/industry/machine-vision/">Machine Vision</a></li>
-                        <li><a href="https://www.stt-systems.com/industry/product-configurators/">Product
+                        <li><a href=<?php _e("https://www.stt-systems.com/industry/machine-vision/", "default")?>>Machine Vision</a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/industry/product-configurators/", "default")?>>Product
                                 Configurators</a></li>
-                        <li><a href="https://www.stt-systems.com/industry/rdi/">R+D+I</a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/industry/rdi/", "default")?>>R+D+I</a></li>
                     </ul>
                 </li>
                 <li>
@@ -191,22 +190,22 @@ wp_enqueue_script('jquery');
                     <input type="checkbox" id="showDrop2">
                     <label for="showDrop2" class="mobile-item">About</label>
                     <ul class="drop-menu">
-                        <li><a href="https://www.stt-systems.com/contact/about-stt/?menu=motion-analysis">The
+                        <li><a href=<?php _e("https://www.stt-systems.com/contact/about-stt/", "default")?>>The
                                 company</a></li>
-                        <li><a href="https://www.stt-systems.com/motion-analysis/distributors/">Distributors</a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/distributors/", "default")?>>Distributors</a></li>
                     </ul>
                 </li>
-                <li><a href="https://www.stt-systems.com/motion-analysis/blog/">Blog</a></li>
+                <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/blog/", "default")?>>Blog</a></li>
                 <li>
                     <a href="#" class="desktop-item">Contact</a>
                     <input type="checkbox" id="showDrop3">
                     <label for="showDrop3" class="mobile-item">Contact</label>
                     <ul class="drop-menu">
-                        <li><a href="https://www.stt-systems.com/contact/contact-us/">Contact us</a></li>
-                        <li><a href="https://www.stt-systems.com/contact/careers/">Careers</a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/contact/contact-us/", "default")?>>Contact us</a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/contact/careers/", "default")?>>Careers</a></li>
                     </ul>
                 </li>
-                <li id="enlace-tienda"><a href="https://store.stt-systems.com" target="_blank">Store</a></li>
+                <li id="enlace-tienda"><a href=<?php _e("https://store.stt-systems.com", "default")?> target="_blank">Store</a></li>
                 <li id="idiomas">
                     <div>
                         <?php
@@ -220,7 +219,7 @@ wp_enqueue_script('jquery');
             </ul>
             <label for="menu-btn" class="btn menu-btn"><img src="/wp-content/themes/STT/images/bars-solid.svg" alt="STT Systems"></label>
         </div>
-    </nav>
+</nav>
 <!--
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
