@@ -68,7 +68,7 @@ wp_enqueue_script('jquery');
 	<meta charset="<?php bloginfo('charset'); ?>"/>
 	<!--[if lt IE 10]><script>document.location="<?php echo get_site_url() . '/ie.html'; ?>";</script><![endif]--><?php
 	wp_head();
-	print_meta(); ?>
+	/* print_meta();  */?>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 	<link rel="stylesheet" id="admin-bar-css" href="https://www.stt-systems.com/wp-content/themes/STT/css/cta-styles.css" media="all">
 </head>
@@ -219,7 +219,7 @@ wp_enqueue_script('jquery');
             </ul>
             <label for="menu-btn" class="btn menu-btn"><img src="/wp-content/themes/STT/images/bars-solid.svg" alt="STT Systems"></label>
         </div>
-</nav>
+    </nav>
 <!--
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
