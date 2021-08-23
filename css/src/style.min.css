@@ -401,7 +401,8 @@ footer {
 
 .textwidget a[href^="mailto"],
 .textwidget a[href^="tel"] {
-    color: #0069aa;
+    color: #d4d4d4;
+    text-decoration: underline!important;
 }
 
 .textwidget [class*="col-"] {
@@ -1104,7 +1105,7 @@ table:not(.clean):not(.shop_attributes) .narrow {
     position: relative;
     z-index: 0;
     padding: 0;
-    background-color: #2f2f2f;
+    background-color: #252525;
 }
 
 .footer .footer-col .footer-title {
@@ -1163,18 +1164,19 @@ table:not(.clean):not(.shop_attributes) .narrow {
 }
 
 .footer .copyright {
-    color: #a3a3a3;
     height: 40px;
     width: 100%;
     font-size: 13px;
-    font-weight: 100;
     line-height: 40px;
     background-color: #fff;
+    color:#2f2f2f;
+    font-weight: 500;
 }
 
 .footer .copyright a,
 .footer .copyright a:visited {
-    color: #a3a3a3;
+    color:#2f2f2f;
+    font-weight: 500;
 }
 
 .footer .copyright:before {
