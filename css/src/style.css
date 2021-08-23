@@ -2497,12 +2497,33 @@ div.row .distributor .type #current {
 }
 
 #cookie-notice .cookie-notice-container {
-    height: 91px;
+    height: 100vh;
     display: table-cell;
     vertical-align: middle;
     font-size: 16px;
+    background-color:transparent;
+}
+#cookie-notice {
+    background-color: rgb(0 0 0 / 82%)!important;
 }
 
+#cn-accept-cookie {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    background-image:none;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+    padding: 1rem;
+}
+
+.cookie-notice-container > #cn-notice-buttons > #cn-more-info,
+.cookie-notice-container > #cn-notice-buttons > #cn-refuse-cookie{
+    border:none;
+    box-shadow: none;
+    border-radius: 0;
+}
 
 /********New Menu*******/
 
@@ -2722,6 +2743,24 @@ label img {
 .front-page .panel .col-md-8 {
     margin-top: 65px;
 }
+
+
+@media (min-width: 992px) { 
+
+    #cookie-notice #cn-accept-cookie{
+        width: 25vh;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    #cookie-notice .cookie-notice-container {
+        height: 91px;
+        font-size: 16px;
+    }
+
+}
+
 
 @media (max-width:1023px) {
     .blog-post-body .style-white h1 {
