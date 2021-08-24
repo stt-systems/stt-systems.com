@@ -158,7 +158,7 @@ wp_enqueue_script('jquery');
                                             href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/", "default")?>>Software
                                             Downloads</a></li>
                                     <li><a
-                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/product-info/", "default")?>>Brochures</a>
+                                            href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/product-info/", "default")?>>Brochures and Sample Reports</a>
                                     </li>
                                     <li><a
                                             href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/", "default")?>>Marketing
