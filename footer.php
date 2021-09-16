@@ -84,27 +84,27 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-2 col-sm-4 footerMarginBottom">
+					<div class="col-md-2 col-sm-3 col-xs-6 footerMarginBottom">
 						<div class="copyright-text">
 							&copy; <?php echo date('Y'); ?> STT Systems
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-1 footerMarginBottom">
+					<div class="col-md-2 col-sm-3 col-xs-6 footerMarginBottom">
 						<div class="copyright-text">
 							<?php echo get_page_full_link('privacy-policy', 'Privacy Policy', 'page', !is_front_page() ? 'nofollow' : ''); ?>
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-1 footerMarginBottom">
+					<div class="col-md-2 col-sm-3 col-xs-6 footerMarginBottom">
 						<div class="copyright-text">
 							<?php echo get_page_full_link('cookies-policy', 'Cookies Policy', 'page', !is_front_page() ? 'nofollow' : ''); ?>
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-2 footerMarginBottom">
+					<div class="col-md-2 col-sm-3 col-xs-6 footerMarginBottom">
 						<div class="copyright-text">
 							<?php echo get_page_full_link('credits', 'Credits', 'page', !is_front_page() ? 'nofollow' : ''); ?>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4"> 
+					<div class="col-md-4 col-sm-12 col-xs-12"> 
 						<div class="social-icons">
 							<ul>
 								<li><a href="https://www.instagram.com/stt.systems" title="Instagram" target="_blank" class="social-media-icon instagram-icon"></a></li>
