@@ -1,4 +1,4 @@
-﻿#izqTel {
+#izqTel {
     margin-right: 5px;
 }
 
@@ -55,7 +55,7 @@ svg:not(:root) {
 }
 
 #contacto-permanente div:hover {
-    right: 0;
+    right: 8.2rem;
     color: #0069aa;
     background-color: white;
     border: #0069aa 1px solid;
@@ -79,13 +79,17 @@ svg:not(:root) {
     #contacto-permanente {
         position: fixed;
         z-index: 999;
-        right: 0;
+        right: -8.2rem;
         left: 0;
-        bottom: 0;
-        overflow: hidden;
+        bottom: 50%;
+        overflow: visible;
         display: flex;
         width: 100%;
         justify-content: space-around;
+        transform: translateY(50%);
+        left: unset;
+        width: unset;
+        flex-direction: column;
     }
     #contacto-permanente div:first-child {
         border-right: none;
@@ -95,16 +99,7 @@ svg:not(:root) {
         width: 1.5rem;
         transition: 0.2s ease-in-out;
     }
-    #contacto-permanente {
-        position: fixed;
-        right: 0;
-        bottom: 50%;
-        transform: translateY(50%);
-        overflow: hidden;
-        left: unset;
-        width: unset;
-        flex-direction: column;
-    }
+   
     #contacto-permanente div {
         padding: 0px;
         background-color: #0069aa;
@@ -114,7 +109,7 @@ svg:not(:root) {
         border: 1px solid  #0069aa;
         border-right: 0;
         transition: 0.2s ease-in-out;
-        right: -7rem;
+        /*right: -7rem;*/
         border-radius: 10px 0 0 10px;
     }
     #contacto-permanente a {
@@ -131,4 +126,16 @@ svg:not(:root) {
     .d-sm-block {
         display: block!important;
     }
+}
+
+@media (min-width: 768px) {
+    /*#contacto-permanente div {
+        right: -8.2rem;
+    }*/
+
+    #contacto-permanente div a {
+        padding: 1rem;
+        font-size: 1.75rem;
+    }
+
 }
