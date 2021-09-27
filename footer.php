@@ -19,7 +19,7 @@
 				</div>
 				<div class="col-md-1 col-sm-1 footer-col ghost"></div>
 				<div class="col-md-4 col-sm-6 footer-col">
-					<div class="footer-title">SITEMAP</div>
+					<div class="footer-title"><?php _e("Featured Pages", "default")?></div>
 					<div id='textwidgetPaddinLeft' class="textwidget">
 						<div class="row">
 						<?php
