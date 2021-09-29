@@ -111,8 +111,6 @@ svg:not(:root) {
   .d-sm-block {
     display: block !important;
   }
-}
-@media (min-width: 768px) {
   #contacto-permanente div a {
     padding: 1rem;
     font-size: 1.75rem;
