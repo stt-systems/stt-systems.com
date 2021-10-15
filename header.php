@@ -121,15 +121,15 @@ wp_enqueue_script('jquery');
                                 <header><?php _e("Support", "default")?></header>
                                 <ul class="mega-links">
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/support/contact-support/", "default")?>><?php _e("Contact Support", "default")?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/faq/", "default")?>>FAQ</a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/support/support-plans/", "default")?>>Support Plans</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/faq/", "default")?>><?php _e("FAQ", "default")?></a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/support/support-plans/", "default")?>><?php _e("Support Plans","default")?></a></li>
                                 </ul>
                             </div>
                             
                             <div class="row">
                                 <header><?php _e("Downloads", "default")?></header>
                                 <ul class="mega-links">
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/", "default")?>>Software Downloads</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/", "default")?>><?php _e("Software Downloads", "default")?></a></li>
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/product-info/", "default")?>>Brochures and sample Reports</a></li>
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/", "default")?>>Marketing Resources</a></li>
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/reference-publications/", "default")?>>Reference Publications</a></li>
