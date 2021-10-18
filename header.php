@@ -168,7 +168,7 @@ wp_enqueue_script('jquery');
                         <li><a href=<?php _e("https://www.stt-systems.com/contact/careers/", "default")?>>Careers</a></li>
                     </ul>
                 </li>
-                <li id="enlace-tienda"><a href=<?php _e("https://store.stt-systems.com", "default")?> target="_blank"><?php _e("Store", "default")?></a></li>
+                <li id="enlace-tienda"><a href=<?php _e("https://store.stt-systems.com/es/shop", "default")?> target="_blank"><?php _e("Store", "default")?></a></li>
                 <li id="idiomas">
                     <div>
                         <?php

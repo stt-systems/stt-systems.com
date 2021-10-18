@@ -58,7 +58,8 @@
 								echo '<p>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</p>';
 								echo '<p>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</p>';
 								echo '<p>' . get_page_full_link('contact-support', 'Support') . '</p>';
-								echo '<p>' . get_page_full_link('downloads', 'Downloads') . '</p>'; ?>
+								echo '<p><a href="https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/">Downloads</a></p>'; 
+								/* echo '<p>' . get_page_full_link('downloads', 'Downloads') . '</p>'; */?>
 							</div>
 							<div class="col-md-6 col-sm-6"><?php
 								echo '<p><strong>' . get_page_full_link('industry', 'INDUSTRY') . '</strong></p>';
