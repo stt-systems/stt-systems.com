@@ -95,6 +95,7 @@ function do_row_shortcode($atts, $content = null) {
 
 	return "<div$id class=\"row$class\">$content</div>";
 }
+
 function do_column_shortcode($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'size' => '100',
@@ -197,11 +198,12 @@ function do_email_shortcode($atts) {
 			$onclick = " onclick=\"return gtag_report_email_conversion('$to');\"";
 		}
 	*/
-
+	
 	if ($title == '') {
 		$title = $to;
 	}
-  	/* 
+  
+	/* 
 		Modificado por Caronte Studio - ggp
 		return "<a$onclick href=\"mailto:$to\">$title</a$onclick>";
 	*/
@@ -406,6 +408,7 @@ function do_download_shortcode($atts) {
 	// NOFOLLOW: do not pass link juice for PDFs on sidebars
 	return get_url_link($download, $title, true, true);
 }
+
 function do_downloads_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'name' => '',
@@ -514,6 +517,7 @@ function do_downloads_shortcode($atts) {
 
 	return "$title<p>" . implode($list, '</p><p>') . '</p>';
 }
+
 function do_all_downloads_shortcode() {
 	$downloads = get_downloads_area_list();
 	$table = '';
@@ -535,6 +539,7 @@ function get_social_img($name) {
 	$url = WL_TEMPLATE_DIR_URI . '/images/social-media/' . $name . '.png';	
 	return '<img src="' . $url . '" width="32" height="32" alt="' . $name . '"/>';
 }
+
 function do_social_links_shortcode() {
 	$code = "<div class=\"contact-social\">
 		<a href=\"https://www.facebook.com/STTSystems\" title=\"Facebook\" target=\"_blank\">". get_social_img('facebook') . "</a>
@@ -623,7 +628,10 @@ function do_post_list_shortcode($atts) {
     while (have_posts()) {
       the_post();
       $post_list .= '<div class="row blog-list style-white">';
-      $post_list .= get_post_thumbnail();
+	  $thumbnail =  get_post_thumbnail();
+	  $alt = 'img alt="'.get_the_title().'"';
+	  $thumbnail = str_replace("img", $alt, $thumbnail);
+      $post_list .= $thumbnail; 
 			$post_list .= "<div class=\"col-md-8 col-sm-8\">";
 			$post_list .= '<h3><a href="' . get_permalink() . '" title="' . the_title_attribute(array('echo' => false)) . '" >' . get_the_title() . '</a></h3>';
 			ob_start();
