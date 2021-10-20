@@ -28,7 +28,7 @@
 }
 
 .contacto-permanente svg {
-  width: 1.5rem;
+  width: 1.75rem;
   display: block;
   margin: 0 auto;
 }
@@ -43,6 +43,7 @@
 
 .contacto-permanente span {
   display: none;
+  font-size:1.25rem;
 }
 
 @media (min-width: 1200px) {
@@ -65,7 +66,7 @@
   }
 
   .contacto-permanente svg {
-    width: 1.5rem;
+    width: 1.75rem;
     margin: 0 1.5rem 0 0;
     display: inline;
   }
