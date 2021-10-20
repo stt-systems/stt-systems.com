@@ -169,6 +169,16 @@ wp_enqueue_script('jquery');
                     </ul>
                 </li>
                 <li id="enlace-tienda"><a href=<?php _e("https://store.stt-systems.com/es/shop", "default")?> target="_blank"><?php _e("Store", "default")?></a></li>
+                <li id="nohover" style="display:none">
+                    <div class="sidebar-content tags blog-search" >
+                        <form method="get" id="searchform" class="searchNavBar" action="https://www.stt-systems.com">
+                            <input type="text" class="blog-search-input text-input barraBusqueda" name="s" id="s" placeholder="Search…">
+                            <button class="blog-search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </li>
                 <li id="idiomas">
                     <div>
                         <?php
@@ -182,7 +192,11 @@ wp_enqueue_script('jquery');
             </ul>
             <label for="menu-btn" class="btn menu-btn"><img src="/wp-content/themes/STT/images/bars-solid.svg" alt="STT Systems"></label>
         </div>
+        <!-- <div class="col-md-3 col-sm-3 footer-col" style="display:none"> -->
+            
+        <!-- </div> -->
     </nav>
+
 <!--
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
