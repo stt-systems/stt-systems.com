@@ -189,6 +189,22 @@ wp_enqueue_script('jquery');
                         ?>
                     </div>
                 <li>
+                <li id="searchbtn" style="display:none">
+                    <i class="fas fa-search"></i>
+                </li>
+                <li id="searchbar" style="display:none">
+                    <div class="sidebar-content tags blog-search">
+                        <form method="get" id="searchform" class="searchNavBar" action="https://www.stt-systems.com">
+                            <input type="text" class="blog-search-input text-input barraBusqueda" name="s" id="s" placeholder="Search…">
+                            <button class="blog-search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                        <button id="searchclose" class="blog-search-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </li>
             </ul>
             <label for="menu-btn" class="btn menu-btn"><img src="/wp-content/themes/STT/images/bars-solid.svg" alt="STT Systems"></label>
         </div>
