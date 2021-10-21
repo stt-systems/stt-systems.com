@@ -189,10 +189,10 @@ wp_enqueue_script('jquery');
                         ?>
                     </div>
                 <li>
-                <li id="searchbtn" style="display:none">
+                <li id="searchbtn">
                     <i class="fas fa-search"></i>
                 </li>
-                <li id="searchbar" style="display:none">
+                <li id="searchbar">
                     <div class="sidebar-content tags blog-search">
                         <form method="get" id="searchform" class="searchNavBar" action="https://www.stt-systems.com">
                             <input type="text" class="blog-search-input text-input barraBusqueda" name="s" id="s" placeholder="Search…">
