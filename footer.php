@@ -173,6 +173,16 @@
 
 <script>window.addEventListener('load',function(){$('.banner').each(function(){var l=$(this);l.css('background-image','url("'+l.attr('data-src')+'")');l.find('img.spinner').remove();});});</script>
 <script>window.addEventListener('load',function(){if($('.col-extra').length)$('.col-extra').matchHeight();});</script>
+<script>
+	jQuery(document).ready(function() {
+		jQuery("#searchbtn").click(function() {
+			jQuery("#searchbar").css("display","block");
+		});
+		jQuery("#searchclose").click(function() {
+			jQuery("#searchbar").css("display","none");
+		});
+	});
+</script>
 
 <link rel="stylesheet" property="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,400i" crossorigin="anonymous"/>
 <link rel="stylesheet" property="stylesheet" href="<?php echo my_get_url_for_path(WL_TEMPLATE_LOCAL_DIR . '/css/theme-menu.min.css', false); ?>"/>
