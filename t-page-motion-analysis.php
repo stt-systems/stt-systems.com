@@ -63,8 +63,24 @@
     </div>
   </div>
 </div>
-
 <?php
   echo get_clients_carousel('capture', 8);
+?>
+<div class="container" id="seccion2-home" style="display: none;">
+  <div class="row">
+    <h2 class="text-center">Greatest motion analysis solutions</h2>
+    <div class="col-md-6 col-sm-12 text-center"> 
+      <noscript>
+        <img src="/wp-content/uploads/golf-motion-analysis.jpg" alt="Golf motion analysis">
+      </noscript>
+      <img class=" ls-is-cached lazyloaded" src="/wp-content/uploads/yeyo_ppal.jpg" data-src="/wp-content/uploads/yeyo_ppal.jpg" alt="Geatest motion analysis solutions.">
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <p>Years of experience guarantee us in the technological field of <strong>motion analysis</strong>. A great group of engineers with a lot of experience, and the aim of devising high quality <strong>motion analysis technology and solutions</strong>. We have at your disposal a wide range of <strong>technological solutions based on movement analysis</strong>, which will provide you with <strong>all the data you need</strong> to be and improve as an elite athlete. These products include the necessary software and hardware ready to be used and complete motion analysis systems and solutions.</p>
+      <p>Most of our activity is focused on the development of <strong>3d motion capture</strong> systems for sport and human studies. We create advanced systems to facilitate <strong>running, cycling or golf motion analysis</strong>. Here you will find our wide range of technological products and solutions for the <strong>best and most accurate motion analysis</strong>.</p>
+    </div>
+  </div>
+</div>
+<?php
   get_footer(); 
 ?>
