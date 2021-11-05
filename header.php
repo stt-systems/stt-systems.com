@@ -136,9 +136,9 @@ function print_area_logo()
                                 <header><?php _e("Downloads", "default") ?></header>
                                 <ul class="mega-links">
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/", "default") ?>><?php _e("Software Downloads", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/product-info/", "default") ?>>Brochures and sample Reports</a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/", "default") ?>>Marketing Resources</a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/reference-publications/", "default") ?>>Reference Publications</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/product-info/", "default") ?>><?php _e("Brochures and sample Reports", "default")?></a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/", "default") ?>><?php _e("Marketing Resources", "default")?></a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/reference-publications/", "default") ?>><?php _e("Reference Publications", "default")?></a></li>
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/whitepapers/", "default") ?>>Whitepapers</a></li>
                                 </ul>
                             </div>
