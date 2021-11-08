@@ -139,7 +139,7 @@ function print_area_logo()
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/products/product-info/", "default") ?>><?php _e("Brochures and sample Reports", "default")?></a></li>
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/marketing-resources/", "default") ?>><?php _e("Marketing Resources", "default")?></a></li>
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/reference-publications/", "default") ?>><?php _e("Reference Publications", "default")?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/whitepapers/", "default") ?>>Whitepapers</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/downloads/technical-documents/whitepapers/", "default") ?>><?php _e("Whitepapers", "default")?></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -152,7 +152,7 @@ function print_area_logo()
                     <ul class="drop-menu">
                         <li><a href=<?php _e("https://www.stt-systems.com/industry/machine-vision/", "default") ?>><?php _e("Machine Vision", "default") ?></a></li>
                         <li><a href=<?php _e("https://www.stt-systems.com/industry/product-configurators/", "default") ?>><?php _e("Product Configurators", "default") ?></a></li>
-                        <li><a href=<?php _e("https://www.stt-systems.com/industry/rdi/", "default") ?>>R+D+I</a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/industry/rdi/", "default") ?>><?php _e("R+D+I", "default")?></a></li>
                     </ul>
                 </li>
                 <li>
