@@ -208,38 +208,3 @@ function print_area_logo()
 
         <!-- </div> -->
     </nav>
-
-    <!--
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header pull-left"><?php
-                                                if (is_front_page()) { ?>
-				<a class="navbar-brand"><?php
-                                                } else { ?>
-				<a class="navbar-brand" href="<?php echo home_url('/'); ?>"><?php
-                                                                        } ?>
-				<img src="<?php echo get_upload_url('https://raw.githubusercontent.com/stt-systems/assets/main/logos/logo.png', false); ?>" alt="STT's logo" rel="nofollow"/>
-			</a>
-		</div>
-		<?php print_area_name(); ?>
-		<div class="navbar-header pull-right">
-			<?php print_area_logo(); ?>
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-				<span class="sr-only"><?php _e('Toggle navigation', 'stt'); ?></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-		</div>
-		<div class="navbar-collapse collapse" id="navbar-collapse"><?php
-                                                                    wp_nav_menu(
-                                                                        array(
-                                                                            'theme_location' => 'primary',
-                                                                            'container'      => 'nav-collapse',
-                                                                            'menu_class'     => 'nav navbar-nav',
-                                                                            'walker'         => new wp_bootstrap_navwalker()
-                                                                        )
-                                                                    ); ?>
-		</div>
-	</div>
-</nav>-->
