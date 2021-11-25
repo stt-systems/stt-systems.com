@@ -71,9 +71,6 @@ function print_area_logo()
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
-    <!--[if lt IE 10]><script>document.location="<?php echo get_site_url() . '/ie.html'; ?>";</script><![endif]--><?php
-                                                                                                                    wp_head();
-                                                                                                                    /* print_meta();  */ ?>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" id="admin-bar-css" href="https://www.stt-systems.com/wp-content/themes/STT/css/cta-styles.css" media="all">
 </head>
@@ -204,7 +201,5 @@ function print_area_logo()
             </ul>
             <label for="menu-btn" class="btn menu-btn"><img src="/wp-content/themes/STT/images/bars-solid.svg" alt="STT Systems"></label>
         </div>
-        <!-- <div class="col-md-3 col-sm-3 footer-col" style="display:none"> -->
 
-        <!-- </div> -->
     </nav>
