@@ -49,7 +49,7 @@
 																	echo '<p><strong>' . get_page_full_link('industry', 'INDUSTRY') . '</strong></p>';
 																	echo '<p>' . get_page_full_link('machine-vision', 'Machine vision') . '</p>';
 																	echo '<p>' . get_page_full_link('product-configurators', 'Product configurators') . '</p>';
-																	echo '<p>' . get_page_full_link('rdi', 'R+D+i') . '</p>'; ?>
+																	echo '<p><a href="https://www.stt-systems.com/industry/rdi/">R+D+i</a></p>'; ?>
 									</div><?php
 										} else { ?>
 									<div class="col-md-6 col-sm-6"><?php
@@ -65,7 +65,7 @@
 																	echo '<p><strong>' . get_page_full_link('industry', 'INDUSTRY') . '</strong></p>';
 																	echo '<p>' . get_page_full_link('machine-vision', 'Machine vision') . '</p>';
 																	echo '<p>' . get_page_full_link('product-configurators', 'Product configurators') . '</p>';
-																	echo '<p>' . get_page_full_link('rdi', 'R+D+i') . '</p>'; ?>
+																	echo '<p><a href="https://www.stt-systems.com/industry/rdi/">R+D+i</a></p>'; ?>
 									</div><?php
 										} ?>
 							</div>
