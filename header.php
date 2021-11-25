@@ -71,6 +71,9 @@ function print_area_logo()
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
+    <!--[if lt IE 10]><script>document.location="<?php echo get_site_url() . '/ie.html'; ?>";</script><![endif]--><?php
+                                                                                                                    wp_head();
+                                                                                                                    /* print_meta();  */ ?>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" id="admin-bar-css" href="https://www.stt-systems.com/wp-content/themes/STT/css/cta-styles.css" media="all">
 </head>
@@ -113,7 +116,6 @@ function print_area_logo()
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/", "default") ?>><?php _e("2DMA Suite", "default") ?></a></li>
                                     <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/cycling-2dma/", "default") ?>><?php _e("Cycling 2DMA", "default") ?></a></li>
                                 </ul>
-                                <!--<img id="img-mega-menu" src="https://www.stt-systems.com/wp-content/uploads/galleries/2dmacustomers/motion-capture-systems-cycling.jpg" alt="Motion capture software systems">-->
                             </div>
                             <div class="row">
                                 <header><?php _e("Inertial Motion Capture", "default") ?></header>
@@ -161,7 +163,7 @@ function print_area_logo()
                         <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/distributors/", "default") ?>><?php _e("Distributors", "default") ?></a></li>
                     </ul>
                 </li>
-                <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/blog/", "default") ?>>Blog</a></li>
+                <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/blog/", "default") ?>><?php _e("Blog", "default")?></a></li>
                 <li>
                     <a href="#" class="desktop-item"><?php _e("Contact", "default") ?></a>
                     <input type="checkbox" id="showDrop3">
@@ -201,5 +203,4 @@ function print_area_logo()
             </ul>
             <label for="menu-btn" class="btn menu-btn"><img src="/wp-content/themes/STT/images/bars-solid.svg" alt="STT Systems"></label>
         </div>
-
     </nav>
