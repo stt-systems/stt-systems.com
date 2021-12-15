@@ -52,13 +52,16 @@ wp_enqueue_style('front-page');
 <div id="temporal-css">
     <div class="container-fluid front-page main">
         <div class="row">
+            <div id="mainHomeHeader" class="col-md-12 col-xs-12">
+                <h1>STT Systems</h1>
+            </div>
             <div class="col-md-6 col-xs-12 panel">
                 <a class='linkBlock' href="<?php echo get_page_permalink("motion-analysis"); ?>">
                     <div class="col-md-2"></div>
                     <div class="col-md-8 col-sm-12">
                         <div class="content-box">
                             <img src="<?php echo get_upload_url("https://raw.githubusercontent.com/stt-systems/assets/main/logos/motion-analysis-single.png"); ?>" alt=<?php _e("Motion analysis solution"); ?> />
-                            <h1><?php _e("Motion Analysis Solutions"); ?></h1>
+                            <h2 class="secondaryHomeHeader"><?php _e("Motion Analysis Solutions"); ?></h2>
                             <h3><?php _e("Premium technologies for human motion studies. Ready to use by sports scientists, clinicians and researchers", "default"); ?></h3>
                         </div>
                     </div>
@@ -72,7 +75,7 @@ wp_enqueue_style('front-page');
                     <div class="col-md-8 col-sm-12">
                         <div class="content-box">
                             <img src="<?php echo get_upload_url("https://raw.githubusercontent.com/stt-systems/assets/main/logos/industry-single.png"); ?>" alt=<?php _e("Industry 4.0"); ?> />
-                            <h1><?php _e("Industry 4.0"); ?></h1>
+                            <h2 class="secondaryHomeHeader"><?php _e("Industry 4.0"); ?></h2>
                             <h3><?php _e("Turn-key solutions for companies seeking smart and automated manufacturing &amp; monitoring processes", "default"); ?></h3>
                         </div>
                     </div>
@@ -91,7 +94,7 @@ wp_enqueue_style('front-page');
                     </figure>
                 </div>
                 <div class="col-lg-5">
-                    <h3><?php _e("STT: 20 Years creating"); ?></h3>
+                    <span><?php _e("STT: 20 Years creating"); ?></span>
                     <h2><?php _e("Motion Capture Systems"); ?></h2>
                     <p><?php _e("STT systems was created by a group of engineers in 1998 in San Sebastian, with the aim of devising high quality motion capture technology. We work on the creation of multiple motion analysis products with different objectives, such as clinical studies, sport researchers or biomechanics. These products include both motion capture software and hardware, creating ready to be used and complete motion analysis systems."); ?></p>
                     <p><?php _e("More specifically, most of our activity is focused on the development of 3d motion capture systems for sport and human studies. For example, we create advanced systems to facilitate running, cycling or golf motion analysis. In addition to all this, we also create image processing software and hardware for industrial purposes. We invite you to browse our website and discover all these products and services in more depth."); ?></p>
@@ -127,8 +130,8 @@ wp_enqueue_style('front-page');
                 <figure class="d-block d-lg-none">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/industry-bg.jpg" alt=<?php _e("STT systems 3DMA"); ?>>
                 </figure>
-                <h4><?php _e("Industry 4.0"); ?></h4>
-                <h5><?php _e("The best solution for your company"); ?></h5>
+                <span><?php _e("Industry 4.0"); ?></span>
+                <h2><?php _e("The best solution for your company"); ?></h2>
                 <p><?php _e("We carry out projects that help companies implement smart automation, monitoring and manufacturing processes. We put all our experience at your disposal to provide solutions that adapt to your company and your industrial environment."); ?></p>
                 <a href=<?php _e("/industry/machine-vision/"); ?> class="btn btn-default"><?php _e("Read more"); ?></a>
             </div>
@@ -140,7 +143,7 @@ wp_enqueue_style('front-page');
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-3 col-sm-12 text-center">
                 <span><?php _e("Get in touch now!"); ?></span>
-                <h3><?php _e("Take the step and exceed your sports limits."); ?></h3>
+                <span class="spanTakeStep"><?php _e("Take the step and exceed your sports limits."); ?></span>
                 <a href=<?php _e("/contact-us/"); ?> class="btn btn-default"><?php _e("Contact"); ?></a>
             </div>
         </div>
@@ -149,8 +152,8 @@ wp_enqueue_style('front-page');
         <div class="container">
             <div class="row justify-content-center my-5">
                 <div class="col-sm-12 col-lg-10 text-center">
-                    <h4><?php _e("Your trust, our best reward"); ?></h4>
-                    <h5><?php _e("Main Customers"); ?></h5>
+                    <span><?php _e("Your trust, our best reward"); ?></span>
+                    <h2><?php _e("Main Customers"); ?></h2>
                     <div class="images">
                         <img class=" lazyloaded" src="https://www.stt-systems.com/wp-content/uploads/clients/industry-all/010-seat.png"  alt="Seat logo - STT Systems">
                         <img class=" lazyloaded" src="https://www.stt-systems.com/wp-content/uploads/clients/industry-all/020-vw.png"  alt="volkswagen logo - STT Systems">
@@ -200,8 +203,8 @@ wp_enqueue_style('front-page');
                 <figure class="d-block d-lg-none">
                     <img src="/wp-content/uploads/motion-accesories.jpg" alt=<?php _e("Accesories analysis"); ?>>
                 </figure>
-                <h4><?php _e("Our Store"); ?></h4>
-                <h5><?php _e("Accesories for motion analysis"); ?></h5>
+                <span><?php _e("Our Store"); ?></span>
+                <h2><?php _e("Accesories for motion analysis"); ?></h2>
                 <p><?php _e("In our store you can find accessories for optical motion capture, such as reflective markers or Velcro bases."); ?></p>
                 <a href="https://store.stt-systems.com/es/shop" class="btn btn-default"><?php _e("Visit Store"); ?></a>
             </div>
@@ -212,7 +215,7 @@ wp_enqueue_style('front-page');
             <div class="row justify-content-center my-5">
                 <div class="col-xs-12 text-center">
                     
-                    <h5><?php _e("Latest news"); ?></h5>
+                    <h2><?php _e("Latest news"); ?></h2>
                     <?php echo entradas_blog(); ?>
                 </div>
             </div>
@@ -220,8 +223,8 @@ wp_enqueue_style('front-page');
     </section>
 </div>
 
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/particles.min.js"></script>
-<script>
+<script  src="<?php echo get_stylesheet_directory_uri(); ?>/js/particles.min.js"></script>
+<script async>
     particlesJS("particles-js", {
         "particles": {
             "number": {
