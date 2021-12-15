@@ -270,6 +270,47 @@ h1.page-title {
     margin-bottom: 25px
 }
 
+
+/* Encabezados de la home */
+
+#mainHomeHeader>h1 {
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.secondaryHomeHeader {
+    font-size: 64px !important;
+    font-weight: 300 !important;
+    color: #fff !important;
+    text-shadow: 0 0 6px #00000066 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+@media (min-width: 1024px) {
+    .secondaryHomeHeader {
+        height: 3em;
+    }
+}
+
+@media (min-width:768px) {
+    #mainHomeHeader {
+        margin-top: 50px;
+    }
+}
+
+@media (min-width:992px) {
+    #mainHomeHeader {
+        position: absolute;
+        text-align: center;
+        z-index: 9;
+        width: 100%;
+    }
+}
+
+
+/* /Encabezados de la home */
+
 .top-title-wrapper {
     border-color: #0069aa;
     background-color: #0069aa;
@@ -1509,7 +1550,6 @@ time {
     display: block;
     height: 90px
 }
-
 
 .page-info {
     padding-top: 30px;
@@ -2855,7 +2895,6 @@ label img {
 
 
 /*----HOME NUEVA----*/
-
 
 #temporal-css .row {
     display: flex;
