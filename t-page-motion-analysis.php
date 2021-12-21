@@ -76,8 +76,9 @@
       <img class=" ls-is-cached lazyloaded" src="/wp-content/uploads/yeyo_ppal.jpg" data-src="/wp-content/uploads/yeyo_ppal.jpg" alt="Geatest motion analysis solutions.">
     </div>
     <div class="col-md-6 col-sm-12">
-      <p>Years of experience guarantee us in the technological field of <strong>motion analysis</strong>. A great group of engineers with a lot of experience, and the aim of devising high quality <strong>motion analysis technology and solutions</strong>. We have at your disposal a wide range of <strong>technological solutions based on movement analysis</strong>, which will provide you with <strong>all the data you need</strong> to be and improve as an elite athlete. These products include the necessary software and hardware ready to be used and complete motion analysis systems and solutions.</p>
-      <p>Most of our activity is focused on the development of <strong>3d motion capture</strong> systems for sport and human studies. We create advanced systems to facilitate <strong>running, cycling or golf motion analysis</strong>. Here you will find our wide range of technological products and solutions for the <strong>best and most accurate motion analysis</strong>.</p>
+      <p>Since the creation of our first motion capture product, we began to accumulate <strong>extensive experience in optical motion capture</strong>. We would soon learn to integrate cameras from various manufacturers, to calibrate them, and to synthesize clean and accurate 3D points based on passive or active marker tracking. Thanks to our careful software design and constant interaction with end users, <strong>we were able to offer innovative products in the field of biomechanics.</strong></p>
+      <p>Most of our activity is focused on the development of <strong>3d motion capture</strong> systems for sport and human studies. We create advanced systems to facilitate <strong>running, cycling or golf motion analysis</strong>. In 2010 a new technology was incorporated to our product range: Inertial sensors or IMUs. At that point, <strong>STT was the only company in the world offering off-the-shelf packages both for ‘optical’ and ‘inertial’ motion tracking & analysis.</strong></p>
+      <p></p>
     </div>
   </div>
 </div>
