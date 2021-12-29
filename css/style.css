@@ -274,7 +274,8 @@ h1.page-title {
 /* Encabezados de la home */
 
 #mainHomeHeader>h1 {
-    text-shadow: 1px 1px 2px #000000;
+    color: #0069aa;
+    text-shadow: none;
 }
 
 .secondaryHomeHeader {
@@ -305,6 +306,10 @@ h1.page-title {
         text-align: center;
         z-index: 9;
         width: 100%;
+    }
+    #mainHomeHeader>h1 {
+        color: #fff;
+        text-shadow: 0 0 5px #000;
     }
 }
 
@@ -373,11 +378,11 @@ h2.widgettitle {
 }
 
 #panelLeft {
-    background-image: url(https://raw.githubusercontent.com/stt-systems/assets/main/web-backgrounds/motion-analysis.jpg)
+    background-image: url(/wp-content/uploads/stt-systems.webp)
 }
 
 #panelRight {
-    background-image: url(https://raw.githubusercontent.com/stt-systems/assets/main/web-backgrounds/industry.jpg)
+    background-image: url(/wp-content/uploads/stt-systems-industry.webp)
 }
 
 .iframeMap {
