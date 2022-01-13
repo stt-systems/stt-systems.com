@@ -100,21 +100,21 @@ function print_area_logo()
                             <div class="row">
                                 <header><?php _e("3D Optical Motion Capture", "default") ?></header>
                                 <ul class="mega-links">
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/", "default") ?>><?php _e("3DMA Suite", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/sports-3dma/", "default") ?>><?php _e("Sports 3DMA", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/cycling-3dma/", "default") ?>><?php _e("Cycling 3DMA", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/golf-3dma/", "default") ?>><?php _e("Golf 3DMA", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/clinical-3dma/", "default") ?>><?php _e("Clinical 3DMA", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/running-3dma/", "default") ?>><?php _e("Running 3DMA", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/human-3dma/", "default") ?>><?php _e("Human 3DMA", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/eddo/", "default") ?>><?php _e("EDDO Biomechanics", "default") ?></a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/", "default") ?>>3DMA Suite</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/sports-3dma/", "default") ?>>Sports 3DMA</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/cycling-3dma/", "default") ?>>Cycling 3DMA</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/golf-3dma/", "default") ?>>Golf 3DMA</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/clinical-3dma/", "default") ?>>Clinical 3DMA</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/running-3dma/", "default") ?>>Running 3DMA</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/human-3dma/", "default") ?>>Human 3DMA</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/3d-optical-motion-capture/eddo/", "default") ?>>EDDO Biomechanics</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <header><?php _e("2D Optical Motion Capture", "default") ?></header>
                                 <ul class="mega-links">
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/", "default") ?>><?php _e("2DMA Suite", "default") ?></a></li>
-                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/cycling-2dma/", "default") ?>><?php _e("Cycling 2DMA", "default") ?></a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/", "default") ?>>2DMA Suite</a></li>
+                                    <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/2d-optical-motion-capture/cycling-2dma/", "default") ?>>Cycling 2DMA</a></li>
                                 </ul>
                             </div>
                             <div class="row">
@@ -159,7 +159,7 @@ function print_area_logo()
                     <input type="checkbox" id="showDrop2">
                     <label for="showDrop2" class="mobile-item"><?php _e("About", "default") ?></label>
                     <ul class="drop-menu">
-                        <li><a href=<?php _e("https://www.stt-systems.com/contact/about-stt/", "default") ?>><?php _e("The company", "default") ?></a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/contact-us/about-stt/", "default") ?>><?php _e("The company", "default") ?></a></li>
                         <li><a href=<?php _e("https://www.stt-systems.com/motion-analysis/distributors/", "default") ?>><?php _e("Distributors", "default") ?></a></li>
                     </ul>
                 </li>
@@ -169,8 +169,8 @@ function print_area_logo()
                     <input type="checkbox" id="showDrop3">
                     <label for="showDrop3" class="mobile-item"><?php _e("Contact", "default") ?></label>
                     <ul class="drop-menu">
-                        <li><a href=<?php _e("https://www.stt-systems.com/contact/contact-us/", "default") ?>><?php _e("Contact us", "default") ?></a></li>
-                        <li><a href=<?php _e("https://www.stt-systems.com/contact/careers/", "default") ?>>Careers</a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/contact-us/", "default") ?>><?php _e("Contact us", "default") ?></a></li>
+                        <li><a href=<?php _e("https://www.stt-systems.com/contact-us/careers/", "default") ?>>Careers</a></li>
                     </ul>
                 </li>
                 <li id="enlace-tienda"><a href=<?php _e("https://store.stt-systems.com/es/shop", "default") ?> target="_blank"><?php _e("Store", "default") ?></a></li>
