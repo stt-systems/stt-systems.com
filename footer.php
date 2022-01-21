@@ -44,21 +44,24 @@
 																	echo '<p><strong>' . get_page_full_link('inertial-motion-capture', 'INERTIAL') . '</strong></p>';
 																	echo '<p>' . get_page_full_link('isen') . '</p>'; ?>
 									</div><?php
-										} else if ($top_slug == 'industry') { ?>
+								} 
+								else if ($top_slug == 'industry') { ?>
 									<div class="col-md-6 col-sm-6"><?php
 																	echo '<p><strong>' . get_page_full_link('industry', 'INDUSTRY') . '</strong></p>';
 																	echo '<p>' . get_page_full_link('machine-vision', 'Machine vision') . '</p>';
 																	echo '<p>' . get_page_full_link('product-configurators', 'Product configurators') . '</p>';
 																	echo '<p><a href="https://www.stt-systems.com/industry/rdi/">R+D+i</a></p>'; ?>
 									</div><?php
-										} else { ?>
+								}
+								else { ?>
 									<div class="col-md-6 col-sm-6"><?php
 																	echo '<p><strong>' . get_page_full_link('motion-analysis', 'MOTION ANALYSIS') . '</strong></p>';
+																	echo '<p>' . get_page_full_link('cycling-3dma') . '</p>';
 																	echo '<p>' . get_page_full_link('3d-optical-motion-capture', '3DMA') . '</p>';
 																	echo '<p>' . get_page_full_link('2d-optical-motion-capture', '2DMA') . '</p>';
 																	echo '<p>' . get_page_full_link('inertial-motion-capture', 'Inertial') . '</p>';
 																	echo '<p>' . get_page_full_link('contact-support', 'Support') . '</p>';
-																	echo '<p><a href="https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/">Downloads</a></p>';
+																	echo '<p><a href="'.translate("https://www.stt-systems.com/motion-analysis/downloads/products/software-downloads/", "default").'">Downloads</a></p>';
 																	/* echo '<p>' . get_page_full_link('downloads', 'Downloads') . '</p>'; */ ?>
 									</div>
 									<div class="col-md-6 col-sm-6"><?php
@@ -108,7 +111,7 @@
 					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="social-icons">
 							<ul>
-								<li><a href="https://www.instagram.com/stt.systems" title="Instagram" target="_blank" class="social-media-icon instagram-icon"></a></li>
+								<li><a href="https://www.instagram.com/stt.systems/" title="Instagram" target="_blank" class="social-media-icon instagram-icon"></a></li>
 								<li><a href="https://www.linkedin.com/company/stt-systems" title="LinkedIn" target="_blank" class="social-media-icon linkedin-icon"></a></li>
 								<li><a href="https://www.youtube.com/user/SttSystems" title="Youtube" target="_blank" class="social-media-icon youtube-icon"></a></li>
 								<li><a href="https://www.facebook.com/STTSystems" title="Facebook" target="_blank" class="social-media-icon facebook-icon"></a></li>
